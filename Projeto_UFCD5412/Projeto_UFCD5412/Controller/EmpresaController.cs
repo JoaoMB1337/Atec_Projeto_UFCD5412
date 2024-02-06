@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projeto_UFCD5412
 {
-    internal class Empresa
+    internal class EmpresaController
     {
         public List<Funcionario> Funcionarios { get; set; }
 
-        public Empresa()
+        public EmpresaController()
         {
             Funcionarios = new List<Funcionario>();
         }

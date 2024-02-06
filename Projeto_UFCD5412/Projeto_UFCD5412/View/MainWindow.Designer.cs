@@ -1,6 +1,6 @@
 ﻿namespace Projeto_UFCD5412
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Variável de designer necessária.

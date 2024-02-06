@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.Model;
 
 namespace Projeto_UFCD5412
 {
@@ -19,7 +21,12 @@ namespace Projeto_UFCD5412
         {
             Funcionarios.Add(funcionario);
         }
-
-        
+        public void ListarFuncionarios()
+        {
+            foreach (var funcionario in Funcionarios)
+            {
+                Console.WriteLine(funcionario);
+            }
+        }
     }
 }

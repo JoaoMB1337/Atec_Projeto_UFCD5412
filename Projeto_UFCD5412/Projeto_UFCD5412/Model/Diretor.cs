@@ -17,8 +17,8 @@ namespace Projeto_UFCD5412.Model
         public bool CarroEmpresa { get; set; }
         public string Departamento { get; set; }
 
-        public Diretor(int id, string nome, string morada, string contacto,string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, bool registoCriminalAtualizado, DateTime dataContrato, bool isencaoHorario, decimal bonusMensal, bool carroEmpresa, string departamento)
-          : base(id, nome, morada, contacto,tipo, dataFimContrato, dataRegistoCriminal,registoCriminalAtualizado, dataContrato)
+        public Diretor(int id, string nome, string morada, string contacto,string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, bool isencaoHorario, decimal bonusMensal, bool carroEmpresa, string departamento)
+          : base(id, nome, morada, contacto,tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal)
         {
             IseHorario = isencaoHorario;
             BonusMensal = bonusMensal;

@@ -11,8 +11,8 @@ namespace Projeto_UFCD5412.Model
         public string DiretorResponsavel { get; set; }
         public string Area { get; set; }
 
-        public Secretaria(int id, string nome, string morada, string contacto, string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, bool registoCriminalAtualizado, DateTime dataContrato, string diretorResponsavel, string area)
-          : base(id, nome, morada, contacto, tipo, dataFimContrato, dataRegistoCriminal,registoCriminalAtualizado,dataContrato)
+        public Secretaria(int id, string nome, string morada, string contacto, string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, string diretorResponsavel, string area)
+          : base(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal)
         {
             DiretorResponsavel = diretorResponsavel;
             Area = area;

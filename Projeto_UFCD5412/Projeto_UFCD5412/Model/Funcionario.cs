@@ -13,22 +13,23 @@ namespace Projeto_UFCD5412.Model
         public string Morada { get; set; }
         public string Contacto { get; set; }
         public string Tipo { get; set; }
+        public DateTime DataContrato { get; set; }
         public DateTime DataFimContrato { get; set; }
         public DateTime DataRegistoCriminal { get; set; }
-        public bool RegistoCriminalAtualizado { get; set; }
-        public DateTime DataContrato { get; set; }
+        public DateTime DataFimRegistoCriminal { get; set; }
 
-        public Funcionario(int id, string nome, string morada, string contacto,string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, bool registoCriminalAtualizado, DateTime dataContrato)
+        public Funcionario(int id, string nome, string morada, string contacto,string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal)
         {
             Id = id;
             Nome = nome;
             Morada = morada;
             Contacto = contacto;
             Tipo = tipo;
+            DataContrato = dataContrato;
             DataFimContrato = dataFimContrato;
             DataRegistoCriminal = dataRegistoCriminal;
-            RegistoCriminalAtualizado = registoCriminalAtualizado;
-            DataContrato = dataContrato;
+            DataFimRegistoCriminal = dataFimRegistoCriminal;
+            
         }
     }
 }

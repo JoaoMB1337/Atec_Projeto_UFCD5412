@@ -24,7 +24,7 @@ namespace Projeto_UFCD5412.Data
 
                     foreach (var funcionario in funcionarios)
                     {
-                        string commonAttributes = $"{funcionario.Id},{funcionario.Nome},{funcionario.Morada},{funcionario.Contacto},{funcionario.Tipo},{funcionario.DataFimContrato},{funcionario.DataRegistoCriminal},{funcionario.RegistoCriminalAtualizado},{funcionario.DataFimContrato},{funcionario.GetType().Name}";
+                        string commonAttributes = $"{funcionario.Id},{funcionario.Nome},{funcionario.Morada},{funcionario.Contacto},{funcionario.Tipo},{funcionario.DataContrato},{funcionario.DataFimContrato},{funcionario.DataRegistoCriminal},{funcionario.DataRegistoCriminal},{funcionario.GetType().Name}";
 
                         if (funcionario is Diretor diretor)
                         {

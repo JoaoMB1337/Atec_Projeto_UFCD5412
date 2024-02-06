@@ -30,13 +30,13 @@ namespace Projeto_UFCD5412
             }
         }
 
-        public void AlterarRegistroCriminal(int id, bool atualizado)
+        public void AtualizarRegistoCriminal(int id, DateTime dataFimRegistoCriminal)
         {
-            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);//FirstOrDefault retorna o primeiro elemento de uma sequência ou um valor padrão se a sequência não contiver elementos.
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);//FirstOrDefault() retorna o primeiro elemento que satisfaça a condição ou null se não existir nenhum
             if (funcionario != null)
             {
-                funcionario.RegistoCriminalAtualizado = atualizado;
-                Console.WriteLine("Registro criminal atualizado.");
+                funcionario.DataFimRegistoCriminal = dataFimRegistoCriminal;
+                Console.WriteLine("Registo criminal atualizado com sucesso.");
             }
             else
             {

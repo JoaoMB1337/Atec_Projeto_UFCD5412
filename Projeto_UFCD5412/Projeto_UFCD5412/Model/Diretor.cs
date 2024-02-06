@@ -8,10 +8,6 @@ namespace Projeto_UFCD5412.Model
 {
     internal class Diretor : Funcionario
     {
-        private int v1;
-        private double v2;
-        private bool v3;
-
         public bool IseHorario { get; set; }
         public decimal BonusMensal { get; set; }
         public bool CarroEmpresa { get; set; }

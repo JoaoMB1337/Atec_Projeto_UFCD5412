@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projeto_UFCD5412
+namespace Projeto_UFCD5412.Model
 {
     internal class Formador : Funcionario
     {
@@ -12,12 +12,13 @@ namespace Projeto_UFCD5412
         public string Disponibilidade { get; set; }
         public decimal ValorHora { get; set; }
 
-        public Formador(int id, string nome, string morada, string contacto, DateTime dataFimContrato, DateTime dataRegistoCriminal, string areaLecionada, string disponibilidade, decimal valorHora)
-          : base(id, nome, morada, contacto, dataFimContrato, dataRegistoCriminal)
+        public Formador(int id, string nome, string morada, string contacto, string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, string areaLecionada, string disponibilidade, decimal valorHora)
+          : base(id, nome, morada, contacto, tipo, dataFimContrato, dataRegistoCriminal)
         {
             AreaLecionada = areaLecionada;
             Disponibilidade = disponibilidade;
             ValorHora = valorHora;
+            Tipo = "Formador";  
         }
 
     }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CSVHandler.cs" />
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
@@ -86,7 +87,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

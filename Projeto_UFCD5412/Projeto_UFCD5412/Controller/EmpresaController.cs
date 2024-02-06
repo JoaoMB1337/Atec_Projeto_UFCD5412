@@ -89,8 +89,5 @@ namespace Projeto_UFCD5412
             return valorTotal;
         }
 
-
-
-
     }
 }

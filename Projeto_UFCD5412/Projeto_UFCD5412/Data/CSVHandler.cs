@@ -12,6 +12,7 @@ namespace Projeto_UFCD5412.Data
 {
     internal class CSVHandler
     {
+
         public static void ExportToCSV(List<Funcionario> funcionarios)
         {
             string filePath = @"funcionarios.csv";
@@ -23,7 +24,7 @@ namespace Projeto_UFCD5412.Data
 
                     foreach (var funcionario in funcionarios)
                     {
-                        string commonAttributes = $"{funcionario.Id},{funcionario.Nome},{funcionario.Morada},{funcionario.Contacto},{funcionario.Tipo},{funcionario.DataFimContrato},{funcionario.DataRegistoCriminal},{funcionario.GetType().Name}";
+                        string commonAttributes = $"{funcionario.Id},{funcionario.Nome},{funcionario.Morada},{funcionario.Contacto},{funcionario.Tipo},{funcionario.DataFimContrato},{funcionario.DataRegistoCriminal},{funcionario.RegistoCriminalAtualizado},{funcionario.DataFimContrato},{funcionario.GetType().Name}";
 
                         if (funcionario is Diretor diretor)
                         {

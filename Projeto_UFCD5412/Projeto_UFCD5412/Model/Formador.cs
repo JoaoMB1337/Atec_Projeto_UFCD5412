@@ -13,8 +13,8 @@ namespace Projeto_UFCD5412.Model
         public decimal ValorHora { get; set; }
 
 
-        public Formador(int id, string nome, string morada, string contacto, string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, string areaLecionada, string disponibilidade, decimal valorHora)
-          : base(id, nome, morada, contacto, tipo, dataFimContrato, dataRegistoCriminal)
+        public Formador(int id, string nome, string morada, string contacto, string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, bool registoCriminalAtualizado, DateTime dataContrato, string areaLecionada, string disponibilidade, decimal valorHora)
+          : base(id, nome, morada, contacto, tipo, dataFimContrato, dataRegistoCriminal, registoCriminalAtualizado,dataContrato)
         {
             AreaLecionada = areaLecionada;
             Disponibilidade = disponibilidade;

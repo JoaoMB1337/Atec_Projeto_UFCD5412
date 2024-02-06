@@ -12,6 +12,7 @@ namespace Projeto_UFCD5412.Model
         public string Disponibilidade { get; set; }
         public decimal ValorHora { get; set; }
 
+
         public Formador(int id, string nome, string morada, string contacto, string tipo, DateTime dataFimContrato, DateTime dataRegistoCriminal, string areaLecionada, string disponibilidade, decimal valorHora)
           : base(id, nome, morada, contacto, tipo, dataFimContrato, dataRegistoCriminal)
         {

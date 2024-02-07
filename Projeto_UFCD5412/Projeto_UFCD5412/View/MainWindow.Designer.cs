@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.ExportarFicheiro_Btn = new FontAwesome.Sharp.IconButton();
             this.CalcularValorPagar_Btn = new FontAwesome.Sharp.IconButton();
             this.VerRegistoCriminal_Btn = new FontAwesome.Sharp.IconButton();
@@ -39,7 +41,6 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -60,10 +61,24 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 745);
             this.panelMenu.TabIndex = 1;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(13, 624);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 28);
+            this.iconButton1.TabIndex = 5;
+            this.iconButton1.Text = "X";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // ExportarFicheiro_Btn
             // 
@@ -77,7 +92,7 @@
             this.ExportarFicheiro_Btn.IconSize = 32;
             this.ExportarFicheiro_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ExportarFicheiro_Btn.Location = new System.Drawing.Point(0, 542);
-            this.ExportarFicheiro_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExportarFicheiro_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.ExportarFicheiro_Btn.Name = "ExportarFicheiro_Btn";
             this.ExportarFicheiro_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.ExportarFicheiro_Btn.Size = new System.Drawing.Size(293, 74);
@@ -100,7 +115,7 @@
             this.CalcularValorPagar_Btn.IconSize = 32;
             this.CalcularValorPagar_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CalcularValorPagar_Btn.Location = new System.Drawing.Point(0, 468);
-            this.CalcularValorPagar_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CalcularValorPagar_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.CalcularValorPagar_Btn.Name = "CalcularValorPagar_Btn";
             this.CalcularValorPagar_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.CalcularValorPagar_Btn.Size = new System.Drawing.Size(293, 74);
@@ -123,7 +138,7 @@
             this.VerRegistoCriminal_Btn.IconSize = 32;
             this.VerRegistoCriminal_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.VerRegistoCriminal_Btn.Location = new System.Drawing.Point(0, 394);
-            this.VerRegistoCriminal_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VerRegistoCriminal_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.VerRegistoCriminal_Btn.Name = "VerRegistoCriminal_Btn";
             this.VerRegistoCriminal_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.VerRegistoCriminal_Btn.Size = new System.Drawing.Size(293, 74);
@@ -146,7 +161,7 @@
             this.VerFuncionarioContrato_Btn.IconSize = 32;
             this.VerFuncionarioContrato_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.VerFuncionarioContrato_Btn.Location = new System.Drawing.Point(0, 320);
-            this.VerFuncionarioContrato_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VerFuncionarioContrato_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.VerFuncionarioContrato_Btn.Name = "VerFuncionarioContrato_Btn";
             this.VerFuncionarioContrato_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.VerFuncionarioContrato_Btn.Size = new System.Drawing.Size(293, 74);
@@ -169,7 +184,7 @@
             this.AlterarRegisto_Btn.IconSize = 32;
             this.AlterarRegisto_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AlterarRegisto_Btn.Location = new System.Drawing.Point(0, 246);
-            this.AlterarRegisto_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AlterarRegisto_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.AlterarRegisto_Btn.Name = "AlterarRegisto_Btn";
             this.AlterarRegisto_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.AlterarRegisto_Btn.Size = new System.Drawing.Size(293, 74);
@@ -192,7 +207,7 @@
             this.AddFuncionario_Btn.IconSize = 32;
             this.AddFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddFuncionario_Btn.Location = new System.Drawing.Point(0, 172);
-            this.AddFuncionario_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddFuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.AddFuncionario_Btn.Name = "AddFuncionario_Btn";
             this.AddFuncionario_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.AddFuncionario_Btn.Size = new System.Drawing.Size(293, 74);
@@ -208,7 +223,7 @@
             this.panelLogo.Controls.Add(this.Home_Btn);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(293, 172);
             this.panelLogo.TabIndex = 0;
@@ -217,7 +232,7 @@
             // 
             this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.icon_ADOSMELHORES_removebg_preview;
             this.Home_Btn.Location = new System.Drawing.Point(69, 15);
-            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.Home_Btn.Name = "Home_Btn";
             this.Home_Btn.Size = new System.Drawing.Size(151, 138);
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,32 +245,18 @@
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(874, 98);
             this.panelTitleBar.TabIndex = 2;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(13, 624);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 28);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "X";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panelShadow
             // 
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(293, 98);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(874, 11);
             this.panelShadow.TabIndex = 3;
@@ -265,7 +266,7 @@
             this.panelDesktop.BackColor = System.Drawing.Color.Azure;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(293, 109);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(874, 636);
             this.panelDesktop.TabIndex = 4;
@@ -279,9 +280,11 @@
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Academia de Formação";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();

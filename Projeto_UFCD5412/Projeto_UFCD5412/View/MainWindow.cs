@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Projeto_UFCD5412.View.Forms;
 
 namespace Projeto_UFCD5412
 {
@@ -28,10 +29,10 @@ namespace Projeto_UFCD5412
             panelMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
         //Eventos
         private struct RGBColors
@@ -42,9 +43,9 @@ namespace Projeto_UFCD5412
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);          
             public static Color color6 = Color.FromArgb(24, 161, 251);          
-        }                                                                       
-                                                                                
-        //Métodos                                                               
+        }
+
+        //Métodos
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -60,9 +61,9 @@ namespace Projeto_UFCD5412
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();     
+                leftBorderBtn.BringToFront();
                 //Icone Atual
-                
+
 
             }
         }
@@ -103,6 +104,9 @@ namespace Projeto_UFCD5412
         {
             ActivateButton(sender, RGBColors.color1);
             //OpenChildForm(new AdicionarFuncionarioForm());
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            adicionarFuncionarioForm.Show();
+
         }
 
         private void AlterarRegisto_Btn_Click(object sender, EventArgs e)

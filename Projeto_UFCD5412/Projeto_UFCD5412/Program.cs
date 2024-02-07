@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Projeto_UFCD5412.Data;
 using System.Runtime.CompilerServices;
 using Projeto_UFCD5412.View;
+using Projeto_UFCD5412.Controller;
 namespace Projeto_UFCD5412
 {
     internal static class Program
@@ -18,28 +19,6 @@ namespace Projeto_UFCD5412
         [STAThread]
         static void Main()
         {
-            //Coordenador coordenador = new Coordenador(1, "João Silva", "Rua A, nº 123", "123456789", "Coordenador", DateTime.Now, DateTime.Now.AddYears(2), DateTime.Now, DateTime.Now.AddYears(1), "Engenharia", new List<Formador>());
-            //Diretor diretor = new Diretor(2, "Maria Oliveira", "Rua B, nº 456", "987654321", "Diretor", DateTime.Now, DateTime.Now.AddYears(3), DateTime.Now, DateTime.Now.AddYears(2), true, 1500, true, "Administração");
-            //Formador formador = new Formador(3, "Carlos Santos", "Rua C, nº 789", "111222333", "Formador", DateTime.Now, DateTime.Now.AddYears(1), DateTime.Now, DateTime.Now.AddMonths(6), "Programming", "Evenings", 30.5m);
-            //Secretaria secretaria = new Secretaria(4, "Ana Pereira", "Rua D, nº 012", "444555666", "Secretaria", DateTime.Now, DateTime.Now.AddYears(2), DateTime.Now, DateTime.Now.AddYears(1), "João Diretor", "Administrativa");
-
-            //List<Funcionario> funcionarios = new List<Funcionario>
-            //{
-            //    coordenador,
-            //    diretor,
-            //    formador,
-            //    secretaria
-            //};
-
-
-            //foreach (var funcionario in funcionarios)
-            //{
-            //    Console.WriteLine($"ID: {funcionario.Id}, Nome: {funcionario.Nome}, Tipo: {funcionario.Tipo}");
-            //}
-
-            //CSVHandler.ExportToCSV(funcionarios);
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ListarFuncionarioForms());

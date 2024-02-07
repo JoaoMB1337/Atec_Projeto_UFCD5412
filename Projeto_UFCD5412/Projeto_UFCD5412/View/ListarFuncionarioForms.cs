@@ -8,58 +8,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Model;
 
 namespace Projeto_UFCD5412.View
 {
     public partial class ListarFuncionarioForms : Form
     {
-        private EmpresaController empresaController;
+        private EmpresaController empresaController = new EmpresaController();
         public ListarFuncionarioForms()
         {
             InitializeComponent();
-            empresaController = new EmpresaController();
         }
+
 
         private void ListarFuncionarioForms_Load(object sender, EventArgs e)
         {
-            ListarFuncionariosDataGrid();
+            ListarFuncionarioDataGrid();
         }
 
-        private void ListarFuncionariosDataGrid()
+        private void ListarFuncionarioDataGrid()
         {
-            empresaController.ListarFuncionarios();
+            DateTime datahj = DateTime.Now;
+            List<Funcionario> funcionarios = empresaController.ListarFuncionarios();
 
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Id");
-            dt.Columns.Add("Nome");
-            dt.Columns.Add("Morada");
-            dt.Columns.Add("Contacto");
-            dt.Columns.Add("Tipo");
-            dt.Columns.Add("DataContrato");
-            dt.Columns.Add("DataFimContrato");
-            dt.Columns.Add("DataRegistoCriminal");
-            dt.Columns.Add("DataFimRegistoCriminal");
+            // Configurar as colunas do DataGridView
+            FuncionariosList_DataGrid.AutoGenerateColumns = false;
+            FuncionariosList_DataGrid.Columns.Add("Id", "ID");
+            FuncionariosList_DataGrid.Columns.Add("Nome", "Nome");
+            FuncionariosList_DataGrid.Columns.Add("Morada", "Morada");
+            FuncionariosList_DataGrid.Columns.Add("Contacto", "Contacto");
+            FuncionariosList_DataGrid.Columns.Add("Tipo", "Tipo");
+            FuncionariosList_DataGrid.Columns.Add("DataContrato", "Data Contrato");
+            FuncionariosList_DataGrid.Columns.Add("DataFimContrato", "Data Fim Contrato");
+            FuncionariosList_DataGrid.Columns.Add("DataRegistoCriminal", "Data Registo Criminal");
+            FuncionariosList_DataGrid.Columns.Add("DataFimRegistoCriminal", "Data Fim Registo Criminal");
 
-            foreach (var funcionario in empresaController.Funcionarios)
+            foreach (var funcionario in funcionarios)
             {
-                dt.Rows.Add(
+                FuncionariosList_DataGrid.Rows.Add(
                     funcionario.Id,
                     funcionario.Nome,
                     funcionario.Morada,
                     funcionario.Contacto,
                     funcionario.Tipo,
-                    funcionario.DataContrato.ToString("dd/MM/yyyy"),
-                    funcionario.DataFimContrato.ToString("dd/MM/yyyy"),
-                    funcionario.DataRegistoCriminal.ToString("dd/MM/yyyy"),
-                    funcionario.DataFimRegistoCriminal.ToString("dd/MM/yyyy")
+                    funcionario.DataContrato.ToShortDateString(),
+                    funcionario.DataFimContrato.ToShortDateString(),
+                    funcionario.DataRegistoCriminal.ToShortDateString(),
+                    funcionario.DataFimRegistoCriminal.ToShortDateString()
                 );
             }
-
-            FuncionariosList_DataGrid.DataSource = dt;
         }
 
+        private void AdicionarFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            AdicionarFuncionarioForms adicionarFuncionarioForms = new AdicionarFuncionarioForms();
+            adicionarFuncionarioForms.ShowDialog();
 
-
-
+        }
     }
 }

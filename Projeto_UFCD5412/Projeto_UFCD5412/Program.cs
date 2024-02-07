@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using Projeto_UFCD5412.Data;
 using System.Runtime.CompilerServices;
+using Projeto_UFCD5412.View.Forms;
 namespace Projeto_UFCD5412
 {
     internal static class Program
@@ -46,7 +47,8 @@ namespace Projeto_UFCD5412
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            Application.Run(new AdicionarFuncionarioForm());
         }
     }
 }

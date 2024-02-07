@@ -104,6 +104,9 @@
     <Compile Include="View\RegistoCriminalForms\RegistoCriminalForm.Designer.cs">
       <DependentUpon>RegistoCriminalForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
+      <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

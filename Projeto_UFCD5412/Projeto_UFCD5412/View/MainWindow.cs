@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,12 +17,21 @@ namespace Projeto_UFCD5412
         //Variáveis
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Form currentChildForm;
+        
+
         public MainWindow()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            //Form
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            
         }
         //Eventos
         private struct RGBColors
@@ -50,7 +60,10 @@ namespace Projeto_UFCD5412
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
+                leftBorderBtn.BringToFront();     
+                //Icone Atual
+                
+
             }
         }
 
@@ -67,45 +80,98 @@ namespace Projeto_UFCD5412
             }
         }
 
+        private void OpenChildForm(object childForm)
+        {
+          if(currentChildForm != null)
+            {
+                //Abrir apenas um formulário
+              currentChildForm.Close();
+          }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            HomeDash_Btn.Text = childForm.Text;
+        }
+    
+
         private void AddFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new AdicionarFuncionarioForm());
         }
 
         private void AlterarRegisto_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new AlterarRegisto());
         }
 
         private void VerFuncionarioContrato_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new VerFuncionarioContrato());
         }
 
         private void VerRegistoCriminal_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new VerRegistoCriminal());
         }
 
         private void CalcularValorPagar_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new CalcularValorPagar());
         }
 
         private void ExportarFicheiro_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new ExportarFicheiro());
         }
 
         private void Home_Btn_Click(object sender, EventArgs e)
         {
             Reset();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
         }
 
         private void Reset()
         {
             DisableButton();
             leftBorderBtn.Visible = false;
+
+            HomeDash_Btn.Text = "Home";
+        }
+        //drag form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

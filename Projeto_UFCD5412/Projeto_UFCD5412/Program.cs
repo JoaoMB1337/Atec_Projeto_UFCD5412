@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Data;
+//using Projeto_UFCD5412.Data;
 using System.Runtime.CompilerServices;
 namespace Projeto_UFCD5412
 {

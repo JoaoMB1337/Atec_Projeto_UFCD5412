@@ -87,52 +87,52 @@ namespace Projeto_UFCD5412
                 //Abrir apenas um formulário
               currentChildForm.Close();
           }
-            currentChildForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            HomeDash_Btn.Text = childForm.Text;
+            //currentChildForm = childForm;
+            //childForm.TopLevel = false;
+            //childForm.FormBorderStyle = FormBorderStyle.None;
+            //childForm.Dock = DockStyle.Fill;
+            //panelDesktop.Controls.Add(childForm);
+            //panelDesktop.Tag = childForm;
+            //childForm.BringToFront();
+            //childForm.Show();
+            //HomeDash_Btn.Text = childForm.Text;
         }
     
 
         private void AddFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new AdicionarFuncionarioForm());
+            //OpenChildForm(new AdicionarFuncionarioForm());
         }
 
         private void AlterarRegisto_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new AlterarRegisto());
+            //OpenChildForm(new AlterarRegisto());
         }
 
         private void VerFuncionarioContrato_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new VerFuncionarioContrato());
+            //OpenChildForm(new VerFuncionarioContrato());
         }
 
         private void VerRegistoCriminal_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new VerRegistoCriminal());
+            //OpenChildForm(new VerRegistoCriminal());
         }
 
         private void CalcularValorPagar_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new CalcularValorPagar());
+            //OpenChildForm(new CalcularValorPagar());
         }
 
         private void ExportarFicheiro_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            OpenChildForm(new ExportarFicheiro());
+            //OpenChildForm(new ExportarFicheiro());
         }
 
         private void Home_Btn_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace Projeto_UFCD5412
             DisableButton();
             leftBorderBtn.Visible = false;
 
-            HomeDash_Btn.Text = "Home";
+            //HomeDash_Btn.Text = "Home";
         }
         //drag form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

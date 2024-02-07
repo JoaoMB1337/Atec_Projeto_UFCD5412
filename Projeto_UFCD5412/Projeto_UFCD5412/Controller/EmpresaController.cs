@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.Model;
 
-namespace Projeto_UFCD5412
+namespace Projeto_UFCD5412.Controller
 {
     internal class EmpresaController
     {
@@ -14,7 +14,8 @@ namespace Projeto_UFCD5412
 
         public EmpresaController()
         {
-            Funcionarios = new List<Funcionario>();
+            List<Funcionario> Funcionario = CSVHandler.LoadFromCSV();
+
         }
 
         public void AdicionarFuncionario(Funcionario funcionario)

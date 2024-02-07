@@ -57,6 +57,12 @@
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
+    <Compile Include="View\ListarFuncionarioForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListarFuncionarioForms.Designer.cs">
+      <DependentUpon>ListarFuncionarioForms.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Secretaria.cs" />
+    <EmbeddedResource Include="View\ListarFuncionarioForms.resx">
+      <DependentUpon>ListarFuncionarioForms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

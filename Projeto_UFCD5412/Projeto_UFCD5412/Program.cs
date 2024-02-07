@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Data;
 using System.Runtime.CompilerServices;
+using Projeto_UFCD5412.View;
 namespace Projeto_UFCD5412
 {
     internal static class Program
@@ -38,15 +39,10 @@ namespace Projeto_UFCD5412
 
             //CSVHandler.ExportToCSV(funcionarios);
 
-            List<Funcionario> funcionarios = CSVHandler.LoadFromCSV();
-            foreach (var funcionario in funcionarios)
-            {
-                Console.WriteLine($"ID: {funcionario.Id}, Nome: {funcionario.Nome}, Tipo: {funcionario.Tipo}");
-            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new ListarFuncionarioForms());
         }
     }
 }

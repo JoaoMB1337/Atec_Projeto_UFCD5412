@@ -105,7 +105,15 @@ namespace Projeto_UFCD5412
             ActivateButton(sender, RGBColors.color1);
             //OpenChildForm(new AdicionarFuncionarioForm());
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            //abrir dentro do paineldekstop
+            adicionarFuncionarioForm.TopLevel = false;
+            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            adicionarFuncionarioForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(adicionarFuncionarioForm);
+            panelDesktop.Tag = adicionarFuncionarioForm;
+            adicionarFuncionarioForm.BringToFront();
             adicionarFuncionarioForm.Show();
+            this.Dashboard_Btn.Click += new System.EventHandler(this.AddFuncionario_Btn_Click);
 
         }
 
@@ -176,6 +184,22 @@ namespace Projeto_UFCD5412
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Dashboard_Btn_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void VerFuncionarioContrato_Btn_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+            //OpenChildForm(new VerFuncionarioContrato());
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            
+
+
         }
     }
 }

@@ -63,6 +63,16 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3408105 {
+            get {
+                object obj = ResourceManager.GetObject("3408105", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_ADOSMELHORES_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("icon-ADOSMELHORES-removebg-preview", resourceCulture);

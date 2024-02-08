@@ -17,10 +17,22 @@ namespace Projeto_UFCD5412.View.LoginForms
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void UserLogin_Btn_Click(object sender, EventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+             MainWindow mainWindow = new MainWindow();
+
+            mainWindow.FormClosed += MainWindow_FormClosed;
+
             mainWindow.Show();
+
+            this.Hide();
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+
+            Application.Exit();
         }
     }
 }

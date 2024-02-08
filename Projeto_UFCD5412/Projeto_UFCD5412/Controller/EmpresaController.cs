@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.Model;
 
-namespace Projeto_UFCD5412
+namespace Projeto_UFCD5412.Controller
 {
     internal class EmpresaController
     {
@@ -15,6 +15,7 @@ namespace Projeto_UFCD5412
         public EmpresaController()
         {
             Funcionarios = new List<Funcionario>();
+            Funcionarios = CSVHandler.LoadFromCSV();
         }
 
         public void AdicionarFuncionario(Funcionario funcionario)
@@ -22,12 +23,21 @@ namespace Projeto_UFCD5412
             Funcionarios.Add(funcionario);
         }
 
-        public void ListarFuncionarios()
+        public List<Funcionario> ListarFuncionarios()
         {
-            foreach (var funcionario in Funcionarios)
-            {
-                Console.WriteLine(funcionario);
-            }
+            return Funcionarios;
+        }
+
+        public List<Funcionario> ListarFuncionariosComContratoValido(DateTime dataAtual)
+        {
+            var funcionariosComContratoValido = Funcionarios.Where(f => f.DataContrato <= dataAtual).ToList();
+            return funcionariosComContratoValido;
+        }
+
+        public List<Funcionario> ListarFuncionariosComRegistoCriminalExpirado(DateTime dataAtual)
+        {
+            var funcionariosComRegistoCriminalExpirado = Funcionarios.Where(f => f.DataFimRegistoCriminal <= dataAtual).ToList();
+            return funcionariosComRegistoCriminalExpirado;
         }
 
         public void AtualizarRegistoCriminal(int id, DateTime dataFimRegistoCriminal)
@@ -36,45 +46,7 @@ namespace Projeto_UFCD5412
             if (funcionario != null)
             {
                 funcionario.DataFimRegistoCriminal = dataFimRegistoCriminal;
-                Console.WriteLine("Registo criminal atualizado com sucesso.");
-            }
-            else
-            {
-                Console.WriteLine("Funcionário não encontrado.");
-            }
-        }
-
-        public void ListarFuncionariosComContratoValido(DateTime dataAtual)
-        {
-            var funcionariosComContratoValido = Funcionarios.Where(f => f.DataContrato <= dataAtual).ToList();//filtrar os funcionários cuja  (DataContrato) <= à dataAtual, ToList() converte o resultado do filtro em uma lista
-            if (funcionariosComContratoValido.Any())
-            {
-                Console.WriteLine("Funcionários com contrato válido para a data atual:");
-                foreach (var funcionario in funcionariosComContratoValido)
-                {
-                    Console.WriteLine(funcionario);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Nenhum funcionário possui contrato válido para a data atual.");
-            }
-        }
-
-        public void ListarFuncionariosComRegistoCriminalExpirado(DateTime dataAtual)
-        {
-            var funcionariosComRegistoCriminalExpirado = Funcionarios.Where(f => f.DataRegistoCriminal <= dataAtual).ToList();//filtrar os funcionários cuja  (DataRegistoCriminal) <= à dataAtual, ToList() converte o resultado do filtro em uma lista
-            if (funcionariosComRegistoCriminalExpirado.Any())
-            {
-                Console.WriteLine("Funcionários com registo criminal expirado para a data atual:");
-                foreach (var funcionario in funcionariosComRegistoCriminalExpirado)
-                {
-                    Console.WriteLine(funcionario);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Nenhum funcionário possui registo criminal expirado para a data atual.");
+              
             }
         }
 

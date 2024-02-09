@@ -30,6 +30,8 @@
         {
             this.FuncionariosList_DataGrid = new System.Windows.Forms.DataGridView();
             this.AdicionarFuncionario_Btn = new FontAwesome.Sharp.IconButton();
+            this.SearchName_TextBox = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.FuncionariosList_DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,11 +60,31 @@
             this.AdicionarFuncionario_Btn.UseVisualStyleBackColor = true;
             this.AdicionarFuncionario_Btn.Click += new System.EventHandler(this.AdicionarFuncionario_Btn_Click);
             // 
+            // SearchName_TextBox
+            // 
+            this.SearchName_TextBox.Location = new System.Drawing.Point(23, 526);
+            this.SearchName_TextBox.Name = "SearchName_TextBox";
+            this.SearchName_TextBox.Size = new System.Drawing.Size(100, 20);
+            this.SearchName_TextBox.TabIndex = 3;
+            this.SearchName_TextBox.TextChanged += new System.EventHandler(this.SearchName_TextBox_TextChanged);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(170, 524);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ListarFuncionarioForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SearchName_TextBox);
             this.Controls.Add(this.AdicionarFuncionario_Btn);
             this.Controls.Add(this.FuncionariosList_DataGrid);
             this.Name = "ListarFuncionarioForms";
@@ -70,11 +92,14 @@
             this.Load += new System.EventHandler(this.ListarFuncionarioForms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FuncionariosList_DataGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView FuncionariosList_DataGrid;
         private FontAwesome.Sharp.IconButton AdicionarFuncionario_Btn;
+        private System.Windows.Forms.TextBox SearchName_TextBox;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

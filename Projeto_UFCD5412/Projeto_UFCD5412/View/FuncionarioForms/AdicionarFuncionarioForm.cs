@@ -23,18 +23,26 @@ namespace Projeto_UFCD5412.View.Forms
 
             switch (TipoFuncionario_ComboBox.SelectedIndex)
             {
-                case 0: // Funcionaria
+                case 0: // Funcionario
                     break;
                 case 1: //Diretor
+                    HideAllControls();
+                    Diretor_GroupBox.Visible = true;
                     InitializeDiretorControls();
                     break;
                 case 2: //Formador
+                    HideAllControls();
+                    Formador_groupBox.Visible = true;
                     InitializeFormadorControls();
                     break;
                 case 3: //Secretaria
+                    HideAllControls();
+                    Secretaria_groupBox.Visible = true;
                     InitializeSecretariaControls();
                    break;
                 case 4: //Coordenador
+                    HideAllControls();
+                    Coordenador_groupBox.Visible = true;
                     InitializeCoordenadorControls();
                     break;
 
@@ -62,10 +70,12 @@ namespace Projeto_UFCD5412.View.Forms
             DiretorResponsavel_TextBox.Visible = false;
             Area_Label.Visible = false;
             Area_TextBox.Visible = false;
+            Secretaria_groupBox.Visible = false;
 
-            // Diretor
+            // cordenador
             DiretorCurso_Label.Visible = false;
             DiretorCurso_TextBox.Visible = false;
+            Coordenador_groupBox.Visible = false;
 
             // Formador
             AreaLecionada_Label.Visible = false;
@@ -74,8 +84,9 @@ namespace Projeto_UFCD5412.View.Forms
             Disponibilidade_TextBox.Visible = false;
             ValorHora_Label.Visible = false;
             ValorHora_TextBox.Visible = false;
+            Formador_groupBox.Visible = false;
 
-            // Coordenador
+            // Diretor
             IseHorario_Label.Visible = false;
             IseHorario_TextBox.Visible = false;
             BonusMensal_Label.Visible = false;
@@ -84,15 +95,16 @@ namespace Projeto_UFCD5412.View.Forms
             CarroEmpresa_TextBox.Visible = false;
             Departamento_Label.Visible = false;
             Departamento_TextBox.Visible = false;
+            Diretor_GroupBox.Visible = false;
 
-            
+
 
 
         }
 
-        private void InitializeDiretorControls()
+        private void InitializeCoordenadorControls()
         {
-            //diretor
+            //coordenador
             DiretorCurso_Label.Visible = true;
             DiretorCurso_TextBox.Visible = true;
 
@@ -100,7 +112,7 @@ namespace Projeto_UFCD5412.View.Forms
 
         private void InitializeFormadorControls()
         {
-            //formador
+            //Formador
             AreaLecionada_Label.Visible = true;
             AreaLecionada_TextBox.Visible = true;
             Disponibilidade_Label.Visible = true;
@@ -121,9 +133,9 @@ namespace Projeto_UFCD5412.View.Forms
 
         }
 
-        private void InitializeCoordenadorControls()
+        private void InitializeDiretorControls()
         {
-            //coordenador
+            //Diretor
             IseHorario_Label.Visible = true;
             IseHorario_TextBox.Visible = true;
             BonusMensal_Label.Visible = true;
@@ -135,5 +147,17 @@ namespace Projeto_UFCD5412.View.Forms
 
         }
 
+        private void Voltar_Btn_Click(object sender, EventArgs e)
+        {
+            //botao voltar ao menu principal
+            this.Hide();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+             
+        }
+
+     
     }
 }

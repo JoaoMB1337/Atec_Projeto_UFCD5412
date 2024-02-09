@@ -68,7 +68,16 @@
             this.BonusMensal_TextBox = new System.Windows.Forms.TextBox();
             this.CarroEmpresa_TextBox = new System.Windows.Forms.TextBox();
             this.Departamento_TextBox = new System.Windows.Forms.TextBox();
+            this.Voltar_Btn = new FontAwesome.Sharp.IconButton();
+            this.Diretor_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Formador_groupBox = new System.Windows.Forms.GroupBox();
+            this.Secretaria_groupBox = new System.Windows.Forms.GroupBox();
+            this.Coordenador_groupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.Diretor_GroupBox.SuspendLayout();
+            this.Formador_groupBox.SuspendLayout();
+            this.Secretaria_groupBox.SuspendLayout();
+            this.Coordenador_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // iconPictureBox2
@@ -236,15 +245,15 @@
             // DiretorResponsavel_Label
             // 
             this.DiretorResponsavel_Label.AutoSize = true;
-            this.DiretorResponsavel_Label.Location = new System.Drawing.Point(441, 320);
+            this.DiretorResponsavel_Label.Location = new System.Drawing.Point(6, 41);
             this.DiretorResponsavel_Label.Name = "DiretorResponsavel_Label";
-            this.DiretorResponsavel_Label.Size = new System.Drawing.Size(132, 13);
+            this.DiretorResponsavel_Label.Size = new System.Drawing.Size(103, 13);
             this.DiretorResponsavel_Label.TabIndex = 20;
-            this.DiretorResponsavel_Label.Text = "DiretorResponsavel_Label";
+            this.DiretorResponsavel_Label.Text = "Diretor Responsavel";
             // 
             // DiretorResponsavel_TextBox
             // 
-            this.DiretorResponsavel_TextBox.Location = new System.Drawing.Point(579, 317);
+            this.DiretorResponsavel_TextBox.Location = new System.Drawing.Point(115, 37);
             this.DiretorResponsavel_TextBox.Name = "DiretorResponsavel_TextBox";
             this.DiretorResponsavel_TextBox.Size = new System.Drawing.Size(100, 20);
             this.DiretorResponsavel_TextBox.TabIndex = 21;
@@ -252,15 +261,15 @@
             // Area_Label
             // 
             this.Area_Label.AutoSize = true;
-            this.Area_Label.Location = new System.Drawing.Point(471, 361);
+            this.Area_Label.Location = new System.Drawing.Point(20, 31);
             this.Area_Label.Name = "Area_Label";
-            this.Area_Label.Size = new System.Drawing.Size(61, 13);
+            this.Area_Label.Size = new System.Drawing.Size(29, 13);
             this.Area_Label.TabIndex = 22;
-            this.Area_Label.Text = "Area_Label";
+            this.Area_Label.Text = "Area";
             // 
             // Area_TextBox
             // 
-            this.Area_TextBox.Location = new System.Drawing.Point(558, 358);
+            this.Area_TextBox.Location = new System.Drawing.Point(84, 28);
             this.Area_TextBox.Name = "Area_TextBox";
             this.Area_TextBox.Size = new System.Drawing.Size(100, 20);
             this.Area_TextBox.TabIndex = 23;
@@ -268,15 +277,15 @@
             // DiretorCurso_Label
             // 
             this.DiretorCurso_Label.AutoSize = true;
-            this.DiretorCurso_Label.Location = new System.Drawing.Point(455, 384);
+            this.DiretorCurso_Label.Location = new System.Drawing.Point(16, 53);
             this.DiretorCurso_Label.Name = "DiretorCurso_Label";
-            this.DiretorCurso_Label.Size = new System.Drawing.Size(97, 13);
+            this.DiretorCurso_Label.Size = new System.Drawing.Size(68, 13);
             this.DiretorCurso_Label.TabIndex = 24;
-            this.DiretorCurso_Label.Text = "DiretorCurso_Label";
+            this.DiretorCurso_Label.Text = "Diretor Curso";
             // 
             // DiretorCurso_TextBox
             // 
-            this.DiretorCurso_TextBox.Location = new System.Drawing.Point(558, 381);
+            this.DiretorCurso_TextBox.Location = new System.Drawing.Point(84, 50);
             this.DiretorCurso_TextBox.Name = "DiretorCurso_TextBox";
             this.DiretorCurso_TextBox.Size = new System.Drawing.Size(100, 20);
             this.DiretorCurso_TextBox.TabIndex = 25;
@@ -284,47 +293,47 @@
             // AreaLecionada_Label
             // 
             this.AreaLecionada_Label.AutoSize = true;
-            this.AreaLecionada_Label.Location = new System.Drawing.Point(446, 226);
+            this.AreaLecionada_Label.Location = new System.Drawing.Point(6, 25);
             this.AreaLecionada_Label.Name = "AreaLecionada_Label";
-            this.AreaLecionada_Label.Size = new System.Drawing.Size(111, 13);
+            this.AreaLecionada_Label.Size = new System.Drawing.Size(82, 13);
             this.AreaLecionada_Label.TabIndex = 26;
-            this.AreaLecionada_Label.Text = "AreaLecionada_Label";
+            this.AreaLecionada_Label.Text = "Area Lecionada";
             // 
             // Disponibilidade_Label
             // 
             this.Disponibilidade_Label.AutoSize = true;
-            this.Disponibilidade_Label.Location = new System.Drawing.Point(447, 253);
+            this.Disponibilidade_Label.Location = new System.Drawing.Point(8, 50);
             this.Disponibilidade_Label.Name = "Disponibilidade_Label";
-            this.Disponibilidade_Label.Size = new System.Drawing.Size(110, 13);
+            this.Disponibilidade_Label.Size = new System.Drawing.Size(78, 13);
             this.Disponibilidade_Label.TabIndex = 27;
-            this.Disponibilidade_Label.Text = "Disponibilidade_Label";
+            this.Disponibilidade_Label.Text = "Disponibilidade";
             // 
             // ValorHora_Label
             // 
             this.ValorHora_Label.AutoSize = true;
-            this.ValorHora_Label.Location = new System.Drawing.Point(471, 290);
+            this.ValorHora_Label.Location = new System.Drawing.Point(14, 72);
             this.ValorHora_Label.Name = "ValorHora_Label";
-            this.ValorHora_Label.Size = new System.Drawing.Size(86, 13);
+            this.ValorHora_Label.Size = new System.Drawing.Size(57, 13);
             this.ValorHora_Label.TabIndex = 28;
-            this.ValorHora_Label.Text = "ValorHora_Label";
+            this.ValorHora_Label.Text = "Valor Hora";
             // 
             // AreaLecionada_TextBox
             // 
-            this.AreaLecionada_TextBox.Location = new System.Drawing.Point(579, 219);
+            this.AreaLecionada_TextBox.Location = new System.Drawing.Point(94, 22);
             this.AreaLecionada_TextBox.Name = "AreaLecionada_TextBox";
             this.AreaLecionada_TextBox.Size = new System.Drawing.Size(100, 20);
             this.AreaLecionada_TextBox.TabIndex = 29;
             // 
             // Disponibilidade_TextBox
             // 
-            this.Disponibilidade_TextBox.Location = new System.Drawing.Point(579, 250);
+            this.Disponibilidade_TextBox.Location = new System.Drawing.Point(94, 46);
             this.Disponibilidade_TextBox.Name = "Disponibilidade_TextBox";
             this.Disponibilidade_TextBox.Size = new System.Drawing.Size(100, 20);
             this.Disponibilidade_TextBox.TabIndex = 30;
             // 
             // ValorHora_TextBox
             // 
-            this.ValorHora_TextBox.Location = new System.Drawing.Point(579, 287);
+            this.ValorHora_TextBox.Location = new System.Drawing.Point(94, 69);
             this.ValorHora_TextBox.Name = "ValorHora_TextBox";
             this.ValorHora_TextBox.Size = new System.Drawing.Size(100, 20);
             this.ValorHora_TextBox.TabIndex = 31;
@@ -332,92 +341,146 @@
             // IseHorario_Label
             // 
             this.IseHorario_Label.AutoSize = true;
-            this.IseHorario_Label.Location = new System.Drawing.Point(433, 108);
+            this.IseHorario_Label.Location = new System.Drawing.Point(5, 17);
             this.IseHorario_Label.Name = "IseHorario_Label";
-            this.IseHorario_Label.Size = new System.Drawing.Size(87, 13);
+            this.IseHorario_Label.Size = new System.Drawing.Size(95, 13);
             this.IseHorario_Label.TabIndex = 32;
-            this.IseHorario_Label.Text = "IseHorario_Label";
+            this.IseHorario_Label.Text = "Isenção de horário";
             // 
             // BonusMensal_Label
             // 
             this.BonusMensal_Label.AutoSize = true;
-            this.BonusMensal_Label.Location = new System.Drawing.Point(417, 133);
+            this.BonusMensal_Label.Location = new System.Drawing.Point(6, 40);
             this.BonusMensal_Label.Name = "BonusMensal_Label";
-            this.BonusMensal_Label.Size = new System.Drawing.Size(103, 13);
+            this.BonusMensal_Label.Size = new System.Drawing.Size(74, 13);
             this.BonusMensal_Label.TabIndex = 33;
-            this.BonusMensal_Label.Text = "BonusMensal_Label";
+            this.BonusMensal_Label.Text = "Bonus Mensal";
             // 
             // CarroEmpresa_Label
             // 
             this.CarroEmpresa_Label.AutoSize = true;
-            this.CarroEmpresa_Label.Location = new System.Drawing.Point(415, 163);
+            this.CarroEmpresa_Label.Location = new System.Drawing.Point(6, 63);
             this.CarroEmpresa_Label.Name = "CarroEmpresa_Label";
-            this.CarroEmpresa_Label.Size = new System.Drawing.Size(105, 13);
+            this.CarroEmpresa_Label.Size = new System.Drawing.Size(76, 13);
             this.CarroEmpresa_Label.TabIndex = 34;
-            this.CarroEmpresa_Label.Text = "CarroEmpresa_Label";
+            this.CarroEmpresa_Label.Text = "Carro Empresa";
             // 
             // Departamento_Label
             // 
             this.Departamento_Label.AutoSize = true;
-            this.Departamento_Label.Location = new System.Drawing.Point(414, 182);
+            this.Departamento_Label.Location = new System.Drawing.Point(6, 87);
             this.Departamento_Label.Name = "Departamento_Label";
-            this.Departamento_Label.Size = new System.Drawing.Size(106, 13);
+            this.Departamento_Label.Size = new System.Drawing.Size(74, 13);
             this.Departamento_Label.TabIndex = 35;
-            this.Departamento_Label.Text = "Departamento_Label";
+            this.Departamento_Label.Text = "Departamento";
             // 
             // IseHorario_TextBox
             // 
-            this.IseHorario_TextBox.Location = new System.Drawing.Point(526, 105);
+            this.IseHorario_TextBox.Location = new System.Drawing.Point(107, 13);
             this.IseHorario_TextBox.Name = "IseHorario_TextBox";
             this.IseHorario_TextBox.Size = new System.Drawing.Size(100, 20);
             this.IseHorario_TextBox.TabIndex = 36;
             // 
             // BonusMensal_TextBox
             // 
-            this.BonusMensal_TextBox.Location = new System.Drawing.Point(526, 131);
+            this.BonusMensal_TextBox.Location = new System.Drawing.Point(107, 37);
             this.BonusMensal_TextBox.Name = "BonusMensal_TextBox";
             this.BonusMensal_TextBox.Size = new System.Drawing.Size(100, 20);
             this.BonusMensal_TextBox.TabIndex = 37;
             // 
             // CarroEmpresa_TextBox
             // 
-            this.CarroEmpresa_TextBox.Location = new System.Drawing.Point(526, 156);
+            this.CarroEmpresa_TextBox.Location = new System.Drawing.Point(107, 61);
             this.CarroEmpresa_TextBox.Name = "CarroEmpresa_TextBox";
             this.CarroEmpresa_TextBox.Size = new System.Drawing.Size(100, 20);
             this.CarroEmpresa_TextBox.TabIndex = 38;
             // 
             // Departamento_TextBox
             // 
-            this.Departamento_TextBox.Location = new System.Drawing.Point(526, 179);
+            this.Departamento_TextBox.Location = new System.Drawing.Point(107, 84);
             this.Departamento_TextBox.Name = "Departamento_TextBox";
             this.Departamento_TextBox.Size = new System.Drawing.Size(100, 20);
             this.Departamento_TextBox.TabIndex = 39;
+            // 
+            // Voltar_Btn
+            // 
+            this.Voltar_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Voltar_Btn.IconColor = System.Drawing.Color.Black;
+            this.Voltar_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Voltar_Btn.Location = new System.Drawing.Point(26, 22);
+            this.Voltar_Btn.Name = "Voltar_Btn";
+            this.Voltar_Btn.Size = new System.Drawing.Size(57, 23);
+            this.Voltar_Btn.TabIndex = 40;
+            this.Voltar_Btn.Text = "Voltar";
+            this.Voltar_Btn.UseVisualStyleBackColor = true;
+            this.Voltar_Btn.Click += new System.EventHandler(this.Voltar_Btn_Click);
+            // 
+            // Diretor_GroupBox
+            // 
+            this.Diretor_GroupBox.Controls.Add(this.IseHorario_Label);
+            this.Diretor_GroupBox.Controls.Add(this.IseHorario_TextBox);
+            this.Diretor_GroupBox.Controls.Add(this.Departamento_TextBox);
+            this.Diretor_GroupBox.Controls.Add(this.BonusMensal_Label);
+            this.Diretor_GroupBox.Controls.Add(this.Departamento_Label);
+            this.Diretor_GroupBox.Controls.Add(this.CarroEmpresa_TextBox);
+            this.Diretor_GroupBox.Controls.Add(this.BonusMensal_TextBox);
+            this.Diretor_GroupBox.Controls.Add(this.CarroEmpresa_Label);
+            this.Diretor_GroupBox.Location = new System.Drawing.Point(394, 156);
+            this.Diretor_GroupBox.Name = "Diretor_GroupBox";
+            this.Diretor_GroupBox.Size = new System.Drawing.Size(226, 109);
+            this.Diretor_GroupBox.TabIndex = 41;
+            this.Diretor_GroupBox.TabStop = false;
+            this.Diretor_GroupBox.Text = "Diretor";
+            // 
+            // Formador_groupBox
+            // 
+            this.Formador_groupBox.Controls.Add(this.AreaLecionada_Label);
+            this.Formador_groupBox.Controls.Add(this.AreaLecionada_TextBox);
+            this.Formador_groupBox.Controls.Add(this.Disponibilidade_Label);
+            this.Formador_groupBox.Controls.Add(this.ValorHora_TextBox);
+            this.Formador_groupBox.Controls.Add(this.Disponibilidade_TextBox);
+            this.Formador_groupBox.Controls.Add(this.ValorHora_Label);
+            this.Formador_groupBox.Location = new System.Drawing.Point(394, 157);
+            this.Formador_groupBox.Name = "Formador_groupBox";
+            this.Formador_groupBox.Size = new System.Drawing.Size(226, 109);
+            this.Formador_groupBox.TabIndex = 42;
+            this.Formador_groupBox.TabStop = false;
+            this.Formador_groupBox.Text = "Formador";
+            // 
+            // Secretaria_groupBox
+            // 
+            this.Secretaria_groupBox.Controls.Add(this.DiretorResponsavel_Label);
+            this.Secretaria_groupBox.Controls.Add(this.DiretorResponsavel_TextBox);
+            this.Secretaria_groupBox.Location = new System.Drawing.Point(394, 157);
+            this.Secretaria_groupBox.Name = "Secretaria_groupBox";
+            this.Secretaria_groupBox.Size = new System.Drawing.Size(226, 80);
+            this.Secretaria_groupBox.TabIndex = 43;
+            this.Secretaria_groupBox.TabStop = false;
+            this.Secretaria_groupBox.Text = "Secretaria";
+            // 
+            // Coordenador_groupBox
+            // 
+            this.Coordenador_groupBox.Controls.Add(this.Area_Label);
+            this.Coordenador_groupBox.Controls.Add(this.DiretorCurso_Label);
+            this.Coordenador_groupBox.Controls.Add(this.Area_TextBox);
+            this.Coordenador_groupBox.Controls.Add(this.DiretorCurso_TextBox);
+            this.Coordenador_groupBox.Location = new System.Drawing.Point(394, 157);
+            this.Coordenador_groupBox.Name = "Coordenador_groupBox";
+            this.Coordenador_groupBox.Size = new System.Drawing.Size(226, 80);
+            this.Coordenador_groupBox.TabIndex = 44;
+            this.Coordenador_groupBox.TabStop = false;
+            this.Coordenador_groupBox.Text = "Coordenador";
             // 
             // AdicionarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Departamento_TextBox);
-            this.Controls.Add(this.CarroEmpresa_TextBox);
-            this.Controls.Add(this.BonusMensal_TextBox);
-            this.Controls.Add(this.IseHorario_TextBox);
-            this.Controls.Add(this.Departamento_Label);
-            this.Controls.Add(this.CarroEmpresa_Label);
-            this.Controls.Add(this.BonusMensal_Label);
-            this.Controls.Add(this.IseHorario_Label);
-            this.Controls.Add(this.ValorHora_TextBox);
-            this.Controls.Add(this.Disponibilidade_TextBox);
-            this.Controls.Add(this.AreaLecionada_TextBox);
-            this.Controls.Add(this.ValorHora_Label);
-            this.Controls.Add(this.Disponibilidade_Label);
-            this.Controls.Add(this.AreaLecionada_Label);
-            this.Controls.Add(this.DiretorCurso_TextBox);
-            this.Controls.Add(this.DiretorCurso_Label);
-            this.Controls.Add(this.Area_TextBox);
-            this.Controls.Add(this.Area_Label);
-            this.Controls.Add(this.DiretorResponsavel_TextBox);
-            this.Controls.Add(this.DiretorResponsavel_Label);
+            this.Controls.Add(this.Coordenador_groupBox);
+            this.Controls.Add(this.Secretaria_groupBox);
+            this.Controls.Add(this.Formador_groupBox);
+            this.Controls.Add(this.Diretor_GroupBox);
+            this.Controls.Add(this.Voltar_Btn);
             this.Controls.Add(this.DataFimRegistoCriminal_DateTimePicker);
             this.Controls.Add(this.DataFimRegistoCriminal_Label);
             this.Controls.Add(this.DataRegistoCriminal_DateTimePicker);
@@ -443,6 +506,14 @@
             this.Text = "Adicionar funcionario";
             this.Load += new System.EventHandler(this.AdicionarFuncionarioForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            this.Diretor_GroupBox.ResumeLayout(false);
+            this.Diretor_GroupBox.PerformLayout();
+            this.Formador_groupBox.ResumeLayout(false);
+            this.Formador_groupBox.PerformLayout();
+            this.Secretaria_groupBox.ResumeLayout(false);
+            this.Secretaria_groupBox.PerformLayout();
+            this.Coordenador_groupBox.ResumeLayout(false);
+            this.Coordenador_groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,5 +559,10 @@
         private System.Windows.Forms.TextBox BonusMensal_TextBox;
         private System.Windows.Forms.TextBox CarroEmpresa_TextBox;
         private System.Windows.Forms.TextBox Departamento_TextBox;
+        private FontAwesome.Sharp.IconButton Voltar_Btn;
+        private System.Windows.Forms.GroupBox Diretor_GroupBox;
+        private System.Windows.Forms.GroupBox Formador_groupBox;
+        private System.Windows.Forms.GroupBox Secretaria_groupBox;
+        private System.Windows.Forms.GroupBox Coordenador_groupBox;
     }
 }

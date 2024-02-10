@@ -28,6 +28,13 @@ namespace Projeto_UFCD5412.Controller
             return Funcionarios;
         }
 
+        public List<Funcionario> PesquisarFuncionariosPorNome(string nome)
+        {
+            var FuncionarioSearchName = Funcionarios.Where(funcionario => funcionario.Nome.ToLower().Contains(nome.ToLower())).ToList();
+            return FuncionarioSearchName;
+
+        }
+
         public List<Funcionario> ListarFuncionariosComContratoValido(DateTime dataAtual)
         {
             var funcionariosComContratoValido = Funcionarios.Where(f => f.DataContrato <= dataAtual).ToList();
@@ -46,9 +53,14 @@ namespace Projeto_UFCD5412.Controller
             if (funcionario != null)
             {
                 funcionario.DataFimRegistoCriminal = dataFimRegistoCriminal;
-              
+                Console.WriteLine("Registo criminal atualizado com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Funcionário não encontrado.");
             }
         }
+
 
         public decimal CalcularValorAPagar(Formador formador, DateTime dataInicio, DateTime dataFim)
         {

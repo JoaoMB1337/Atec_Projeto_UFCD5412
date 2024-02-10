@@ -69,6 +69,12 @@
     <Compile Include="View\ContratoFuncForm\ContratoFuncForm.Designer.cs">
       <DependentUpon>ContratoFuncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DashboardForms\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashboardForms\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ExportarFicheiroForms\FicheiroCSvForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="View\RegistoCriminalForms\RegistoCriminalForm.Designer.cs">
       <DependentUpon>RegistoCriminalForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-ADOSMELHORES-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rm314-adj-02.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

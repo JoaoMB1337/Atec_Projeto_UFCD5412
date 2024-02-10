@@ -64,7 +64,7 @@ namespace Projeto_UFCD5412.Data
                 using (StreamReader sr = new StreamReader(@"funcionarios.csv"))
                 {
 
-                    sr.ReadLine(); // Ignorar a primeira linha (cabeçalho)
+                    sr.ReadLine(); 
 
                     while (!sr.EndOfStream)
                     {

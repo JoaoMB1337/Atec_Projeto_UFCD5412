@@ -18,7 +18,14 @@ namespace Projeto_UFCD5412.Model
         public DateTime DataRegistoCriminal { get; set; }
         public DateTime DataFimRegistoCriminal { get; set; }
 
-        public Funcionario(int id, string nome, string morada, string contacto,string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal)
+        public DateTime DataAniversario { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public decimal Salario { get; set; }
+        public bool PrimeiroLogin { get; set; }
+
+
+        public Funcionario(int id, string nome, string morada, string contacto,string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, DateTime dataAniverario, string username, string password, decimal salario, bool primeiroLogin)
         {
             Id = id;
             Nome = nome;
@@ -29,6 +36,12 @@ namespace Projeto_UFCD5412.Model
             DataFimContrato = dataFimContrato;
             DataRegistoCriminal = dataRegistoCriminal;
             DataFimRegistoCriminal = dataFimRegistoCriminal;
+            DataAniversario = dataAniverario;
+            Username = username;
+            Password = password;
+            Salario = salario;
+            PrimeiroLogin = primeiroLogin;
+
             
         }
     }

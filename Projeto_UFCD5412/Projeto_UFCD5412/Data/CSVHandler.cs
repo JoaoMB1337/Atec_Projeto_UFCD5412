@@ -88,14 +88,14 @@ namespace Projeto_UFCD5412.Data
                                 bool carroEmpresa = bool.Parse(line[11]);
                                 string departamento = line[12];
 
-                                Funcionarios.Add(new Diretor(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, isencaoHorario, bonusMensal, carroEmpresa, departamento));
+                                Funcionarios.Add(new Diretor(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, isencaoHorario, bonusMensal, carroEmpresa, departamento, DateTime.Now, "username", "password", 0, false));
                                 break;
 
                             case "Secretaria":
                                 string diretorResponsavel = line[9];
                                 string area = line[10];
 
-                                Funcionarios.Add(new Secretaria(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, diretorResponsavel, area));
+                                Funcionarios.Add(new Secretaria(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, diretorResponsavel, area, DateTime.Now, "username", "password", 0, false));
                                 break;
 
                             case "Formador":
@@ -103,18 +103,19 @@ namespace Projeto_UFCD5412.Data
                                 string disponibilidade = line[10];
                                 decimal valorHora = decimal.Parse(line[11]);
 
-                                Funcionarios.Add(new Formador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, areaLecionada, disponibilidade, valorHora));
+                                Funcionarios.Add(new Formador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, areaLecionada, disponibilidade, valorHora, DateTime.Now, "username", "password", 0, false));
                                 break;
 
                             case "Coordenador":
                                 string curso = line[9];
-                                List<Formador> formadoresAssociados = new List<Formador>();
-                                Funcionarios.Add(new Coordenador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, curso, formadoresAssociados));
+                                List<Formador> formadoresAssociados = new List<Formador>(); 
+
+                                Funcionarios.Add(new Coordenador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, curso, formadoresAssociados, DateTime.Now, "username", "password", 0, false));
                                 break;
 
                             default:
-                                
-                                break;
+                                throw new Exception("Tipo de funcionário desconhecido.");
+                            
                         }
                     }
                 }

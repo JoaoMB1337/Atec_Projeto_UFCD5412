@@ -12,8 +12,8 @@ namespace Projeto_UFCD5412.Model
         public string Curso { get; set; }
         public List<Formador> FormadoresAssociados { get; set; }
 
-        public Coordenador(int id, string nome, string morada, string contacto, string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, string curso, List<Formador> formadoresAssociados)
-          : base(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal)
+        public Coordenador(int id, string nome, string morada, string contacto, string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, string curso, List<Formador> formadoresAssociados, DateTime dataAniverario, string username, string password, decimal salario, bool primeiroLogin)
+          : base(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, dataAniverario, username, password, salario, primeiroLogin)
         {
             Curso = curso;
             FormadoresAssociados = formadoresAssociados;

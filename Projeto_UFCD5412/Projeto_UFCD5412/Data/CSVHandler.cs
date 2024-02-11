@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Projeto_UFCD5412.Model;
 
 
@@ -46,6 +47,12 @@ namespace Projeto_UFCD5412.Data
                         {
                             sw.WriteLine($"{commonAttributes};{coordenador.Curso};{coordenador.FormadoresAssociados}");
                         }
+                        else if (funcionario is Funcionario)
+                        {
+                            sw.WriteLine(commonAttributes);
+                        }
+
+                        Console.WriteLine(funcionario.ToString());
                     }
                 }
 
@@ -119,6 +126,9 @@ namespace Projeto_UFCD5412.Data
 
                                 Funcionarios.Add(new Coordenador(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin, curso, formadoresAssociados));
                                 break;
+                            case "Funcionario":
+                                Funcionarios.Add(new Funcionario(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin));
+                                break;
 
                             default:
                                 throw new Exception("Tipo de funcionário desconhecido.");
@@ -137,6 +147,49 @@ namespace Projeto_UFCD5412.Data
             return Funcionarios;
         }
 
+
+        public static void AddFuncionario(Funcionario novoFuncionario)
+        {
+            string filePath = @"funcionarios.csv";
+
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.UTF8))
+                {
+                    string commonAttributes = $"{novoFuncionario.Id};{novoFuncionario.Nome};{novoFuncionario.Morada};{novoFuncionario.Contacto};" +
+                        $"{novoFuncionario.Tipo};{novoFuncionario.Salario};{novoFuncionario.DataAniversario};" +
+                        $"{novoFuncionario.DataContrato};{novoFuncionario.DataFimContrato};{novoFuncionario.DataRegistoCriminal};" +
+                        $"{novoFuncionario.DataFimRegistoCriminal};{novoFuncionario.Username};{novoFuncionario.Password};{novoFuncionario.PrimeiroLogin}";
+
+                    if (novoFuncionario is Diretor diretor)
+                    {
+                        sw.WriteLine($"{commonAttributes};{diretor.IseHorario};{diretor.BonusMensal};{diretor.CarroEmpresa};{diretor.Departamento}");
+                    }
+                    else if (novoFuncionario is Secretaria secretaria)
+                    {
+                        sw.WriteLine($"{commonAttributes};{secretaria.DiretorResponsavel};{secretaria.Area}");
+                    }
+                    else if (novoFuncionario is Formador formador)
+                    {
+                        sw.WriteLine($"{commonAttributes};{formador.AreaLecionada};{formador.Disponibilidade};{formador.ValorHora}");
+                    }
+                    else if (novoFuncionario is Coordenador coordenador)
+                    {
+                        sw.WriteLine($"{commonAttributes};{coordenador.Curso};{coordenador.FormadoresAssociados}");
+                    }
+                    else if (novoFuncionario is Funcionario)
+                    {
+                        sw.WriteLine(commonAttributes);
+                    }
+
+                    Console.WriteLine("Novo funcionário adicionado com sucesso ao CSV.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao adicionar novo funcionário ao CSV: {ex.Message}");
+            }
+        }
 
     }
 }

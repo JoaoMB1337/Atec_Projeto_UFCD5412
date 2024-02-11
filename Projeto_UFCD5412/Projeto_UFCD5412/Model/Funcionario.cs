@@ -51,5 +51,10 @@ namespace Projeto_UFCD5412.Model
             PrimeiroLogin = primeiroLogin;
         }
 
+        public override string ToString()
+        {
+            return $"Id: {Id}, Nome: {Nome}, Morada: {Morada}, Contacto: {Contacto}, Tipo: {Tipo}, Salario: {Salario}, Data Aniversário: {DataAniversario}, Data Contrato: {DataContrato}, Data Fim Contrato: {DataFimContrato}, Data Registo Criminal: {DataRegistoCriminal}, Data Fim Registo Criminal: {DataFimRegistoCriminal}, Username: {Username}, Password: {Password}, Primeiro Login: {PrimeiroLogin}";
+        }   
+
     }
 }

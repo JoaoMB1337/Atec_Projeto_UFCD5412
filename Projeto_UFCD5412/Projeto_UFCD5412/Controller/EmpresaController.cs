@@ -11,19 +11,37 @@ namespace Projeto_UFCD5412.Controller
     internal class EmpresaController
     {
         public List<Funcionario> Funcionarios { get; set; }
+        private static EmpresaController instance;
+        private static readonly object lockObject = new object();
 
         private static int contadorId = 1;
 
         public EmpresaController()
         {
-            Funcionarios = new List<Funcionario>();
             Funcionarios = CSVHandler.LoadFromCSV();
+            contadorId = Funcionarios.Count > 0 ? Funcionarios.Max(f => f.Id) + 1 : 1;
+        }
+
+        public static EmpresaController Instance
+        {
+            get
+            {
+                lock (lockObject)
+                {
+                    if (instance == null)
+                    {
+                        instance = new EmpresaController();
+                    }
+                    return instance;
+                }
+            }
         }
 
         public void AdicionarFuncionario(Funcionario funcionario)
         {
-            funcionario.Id = contadorId++;
+            funcionario.Id = Funcionarios.Count +1;
             Funcionarios.Add(funcionario);
+            CSVHandler.AddFuncionario(funcionario);
         }
 
         public List<Funcionario> ListarFuncionarios()
@@ -64,7 +82,6 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
-
         public decimal CalcularValorAPagar(Formador formador, DateTime dataInicio, DateTime dataFim)
         {
             int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
@@ -75,6 +92,8 @@ namespace Projeto_UFCD5412.Controller
 
             return valorTotal;
         }
+
+       
 
     }
 }

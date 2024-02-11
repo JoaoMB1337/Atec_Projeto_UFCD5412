@@ -9,11 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_UFCD5412.Controller;
 
 namespace Projeto_UFCD5412.View.Forms
 {
     public partial class AdicionarFuncionarioForm : Form
     {
+        private EmpresaController empresaController = EmpresaController.Instance;
         public AdicionarFuncionarioForm()
         {
             InitializeComponent();
@@ -36,10 +38,12 @@ namespace Projeto_UFCD5412.View.Forms
 
             }
         }
+
         private void AdicionarFuncionarioForm_Load(object sender, EventArgs e)
         {
             LoadTipoFuncionarioComboBox();
         }
+
         private void LoadTipoFuncionarioComboBox()
         {
             TipoFuncionario_ComboBox.Items.Add("Funcionario");
@@ -84,7 +88,6 @@ namespace Projeto_UFCD5412.View.Forms
                 primeiroLogin: true 
             );
 
-            EmpresaController empresaController = new EmpresaController();
             empresaController.AdicionarFuncionario(novoFuncionario);
 
             LimparCampos();
@@ -97,8 +100,6 @@ namespace Projeto_UFCD5412.View.Forms
             contacto_textbox.Text = string.Empty;
         }
 
-
-
         private void addFoto_btn_Click(object sender, EventArgs e)
         {//adicionar foto de funcionario
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -109,8 +110,6 @@ namespace Projeto_UFCD5412.View.Forms
                 iconPictureBox1.ImageLocation = imageLocation;
                 iconPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            
-
         }
     }
 }

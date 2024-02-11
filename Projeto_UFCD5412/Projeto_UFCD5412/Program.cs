@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Runtime.CompilerServices;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.LoginForms;
+using System.Security.Cryptography.X509Certificates;
+using Projeto_UFCD5412.Controller;
 namespace Projeto_UFCD5412
 {
     internal static class Program
@@ -58,7 +60,6 @@ namespace Projeto_UFCD5412
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainWindow());
             Application.Run(new LoginForm());
 
 

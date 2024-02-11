@@ -15,7 +15,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 {
     public partial class ListarFuncionariosForm : Form
     {
-        private EmpresaController empresaController = new EmpresaController();
+        private EmpresaController empresaController = EmpresaController.Instance;
         public ListarFuncionariosForm()
         {
             InitializeComponent();
@@ -64,7 +64,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             }
         }
 
-
         private void ListarFuncionarioDataGrid()
         {
             List<Funcionario> funcionarios = empresaController.ListarFuncionarios();
@@ -102,6 +101,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }

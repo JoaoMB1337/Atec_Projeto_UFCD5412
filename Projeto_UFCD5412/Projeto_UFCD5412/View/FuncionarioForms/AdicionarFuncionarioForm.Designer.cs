@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarFuncionarioForm));
             this.labelIDFuncionario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.id_textbox = new System.Windows.Forms.TextBox();
             this.NomeFunc_Label = new System.Windows.Forms.Label();
             this.MoradaFunc_Label = new System.Windows.Forms.Label();
             this.ContactoFunc_Label = new System.Windows.Forms.Label();
@@ -38,18 +38,18 @@
             this.DataContrato_Label = new System.Windows.Forms.Label();
             this.FimContrato_Label = new System.Windows.Forms.Label();
             this.DataRegistoCriminal_Label = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.nome_textbox = new System.Windows.Forms.TextBox();
+            this.morada_textbox = new System.Windows.Forms.TextBox();
+            this.contacto_textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
             this.DataContrato_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataFimContrato_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataFimRegistoCriminal_Label = new System.Windows.Forms.Label();
             this.DataFimRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.addFoto_btn = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.addFuncionarioSistema_btn = new FontAwesome.Sharp.IconButton();
             this.Sair_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,13 +65,13 @@
             this.labelIDFuncionario.TabIndex = 2;
             this.labelIDFuncionario.Text = "ID:";
             // 
-            // textBox1
+            // id_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(608, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 3;
+            this.id_textbox.Location = new System.Drawing.Point(608, 105);
+            this.id_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.id_textbox.Name = "id_textbox";
+            this.id_textbox.Size = new System.Drawing.Size(132, 22);
+            this.id_textbox.TabIndex = 3;
             // 
             // NomeFunc_Label
             // 
@@ -150,36 +150,36 @@
             this.DataRegistoCriminal_Label.TabIndex = 10;
             this.DataRegistoCriminal_Label.Text = "Data Registo Criminal:";
             // 
-            // textBox2
+            // nome_textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(608, 137);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 22);
-            this.textBox2.TabIndex = 11;
+            this.nome_textbox.Location = new System.Drawing.Point(608, 137);
+            this.nome_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.nome_textbox.Name = "nome_textbox";
+            this.nome_textbox.Size = new System.Drawing.Size(247, 22);
+            this.nome_textbox.TabIndex = 11;
             // 
-            // textBox3
+            // morada_textbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(608, 172);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 22);
-            this.textBox3.TabIndex = 12;
+            this.morada_textbox.Location = new System.Drawing.Point(608, 172);
+            this.morada_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.morada_textbox.Name = "morada_textbox";
+            this.morada_textbox.Size = new System.Drawing.Size(247, 22);
+            this.morada_textbox.TabIndex = 12;
             // 
-            // textBox4
+            // contacto_textbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(608, 209);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 22);
-            this.textBox4.TabIndex = 13;
+            this.contacto_textbox.Location = new System.Drawing.Point(608, 209);
+            this.contacto_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.contacto_textbox.Name = "contacto_textbox";
+            this.contacto_textbox.Size = new System.Drawing.Size(132, 22);
+            this.contacto_textbox.TabIndex = 13;
             // 
             // TipoFuncionario_ComboBox
             // 
             this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
             this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(608, 241);
-            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(160, 24);
             this.TipoFuncionario_ComboBox.TabIndex = 14;
@@ -188,7 +188,7 @@
             // DataContrato_DateTimePicker
             // 
             this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(1132, 108);
-            this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataContrato_DateTimePicker.Name = "DataContrato_DateTimePicker";
             this.DataContrato_DateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.DataContrato_DateTimePicker.TabIndex = 15;
@@ -196,7 +196,7 @@
             // DataFimContrato_DateTimePicker
             // 
             this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(1132, 140);
-            this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimContrato_DateTimePicker.Name = "DataFimContrato_DateTimePicker";
             this.DataFimContrato_DateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.DataFimContrato_DateTimePicker.TabIndex = 16;
@@ -204,7 +204,7 @@
             // DataRegistoCriminal_DateTimePicker
             // 
             this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1132, 181);
-            this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataRegistoCriminal_DateTimePicker.Name = "DataRegistoCriminal_DateTimePicker";
             this.DataRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.DataRegistoCriminal_DateTimePicker.TabIndex = 17;
@@ -223,23 +223,24 @@
             // DataFimRegistoCriminal_DateTimePicker
             // 
             this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1132, 218);
-            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
             this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.DataFimRegistoCriminal_DateTimePicker.TabIndex = 19;
             // 
-            // iconButton2
+            // addFoto_btn
             // 
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(167, 308);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(255, 28);
-            this.iconButton2.TabIndex = 22;
-            this.iconButton2.Text = "Adicionar foto";
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.addFoto_btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.addFoto_btn.IconColor = System.Drawing.Color.Black;
+            this.addFoto_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addFoto_btn.Location = new System.Drawing.Point(167, 308);
+            this.addFoto_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.addFoto_btn.Name = "addFoto_btn";
+            this.addFoto_btn.Size = new System.Drawing.Size(255, 28);
+            this.addFoto_btn.TabIndex = 22;
+            this.addFoto_btn.Text = "Adicionar foto";
+            this.addFoto_btn.UseVisualStyleBackColor = true;
+            this.addFoto_btn.Click += new System.EventHandler(this.addFoto_btn_Click);
             // 
             // iconPictureBox1
             // 
@@ -252,25 +253,26 @@
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 233;
             this.iconPictureBox1.Location = new System.Drawing.Point(167, 55);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(254, 233);
             this.iconPictureBox1.TabIndex = 21;
             this.iconPictureBox1.TabStop = false;
             // 
-            // iconButton1
+            // addFuncionarioSistema_btn
             // 
-            this.iconButton1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(1153, 274);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(244, 28);
-            this.iconButton1.TabIndex = 20;
-            this.iconButton1.Text = "Adicionar ao sistema";
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.addFuncionarioSistema_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addFuncionarioSistema_btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.addFuncionarioSistema_btn.IconColor = System.Drawing.Color.Black;
+            this.addFuncionarioSistema_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(1153, 274);
+            this.addFuncionarioSistema_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.addFuncionarioSistema_btn.Name = "addFuncionarioSistema_btn";
+            this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(244, 28);
+            this.addFuncionarioSistema_btn.TabIndex = 20;
+            this.addFuncionarioSistema_btn.Text = "Adicionar ao sistema";
+            this.addFuncionarioSistema_btn.UseVisualStyleBackColor = false;
+            this.addFuncionarioSistema_btn.Click += new System.EventHandler(this.addFuncionarioSistema_btn_Click);
             // 
             // Sair_Btn
             // 
@@ -288,24 +290,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-
-            this.ClientSize = new System.Drawing.Size(1651, 762);
-
             this.ClientSize = new System.Drawing.Size(1238, 619);
             this.Controls.Add(this.Sair_Btn);
-
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.addFoto_btn);
             this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.addFuncionarioSistema_btn);
             this.Controls.Add(this.DataFimRegistoCriminal_DateTimePicker);
             this.Controls.Add(this.DataFimRegistoCriminal_Label);
             this.Controls.Add(this.DataRegistoCriminal_DateTimePicker);
             this.Controls.Add(this.DataFimContrato_DateTimePicker);
             this.Controls.Add(this.DataContrato_DateTimePicker);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contacto_textbox);
+            this.Controls.Add(this.morada_textbox);
+            this.Controls.Add(this.nome_textbox);
             this.Controls.Add(this.DataRegistoCriminal_Label);
             this.Controls.Add(this.FimContrato_Label);
             this.Controls.Add(this.DataContrato_Label);
@@ -313,10 +311,10 @@
             this.Controls.Add(this.ContactoFunc_Label);
             this.Controls.Add(this.MoradaFunc_Label);
             this.Controls.Add(this.NomeFunc_Label);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.id_textbox);
             this.Controls.Add(this.labelIDFuncionario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdicionarFuncionarioForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar funcionario";
@@ -329,7 +327,7 @@
 
         #endregion
         private System.Windows.Forms.Label labelIDFuncionario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox id_textbox;
         private System.Windows.Forms.Label NomeFunc_Label;
         private System.Windows.Forms.Label MoradaFunc_Label;
         private System.Windows.Forms.Label ContactoFunc_Label;
@@ -337,18 +335,18 @@
         private System.Windows.Forms.Label DataContrato_Label;
         private System.Windows.Forms.Label FimContrato_Label;
         private System.Windows.Forms.Label DataRegistoCriminal_Label;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox nome_textbox;
+        private System.Windows.Forms.TextBox morada_textbox;
+        private System.Windows.Forms.TextBox contacto_textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
         private System.Windows.Forms.DateTimePicker DataContrato_DateTimePicker;
         private System.Windows.Forms.DateTimePicker DataFimContrato_DateTimePicker;
         private System.Windows.Forms.DateTimePicker DataRegistoCriminal_DateTimePicker;
         private System.Windows.Forms.Label DataFimRegistoCriminal_Label;
         private System.Windows.Forms.DateTimePicker DataFimRegistoCriminal_DateTimePicker;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton addFuncionarioSistema_btn;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton addFoto_btn;
         private System.Windows.Forms.Button Sair_Btn;
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Projeto_UFCD5412.View.Forms;
-
+using Projeto_UFCD5412.View.FuncionarioForms;
 namespace Projeto_UFCD5412
 {
     public partial class MainWindow : Form
@@ -57,7 +57,7 @@ namespace Projeto_UFCD5412
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
@@ -98,55 +98,7 @@ namespace Projeto_UFCD5412
             //childForm.Show();
             //HomeDash_Btn.Text = childForm.Text;
         }
-    
-
-        private void AddFuncionario_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new AdicionarFuncionarioForm());
-            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            //abrir dentro do paineldekstop
-            adicionarFuncionarioForm.TopLevel = false;
-            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
-            adicionarFuncionarioForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(adicionarFuncionarioForm);
-            panelDesktop.Tag = adicionarFuncionarioForm;
-            adicionarFuncionarioForm.BringToFront();
-            adicionarFuncionarioForm.Show();
-            this.Dashboard_Btn.Click += new System.EventHandler(this.AddFuncionario_Btn_Click);
-
-        }
-
-        private void AlterarRegisto_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color2);
-            //OpenChildForm(new AlterarRegisto());
-        }
-
-        private void VerFuncionarioContrato_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color3);
-            //OpenChildForm(new VerFuncionarioContrato());
-        }
-
-        private void VerRegistoCriminal_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color4);
-            //OpenChildForm(new VerRegistoCriminal());
-        }
-
-        private void CalcularValorPagar_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color5);
-            //OpenChildForm(new CalcularValorPagar());
-        }
-
-        private void ExportarFicheiro_Btn_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBColors.color6);
-            //OpenChildForm(new ExportarFicheiro());
-        }
-
+   
         private void Home_Btn_Click(object sender, EventArgs e)
         {
             Reset();
@@ -168,6 +120,7 @@ namespace Projeto_UFCD5412
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -189,17 +142,79 @@ namespace Projeto_UFCD5412
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
 
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
 
         }
 
-        private void VerFuncionarioContrato_Btn_Click_1(object sender, EventArgs e)
+        private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            //OpenChildForm(new AdicionarFuncionarioForm());
+            //AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            //abrir dentro do paineldekstop
+            //adicionarFuncionarioForm.TopLevel = false;
+            //adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            //adicionarFuncionarioForm.Dock = DockStyle.Fill;
+            //Menus_TabControl.Controls.Add(adicionarFuncionarioForm);
+           // Menus_TabControl.Tag = adicionarFuncionarioForm;
+            //panelDesktop.Controls.Add(adicionarFuncionarioForm);
+            //panelDesktop.Tag = adicionarFuncionarioForm;
+            //adicionarFuncionarioForm.BringToFront();
+            //adicionarFuncionarioForm.Show();
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
+
+        }
+
+        private void DashboardFormadores_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             //OpenChildForm(new VerFuncionarioContrato());
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
+
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            
+        }
+
+        private void DashboardFinancas_Btn_Click(object sender, EventArgs e)
+        {
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
+        }
+
+        private void Defincoes_Btn_Click(object sender, EventArgs e)
+        {
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
+        }
 
 
+        private void AdicionarFuncionario_Btn_Click_1(object sender, EventArgs e)
+        {
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+
+            // Define as propriedades do formulário
+            adicionarFuncionarioForm.TopLevel = false;
+            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            adicionarFuncionarioForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(adicionarFuncionarioForm);
+
+            // Traz o formulário para frente
+            adicionarFuncionarioForm.BringToFront();
+
+            // Exibe o formulário
+            adicionarFuncionarioForm.Show();
+
+        }
+
+        private void ListarFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
         }
 
      

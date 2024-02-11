@@ -12,6 +12,8 @@ namespace Projeto_UFCD5412.Controller
     {
         public List<Funcionario> Funcionarios { get; set; }
 
+        private static int contadorId = 1;
+
         public EmpresaController()
         {
             Funcionarios = new List<Funcionario>();
@@ -20,6 +22,7 @@ namespace Projeto_UFCD5412.Controller
 
         public void AdicionarFuncionario(Funcionario funcionario)
         {
+            funcionario.Id = contadorId++;
             Funcionarios.Add(funcionario);
         }
 

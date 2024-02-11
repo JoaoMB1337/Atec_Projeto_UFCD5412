@@ -50,6 +50,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Sair_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -271,14 +272,28 @@
             this.iconButton1.Text = "Adicionar ao sistema";
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
+            // Sair_Btn
+            // 
+            this.Sair_Btn.Location = new System.Drawing.Point(1065, 567);
+            this.Sair_Btn.Name = "Sair_Btn";
+            this.Sair_Btn.Size = new System.Drawing.Size(142, 40);
+            this.Sair_Btn.TabIndex = 23;
+            this.Sair_Btn.Text = "Sair";
+            this.Sair_Btn.UseVisualStyleBackColor = true;
+            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
+            // 
             // AdicionarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.rm314_adj_02;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(1651, 762);
+=======
+            this.ClientSize = new System.Drawing.Size(1238, 619);
+            this.Controls.Add(this.Sair_Btn);
+>>>>>>> Stashed changes
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.iconButton1);
@@ -334,5 +349,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Button Sair_Btn;
     }
 }

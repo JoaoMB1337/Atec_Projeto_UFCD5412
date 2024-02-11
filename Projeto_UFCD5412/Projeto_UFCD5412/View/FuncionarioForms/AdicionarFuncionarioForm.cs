@@ -49,6 +49,9 @@ namespace Projeto_UFCD5412.View.Forms
             TipoFuncionario_ComboBox.SelectedIndex = 0;
         }
 
-       
+        private void Sair_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

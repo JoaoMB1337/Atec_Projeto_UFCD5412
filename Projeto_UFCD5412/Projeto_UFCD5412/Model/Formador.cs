@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Projeto_UFCD5412.Model
 {
@@ -12,15 +9,20 @@ namespace Projeto_UFCD5412.Model
         public string Disponibilidade { get; set; }
         public decimal ValorHora { get; set; }
 
-
-        public Formador(int id, string nome, string morada, string contacto, string tipo, DateTime dataContrato, DateTime dataFimContrato, DateTime dataRegistoCriminal, DateTime dataFimRegistoCriminal, string areaLecionada, string disponibilidade, decimal valorHora, DateTime dataAniverario, string username, string password, decimal salario, bool primeiroLogin)
-          : base(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, dataAniverario, username, password, salario, primeiroLogin)
+        public Formador(int id, string nome, string morada, string contacto, string tipo,
+                        decimal salario, DateTime dataAniverario, DateTime dataContrato,
+                        DateTime dataFimContrato, DateTime dataRegistoCriminal,
+                        DateTime dataFimRegistoCriminal, string username, string password,
+                        bool primeiroLogin, string areaLecionada, string disponibilidade,
+                        decimal valorHora)
+            : base(id, nome, morada, contacto, tipo, salario, dataAniverario, dataContrato,
+                   dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username,
+                   password, primeiroLogin)
         {
             AreaLecionada = areaLecionada;
             Disponibilidade = disponibilidade;
             ValorHora = valorHora;
-            Tipo = "Formador";  
+            Tipo = "Formador";
         }
-
     }
 }

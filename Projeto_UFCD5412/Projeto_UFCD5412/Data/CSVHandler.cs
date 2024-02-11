@@ -13,7 +13,7 @@ namespace Projeto_UFCD5412.Data
 {
     internal class CSVHandler
     {
-       
+
         public static void ExportToCSV(List<Funcionario> funcionarios)
         {
             string filePath = @"funcionarios.csv";
@@ -21,12 +21,14 @@ namespace Projeto_UFCD5412.Data
             {
                 using (StreamWriter sw = new StreamWriter(filePath, false, Encoding.UTF8))
                 {
-                    sw.WriteLine("ID;Nome;Morada;Contacto;FimContrato;RegistoCriminal;Tipo;OutrosAtributosEspecificos");
+                    sw.WriteLine("ID;Nome;Morada;Contacto;Tipo;Salario;DataAniversario;DataContrato;DataFimContrato;DataRegistoCriminal;DataFimRegistoCriminal;Username;Password;PrimeiroLogin");
 
                     foreach (var funcionario in funcionarios)
                     {
-                        string commonAttributes = $"{funcionario.Id};{funcionario.Nome};{funcionario.Morada};{funcionario.Contacto};{funcionario.Tipo};{funcionario.DataContrato};" +
-                            $"{funcionario.DataFimContrato};{funcionario.DataRegistoCriminal};{funcionario.DataRegistoCriminal}";
+                        string commonAttributes = $"{funcionario.Id};{funcionario.Nome};{funcionario.Morada};{funcionario.Contacto};" +
+                            $"{funcionario.Tipo};{funcionario.Salario};{funcionario.DataAniversario};" +
+                            $"{funcionario.DataContrato};{funcionario.DataFimContrato};{funcionario.DataRegistoCriminal};" +
+                            $"{funcionario.DataFimRegistoCriminal};{funcionario.Username};{funcionario.Password};{funcionario.PrimeiroLogin}";
 
                         if (funcionario is Diretor diretor)
                         {
@@ -64,7 +66,7 @@ namespace Projeto_UFCD5412.Data
                 using (StreamReader sr = new StreamReader(@"funcionarios.csv"))
                 {
 
-                    sr.ReadLine(); 
+                    sr.ReadLine();
 
                     while (!sr.EndOfStream)
                     {
@@ -75,47 +77,52 @@ namespace Projeto_UFCD5412.Data
                         string morada = line[2];
                         string contacto = line[3];
                         string tipo = line[4];
-                        DateTime dataContrato = DateTime.Parse(line[5]);
-                        DateTime dataFimContrato = DateTime.Parse(line[6]);
-                        DateTime dataRegistoCriminal = DateTime.Parse(line[7]);
-                        DateTime dataFimRegistoCriminal = DateTime.Parse(line[8]);
+                        decimal salario = decimal.Parse(line[5]);
+                        DateTime dataAniversario = DateTime.Parse(line[6]);
+                        DateTime dataContrato = DateTime.Parse(line[7]);
+                        DateTime dataFimContrato = DateTime.Parse(line[8]);
+                        DateTime dataRegistoCriminal = DateTime.Parse(line[9]);
+                        DateTime dataFimRegistoCriminal = DateTime.Parse(line[10]);
+                        string username = line[11];
+                        string password = line[12];
+                        bool primeiroLogin = bool.Parse(line[13]);
 
                         switch (tipo)
                         {
                             case "Diretor":
-                                bool isencaoHorario = bool.Parse(line[9]);
-                                decimal bonusMensal = decimal.Parse(line[10]);
-                                bool carroEmpresa = bool.Parse(line[11]);
-                                string departamento = line[12];
+                                bool isencaoHorario = bool.Parse(line[14]);
+                                decimal bonusMensal = decimal.Parse(line[15]);
+                                bool carroEmpresa = bool.Parse(line[16]);
+                                string departamento = line[17];
 
-                                Funcionarios.Add(new Diretor(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, isencaoHorario, bonusMensal, carroEmpresa, departamento, DateTime.Now, "username", "password", 0, false));
+                                Funcionarios.Add(new Diretor(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin, isencaoHorario, bonusMensal, carroEmpresa, departamento));
                                 break;
 
                             case "Secretaria":
-                                string diretorResponsavel = line[9];
-                                string area = line[10];
+                                string diretorResponsavel = line[14];
+                                string area = line[15];
 
-                                Funcionarios.Add(new Secretaria(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, diretorResponsavel, area, DateTime.Now, "username", "password", 0, false));
+                                Funcionarios.Add(new Secretaria(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin, diretorResponsavel, area));
                                 break;
 
                             case "Formador":
-                                string areaLecionada = line[9];
-                                string disponibilidade = line[10];
-                                decimal valorHora = decimal.Parse(line[11]);
+                                string areaLecionada = line[14];
+                                string disponibilidade = line[15];
+                                decimal valorHora = decimal.Parse(line[16]);
 
-                                Funcionarios.Add(new Formador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, areaLecionada, disponibilidade, valorHora, DateTime.Now, "username", "password", 0, false));
+                                Funcionarios.Add(new Formador(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin, areaLecionada, disponibilidade, valorHora));
                                 break;
 
                             case "Coordenador":
-                                string curso = line[9];
-                                List<Formador> formadoresAssociados = new List<Formador>(); 
+                                string curso = line[14];
+                                List<Formador> formadoresAssociados = new List<Formador>();
 
-                                Funcionarios.Add(new Coordenador(id, nome, morada, contacto, tipo, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, curso, formadoresAssociados, DateTime.Now, "username", "password", 0, false));
+                                Funcionarios.Add(new Coordenador(id, nome, morada, contacto, tipo, salario, dataAniversario, dataContrato, dataFimContrato, dataRegistoCriminal, dataFimRegistoCriminal, username, password, primeiroLogin, curso, formadoresAssociados));
                                 break;
 
                             default:
                                 throw new Exception("Tipo de funcionário desconhecido.");
-                            
+
                         }
                     }
                 }
@@ -129,6 +136,7 @@ namespace Projeto_UFCD5412.Data
 
             return Funcionarios;
         }
+
 
     }
 }

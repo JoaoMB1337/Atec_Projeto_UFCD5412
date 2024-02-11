@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
-<<<<<<< Updated upstream
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-=======
+
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.panelShadow = new System.Windows.Forms.Panel();
@@ -48,7 +45,6 @@
             this.ListarFuncionario_Btn = new System.Windows.Forms.Button();
             this.Defincoes_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardFinancas_Btn = new FontAwesome.Sharp.IconButton();
->>>>>>> Stashed changes
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.DashboardFormadores_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardFuncionario_Btn = new FontAwesome.Sharp.IconButton();
@@ -57,7 +53,6 @@
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.panelShadow = new System.Windows.Forms.Panel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.Menus_TabControl.SuspendLayout();
@@ -82,29 +77,6 @@
             this.panelMenu.Size = new System.Drawing.Size(293, 892);
             this.panelMenu.TabIndex = 1;
             // 
-<<<<<<< Updated upstream
-            // iconButton3
-            // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 32;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 468);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.iconButton3.Size = new System.Drawing.Size(293, 74);
-            this.iconButton3.TabIndex = 7;
-            this.iconButton3.Text = "Definições";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-=======
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.Home_Btn);
@@ -158,31 +130,7 @@
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
             this.tabDashboard.UseVisualStyleBackColor = true;
->>>>>>> Stashed changes
-            // 
-            // tabDashboardFuncionario
-            // 
-<<<<<<< Updated upstream
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 394);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.iconButton2.Size = new System.Drawing.Size(293, 74);
-            this.iconButton2.TabIndex = 6;
-            this.iconButton2.Text = "Finanças";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-=======
+
             this.tabDashboardFuncionario.Controls.Add(this.ListarFuncionario_Btn);
             this.tabDashboardFuncionario.Controls.Add(this.AdicionarFuncionario_Btn);
             this.tabDashboardFuncionario.Location = new System.Drawing.Point(4, 22);
@@ -283,7 +231,6 @@
             this.DashboardFinancas_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardFinancas_Btn.UseVisualStyleBackColor = true;
             this.DashboardFinancas_Btn.Click += new System.EventHandler(this.DashboardFinancas_Btn_Click);
->>>>>>> Stashed changes
             // 
             // iconButton1
             // 
@@ -301,28 +248,7 @@
             // 
             // DashboardFormadores_Btn
             // 
-<<<<<<< Updated upstream
-            this.VerFuncionarioContrato_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VerFuncionarioContrato_Btn.FlatAppearance.BorderSize = 0;
-            this.VerFuncionarioContrato_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VerFuncionarioContrato_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.VerFuncionarioContrato_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.VerFuncionarioContrato_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.VerFuncionarioContrato_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.VerFuncionarioContrato_Btn.IconSize = 32;
-            this.VerFuncionarioContrato_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.VerFuncionarioContrato_Btn.Location = new System.Drawing.Point(0, 320);
-            this.VerFuncionarioContrato_Btn.Margin = new System.Windows.Forms.Padding(4);
-            this.VerFuncionarioContrato_Btn.Name = "VerFuncionarioContrato_Btn";
-            this.VerFuncionarioContrato_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.VerFuncionarioContrato_Btn.Size = new System.Drawing.Size(293, 74);
-            this.VerFuncionarioContrato_Btn.TabIndex = 2;
-            this.VerFuncionarioContrato_Btn.Text = "Formadores";
-            this.VerFuncionarioContrato_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.VerFuncionarioContrato_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.VerFuncionarioContrato_Btn.UseVisualStyleBackColor = true;
-            this.VerFuncionarioContrato_Btn.Click += new System.EventHandler(this.VerFuncionarioContrato_Btn_Click_1);
-=======
+
             this.DashboardFormadores_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardFormadores_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardFormadores_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -342,32 +268,8 @@
             this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
             this.DashboardFormadores_Btn.Click += new System.EventHandler(this.DashboardFormadores_Btn_Click);
->>>>>>> Stashed changes
-            // 
-            // DashboardFuncionario_Btn
-            // 
-<<<<<<< Updated upstream
-            this.AddFuncionario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AddFuncionario_Btn.FlatAppearance.BorderSize = 0;
-            this.AddFuncionario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddFuncionario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.AddFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.AddFuncionario_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.AddFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.AddFuncionario_Btn.IconSize = 32;
-            this.AddFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddFuncionario_Btn.Location = new System.Drawing.Point(0, 246);
-            this.AddFuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
-            this.AddFuncionario_Btn.Name = "AddFuncionario_Btn";
-            this.AddFuncionario_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.AddFuncionario_Btn.Size = new System.Drawing.Size(293, 74);
-            this.AddFuncionario_Btn.TabIndex = 1;
-            this.AddFuncionario_Btn.Text = "Funcionários";
-            this.AddFuncionario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddFuncionario_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddFuncionario_Btn.UseVisualStyleBackColor = true;
-            this.AddFuncionario_Btn.Click += new System.EventHandler(this.AddFuncionario_Btn_Click);
-=======
+
+
             this.DashboardFuncionario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardFuncionario_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardFuncionario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -387,7 +289,6 @@
             this.DashboardFuncionario_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardFuncionario_Btn.UseVisualStyleBackColor = true;
             this.DashboardFuncionario_Btn.Click += new System.EventHandler(this.DashboardFuncionario_Btn_Click);
->>>>>>> Stashed changes
             // 
             // Dashboard_Btn
             // 
@@ -457,27 +358,17 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.BackColor = System.Drawing.Color.Silver;
-            this.panelDesktop.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.rm314_adj_02;
-            this.panelDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(293, 109);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1410, 783);
-            this.panelDesktop.TabIndex = 4;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< Updated upstream
+
             this.ClientSize = new System.Drawing.Size(1703, 892);
-            this.Controls.Add(this.panelDesktop);
-=======
+
             this.ClientSize = new System.Drawing.Size(1277, 725);
             this.Controls.Add(this.Menus_TabControl);
->>>>>>> Stashed changes
+
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);

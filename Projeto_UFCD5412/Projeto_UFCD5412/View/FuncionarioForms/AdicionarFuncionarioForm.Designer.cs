@@ -288,12 +288,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-<<<<<<< Updated upstream
+
             this.ClientSize = new System.Drawing.Size(1651, 762);
-=======
+
             this.ClientSize = new System.Drawing.Size(1238, 619);
             this.Controls.Add(this.Sair_Btn);
->>>>>>> Stashed changes
+
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.iconButton1);

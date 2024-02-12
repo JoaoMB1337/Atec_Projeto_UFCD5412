@@ -92,8 +92,5 @@ namespace Projeto_UFCD5412.Controller
 
             return valorTotal;
         }
-
-       
-
     }
 }

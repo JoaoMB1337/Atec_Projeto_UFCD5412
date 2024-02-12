@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Data;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -101,6 +102,14 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void atualizarCsv_btn_Click(object sender, EventArgs e)
+        {
+            CSVHandler.ExportToCSV(empresaController.Funcionarios);
+
+
 
         }
     }

@@ -33,6 +33,12 @@ namespace Projeto_UFCD5412
             this.DoubleBuffered = true;
             //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
+
+
+            Timer timer = new Timer();
+            timer.Interval = (1 * 1000); // 10 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
         }
         //Eventos
         private struct RGBColors
@@ -215,8 +221,14 @@ namespace Projeto_UFCD5412
 
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
+
         }
 
-     
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+        }
+
     }
 }

@@ -20,6 +20,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         public ListarFuncionariosForm()
         {
             InitializeComponent();
+            CSVHandler.LoadFromCSV();
         }
 
         private void ListarFuncionariosForm_Load(object sender, EventArgs e)
@@ -108,9 +109,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void atualizarCsv_btn_Click(object sender, EventArgs e)
         {
             CSVHandler.ExportToCSV(empresaController.Funcionarios);
-
-
-
         }
     }
 }

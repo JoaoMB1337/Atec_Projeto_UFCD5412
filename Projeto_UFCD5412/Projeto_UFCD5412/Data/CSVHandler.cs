@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -154,12 +155,20 @@ namespace Projeto_UFCD5412.Data
 
             try
             {
+                 CultureInfo culture = new CultureInfo("pt-PT");
+
                 using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.UTF8))
                 {
+                    string dataAniversario = novoFuncionario.DataAniversario.ToString("dd/MM/yyyy HH:mm:ss");
+                    string dataContrato = novoFuncionario.DataContrato.ToString("dd/MM/yyyy HH:mm:ss");
+                    string dataFimContrato = novoFuncionario.DataFimContrato.ToString("dd/MM/yyyy HH:mm:ss");
+                    string dataRegistoCriminal = novoFuncionario.DataRegistoCriminal.ToString("dd/MM/yyyy HH:mm:ss");
+                    string dataFimRegistoCriminal = novoFuncionario.DataFimRegistoCriminal.ToString("dd/MM/yyyy HH:mm:ss");
+
                     string commonAttributes = $"{novoFuncionario.Id};{novoFuncionario.Nome};{novoFuncionario.Morada};{novoFuncionario.Contacto};" +
-                        $"{novoFuncionario.Tipo};{novoFuncionario.Salario};{novoFuncionario.DataAniversario};" +
-                        $"{novoFuncionario.DataContrato};{novoFuncionario.DataFimContrato};{novoFuncionario.DataRegistoCriminal};" +
-                        $"{novoFuncionario.DataFimRegistoCriminal};{novoFuncionario.Username};{novoFuncionario.Password};{novoFuncionario.PrimeiroLogin}";
+                        $"{novoFuncionario.Tipo};{novoFuncionario.Salario};{dataAniversario};" +
+                        $"{dataContrato};{dataFimContrato};{dataRegistoCriminal};" +
+                        $"{dataFimRegistoCriminal};{novoFuncionario.Username};{novoFuncionario.Password};{novoFuncionario.PrimeiroLogin}";
 
                     if (novoFuncionario is Diretor diretor)
                     {
@@ -190,6 +199,7 @@ namespace Projeto_UFCD5412.Data
                 Console.WriteLine($"Erro ao adicionar novo funcionário ao CSV: {ex.Message}");
             }
         }
+
 
     }
 }

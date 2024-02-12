@@ -62,7 +62,19 @@ namespace Projeto_UFCD5412.View.Forms
 
         private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)
         {
+            // Verificar se todos os campos obrigatórios estão preenchidos
+            if (string.IsNullOrEmpty(nome_textbox.Text) ||
+                string.IsNullOrEmpty(morada_textbox.Text) ||
+                string.IsNullOrEmpty(contacto_textbox.Text) ||
+                TipoFuncionario_ComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.");
+                return;
+            }
+
+            // Obter valores dos campos
             string nome = nome_textbox.Text;
+            DateTime dataAniversario = DataNascimento_DateTimePicker.Value;
             string morada = morada_textbox.Text;
             string contacto = contacto_textbox.Text;
             DateTime dataContrato = DataContrato_DateTimePicker.Value;
@@ -71,27 +83,38 @@ namespace Projeto_UFCD5412.View.Forms
             DateTime dataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
             string tipoFuncionario = TipoFuncionario_ComboBox.SelectedItem.ToString();
 
+            // Converter o valor do salário para decimal
+            if (!decimal.TryParse(salario_textbox.Text, out decimal salario))
+            {
+                MessageBox.Show("Por favor, insira um valor de salário válido.");
+                return;
+            }
+
+            // Criar um novo objeto Funcionario com os valores obtidos
             Funcionario novoFuncionario = new Funcionario(
-                id: 0, 
+                id: 0,
                 nome: nome,
                 morada: morada,
                 contacto: contacto,
                 tipo: tipoFuncionario,
-                salario: 0, 
-                dataAniverario: DateTime.MinValue, 
+                salario: salario, // Usar o valor do salário convertido
+                dataAniverario: dataAniversario,
                 dataContrato: dataContrato,
                 dataFimContrato: dataFimContrato,
                 dataRegistoCriminal: dataRegistoCriminal,
                 dataFimRegistoCriminal: dataFimRegistoCriminal,
-                username: "", 
-                password: "", 
-                primeiroLogin: true 
+                username: "",
+                password: "",
+                primeiroLogin: true
             );
 
+            // Adicionar o novo funcionário
             empresaController.AdicionarFuncionario(novoFuncionario);
 
+            // Limpar os campos após adicionar o funcionário
             LimparCampos();
         }
+
 
         private void LimparCampos()
         {

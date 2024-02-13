@@ -17,10 +17,18 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
     public partial class ListarFuncionariosForm : Form
     {
         private EmpresaController empresaController = EmpresaController.Instance;
+
         public ListarFuncionariosForm()
         {
             InitializeComponent();
-            CSVHandler.LoadFromCSV();
+        }
+
+        internal void SetParameter( string parametro)
+        {
+            if (parametro == "editar")
+            {
+                ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
+            }
         }
 
         private void ListarFuncionariosForm_Load(object sender, EventArgs e)
@@ -109,6 +117,35 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void atualizarCsv_btn_Click(object sender, EventArgs e)
         {
             CSVHandler.ExportToCSV(empresaController.Funcionarios);
+        }
+
+        private void RegistoCriminal_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RegistoCriminal_CheckBox.Checked)
+            {
+                List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(DateTime.Now);
+                AtualizarDataGridView(funcionariosComRegistoExpirado);
+            }
+            else
+            {
+                ListarFuncionarioDataGrid();
+            }
+        }
+
+
+        private void ListaFuncionarios_DataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        { 
+            int rowIndex = e.RowIndex;
+            int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
+            EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
+            editarFuncionarioForm.SetParameter(funcionarioId);
+            editarFuncionarioForm.Show();
+            editarFuncionarioForm.FormClosed += EditarFuncionarioForm_FormClosed;
+        }
+
+        private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ListarFuncionarioDataGrid();
         }
     }
 }

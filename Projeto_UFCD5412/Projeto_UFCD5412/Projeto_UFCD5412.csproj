@@ -69,6 +69,12 @@
     <Compile Include="View\FuncionarioForms\AdicionarFuncionarioForm.Designer.cs">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FuncionarioForms\EditarFuncionarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FuncionarioForms\EditarFuncionarioForm.Designer.cs">
+      <DependentUpon>EditarFuncionarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FuncionarioForms\ListarFuncionariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FuncionarioForms\EditarFuncionarioForm.resx">
+      <DependentUpon>EditarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\ListarFuncionariosForm.resx">
       <DependentUpon>ListarFuncionariosForm.cs</DependentUpon>

@@ -145,6 +145,12 @@ namespace Projeto_UFCD5412
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+        }
+
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
 
@@ -155,18 +161,6 @@ namespace Projeto_UFCD5412
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            //OpenChildForm(new AdicionarFuncionarioForm());
-            //AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            //abrir dentro do paineldekstop
-            //adicionarFuncionarioForm.TopLevel = false;
-            //adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
-            //adicionarFuncionarioForm.Dock = DockStyle.Fill;
-            //Menus_TabControl.Controls.Add(adicionarFuncionarioForm);
-           // Menus_TabControl.Tag = adicionarFuncionarioForm;
-            //panelDesktop.Controls.Add(adicionarFuncionarioForm);
-            //panelDesktop.Tag = adicionarFuncionarioForm;
-            //adicionarFuncionarioForm.BringToFront();
-            //adicionarFuncionarioForm.Show();
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
 
         }
@@ -174,7 +168,6 @@ namespace Projeto_UFCD5412
         private void DashboardFormadores_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            //OpenChildForm(new VerFuncionarioContrato());
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
@@ -195,14 +188,11 @@ namespace Projeto_UFCD5412
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
 
-            // Define as propriedades do formulário
             adicionarFuncionarioForm.TopLevel = false;
             adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
             adicionarFuncionarioForm.Dock = DockStyle.Fill;
 
             Menus_TabControl.SelectedTab.Controls.Add(adicionarFuncionarioForm);
-
-            // Traz o formulário para frente
             adicionarFuncionarioForm.BringToFront();
 
             // Exibe o formulário
@@ -224,11 +214,20 @@ namespace Projeto_UFCD5412
 
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+
+        private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
         {
-            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
+
+            listarFuncionariosForm.SetParameter("editar");  // enviar parametro para o form
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
         }
-
     }
 }

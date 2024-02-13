@@ -50,6 +50,7 @@
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
+            this.EditarFuncionario_Btn = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
@@ -86,7 +87,7 @@
             this.Defincoes_Btn.IconSize = 32;
             this.Defincoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Defincoes_Btn.Location = new System.Drawing.Point(0, 347);
-            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Defincoes_Btn.Name = "Defincoes_Btn";
             this.Defincoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.Defincoes_Btn.Size = new System.Drawing.Size(220, 49);
@@ -109,7 +110,7 @@
             this.DashboardFinancas_Btn.IconSize = 32;
             this.DashboardFinancas_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFinancas_Btn.Location = new System.Drawing.Point(0, 298);
-            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFinancas_Btn.Name = "DashboardFinancas_Btn";
             this.DashboardFinancas_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFinancas_Btn.Size = new System.Drawing.Size(220, 49);
@@ -145,7 +146,7 @@
             this.DashboardFormadores_Btn.IconSize = 32;
             this.DashboardFormadores_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFormadores_Btn.Location = new System.Drawing.Point(0, 249);
-            this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFormadores_Btn.Name = "DashboardFormadores_Btn";
             this.DashboardFormadores_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFormadores_Btn.Size = new System.Drawing.Size(220, 49);
@@ -168,7 +169,7 @@
             this.DashboardFuncionario_Btn.IconSize = 32;
             this.DashboardFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFuncionario_Btn.Location = new System.Drawing.Point(0, 200);
-            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFuncionario_Btn.Name = "DashboardFuncionario_Btn";
             this.DashboardFuncionario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFuncionario_Btn.Size = new System.Drawing.Size(220, 49);
@@ -263,7 +264,7 @@
             this.Menus_TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Menus_TabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.Menus_TabControl.Location = new System.Drawing.Point(220, 89);
-            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2);
             this.Menus_TabControl.Name = "Menus_TabControl";
             this.Menus_TabControl.SelectedIndex = 0;
             this.Menus_TabControl.Size = new System.Drawing.Size(738, 500);
@@ -273,9 +274,9 @@
             // tabDashboard
             // 
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Size = new System.Drawing.Size(730, 474);
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
@@ -283,12 +284,13 @@
             // 
             // tabDashboardFuncionario
             // 
+            this.tabDashboardFuncionario.Controls.Add(this.EditarFuncionario_Btn);
             this.tabDashboardFuncionario.Controls.Add(this.ListarFuncionario_Btn);
             this.tabDashboardFuncionario.Controls.Add(this.AdicionarFuncionario_Btn);
             this.tabDashboardFuncionario.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFuncionario.Name = "tabDashboardFuncionario";
-            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2);
             this.tabDashboardFuncionario.Size = new System.Drawing.Size(730, 474);
             this.tabDashboardFuncionario.TabIndex = 1;
             this.tabDashboardFuncionario.Text = "tabPage2";
@@ -297,7 +299,7 @@
             // ListarFuncionario_Btn
             // 
             this.ListarFuncionario_Btn.Location = new System.Drawing.Point(164, 24);
-            this.ListarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ListarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.ListarFuncionario_Btn.Name = "ListarFuncionario_Btn";
             this.ListarFuncionario_Btn.Size = new System.Drawing.Size(101, 104);
             this.ListarFuncionario_Btn.TabIndex = 1;
@@ -308,7 +310,7 @@
             // AdicionarFuncionario_Btn
             // 
             this.AdicionarFuncionario_Btn.Location = new System.Drawing.Point(26, 24);
-            this.AdicionarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdicionarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.AdicionarFuncionario_Btn.Name = "AdicionarFuncionario_Btn";
             this.AdicionarFuncionario_Btn.Size = new System.Drawing.Size(101, 104);
             this.AdicionarFuncionario_Btn.TabIndex = 0;
@@ -319,7 +321,7 @@
             // tabDashboardFormadoes
             // 
             this.tabDashboardFormadoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFormadoes.Name = "tabDashboardFormadoes";
             this.tabDashboardFormadoes.Size = new System.Drawing.Size(730, 474);
             this.tabDashboardFormadoes.TabIndex = 2;
@@ -329,7 +331,7 @@
             // tabDashboardFinancas
             // 
             this.tabDashboardFinancas.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFinancas.Name = "tabDashboardFinancas";
             this.tabDashboardFinancas.Size = new System.Drawing.Size(730, 474);
             this.tabDashboardFinancas.TabIndex = 3;
@@ -339,12 +341,23 @@
             // tabDashboardDefinicoes
             // 
             this.tabDashboardDefinicoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardDefinicoes.Name = "tabDashboardDefinicoes";
             this.tabDashboardDefinicoes.Size = new System.Drawing.Size(730, 474);
             this.tabDashboardDefinicoes.TabIndex = 4;
             this.tabDashboardDefinicoes.Text = "tabPage5";
             this.tabDashboardDefinicoes.UseVisualStyleBackColor = true;
+            // 
+            // EditarFuncionario_Btn
+            // 
+            this.EditarFuncionario_Btn.Location = new System.Drawing.Point(305, 24);
+            this.EditarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.EditarFuncionario_Btn.Name = "EditarFuncionario_Btn";
+            this.EditarFuncionario_Btn.Size = new System.Drawing.Size(101, 104);
+            this.EditarFuncionario_Btn.TabIndex = 2;
+            this.EditarFuncionario_Btn.Text = "Editar Funcionarios";
+            this.EditarFuncionario_Btn.UseVisualStyleBackColor = true;
+            this.EditarFuncionario_Btn.Click += new System.EventHandler(this.EditarFuncionario_Btn_Click);
             // 
             // MainWindow
             // 
@@ -394,6 +407,7 @@
         private System.Windows.Forms.Button AdicionarFuncionario_Btn;
         private System.Windows.Forms.Button ListarFuncionario_Btn;
         private System.Windows.Forms.Label timer_label;
+        private System.Windows.Forms.Button EditarFuncionario_Btn;
     }
 }
 

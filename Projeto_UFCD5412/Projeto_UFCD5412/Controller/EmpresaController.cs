@@ -37,6 +37,14 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
+
+        public Funcionario GetFuncionarioById(int id)
+        {
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);
+            return funcionario;
+        }
+
+
         public void AdicionarFuncionario(Funcionario funcionario)
         {
             funcionario.Id = Funcionarios.Count +1;
@@ -91,6 +99,30 @@ namespace Projeto_UFCD5412.Controller
             decimal valorTotal = totalHoras * formador.ValorHora;
 
             return valorTotal;
+        }
+
+        public void UpdateFuncionario(Funcionario updateFuncionario)
+        {
+           var funcionario = Funcionarios.FirstOrDefault(f => f.Id == updateFuncionario.Id);
+
+            if (funcionario != null)
+            {
+                funcionario.Nome = updateFuncionario.Nome;
+                funcionario.Morada = updateFuncionario.Morada;
+                funcionario.Contacto = updateFuncionario.Contacto;
+                funcionario.Tipo = updateFuncionario.Tipo;
+                funcionario.DataContrato = updateFuncionario.DataContrato;
+                funcionario.DataFimContrato = updateFuncionario.DataFimContrato;
+                funcionario.DataRegistoCriminal = updateFuncionario.DataRegistoCriminal;
+                funcionario.DataFimRegistoCriminal = updateFuncionario.DataFimRegistoCriminal;
+                funcionario.DataAniversario = updateFuncionario.DataAniversario;
+                funcionario.Salario = updateFuncionario.Salario;
+                CSVHandler.ExportToCSV(Funcionarios);
+            }
+            else
+            {
+                Console.WriteLine("Funcionário não encontrado.");
+            }
         }
     }
 }

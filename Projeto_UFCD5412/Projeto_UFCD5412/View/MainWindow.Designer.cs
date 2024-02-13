@@ -45,12 +45,12 @@
             this.Menus_TabControl = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
             this.tabDashboardFuncionario = new System.Windows.Forms.TabPage();
+            this.EditarFuncionario_Btn = new System.Windows.Forms.Button();
             this.ListarFuncionario_Btn = new System.Windows.Forms.Button();
             this.AdicionarFuncionario_Btn = new System.Windows.Forms.Button();
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
-            this.EditarFuncionario_Btn = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
@@ -70,6 +70,7 @@
             this.panelMenu.Controls.Add(this.Dashboard_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 589);
@@ -123,14 +124,15 @@
             // 
             // iconButton1
             // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(10, 572);
+            this.iconButton1.Location = new System.Drawing.Point(12, 554);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(32, 23);
+            this.iconButton1.Size = new System.Drawing.Size(74, 23);
             this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "X";
+            this.iconButton1.Text = "Sair";
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
@@ -284,6 +286,8 @@
             // 
             // tabDashboardFuncionario
             // 
+            this.tabDashboardFuncionario.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.rm314_adj_02;
+            this.tabDashboardFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabDashboardFuncionario.Controls.Add(this.EditarFuncionario_Btn);
             this.tabDashboardFuncionario.Controls.Add(this.ListarFuncionario_Btn);
             this.tabDashboardFuncionario.Controls.Add(this.AdicionarFuncionario_Btn);
@@ -295,6 +299,17 @@
             this.tabDashboardFuncionario.TabIndex = 1;
             this.tabDashboardFuncionario.Text = "tabPage2";
             this.tabDashboardFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // EditarFuncionario_Btn
+            // 
+            this.EditarFuncionario_Btn.Location = new System.Drawing.Point(305, 24);
+            this.EditarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.EditarFuncionario_Btn.Name = "EditarFuncionario_Btn";
+            this.EditarFuncionario_Btn.Size = new System.Drawing.Size(101, 104);
+            this.EditarFuncionario_Btn.TabIndex = 2;
+            this.EditarFuncionario_Btn.Text = "Editar Funcionarios";
+            this.EditarFuncionario_Btn.UseVisualStyleBackColor = true;
+            this.EditarFuncionario_Btn.Click += new System.EventHandler(this.EditarFuncionario_Btn_Click);
             // 
             // ListarFuncionario_Btn
             // 
@@ -347,17 +362,6 @@
             this.tabDashboardDefinicoes.TabIndex = 4;
             this.tabDashboardDefinicoes.Text = "tabPage5";
             this.tabDashboardDefinicoes.UseVisualStyleBackColor = true;
-            // 
-            // EditarFuncionario_Btn
-            // 
-            this.EditarFuncionario_Btn.Location = new System.Drawing.Point(305, 24);
-            this.EditarFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
-            this.EditarFuncionario_Btn.Name = "EditarFuncionario_Btn";
-            this.EditarFuncionario_Btn.Size = new System.Drawing.Size(101, 104);
-            this.EditarFuncionario_Btn.TabIndex = 2;
-            this.EditarFuncionario_Btn.Text = "Editar Funcionarios";
-            this.EditarFuncionario_Btn.UseVisualStyleBackColor = true;
-            this.EditarFuncionario_Btn.Click += new System.EventHandler(this.EditarFuncionario_Btn_Click);
             // 
             // MainWindow
             // 

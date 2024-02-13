@@ -18,22 +18,129 @@ namespace Projeto_UFCD5412.View.Forms
         private EmpresaController empresaController = EmpresaController.Instance;
         public AdicionarFuncionarioForm()
         {
-            InitializeComponent();
+            InitializeComponent();     
+            isencaohorario_checkbox.Visible = false;
+            bonusmensal_checkbox.Visible = false;
+            carroempresa_checkbox.Visible = false;
+
+            secretariaNomeDiretor_textbox.Visible = false;
+            secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento"; 
+            secretariaNomeDiretor_textbox.ForeColor = SystemColors.GrayText;
+
+            valorhora_textbox.Visible = false;
+            valorhora_textbox.Text = "Introduza o valor da hora";
+            valorhora_textbox.ForeColor = SystemColors.GrayText;
+
+            areaensino_textbox.Visible = false;
+            areaensino_textbox.Text = "Introduza a área de ensino";
+            areaensino_textbox.ForeColor = SystemColors.GrayText;
+
+
+
+            poslaboral_checkbox.Visible = false;
+            laboral_checkbox.Visible = false;
+            valorhora_textbox.Visible =false;
+            areaensino_textbox.Visible = false;
         }
 
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void valorhora_textbox_GotFocus(object sender, EventArgs e)
         {
+            if (valorhora_textbox.Text == "Introduza o valor da hora")
+            {
+                valorhora_textbox.Text = "";
+                valorhora_textbox.ForeColor = SystemColors.WindowText;
+            }
+        }
+        private void valorhora_textbox_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(valorhora_textbox.Text))
+            {
+                valorhora_textbox.Text = "Introduza o valor da hora";
+                valorhora_textbox.ForeColor = SystemColors.GrayText;
+            }
+        }
+        //
+        private void areaensino_textbox_GotFocus(object sender, EventArgs e)
+        {
+            if (areaensino_textbox.Text == "Introduza a área de ensino")
+            {
+                areaensino_textbox.Text = "";
+                areaensino_textbox.ForeColor = SystemColors.WindowText;
+            }
+        }
+        private void areaensino_textbox_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(areaensino_textbox.Text))
+            {
+                areaensino_textbox.Text = "Introduza a área de ensino";
+                areaensino_textbox.ForeColor = SystemColors.GrayText;
+            }
+        }
+        /// 
+        private void secretariaNomeDiretor_textbox_GotFocus(object sender, EventArgs e)
+        {
+            if (secretariaNomeDiretor_textbox.Text == "Introduza o nome do diretor de departamento")
+            {
+                secretariaNomeDiretor_textbox.Text = "";
+                secretariaNomeDiretor_textbox.ForeColor = SystemColors.WindowText; 
+            }
+        }
+        private void secretariaNomeDiretor_textbox_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(secretariaNomeDiretor_textbox.Text))
+            {
+                secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento";
+                secretariaNomeDiretor_textbox.ForeColor = SystemColors.GrayText; 
+            }
+        }
+
+        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e){
             switch (TipoFuncionario_ComboBox.SelectedIndex)
             {
                 case 0: // Funcionaria
                     break;
                 case 1: //Diretor
+                    isencaohorario_checkbox.Visible = true;
+                    bonusmensal_checkbox.Visible = true;
+                    carroempresa_checkbox.Visible = true;
+                    //se mudar outra vez para outro tipo de funcionario esconder os campos
+                    poslaboral_checkbox.Visible = false;
+                    laboral_checkbox.Visible = false;
+                    valorhora_textbox.Visible = false;
+                    areaensino_textbox.Visible = false;    
+                    secretariaNomeDiretor_textbox.Visible = false;
                     break;
                 case 2: //Formador
+                    poslaboral_checkbox.Visible = true;
+                    laboral_checkbox.Visible = true;
+                    valorhora_textbox.Visible = true;
+                    areaensino_textbox.Visible = true;
+                    //se mudar outra vez para outro tipo de funcionario esconder os campos
+                    isencaohorario_checkbox.Visible = false;
+                    bonusmensal_checkbox.Visible = false;
+                    carroempresa_checkbox.Visible = false;
+                    secretariaNomeDiretor_textbox.Visible = false;
                     break;
                 case 3: //Secretaria
+                    secretariaNomeDiretor_textbox.Visible = true;
+                    //se mudar outra vez para outro tipo de funcionario esconder os campos
+                    isencaohorario_checkbox.Visible = false;
+                    bonusmensal_checkbox.Visible = false;
+                    carroempresa_checkbox.Visible = false;
+                    poslaboral_checkbox.Visible = false;
+                    laboral_checkbox.Visible = false;
+                    valorhora_textbox.Visible = false;
+                    areaensino_textbox.Visible = false;
                    break;
                 case 4: //Coordenador
+                    secretariaNomeDiretor_textbox.Visible = false;
+                    isencaohorario_checkbox.Visible = false;
+                    bonusmensal_checkbox.Visible = false;
+                    carroempresa_checkbox.Visible = false;
+                    poslaboral_checkbox.Visible = false;
+                    laboral_checkbox.Visible = false;
+                    valorhora_textbox.Visible = false;
+                    areaensino_textbox.Visible = false;
                     break;
 
             }
@@ -82,6 +189,31 @@ namespace Projeto_UFCD5412.View.Forms
             DateTime dataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
             DateTime dataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
             string tipoFuncionario = TipoFuncionario_ComboBox.SelectedItem.ToString();
+            bool isencaoHorario = isencaohorario_checkbox.Checked;
+            bool bonusMensal = bonusmensal_checkbox.Checked;
+            bool carroEmpresa = carroempresa_checkbox.Checked;
+            bool posLaboral = poslaboral_checkbox.Checked;
+            bool laboral = laboral_checkbox.Checked;
+            string areaEnsino = areaensino_textbox.Text;
+            string nomeDiretor = secretariaNomeDiretor_textbox.Text;
+            decimal valorHora = 0;
+
+            switch (tipoFuncionario)
+            {
+                case "Funcionario":                 
+                    break;
+                case "Diretor":
+                   
+                    break;
+                case "Formador":
+                    break;
+                case "Secretaria":
+                    break;
+                case "Coordenador":
+                    break;
+                default:
+                    break;
+            }
 
             // Converter o valor do salário para decimal
             if (!decimal.TryParse(salario_textbox.Text, out decimal salario))
@@ -114,6 +246,7 @@ namespace Projeto_UFCD5412.View.Forms
             // Limpar os campos após adicionar o funcionário
             LimparCampos();
         }
+
 
 
         private void LimparCampos()

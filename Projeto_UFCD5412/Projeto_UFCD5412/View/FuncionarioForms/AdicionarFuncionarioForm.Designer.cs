@@ -61,6 +61,11 @@
             this.laboral_checkbox = new System.Windows.Forms.CheckBox();
             this.poslaboral_checkbox = new System.Windows.Forms.CheckBox();
             this.valorhora_textbox = new System.Windows.Forms.TextBox();
+            this.username_textbox = new System.Windows.Forms.TextBox();
+            this.username_label = new System.Windows.Forms.Label();
+            this.password_textbox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cursoresponsavel_textbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +117,7 @@
             // 
             this.DataContrato_Label.AutoSize = true;
             this.DataContrato_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DataContrato_Label.Location = new System.Drawing.Point(483, 399);
+            this.DataContrato_Label.Location = new System.Drawing.Point(483, 438);
             this.DataContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataContrato_Label.Name = "DataContrato_Label";
             this.DataContrato_Label.Size = new System.Drawing.Size(123, 18);
@@ -123,7 +128,7 @@
             // 
             this.FimContrato_Label.AutoSize = true;
             this.FimContrato_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FimContrato_Label.Location = new System.Drawing.Point(483, 432);
+            this.FimContrato_Label.Location = new System.Drawing.Point(483, 471);
             this.FimContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FimContrato_Label.Name = "FimContrato_Label";
             this.FimContrato_Label.Size = new System.Drawing.Size(167, 18);
@@ -134,7 +139,7 @@
             // 
             this.DataRegistoCriminal_Label.AutoSize = true;
             this.DataRegistoCriminal_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DataRegistoCriminal_Label.Location = new System.Drawing.Point(483, 472);
+            this.DataRegistoCriminal_Label.Location = new System.Drawing.Point(483, 511);
             this.DataRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataRegistoCriminal_Label.Name = "DataRegistoCriminal_Label";
             this.DataRegistoCriminal_Label.Size = new System.Drawing.Size(156, 18);
@@ -178,7 +183,7 @@
             // 
             // DataContrato_DateTimePicker
             // 
-            this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(687, 390);
+            this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(687, 429);
             this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataContrato_DateTimePicker.Name = "DataContrato_DateTimePicker";
             this.DataContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
@@ -186,7 +191,7 @@
             // 
             // DataFimContrato_DateTimePicker
             // 
-            this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(687, 426);
+            this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(687, 465);
             this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimContrato_DateTimePicker.Name = "DataFimContrato_DateTimePicker";
             this.DataFimContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
@@ -194,7 +199,7 @@
             // 
             // DataRegistoCriminal_DateTimePicker
             // 
-            this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 472);
+            this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 511);
             this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataRegistoCriminal_DateTimePicker.Name = "DataRegistoCriminal_DateTimePicker";
             this.DataRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
@@ -204,7 +209,7 @@
             // 
             this.DataFimRegistoCriminal_Label.AutoSize = true;
             this.DataFimRegistoCriminal_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DataFimRegistoCriminal_Label.Location = new System.Drawing.Point(483, 514);
+            this.DataFimRegistoCriminal_Label.Location = new System.Drawing.Point(483, 553);
             this.DataFimRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataFimRegistoCriminal_Label.Name = "DataFimRegistoCriminal_Label";
             this.DataFimRegistoCriminal_Label.Size = new System.Drawing.Size(185, 18);
@@ -213,7 +218,7 @@
             // 
             // DataFimRegistoCriminal_DateTimePicker
             // 
-            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 514);
+            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 553);
             this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
             this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
@@ -256,7 +261,7 @@
             this.addFuncionarioSistema_btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.addFuncionarioSistema_btn.IconColor = System.Drawing.Color.Black;
             this.addFuncionarioSistema_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(711, 582);
+            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(711, 621);
             this.addFuncionarioSistema_btn.Margin = new System.Windows.Forms.Padding(4);
             this.addFuncionarioSistema_btn.Name = "addFuncionarioSistema_btn";
             this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(274, 32);
@@ -297,7 +302,7 @@
             // 
             // salario_textbox
             // 
-            this.salario_textbox.Location = new System.Drawing.Point(687, 330);
+            this.salario_textbox.Location = new System.Drawing.Point(687, 314);
             this.salario_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.salario_textbox.Name = "salario_textbox";
             this.salario_textbox.Size = new System.Drawing.Size(148, 24);
@@ -307,7 +312,7 @@
             // 
             this.salario_label.AutoSize = true;
             this.salario_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.salario_label.Location = new System.Drawing.Point(598, 334);
+            this.salario_label.Location = new System.Drawing.Point(598, 318);
             this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salario_label.Name = "salario_label";
             this.salario_label.Size = new System.Drawing.Size(58, 18);
@@ -394,6 +399,52 @@
             this.valorhora_textbox.GotFocus += new System.EventHandler(this.valorhora_textbox_GotFocus);
             this.valorhora_textbox.LostFocus += new System.EventHandler(this.valorhora_textbox_LostFocus);
             // 
+            // username_textbox
+            // 
+            this.username_textbox.Location = new System.Drawing.Point(687, 346);
+            this.username_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.username_textbox.Name = "username_textbox";
+            this.username_textbox.Size = new System.Drawing.Size(148, 24);
+            this.username_textbox.TabIndex = 38;
+            // 
+            // username_label
+            // 
+            this.username_label.AutoSize = true;
+            this.username_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.username_label.Location = new System.Drawing.Point(598, 350);
+            this.username_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.username_label.Name = "username_label";
+            this.username_label.Size = new System.Drawing.Size(77, 18);
+            this.username_label.TabIndex = 37;
+            this.username_label.Text = "Username";
+            // 
+            // password_textbox
+            // 
+            this.password_textbox.Location = new System.Drawing.Point(944, 346);
+            this.password_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.password_textbox.Name = "password_textbox";
+            this.password_textbox.Size = new System.Drawing.Size(148, 24);
+            this.password_textbox.TabIndex = 40;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(855, 350);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Password";
+            // 
+            // cursoresponsavel_textbox
+            // 
+            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(1414, 283);
+            this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
+            this.cursoresponsavel_textbox.Size = new System.Drawing.Size(142, 24);
+            this.cursoresponsavel_textbox.TabIndex = 41;
+            this.cursoresponsavel_textbox.Text = "Curso Responsavél";
+            // 
             // AdicionarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -401,6 +452,11 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1777, 696);
+            this.Controls.Add(this.cursoresponsavel_textbox);
+            this.Controls.Add(this.password_textbox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.username_textbox);
+            this.Controls.Add(this.username_label);
             this.Controls.Add(this.valorhora_textbox);
             this.Controls.Add(this.areaensino_textbox);
             this.Controls.Add(this.laboral_checkbox);
@@ -479,5 +535,10 @@
         private System.Windows.Forms.CheckBox laboral_checkbox;
         private System.Windows.Forms.CheckBox poslaboral_checkbox;
         private System.Windows.Forms.TextBox valorhora_textbox;
+        private System.Windows.Forms.TextBox username_textbox;
+        private System.Windows.Forms.Label username_label;
+        private System.Windows.Forms.TextBox password_textbox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox cursoresponsavel_textbox;
     }
 }

@@ -10,11 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Data;
 
 namespace Projeto_UFCD5412.View.Forms
 {
     public partial class AdicionarFuncionarioForm : Form
     {
+        private bool posLaboral; 
+        private bool laboral;
+
         private EmpresaController empresaController = EmpresaController.Instance;
         public AdicionarFuncionarioForm()
         {
@@ -41,6 +45,13 @@ namespace Projeto_UFCD5412.View.Forms
             laboral_checkbox.Visible = false;
             valorhora_textbox.Visible =false;
             areaensino_textbox.Visible = false;
+
+            username_label.Visible = false;
+            username_textbox.Visible = false;
+
+            cursoresponsavel_textbox.Visible = false;
+
+
         }
 
         private void valorhora_textbox_GotFocus(object sender, EventArgs e)
@@ -103,6 +114,9 @@ namespace Projeto_UFCD5412.View.Forms
                     isencaohorario_checkbox.Visible = true;
                     bonusmensal_checkbox.Visible = true;
                     carroempresa_checkbox.Visible = true;
+                    password_textbox.Visible = true;                
+                    username_label.Visible = true;
+                    username_textbox.Visible = true;    
                     //se mudar outra vez para outro tipo de funcionario esconder os campos
                     poslaboral_checkbox.Visible = false;
                     laboral_checkbox.Visible = false;
@@ -115,6 +129,9 @@ namespace Projeto_UFCD5412.View.Forms
                     laboral_checkbox.Visible = true;
                     valorhora_textbox.Visible = true;
                     areaensino_textbox.Visible = true;
+                    password_textbox.Visible = true;
+                    username_label.Visible = true;
+                    username_textbox.Visible = true;
                     //se mudar outra vez para outro tipo de funcionario esconder os campos
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
@@ -123,6 +140,9 @@ namespace Projeto_UFCD5412.View.Forms
                     break;
                 case 3: //Secretaria
                     secretariaNomeDiretor_textbox.Visible = true;
+                    password_textbox.Visible = true;
+                    username_label.Visible = true;
+                    username_textbox.Visible = true;
                     //se mudar outra vez para outro tipo de funcionario esconder os campos
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
@@ -133,6 +153,8 @@ namespace Projeto_UFCD5412.View.Forms
                     areaensino_textbox.Visible = false;
                    break;
                 case 4: //Coordenador
+                    password_textbox.Visible = true;
+                    username_label.Visible = true;
                     secretariaNomeDiretor_textbox.Visible = false;
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
@@ -141,6 +163,7 @@ namespace Projeto_UFCD5412.View.Forms
                     laboral_checkbox.Visible = false;
                     valorhora_textbox.Visible = false;
                     areaensino_textbox.Visible = false;
+                    cursoresponsavel_textbox.Visible = true;
                     break;
 
             }
@@ -169,21 +192,13 @@ namespace Projeto_UFCD5412.View.Forms
 
         private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)
         {
-            // Verificar se todos os campos obrigatórios estão preenchidos
-            if (string.IsNullOrEmpty(nome_textbox.Text) ||
-                string.IsNullOrEmpty(morada_textbox.Text) ||
-                string.IsNullOrEmpty(contacto_textbox.Text) ||
-                TipoFuncionario_ComboBox.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.");
-                return;
-            }
-
-            // Obter valores dos campos
+            // Obter valores dos campos da interface do usuário
             string nome = nome_textbox.Text;
-            DateTime dataAniversario = DataNascimento_DateTimePicker.Value;
             string morada = morada_textbox.Text;
             string contacto = contacto_textbox.Text;
+            decimal salario = 0;
+            decimal.TryParse(salario_textbox.Text, out salario); 
+            DateTime dataAniversario = DataNascimento_DateTimePicker.Value;
             DateTime dataContrato = DataContrato_DateTimePicker.Value;
             DateTime dataFimContrato = DataFimContrato_DateTimePicker.Value;
             DateTime dataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
@@ -192,60 +207,118 @@ namespace Projeto_UFCD5412.View.Forms
             bool isencaoHorario = isencaohorario_checkbox.Checked;
             bool bonusMensal = bonusmensal_checkbox.Checked;
             bool carroEmpresa = carroempresa_checkbox.Checked;
-            bool posLaboral = poslaboral_checkbox.Checked;
-            bool laboral = laboral_checkbox.Checked;
-            string areaEnsino = areaensino_textbox.Text;
-            string nomeDiretor = secretariaNomeDiretor_textbox.Text;
-            decimal valorHora = 0;
+            string departamento = areaensino_textbox.Text; 
+            string nomeDiretor = secretariaNomeDiretor_textbox.Text; 
+            string areaEnsino = areaensino_textbox.Text; 
+            decimal valorHora = 0; 
+            
+
+            // Criar o novo funcionário com base no tipo selecionado
+            Funcionario novoFuncionario = null;
 
             switch (tipoFuncionario)
             {
-                case "Funcionario":                 
-                    break;
                 case "Diretor":
-                   
-                    break;
-                case "Formador":
+                    novoFuncionario = new Diretor(
+                        id: 0, 
+                        nome: nome,
+                        morada: morada,
+                        contacto: contacto,
+                        tipo: tipoFuncionario,
+                        salario: salario,
+                        dataAniverario: dataAniversario,
+                        dataContrato: dataContrato,
+                        dataFimContrato: dataFimContrato,
+                        dataRegistoCriminal: dataRegistoCriminal,
+                        dataFimRegistoCriminal: dataFimRegistoCriminal,
+                        username: username_textbox.Text,
+                        password: password_textbox.Text,
+                        primeiroLogin: true,
+                        isencaoHorario: isencaoHorario,
+                        bonusMensal: bonusMensal ? salario : 0,
+                        carroEmpresa: carroEmpresa,
+                        departamento: departamento
+                    );
                     break;
                 case "Secretaria":
+                    novoFuncionario = new Secretaria(
+                        id: 0, 
+                        nome: nome,
+                        morada: morada,
+                        contacto: contacto,
+                        tipo: tipoFuncionario,
+                        salario: salario,
+                        dataAniverario: dataAniversario,
+                        dataContrato: dataContrato,
+                        dataFimContrato: dataFimContrato,
+                        dataRegistoCriminal: dataRegistoCriminal,
+                        dataFimRegistoCriminal: dataFimRegistoCriminal,
+                        username: username_textbox.Text,
+                        password: password_textbox.Text,
+                        primeiroLogin: true,
+                        diretorResponsavel: nomeDiretor,
+                        area: areaEnsino
+                    );
+
                     break;
-                case "Coordenador":
+                case "Formador":
+                    novoFuncionario = new Formador(
+                        id: 0, 
+                        nome: nome,
+                        morada: morada,
+                        contacto: contacto,
+                        tipo: tipoFuncionario,
+                        salario: salario,
+                        dataAniverario: dataAniversario,
+                        dataContrato: dataContrato,
+                        dataFimContrato: dataFimContrato,
+                        dataRegistoCriminal: dataRegistoCriminal,
+                        dataFimRegistoCriminal: dataFimRegistoCriminal,
+                        username: username_textbox.Text,
+                        password: password_textbox.Text,
+                        primeiroLogin: true,
+                        areaLecionada: areaEnsino, 
+                        disponibilidade: posLaboral ? "Pós-laboral" : (laboral ? "Laboral" : "Ambas"), 
+                        valorHora: valorHora 
+                    );
                     break;
+                //case "Coordenador":
+                //    novoFuncionario = new Coordenador(
+                //        id: 0,
+                //        nome: nome,
+                //        morada: morada,
+                //        contacto: contacto,
+                //        tipo: tipoFuncionario,
+                //        salario: salario,
+                //        dataAniverario: dataAniversario,
+                //        dataContrato: dataContrato,
+                //        dataFimContrato: dataFimContrato,
+                //        dataRegistoCriminal: dataRegistoCriminal,
+                //        dataFimRegistoCriminal: dataFimRegistoCriminal,
+                //        username: username_textbox.Text,
+                //        password: password_textbox.Text,
+                //        primeiroLogin: true,
+                //        curso: cursoresponsavel_textbox.Text
+                //    ); ;
+                //    break;
+
+                // Adicione casos para outros tipos de funcionários, se necessário
                 default:
-                    break;
+                    MessageBox.Show("Tipo de funcionário não suportado.");
+                    return;
             }
 
-            // Converter o valor do salário para decimal
-            if (!decimal.TryParse(salario_textbox.Text, out decimal salario))
-            {
-                MessageBox.Show("Por favor, insira um valor de salário válido.");
-                return;
-            }
-
-            // Criar um novo objeto Funcionario com os valores obtidos
-            Funcionario novoFuncionario = new Funcionario(
-                id: 0,
-                nome: nome,
-                morada: morada,
-                contacto: contacto,
-                tipo: tipoFuncionario,
-                salario: salario, // Usar o valor do salário convertido
-                dataAniverario: dataAniversario,
-                dataContrato: dataContrato,
-                dataFimContrato: dataFimContrato,
-                dataRegistoCriminal: dataRegistoCriminal,
-                dataFimRegistoCriminal: dataFimRegistoCriminal,
-                username: "",
-                password: "",
-                primeiroLogin: true
-            );
-
-            // Adicionar o novo funcionário
+            // Adicionar o novo funcionário à lista de funcionários ou fazer qualquer outra operação necessária
             empresaController.AdicionarFuncionario(novoFuncionario);
+
+            // Exportar para CSV, se necessário
+            CSVHandler.ExportToCSV(empresaController.Funcionarios);
 
             // Limpar os campos após adicionar o funcionário
             LimparCampos();
         }
+
+
 
 
 

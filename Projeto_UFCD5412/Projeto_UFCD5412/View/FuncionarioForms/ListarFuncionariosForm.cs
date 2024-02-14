@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.View.Forms;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -114,11 +115,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
         }
 
-        private void atualizarCsv_btn_Click(object sender, EventArgs e)
-        {
-            CSVHandler.ExportToCSV(empresaController.Funcionarios);
-        }
-
+        
         private void RegistoCriminal_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (RegistoCriminal_CheckBox.Checked)
@@ -146,6 +143,26 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ListarFuncionarioDataGrid();
+
+        }
+
+        private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ListarFuncionarioDataGrid();
+        }
+
+        private void addfuncionario_textbox_Click(object sender, EventArgs e)
+        {
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            adicionarFuncionarioForm.Show();
+            adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
+
+        }
+
+        private void editarfuncionario_textbox_Click(object sender, EventArgs e)
+        {
+           SetParameter("editar");
+
         }
     }
 }

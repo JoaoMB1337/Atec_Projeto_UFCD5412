@@ -163,6 +163,21 @@ namespace Projeto_UFCD5412
             ActivateButton(sender, RGBColors.color1);
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
 
+
+            //abrir form de listagem de funcionarios dentro do tabcontrol
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
+            
+
+
+
+
         }
 
         private void DashboardFormadores_Btn_Click(object sender, EventArgs e)

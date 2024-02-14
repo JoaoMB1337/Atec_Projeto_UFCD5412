@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 namespace Projeto_UFCD5412
@@ -185,7 +186,13 @@ namespace Projeto_UFCD5412
             ActivateButton(sender, RGBColors.color3);
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
-            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            CoordenacaoMainForm coordenacaoMainForm = new CoordenacaoMainForm();
+            coordenacaoMainForm.TopLevel = false;
+            coordenacaoMainForm.FormBorderStyle = FormBorderStyle.None;
+            coordenacaoMainForm.Dock = DockStyle.Fill;
+
+            
+
         }
 
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)

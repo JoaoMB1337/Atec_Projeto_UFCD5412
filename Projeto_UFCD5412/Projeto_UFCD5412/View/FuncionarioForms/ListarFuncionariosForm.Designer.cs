@@ -30,8 +30,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         /// </summary>
         private void InitializeComponent()
         {
-            
-
             this.ListaFuncionarios_DataGrid = new System.Windows.Forms.DataGridView();
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
@@ -39,6 +37,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.RegistoCriminal_CheckBox = new System.Windows.Forms.CheckBox();
             this.editarfuncionario_textbox = new System.Windows.Forms.Button();
             this.addfuncionario_textbox = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios_DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +46,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ListaFuncionarios_DataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListaFuncionarios_DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListaFuncionarios_DataGrid.ColumnHeadersHeight = 50;
             this.ListaFuncionarios_DataGrid.Location = new System.Drawing.Point(16, 76);
             this.ListaFuncionarios_DataGrid.Margin = new System.Windows.Forms.Padding(4);
@@ -55,7 +55,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ListaFuncionarios_DataGrid.RowHeadersWidth = 51;
             this.ListaFuncionarios_DataGrid.Size = new System.Drawing.Size(1035, 475);
             this.ListaFuncionarios_DataGrid.TabIndex = 0;
-            this.ListaFuncionarios_DataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // PesquisarFuncinarioPorNome_Textbox
             // 
@@ -125,11 +124,23 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.addfuncionario_textbox.UseVisualStyleBackColor = true;
             this.addfuncionario_textbox.Click += new System.EventHandler(this.addfuncionario_textbox_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(436, 20);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 20);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Contrato válido";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // ListarFuncionariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 602);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.addfuncionario_textbox);
             this.Controls.Add(this.editarfuncionario_textbox);
             this.Controls.Add(this.RegistoCriminal_CheckBox);
@@ -157,5 +168,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private System.Windows.Forms.CheckBox RegistoCriminal_CheckBox;
         private System.Windows.Forms.Button editarfuncionario_textbox;
         private System.Windows.Forms.Button addfuncionario_textbox;
+        private CheckBox checkBox1;
     }
 }

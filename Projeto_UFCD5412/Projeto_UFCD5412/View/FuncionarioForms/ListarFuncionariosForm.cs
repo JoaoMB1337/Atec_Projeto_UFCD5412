@@ -129,14 +129,13 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             }
         }
 
-
         private void ListaFuncionarios_DataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         { 
             int rowIndex = e.RowIndex;
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
             EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
             editarFuncionarioForm.SetParameter(funcionarioId);
-            editarFuncionarioForm.Show();
+            editarFuncionarioForm.ShowDialog();
             editarFuncionarioForm.FormClosed += EditarFuncionarioForm_FormClosed;
         }
 
@@ -154,7 +153,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void addfuncionario_textbox_Click(object sender, EventArgs e)
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            adicionarFuncionarioForm.Show();
+            adicionarFuncionarioForm.ShowDialog();
             adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
 
         }

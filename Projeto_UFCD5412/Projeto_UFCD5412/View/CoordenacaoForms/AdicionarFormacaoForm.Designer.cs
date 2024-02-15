@@ -32,10 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dt_trainingStartDate = new System.Windows.Forms.DateTimePicker();
             this.dt_trainingEndDate = new System.Windows.Forms.DateTimePicker();
-            this.cmb_startingHour = new System.Windows.Forms.ComboBox();
-            this.cmb_endingHour = new System.Windows.Forms.ComboBox();
-            this.cmb_trainers = new System.Windows.Forms.ComboBox();
-            this.cmb_classes = new System.Windows.Forms.ComboBox();
+            this.HoraInicio_Combo = new System.Windows.Forms.ComboBox();
+            this.HoraFim_Combo = new System.Windows.Forms.ComboBox();
+            this.Fomadores_Combo = new System.Windows.Forms.ComboBox();
+            this.Turmas_Combo = new System.Windows.Forms.ComboBox();
             this.btn_saveTraining = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,11 +78,11 @@
             this.dt_trainingEndDate.Size = new System.Drawing.Size(246, 22);
             this.dt_trainingEndDate.TabIndex = 12;
             // 
-            // cmb_startingHour
+            // HoraInicio_Combo
             // 
-            this.cmb_startingHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_startingHour.FormattingEnabled = true;
-            this.cmb_startingHour.Items.AddRange(new object[] {
+            this.HoraInicio_Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HoraInicio_Combo.FormattingEnabled = true;
+            this.HoraInicio_Combo.Items.AddRange(new object[] {
             "07:00 AM",
             "08:00 AM",
             "09:00 AM",
@@ -100,16 +100,16 @@
             "09:00 PM",
             "10:00 PM",
             "11:00 PM"});
-            this.cmb_startingHour.Location = new System.Drawing.Point(357, 268);
-            this.cmb_startingHour.Name = "cmb_startingHour";
-            this.cmb_startingHour.Size = new System.Drawing.Size(172, 24);
-            this.cmb_startingHour.TabIndex = 21;
+            this.HoraInicio_Combo.Location = new System.Drawing.Point(357, 268);
+            this.HoraInicio_Combo.Name = "HoraInicio_Combo";
+            this.HoraInicio_Combo.Size = new System.Drawing.Size(172, 24);
+            this.HoraInicio_Combo.TabIndex = 21;
             // 
-            // cmb_endingHour
+            // HoraFim_Combo
             // 
-            this.cmb_endingHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_endingHour.FormattingEnabled = true;
-            this.cmb_endingHour.Items.AddRange(new object[] {
+            this.HoraFim_Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HoraFim_Combo.FormattingEnabled = true;
+            this.HoraFim_Combo.Items.AddRange(new object[] {
             "07:00 AM",
             "08:00 AM",
             "09:00 AM",
@@ -127,28 +127,28 @@
             "09:00 PM",
             "10:00 PM",
             "11:00 PM"});
-            this.cmb_endingHour.Location = new System.Drawing.Point(872, 268);
-            this.cmb_endingHour.Name = "cmb_endingHour";
-            this.cmb_endingHour.Size = new System.Drawing.Size(163, 24);
-            this.cmb_endingHour.TabIndex = 23;
+            this.HoraFim_Combo.Location = new System.Drawing.Point(872, 268);
+            this.HoraFim_Combo.Name = "HoraFim_Combo";
+            this.HoraFim_Combo.Size = new System.Drawing.Size(163, 24);
+            this.HoraFim_Combo.TabIndex = 23;
             // 
-            // cmb_trainers
+            // Fomadores_Combo
             // 
-            this.cmb_trainers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_trainers.FormattingEnabled = true;
-            this.cmb_trainers.Location = new System.Drawing.Point(294, 354);
-            this.cmb_trainers.Name = "cmb_trainers";
-            this.cmb_trainers.Size = new System.Drawing.Size(247, 24);
-            this.cmb_trainers.TabIndex = 24;
+            this.Fomadores_Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Fomadores_Combo.FormattingEnabled = true;
+            this.Fomadores_Combo.Location = new System.Drawing.Point(294, 354);
+            this.Fomadores_Combo.Name = "Fomadores_Combo";
+            this.Fomadores_Combo.Size = new System.Drawing.Size(247, 24);
+            this.Fomadores_Combo.TabIndex = 24;
             // 
-            // cmb_classes
+            // Turmas_Combo
             // 
-            this.cmb_classes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_classes.FormattingEnabled = true;
-            this.cmb_classes.Location = new System.Drawing.Point(789, 354);
-            this.cmb_classes.Name = "cmb_classes";
-            this.cmb_classes.Size = new System.Drawing.Size(246, 24);
-            this.cmb_classes.TabIndex = 25;
+            this.Turmas_Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Turmas_Combo.FormattingEnabled = true;
+            this.Turmas_Combo.Location = new System.Drawing.Point(789, 354);
+            this.Turmas_Combo.Name = "Turmas_Combo";
+            this.Turmas_Combo.Size = new System.Drawing.Size(246, 24);
+            this.Turmas_Combo.TabIndex = 25;
             // 
             // btn_saveTraining
             // 
@@ -220,10 +220,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_saveTraining);
-            this.Controls.Add(this.cmb_classes);
-            this.Controls.Add(this.cmb_trainers);
-            this.Controls.Add(this.cmb_endingHour);
-            this.Controls.Add(this.cmb_startingHour);
+            this.Controls.Add(this.Turmas_Combo);
+            this.Controls.Add(this.Fomadores_Combo);
+            this.Controls.Add(this.HoraFim_Combo);
+            this.Controls.Add(this.HoraInicio_Combo);
             this.Controls.Add(this.dt_trainingEndDate);
             this.Controls.Add(this.dt_trainingStartDate);
             this.Controls.Add(this.label2);
@@ -241,10 +241,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dt_trainingStartDate;
         private System.Windows.Forms.DateTimePicker dt_trainingEndDate;
-        private System.Windows.Forms.ComboBox cmb_startingHour;
-        private System.Windows.Forms.ComboBox cmb_endingHour;
-        private System.Windows.Forms.ComboBox cmb_trainers;
-        private System.Windows.Forms.ComboBox cmb_classes;
+        private System.Windows.Forms.ComboBox HoraInicio_Combo;
+        private System.Windows.Forms.ComboBox HoraFim_Combo;
+        private System.Windows.Forms.ComboBox Fomadores_Combo;
+        private System.Windows.Forms.ComboBox Turmas_Combo;
         private System.Windows.Forms.Button btn_saveTraining;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

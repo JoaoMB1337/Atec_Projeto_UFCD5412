@@ -164,12 +164,12 @@ namespace Projeto_UFCD5412
         {
             ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
-            settingsForm.TopLevel = false;
-            settingsForm.FormBorderStyle = FormBorderStyle.None;
-            settingsForm.Dock = DockStyle.Fill;
-            Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
-            settingsForm.BringToFront();
-            settingsForm.Show();
+            //settingsForm.TopLevel = false;
+            //settingsForm.FormBorderStyle = FormBorderStyle.None;
+            //settingsForm.Dock = DockStyle.Fill;
+            //Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
+            //settingsForm.BringToFront();
+            //settingsForm.Show();
         }
 
         private void CalcularValorAPagar_button_Click(object sender, EventArgs e)

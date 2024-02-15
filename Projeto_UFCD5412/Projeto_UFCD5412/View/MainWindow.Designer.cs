@@ -47,7 +47,6 @@
             this.tabDashboardFuncionario = new System.Windows.Forms.TabPage();
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
-            this.CalcularValorAPagar_button = new System.Windows.Forms.Button();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -304,7 +303,6 @@
             // 
             // tabDashboardFinancas
             // 
-            this.tabDashboardFinancas.Controls.Add(this.CalcularValorAPagar_button);
             this.tabDashboardFinancas.Location = new System.Drawing.Point(4, 22);
             this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFinancas.Name = "tabDashboardFinancas";
@@ -312,18 +310,6 @@
             this.tabDashboardFinancas.TabIndex = 3;
             this.tabDashboardFinancas.Text = "tabPage4";
             this.tabDashboardFinancas.UseVisualStyleBackColor = true;
-            // 
-            // CalcularValorAPagar_button
-            // 
-            this.CalcularValorAPagar_button.Location = new System.Drawing.Point(59, 34);
-            this.CalcularValorAPagar_button.Margin = new System.Windows.Forms.Padding(2);
-            this.CalcularValorAPagar_button.Name = "CalcularValorAPagar_button";
-            this.CalcularValorAPagar_button.Size = new System.Drawing.Size(101, 104);
-            this.CalcularValorAPagar_button.TabIndex = 3;
-            this.CalcularValorAPagar_button.Text = "Calcular Valor a pagar a todos os Funcionarios";
-            this.CalcularValorAPagar_button.UseVisualStyleBackColor = true;
-            this.CalcularValorAPagar_button.Click += new System.EventHandler(this.CalcularValorAPagar_button_Click);
-            // 
             // tabDashboardDefinicoes
             // 
             this.tabDashboardDefinicoes.Location = new System.Drawing.Point(4, 22);

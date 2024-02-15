@@ -148,10 +148,17 @@ namespace Projeto_UFCD5412
             ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
+            //abrir o coordenacaoMainForm fora do tabControl
             CoordenacaoMainForm coordenacaoMainForm = new CoordenacaoMainForm();
             coordenacaoMainForm.TopLevel = false;
             coordenacaoMainForm.FormBorderStyle = FormBorderStyle.None;
             coordenacaoMainForm.Dock = DockStyle.Fill;
+            this.Controls.Add(coordenacaoMainForm);
+            coordenacaoMainForm.BringToFront();
+            coordenacaoMainForm.Show();
+           
+
+            
         }
 
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)

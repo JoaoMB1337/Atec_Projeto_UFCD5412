@@ -23,25 +23,26 @@ namespace Projeto_UFCD5412
         //Variáveis
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        
+
         DateTimeController dateTimeController = DateTimeController.Instance;
 
-     
         public MainWindow()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
+
             //Form
             this.Text = string.Empty;
-            //this.ControlBox = false;
             this.DoubleBuffered = true;
 
-            Timer timer = new Timer();
-            timer.Interval = (1 * 1000); // 10 secs
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
+
+            // Defina a data e hora inicial
+            dateTimeController.SetDateTime(DateTime.Now);
+
+            // Atualize a exibição inicial
+            timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
         }
         //Eventos
         private struct RGBColors
@@ -113,7 +114,14 @@ namespace Projeto_UFCD5412
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            timer_label.Text = timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
+            DateTime newDateTime = DateTime.Now;
+
+            // Somente atualiza o DateTimeController se o valor mudou
+            if (newDateTime != dateTimeController.GetDateTime())
+            {
+                dateTimeController.SetDateTime(newDateTime);
+                timer_label.Text = newDateTime.ToString("dd/MM/yyyy HH:mm:ss");
+            }
         }
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)

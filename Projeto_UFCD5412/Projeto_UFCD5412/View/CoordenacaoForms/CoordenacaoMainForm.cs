@@ -16,5 +16,21 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             InitializeComponent();
         }
+
+       
+
+        private void DashboardCalendario_Btn_Click(object sender, EventArgs e)
+        {
+            //abrir calendario dentro do flowpanel
+            CalendarioForm calendarioForm = new CalendarioForm();
+            calendarioForm.TopLevel = false;
+            calendarioForm.AutoScroll = true;
+            calendarioForm.FormBorderStyle = FormBorderStyle.None;
+            flowLayoutPanel1.Controls.Add(calendarioForm);
+            calendarioForm.Show();
+
+            
+            
+        }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
     <Compile Include="Model\GestaoFormadores.cs" />
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.Designer.cs">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CoordenacaoForms\CalendarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="View\SettingsForms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CoordenacaoForms\AdicionarFormacaoForm.resx">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CoordenacaoForms\CalendarioForm.resx">
       <DependentUpon>CalendarioForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -32,5 +32,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             
             
         }
+
+        private void Sair_Btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();          
+        }
     }
 }

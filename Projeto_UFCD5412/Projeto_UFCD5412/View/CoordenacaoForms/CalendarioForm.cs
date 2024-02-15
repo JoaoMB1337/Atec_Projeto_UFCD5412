@@ -59,13 +59,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             int numColunas = tableLayoutPanel1.ColumnCount;
 
             int diaAtual = 1;
-            int linhaAtual = 2; // Começar na terceira linha
+            int linhaAtual = 2;
             bool preencher = false;
 
-            // Dia atual
             int diaAtualDoMes = DateTime.Today.Day;
 
-            // Adicionar cabeçalho com nome do mês
             Label lblMes = new Label();
             lblMes.Text = data.ToString("MMMM yyyy");
             lblMes.TextAlign = ContentAlignment.MiddleCenter;
@@ -74,8 +72,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
 
-            // Adicionar labels com nome dos dias da semana
-            string[] diasDaSemana = { "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom" };
+            string[] diasDaSemana = { "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" };
             for (int i = 0; i < numColunas; i++)
             {
                 Label lblDiaSemana = new Label();
@@ -102,33 +99,38 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         lbl.TextAlign = ContentAlignment.MiddleCenter;
                         lbl.Font = new Font(lbl.Font, FontStyle.Bold);
 
-                        // Destacar o dia atual com uma cor diferente
                         if (diaAtual == diaAtualDoMes)
                         {
-                            lbl.BackColor = Color.LightGreen;
+                            lbl.BackColor = Color.Yellow;
                         }
                         else
                         {
                             lbl.BackColor = Color.LightBlue;
-                            // Adicionar evento de clique para selecionar o dia
                             lbl.Click += (sender, e) =>
                             {
                                 Label selectedLabel = (Label)sender;
                                 int diaSelecionado = int.Parse(selectedLabel.Text);
-                                // Aqui você pode adicionar a lógica para lidar com a seleção do dia
-                                MessageBox.Show($"Você selecionou o dia {diaSelecionado}.");
+                                AdicionarEvento(data.Year, data.Month, diaSelecionado);
                             };
-                            lbl.Cursor = Cursors.Hand; // Alterar o cursor para indicar que é clicável
+                            lbl.Cursor = Cursors.Hand;
                         }
 
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
                         diaAtual++;
                     }
                 }
-                if (preencher && diaAtual > diasNoMes) // Verificar se todos os dias foram adicionados
+                if (preencher && diaAtual > diasNoMes)
                     break;
-                linhaAtual++; // Mover para a próxima linha
+                linhaAtual++;
             }
+        }
+
+        private void AdicionarEvento(int ano, int mes, int dia)
+        {           
+            MessageBox.Show($"Você está adicionando um evento para o dia {dia}/{mes}/{ano}.");
+            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm();
+            adicionarFormacaoForm.ShowDialog();
+
         }
 
 

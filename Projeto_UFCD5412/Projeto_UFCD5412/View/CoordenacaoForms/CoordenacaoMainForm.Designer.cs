@@ -32,13 +32,13 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.timer_label = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.DashboardDefinicoes_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardCalendario_Btn = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Sair_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardFormadores_Btn = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -82,7 +82,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelMenu.Controls.Add(this.DashboardDefinicoes_Btn);
             this.panelMenu.Controls.Add(this.DashboardCalendario_Btn);
-            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.Sair_Btn);
             this.panelMenu.Controls.Add(this.DashboardFormadores_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -92,6 +92,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 583);
             this.panelMenu.TabIndex = 5;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.Home_Btn);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(293, 172);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(293, 105);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 478);
+            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // DashboardDefinicoes_Btn
             // 
@@ -138,19 +158,20 @@
             this.DashboardCalendario_Btn.UseVisualStyleBackColor = true;
             this.DashboardCalendario_Btn.Click += new System.EventHandler(this.DashboardCalendario_Btn_Click);
             // 
-            // iconButton1
+            // Sair_Btn
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(4, 528);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(283, 41);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Sair";
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Sair_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Sair_Btn.IconColor = System.Drawing.Color.Black;
+            this.Sair_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Sair_Btn.Location = new System.Drawing.Point(4, 528);
+            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Sair_Btn.Name = "Sair_Btn";
+            this.Sair_Btn.Size = new System.Drawing.Size(283, 41);
+            this.Sair_Btn.TabIndex = 5;
+            this.Sair_Btn.Text = "Sair";
+            this.Sair_Btn.UseVisualStyleBackColor = true;
+            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // DashboardFormadores_Btn
             // 
@@ -174,16 +195,6 @@
             this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.Home_Btn);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(293, 172);
-            this.panelLogo.TabIndex = 0;
-            // 
             // Home_Btn
             // 
             this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.icon_ADOSMELHORES_removebg_preview;
@@ -194,16 +205,6 @@
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Home_Btn.TabIndex = 0;
             this.Home_Btn.TabStop = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(293, 105);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 478);
-            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // CoordenacaoMainForm
             // 
@@ -233,7 +234,7 @@
         private System.Windows.Forms.Label timer_label;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton DashboardCalendario_Btn;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton Sair_Btn;
         private FontAwesome.Sharp.IconButton DashboardFormadores_Btn;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox Home_Btn;

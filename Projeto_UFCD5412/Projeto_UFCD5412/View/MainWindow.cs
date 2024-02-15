@@ -186,12 +186,6 @@ namespace Projeto_UFCD5412
             ActivateButton(sender, RGBColors.color3);
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
-            CoordenacaoMainForm coordenacaoMainForm = new CoordenacaoMainForm();
-            coordenacaoMainForm.TopLevel = false;
-            coordenacaoMainForm.FormBorderStyle = FormBorderStyle.None;
-            coordenacaoMainForm.Dock = DockStyle.Fill;
-
-            
 
         }
 

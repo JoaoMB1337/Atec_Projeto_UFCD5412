@@ -310,6 +310,7 @@
             this.tabDashboardFinancas.TabIndex = 3;
             this.tabDashboardFinancas.Text = "tabPage4";
             this.tabDashboardFinancas.UseVisualStyleBackColor = true;
+            // 
             // tabDashboardDefinicoes
             // 
             this.tabDashboardDefinicoes.Location = new System.Drawing.Point(4, 22);
@@ -340,8 +341,6 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.Menus_TabControl.ResumeLayout(false);
-            this.tabDashboardFuncionario.ResumeLayout(false);
-            this.tabDashboardFinancas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

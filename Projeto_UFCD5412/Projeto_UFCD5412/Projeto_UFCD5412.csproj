@@ -53,6 +53,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DateTimeController.cs" />
     <Compile Include="Data\CSVHandler.cs" />
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />

@@ -14,6 +14,8 @@ using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 using Projeto_UFCD5412.View.SettingsForms;
+using System.Windows.Media.Animation;
+using Projeto_UFCD5412.Controller;
 namespace Projeto_UFCD5412
 {
     public partial class MainWindow : Form
@@ -22,7 +24,9 @@ namespace Projeto_UFCD5412
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         
+        DateTimeController dateTimeController = DateTimeController.Instance;
 
+     
         public MainWindow()
         {
             InitializeComponent();
@@ -83,15 +87,6 @@ namespace Projeto_UFCD5412
             }
         }
 
-  
-
-        private void Reset()
-        {
-            DisableButton();
-            leftBorderBtn.Visible = false;
-
-            //HomeDash_Btn.Text = "Home";
-        }
         //drag form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -118,14 +113,12 @@ namespace Projeto_UFCD5412
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-
+            timer_label.Text = timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
-
         }
 
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
@@ -162,14 +155,15 @@ namespace Projeto_UFCD5412
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)
         {
+            SettingsForm settingsForm = new SettingsForm();
             ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
-            //settingsForm.TopLevel = false;
-            //settingsForm.FormBorderStyle = FormBorderStyle.None;
-            //settingsForm.Dock = DockStyle.Fill;
-            //Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
-            //settingsForm.BringToFront();
-            //settingsForm.Show();
+            settingsForm.TopLevel = false;
+            settingsForm.FormBorderStyle = FormBorderStyle.None;
+            settingsForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
+            settingsForm.BringToFront();
+            settingsForm.Show();
         }
 
         private void CalcularValorAPagar_button_Click(object sender, EventArgs e)

@@ -28,33 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.DataSistema_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // label1
+            // DataSistema_DateTimePicker
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hey Im";
+            this.DataSistema_DateTimePicker.Location = new System.Drawing.Point(80, 91);
+            this.DataSistema_DateTimePicker.Name = "DataSistema_DateTimePicker";
+            this.DataSistema_DateTimePicker.Size = new System.Drawing.Size(289, 20);
+            this.DataSistema_DateTimePicker.TabIndex = 0;
+            this.DataSistema_DateTimePicker.ValueChanged += new System.EventHandler(this.DataSistema_DateTimePicker_ValueChanged);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DataSistema_DateTimePicker);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DataSistema_DateTimePicker;
     }
 }

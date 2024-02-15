@@ -63,6 +63,12 @@
     <Compile Include="View\DashboardForms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FinancasForms\CalcularValorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FinancasForms\CalcularValorForm.Designer.cs">
+      <DependentUpon>CalcularValorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FuncionarioForms\AdicionarFuncionarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Model\Secretaria.cs" />
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FinancasForms\CalcularValorForm.resx">
+      <DependentUpon>CalcularValorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Projeto_UFCD5412.View.FinancasForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 namespace Projeto_UFCD5412
@@ -175,11 +176,13 @@ namespace Projeto_UFCD5412
 
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)
         {
-           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
+            ActivateButton(sender, RGBColors.color3);
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
         }
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
         }
 
@@ -228,6 +231,23 @@ namespace Projeto_UFCD5412
             Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
+        }
+
+        private void CalcularValorAPagar_button_Click(object sender, EventArgs e)
+        {
+
+            CalcularValorForm listarFuncionariosForm = new CalcularValorForm();
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
+
+
+
         }
     }
 }

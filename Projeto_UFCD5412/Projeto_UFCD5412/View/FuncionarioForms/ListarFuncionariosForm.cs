@@ -9,8 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.View.Forms;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -114,11 +114,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
         }
 
-        private void atualizarCsv_btn_Click(object sender, EventArgs e)
-        {
-            CSVHandler.ExportToCSV(empresaController.Funcionarios);
-        }
-
+        
         private void RegistoCriminal_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (RegistoCriminal_CheckBox.Checked)
@@ -132,20 +128,37 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             }
         }
 
-
         private void ListaFuncionarios_DataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         { 
             int rowIndex = e.RowIndex;
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
             EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
             editarFuncionarioForm.SetParameter(funcionarioId);
-            editarFuncionarioForm.Show();
+            editarFuncionarioForm.ShowDialog();
             editarFuncionarioForm.FormClosed += EditarFuncionarioForm_FormClosed;
         }
 
         private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ListarFuncionarioDataGrid();
+        }
+
+        private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ListarFuncionarioDataGrid();
+        }
+
+        private void AddFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            adicionarFuncionarioForm.ShowDialog();
+            adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
+
+        }
+
+        private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+           SetParameter("editar");
         }
     }
 }

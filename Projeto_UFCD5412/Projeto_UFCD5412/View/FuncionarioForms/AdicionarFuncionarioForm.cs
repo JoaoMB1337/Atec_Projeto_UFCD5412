@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
 
 namespace Projeto_UFCD5412.View.Forms
@@ -109,6 +108,8 @@ namespace Projeto_UFCD5412.View.Forms
             switch (TipoFuncionario_ComboBox.SelectedIndex)
             {
                 case 0: // Funcionaria
+                    username_label.Visible = true;
+                    username_textbox.Visible = true;
                     break;
                 case 1: //Diretor
                     isencaohorario_checkbox.Visible = true;
@@ -155,6 +156,7 @@ namespace Projeto_UFCD5412.View.Forms
                 case 4: //Coordenador
                     password_textbox.Visible = true;
                     username_label.Visible = true;
+                    username_textbox.Visible = true;
                     secretariaNomeDiretor_textbox.Visible = false;
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
@@ -282,25 +284,27 @@ namespace Projeto_UFCD5412.View.Forms
                         valorHora: valorHora 
                     );
                     break;
-                //case "Coordenador":
-                //    novoFuncionario = new Coordenador(
-                //        id: 0,
-                //        nome: nome,
-                //        morada: morada,
-                //        contacto: contacto,
-                //        tipo: tipoFuncionario,
-                //        salario: salario,
-                //        dataAniverario: dataAniversario,
-                //        dataContrato: dataContrato,
-                //        dataFimContrato: dataFimContrato,
-                //        dataRegistoCriminal: dataRegistoCriminal,
-                //        dataFimRegistoCriminal: dataFimRegistoCriminal,
-                //        username: username_textbox.Text,
-                //        password: password_textbox.Text,
-                //        primeiroLogin: true,
-                //        curso: cursoresponsavel_textbox.Text
-                //    ); ;
-                //    break;
+                case "Coordenador":
+                    novoFuncionario = new Coordenador(
+                        id: 0,
+                        nome: nome,
+                        morada: morada,
+                        contacto: contacto,
+                        tipo: tipoFuncionario,
+                        salario: salario,
+                        dataAniverario: dataAniversario,
+                        dataContrato: dataContrato,
+                        dataFimContrato: dataFimContrato,
+                        dataRegistoCriminal: dataRegistoCriminal,
+                        dataFimRegistoCriminal: dataFimRegistoCriminal,
+                        username: username_textbox.Text,
+                        password: password_textbox.Text,
+                        primeiroLogin: true,
+                        curso: cursoresponsavel_textbox.Text,
+                        formadoresAssociados: new List<Formador>()
+
+                    ); ; 
+                    break;
 
                 // Adicione casos para outros tipos de funcionários, se necessário
                 default:
@@ -314,19 +318,39 @@ namespace Projeto_UFCD5412.View.Forms
             // Exportar para CSV, se necessário
             CSVHandler.ExportToCSV(empresaController.Funcionarios);
 
+            MessageBox.Show("Funcionário adicionado com sucesso!");
+
             // Limpar os campos após adicionar o funcionário
             LimparCampos();
         }
-
-
-
-
 
         private void LimparCampos()
         {
             nome_textbox.Text = string.Empty;
             morada_textbox.Text = string.Empty;
             contacto_textbox.Text = string.Empty;
+            salario_textbox.Text = string.Empty;
+            DataNascimento_DateTimePicker.Value = DateTime.Now;
+            DataContrato_DateTimePicker.Value = DateTime.Now;
+            DataFimContrato_DateTimePicker.Value = DateTime.Now;
+            DataRegistoCriminal_DateTimePicker.Value = DateTime.Now;
+            DataFimRegistoCriminal_DateTimePicker.Value = DateTime.Now;
+            TipoFuncionario_ComboBox.SelectedIndex = 0;
+            isencaohorario_checkbox.Checked = false;
+            bonusmensal_checkbox.Checked = false;
+            carroempresa_checkbox.Checked = false;
+            secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento";
+            secretariaNomeDiretor_textbox.ForeColor = SystemColors.GrayText;
+            areaensino_textbox.Text = "Introduza a área de ensino";
+            areaensino_textbox.ForeColor = SystemColors.GrayText;
+            valorhora_textbox.Text = "Introduza o valor da hora";
+            valorhora_textbox.ForeColor = SystemColors.GrayText;
+            poslaboral_checkbox.Checked = false;
+            laboral_checkbox.Checked = false;
+            username_textbox.Text = string.Empty;
+            password_textbox.Text = string.Empty;
+            cursoresponsavel_textbox.Text = string.Empty;
+
         }
 
         private void addFoto_btn_Click(object sender, EventArgs e)

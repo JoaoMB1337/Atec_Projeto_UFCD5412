@@ -10,8 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Projeto_UFCD5412.View.FinancasForms;
+using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
+using Projeto_UFCD5412.View.SettingsForms;
 namespace Projeto_UFCD5412
 {
     public partial class MainWindow : Form
@@ -19,22 +21,18 @@ namespace Projeto_UFCD5412
         //Variáveis
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        private Form currentChildForm;
         
 
         public MainWindow()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
             //Form
             this.Text = string.Empty;
             //this.ControlBox = false;
             this.DoubleBuffered = true;
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-
 
             Timer timer = new Timer();
             timer.Interval = (1 * 1000); // 10 secs
@@ -63,15 +61,12 @@ namespace Projeto_UFCD5412
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText; 
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //Icone Atual
-
-
             }
         }
 
@@ -79,7 +74,7 @@ namespace Projeto_UFCD5412
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(0, 0, 64);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -88,32 +83,7 @@ namespace Projeto_UFCD5412
             }
         }
 
-        private void OpenChildForm(object childForm)
-        {
-          if(currentChildForm != null)
-            {
-                //Abrir apenas um formulário
-              currentChildForm.Close();
-          }
-            //currentChildForm = childForm;
-            //childForm.TopLevel = false;
-            //childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Dock = DockStyle.Fill;
-            //panelDesktop.Controls.Add(childForm);
-            //panelDesktop.Tag = childForm;
-            //childForm.BringToFront();
-            //childForm.Show();
-            //HomeDash_Btn.Text = childForm.Text;
-        }
-   
-        private void Home_Btn_Click(object sender, EventArgs e)
-        {
-            Reset();
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-        }
+  
 
         private void Reset()
         {
@@ -154,7 +124,6 @@ namespace Projeto_UFCD5412
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
-
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
 
         }
@@ -162,16 +131,27 @@ namespace Projeto_UFCD5412
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
 
         }
 
         private void DashboardFormadores_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
-            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            CoordenacaoMainForm coordenacaoMainForm = new CoordenacaoMainForm();
+            coordenacaoMainForm.TopLevel = false;
+            coordenacaoMainForm.FormBorderStyle = FormBorderStyle.None;
+            coordenacaoMainForm.Dock = DockStyle.Fill;
         }
 
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)
@@ -184,53 +164,12 @@ namespace Projeto_UFCD5412
         {
             ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
-        }
-
-
-        private void AdicionarFuncionario_Btn_Click_1(object sender, EventArgs e)
-        {
-            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-
-            adicionarFuncionarioForm.TopLevel = false;
-            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
-            adicionarFuncionarioForm.Dock = DockStyle.Fill;
-
-            Menus_TabControl.SelectedTab.Controls.Add(adicionarFuncionarioForm);
-            adicionarFuncionarioForm.BringToFront();
-
-            // Exibe o formulário
-            adicionarFuncionarioForm.Show();
-
-        }
-
-        private void ListarFuncionario_Btn_Click(object sender, EventArgs e)
-        {
-            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
-            listarFuncionariosForm.TopLevel = false;
-            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
-            listarFuncionariosForm.Dock = DockStyle.Fill;
-
-            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
-
-            listarFuncionariosForm.BringToFront();
-            listarFuncionariosForm.Show();
-
-        }
-
-
-        private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
-        {
-
-            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
-
-            listarFuncionariosForm.SetParameter("editar");  // enviar parametro para o form
-            listarFuncionariosForm.TopLevel = false;
-            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
-            listarFuncionariosForm.Dock = DockStyle.Fill;
-
-            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
-            listarFuncionariosForm.BringToFront();
-            listarFuncionariosForm.Show();
+            settingsForm.TopLevel = false;
+            settingsForm.FormBorderStyle = FormBorderStyle.None;
+            settingsForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
+            settingsForm.BringToFront();
+            settingsForm.Show();
         }
 
         private void CalcularValorAPagar_button_Click(object sender, EventArgs e)

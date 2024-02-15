@@ -57,6 +57,13 @@
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
+    <Compile Include="Model\GestaoFormadores.cs" />
+    <Compile Include="View\CoordenacaoForms\CoordenacaoMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\CoordenacaoMainForm.Designer.cs">
+      <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DashboardForms\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +111,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Secretaria.cs" />
+    <Compile Include="View\SettingsForms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SettingsForms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
+      <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +151,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\SettingsForms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

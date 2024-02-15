@@ -439,7 +439,7 @@
             // 
             // cursoresponsavel_textbox
             // 
-            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(1414, 283);
+            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(893, 281);
             this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
             this.cursoresponsavel_textbox.Size = new System.Drawing.Size(142, 24);
             this.cursoresponsavel_textbox.TabIndex = 41;
@@ -490,8 +490,11 @@
             this.Controls.Add(this.MoradaFunc_Label);
             this.Controls.Add(this.NomeFunc_Label);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AdicionarFuncionarioForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar funcionario";

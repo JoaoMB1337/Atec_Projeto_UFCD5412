@@ -1,4 +1,6 @@
-﻿namespace Projeto_UFCD5412.View.FuncionarioForms
+﻿using System.Windows.Forms;
+
+namespace Projeto_UFCD5412.View.FuncionarioForms
 {
     partial class ListarFuncionariosForm
     {
@@ -32,8 +34,10 @@
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
             this.Sair_Btn = new System.Windows.Forms.Button();
-            this.atualizarCsv_btn = new System.Windows.Forms.Button();
             this.RegistoCriminal_CheckBox = new System.Windows.Forms.CheckBox();
+            this.EditarFuncionario_Btn = new System.Windows.Forms.Button();
+            this.AddFuncionario_Btn = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios_DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +46,8 @@
             this.ListaFuncionarios_DataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListaFuncionarios_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaFuncionarios_DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ListaFuncionarios_DataGrid.ColumnHeadersHeight = 50;
             this.ListaFuncionarios_DataGrid.Location = new System.Drawing.Point(12, 62);
             this.ListaFuncionarios_DataGrid.Name = "ListaFuncionarios_DataGrid";
             this.ListaFuncionarios_DataGrid.ReadOnly = true;
@@ -71,24 +76,13 @@
             // Sair_Btn
             // 
             this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.Location = new System.Drawing.Point(588, 427);
+            this.Sair_Btn.Location = new System.Drawing.Point(659, 454);
             this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(150, 50);
+            this.Sair_Btn.Size = new System.Drawing.Size(129, 30);
             this.Sair_Btn.TabIndex = 3;
-            this.Sair_Btn.Text = "Sair";
+            this.Sair_Btn.Text = "Voltar";
             this.Sair_Btn.UseVisualStyleBackColor = true;
             this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
-            // 
-            // atualizarCsv_btn
-            // 
-            this.atualizarCsv_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.atualizarCsv_btn.Location = new System.Drawing.Point(432, 427);
-            this.atualizarCsv_btn.Name = "atualizarCsv_btn";
-            this.atualizarCsv_btn.Size = new System.Drawing.Size(150, 50);
-            this.atualizarCsv_btn.TabIndex = 4;
-            this.atualizarCsv_btn.Text = "Atualizar CSV";
-            this.atualizarCsv_btn.UseVisualStyleBackColor = true;
-            this.atualizarCsv_btn.Click += new System.EventHandler(this.atualizarCsv_btn_Click);
             // 
             // RegistoCriminal_CheckBox
             // 
@@ -101,13 +95,47 @@
             this.RegistoCriminal_CheckBox.UseVisualStyleBackColor = true;
             this.RegistoCriminal_CheckBox.CheckedChanged += new System.EventHandler(this.RegistoCriminal_CheckBox_CheckedChanged);
             // 
+            // EditarFuncionario_Btn
+            // 
+            this.EditarFuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditarFuncionario_Btn.Location = new System.Drawing.Point(156, 454);
+            this.EditarFuncionario_Btn.Name = "EditarFuncionario_Btn";
+            this.EditarFuncionario_Btn.Size = new System.Drawing.Size(129, 30);
+            this.EditarFuncionario_Btn.TabIndex = 6;
+            this.EditarFuncionario_Btn.Text = "Editar ";
+            this.EditarFuncionario_Btn.UseVisualStyleBackColor = true;
+            this.EditarFuncionario_Btn.Click += new System.EventHandler(this.EditarFuncionario_Btn_Click);
+            // 
+            // AddFuncionario_Btn
+            // 
+            this.AddFuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddFuncionario_Btn.Location = new System.Drawing.Point(12, 454);
+            this.AddFuncionario_Btn.Name = "AddFuncionario_Btn";
+            this.AddFuncionario_Btn.Size = new System.Drawing.Size(129, 30);
+            this.AddFuncionario_Btn.TabIndex = 7;
+            this.AddFuncionario_Btn.Text = "Adicionar";
+            this.AddFuncionario_Btn.UseVisualStyleBackColor = true;
+            this.AddFuncionario_Btn.Click += new System.EventHandler(this.AddFuncionario_Btn_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(327, 16);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(97, 17);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Contrato válido";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // ListarFuncionariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.AddFuncionario_Btn);
+            this.Controls.Add(this.EditarFuncionario_Btn);
             this.Controls.Add(this.RegistoCriminal_CheckBox);
-            this.Controls.Add(this.atualizarCsv_btn);
             this.Controls.Add(this.Sair_Btn);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
@@ -128,7 +156,9 @@
         private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
         private System.Windows.Forms.Button Sair_Btn;
-        private System.Windows.Forms.Button atualizarCsv_btn;
         private System.Windows.Forms.CheckBox RegistoCriminal_CheckBox;
+        private System.Windows.Forms.Button EditarFuncionario_Btn;
+        private System.Windows.Forms.Button AddFuncionario_Btn;
+        private CheckBox checkBox1;
     }
 }

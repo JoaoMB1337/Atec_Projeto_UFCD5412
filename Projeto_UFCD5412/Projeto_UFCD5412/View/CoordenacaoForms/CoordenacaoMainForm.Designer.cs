@@ -32,11 +32,11 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.timer_label = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.DashboardDefinicoes_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardCalendario_Btn = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.DashboardFormadores_Btn = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleBar.SuspendLayout();
@@ -92,16 +92,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 583);
             this.panelMenu.TabIndex = 5;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.Home_Btn);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(293, 172);
-            this.panelLogo.TabIndex = 0;
             // 
             // DashboardDefinicoes_Btn
             // 
@@ -183,6 +173,16 @@
             this.DashboardFormadores_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.Home_Btn);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(293, 172);
+            this.panelLogo.TabIndex = 0;
             // 
             // Home_Btn
             // 

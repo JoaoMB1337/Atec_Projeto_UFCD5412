@@ -59,36 +59,80 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             int numColunas = tableLayoutPanel1.ColumnCount;
 
             int diaAtual = 1;
+            int linhaAtual = 2; // Começar na terceira linha
             bool preencher = false;
 
-            for (int i = 0; i < numLinhas; i++)
+            // Dia atual
+            int diaAtualDoMes = DateTime.Today.Day;
+
+            // Adicionar cabeçalho com nome do mês
+            Label lblMes = new Label();
+            lblMes.Text = data.ToString("MMMM yyyy");
+            lblMes.TextAlign = ContentAlignment.MiddleCenter;
+            lblMes.Font = new Font(lblMes.Font, FontStyle.Bold);
+            lblMes.ForeColor = Color.DarkBlue;
+            tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
+            tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
+
+            // Adicionar labels com nome dos dias da semana
+            string[] diasDaSemana = { "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom" };
+            for (int i = 0; i < numColunas; i++)
+            {
+                Label lblDiaSemana = new Label();
+                lblDiaSemana.Text = diasDaSemana[i];
+                lblDiaSemana.TextAlign = ContentAlignment.MiddleCenter;
+                lblDiaSemana.Font = new Font(lblDiaSemana.Font, FontStyle.Bold);
+                lblDiaSemana.ForeColor = Color.DarkBlue;
+                tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
+            }
+
+            for (int i = 0; i < numLinhas - 2; i++)
             {
                 for (int j = 0; j < numColunas; j++)
                 {
-                    if (tableLayoutPanel1.GetControlFromPosition(j, i) == null)
+                    if (!preencher && j == (int)primeiroDiaDoMes)
                     {
-                        if (!preencher && j == (int)primeiroDiaDoMes)
+                        preencher = true;
+                    }
+
+                    if (preencher && diaAtual <= diasNoMes)
+                    {
+                        Label lbl = new Label();
+                        lbl.Text = diaAtual.ToString();
+                        lbl.TextAlign = ContentAlignment.MiddleCenter;
+                        lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+
+                        // Destacar o dia atual com uma cor diferente
+                        if (diaAtual == diaAtualDoMes)
                         {
-                            preencher = true;
+                            lbl.BackColor = Color.LightGreen;
+                        }
+                        else
+                        {
+                            lbl.BackColor = Color.LightBlue;
+                            // Adicionar evento de clique para selecionar o dia
+                            lbl.Click += (sender, e) =>
+                            {
+                                Label selectedLabel = (Label)sender;
+                                int diaSelecionado = int.Parse(selectedLabel.Text);
+                                // Aqui você pode adicionar a lógica para lidar com a seleção do dia
+                                MessageBox.Show($"Você selecionou o dia {diaSelecionado}.");
+                            };
+                            lbl.Cursor = Cursors.Hand; // Alterar o cursor para indicar que é clicável
                         }
 
-                        if (preencher && diaAtual <= diasNoMes)
-                        {
-                            Label lbl = new Label();
-                            lbl.Text = diaAtual.ToString();
-                            lbl.Dock = DockStyle.Fill;
-                            lbl.TextAlign = ContentAlignment.MiddleCenter;
-                            tableLayoutPanel1.Controls.Add(lbl, j, i);
-                            diaAtual++;
-                        }
+                        tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
+                        diaAtual++;
                     }
                 }
+                if (preencher && diaAtual > diasNoMes) // Verificar se todos os dias foram adicionados
+                    break;
+                linhaAtual++; // Mover para a próxima linha
             }
-
-          
-            
-
         }
+
+
+
 
         private void avancar_btn_Click(object sender, EventArgs e)
         {

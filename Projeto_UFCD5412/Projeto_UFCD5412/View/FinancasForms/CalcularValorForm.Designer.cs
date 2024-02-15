@@ -65,6 +65,7 @@
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoFuncionario_ComboBox.TabIndex = 13;
+            this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
             // 
             // Filtrar_label
             // 
@@ -89,7 +90,6 @@
             this.ListaFuncionariosValorAPagar_DataGrid.RowHeadersWidth = 51;
             this.ListaFuncionariosValorAPagar_DataGrid.Size = new System.Drawing.Size(776, 386);
             this.ListaFuncionariosValorAPagar_DataGrid.TabIndex = 15;
-            this.ListaFuncionariosValorAPagar_DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaFuncionariosValorAPagar_DataGrid_CellContentClick);
             // 
             // Sair_Btn
             // 

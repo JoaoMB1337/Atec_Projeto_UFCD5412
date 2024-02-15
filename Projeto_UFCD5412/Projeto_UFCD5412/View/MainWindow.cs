@@ -14,6 +14,8 @@ using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 using Projeto_UFCD5412.View.SettingsForms;
+using Projeto_UFCD5412.View.DashboardForms;
+
 namespace Projeto_UFCD5412
 {
     public partial class MainWindow : Form
@@ -124,8 +126,17 @@ namespace Projeto_UFCD5412
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, RGBColors.color1);
+            DashboardForm dashboardForm = new DashboardForm();
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
+            dashboardForm.TopLevel = false;
+            dashboardForm.FormBorderStyle = FormBorderStyle.None;
+            dashboardForm.Dock = DockStyle.Fill;
 
+
+            Menus_TabControl.SelectedTab.Controls.Add(dashboardForm);
+            dashboardForm.BringToFront();
+            dashboardForm.Show();
         }
 
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
@@ -158,6 +169,15 @@ namespace Projeto_UFCD5412
         {
             ActivateButton(sender, RGBColors.color3);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
+            CalcularValorForm financasMainForm = new CalcularValorForm();
+            financasMainForm.TopLevel = false;
+            financasMainForm.FormBorderStyle = FormBorderStyle.None;
+            financasMainForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(financasMainForm);
+            financasMainForm.BringToFront();
+            financasMainForm.Show();
+
+            
         }
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)

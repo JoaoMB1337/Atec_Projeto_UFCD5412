@@ -28,7 +28,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.Resize += CalendarioForm_Resize;
         }
 
-
         private void CalendarioForm_Resize(object sender, EventArgs e)
         {
             int larguraCelula = tableLayoutPanel1.Width / tableLayoutPanel1.ColumnCount;
@@ -130,9 +129,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void AdicionarEvento(int ano, int mes, int dia)
         {
             MessageBox.Show($"Você está adicionando um evento para o dia {dia}/{mes}/{ano}.");
-            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm();
+            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(new DateTime(ano, mes, dia));
             adicionarFormacaoForm.ShowDialog();
-
         }
 
         private void avancar_btn_Click(object sender, EventArgs e)
@@ -149,12 +147,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         public void AdicionarFormacaoAoCalendario(Formacao formacao)
         {
-           //aqui temos de adicionar a formação ao calendário e aparecer no dia correto
-
             MessageBox.Show($"Adicionando formação ao calendário: {formacao.DataInicio.ToShortDateString()} - {formacao.DataFim.ToShortDateString()}");
-
-            
+            // Aqui você pode adicionar a formação ao calendário e aparecer no dia correto
         }
-
     }
 }

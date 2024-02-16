@@ -69,7 +69,7 @@
             // DataInicio_calendar
             // 
             this.DataInicio_calendar.Location = new System.Drawing.Point(220, 155);
-            this.DataInicio_calendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataInicio_calendar.Margin = new System.Windows.Forms.Padding(2);
             this.DataInicio_calendar.Name = "DataInicio_calendar";
             this.DataInicio_calendar.Size = new System.Drawing.Size(186, 20);
             this.DataInicio_calendar.TabIndex = 11;
@@ -77,7 +77,7 @@
             // DataFim_calendar
             // 
             this.DataFim_calendar.Location = new System.Drawing.Point(592, 154);
-            this.DataFim_calendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DataFim_calendar.Margin = new System.Windows.Forms.Padding(2);
             this.DataFim_calendar.Name = "DataFim_calendar";
             this.DataFim_calendar.Size = new System.Drawing.Size(186, 20);
             this.DataFim_calendar.TabIndex = 12;
@@ -105,7 +105,7 @@
             "10:00 PM",
             "11:00 PM"});
             this.HoraIncio_combo.Location = new System.Drawing.Point(268, 218);
-            this.HoraIncio_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HoraIncio_combo.Margin = new System.Windows.Forms.Padding(2);
             this.HoraIncio_combo.Name = "HoraIncio_combo";
             this.HoraIncio_combo.Size = new System.Drawing.Size(130, 21);
             this.HoraIncio_combo.TabIndex = 21;
@@ -133,7 +133,7 @@
             "10:00 PM",
             "11:00 PM"});
             this.HoraFim_combo.Location = new System.Drawing.Point(654, 218);
-            this.HoraFim_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HoraFim_combo.Margin = new System.Windows.Forms.Padding(2);
             this.HoraFim_combo.Name = "HoraFim_combo";
             this.HoraFim_combo.Size = new System.Drawing.Size(123, 21);
             this.HoraFim_combo.TabIndex = 23;
@@ -143,7 +143,7 @@
             this.FormadorNomes_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormadorNomes_combo.FormattingEnabled = true;
             this.FormadorNomes_combo.Location = new System.Drawing.Point(220, 288);
-            this.FormadorNomes_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormadorNomes_combo.Margin = new System.Windows.Forms.Padding(2);
             this.FormadorNomes_combo.Name = "FormadorNomes_combo";
             this.FormadorNomes_combo.Size = new System.Drawing.Size(186, 21);
             this.FormadorNomes_combo.TabIndex = 24;
@@ -153,7 +153,7 @@
             this.Turmas_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Turmas_combo.FormattingEnabled = true;
             this.Turmas_combo.Location = new System.Drawing.Point(592, 288);
-            this.Turmas_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Turmas_combo.Margin = new System.Windows.Forms.Padding(2);
             this.Turmas_combo.Name = "Turmas_combo";
             this.Turmas_combo.Size = new System.Drawing.Size(186, 21);
             this.Turmas_combo.TabIndex = 25;
@@ -161,12 +161,13 @@
             // AdicionarFormacao_btn
             // 
             this.AdicionarFormacao_btn.Location = new System.Drawing.Point(669, 383);
-            this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2);
             this.AdicionarFormacao_btn.Name = "AdicionarFormacao_btn";
             this.AdicionarFormacao_btn.Size = new System.Drawing.Size(107, 23);
             this.AdicionarFormacao_btn.TabIndex = 26;
             this.AdicionarFormacao_btn.Text = "Adicionar";
             this.AdicionarFormacao_btn.UseVisualStyleBackColor = true;
+            this.AdicionarFormacao_btn.Click += new System.EventHandler(this.AdicionarFormacao_btn_Click_1);
             // 
             // label3
             // 
@@ -242,7 +243,7 @@
             this.Controls.Add(this.DataInicio_calendar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdicionarFormacaoForm";
             this.Text = "AdicionarFormacaoForm";
             this.ResumeLayout(false);

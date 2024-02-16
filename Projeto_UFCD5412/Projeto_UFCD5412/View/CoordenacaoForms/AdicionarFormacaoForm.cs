@@ -14,12 +14,16 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class AdicionarFormacaoForm : Form
     {
-        public AdicionarFormacaoForm()
+        private DateTime dataSelecionada;
+
+        public AdicionarFormacaoForm(DateTime dataSelecionada)
         {
             InitializeComponent();
             CarregarFormadores();
             CarregarTurmas();
+            this.dataSelecionada = dataSelecionada;
         }
+
         private void CarregarFormadores()
         {
             FormadorNomes_combo.Items.Clear();
@@ -34,21 +38,35 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 }
             }
         }
+
         private void CarregarTurmas()
         {
             Turmas_combo.Items.Clear();
-            //criar turmas estaticas
 
+            // Criar turmas estaticamente
             Turmas_combo.Items.Add("UFCD 5412");
             Turmas_combo.Items.Add("UFCD 5413");
             Turmas_combo.Items.Add("UFCD 5414");
             Turmas_combo.Items.Add("UFCD 5415");
             Turmas_combo.Items.Add("UFCD 5416");
             Turmas_combo.Items.Add("UFCD 5417");
-
         }
-        private void AdicionarFormacao_btn_Click(object sender, EventArgs e)
+
+       
+
+        private void LimparCampos()
         {
+            DataInicio_calendar.Value = DateTime.Today;
+            DataFim_calendar.Value = DateTime.Today;
+            HoraIncio_combo.SelectedIndex = -1;
+            HoraFim_combo.SelectedIndex = -1;
+            FormadorNomes_combo.SelectedIndex = -1;
+            Turmas_combo.SelectedIndex = -1;
+        }
+
+        private void AdicionarFormacao_btn_Click_1(object sender, EventArgs e)
+        {
+
             DateTime dataInicio = DataInicio_calendar.Value;
             DateTime dataFim = DataFim_calendar.Value;
             string horaInicio = HoraIncio_combo.SelectedItem.ToString();
@@ -78,16 +96,5 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
             LimparCampos();
         }
-
-        private void LimparCampos()
-        {
-            DataInicio_calendar.Value = DateTime.Today;
-            DataFim_calendar.Value = DateTime.Today;
-            HoraIncio_combo.SelectedIndex = -1;
-            HoraFim_combo.SelectedIndex = -1;
-            FormadorNomes_combo.SelectedIndex = -1;
-            Turmas_combo.SelectedIndex = -1;
-        }
-
     }
 }

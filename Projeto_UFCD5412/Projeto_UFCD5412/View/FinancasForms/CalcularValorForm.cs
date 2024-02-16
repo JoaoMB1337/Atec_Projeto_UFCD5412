@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Model;
+using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 
 namespace Projeto_UFCD5412.View.FinancasForms
@@ -16,82 +17,92 @@ namespace Projeto_UFCD5412.View.FinancasForms
     public partial class CalcularValorForm : Form
     {
         private EmpresaController empresaController = EmpresaController.Instance;
+        private List<Funcionario> funcionarios;
+
         public CalcularValorForm()
         {
             InitializeComponent();
+            LoadComboBox();
+            InitializeDataGridView();
         }
 
-
-        private void CalcularValorForm_Load(object sender, EventArgs e)
+        private void LoadComboBox()
         {
-            TipoFuncionario_ComboBox_SelectedIndexChanged_1();
-            ListarFuncionarioDataGrid();
-        }
-
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged_1()
-        {
+            
             TipoFuncionario_ComboBox.Items.Add("Funcionario");
             TipoFuncionario_ComboBox.Items.Add("Formador");
             TipoFuncionario_ComboBox.Items.Add("Coordenador");
             TipoFuncionario_ComboBox.Items.Add("Secretaria");
             TipoFuncionario_ComboBox.Items.Add("Diretor");
             TipoFuncionario_ComboBox.Items.Add("Todos");
-            TipoFuncionario_ComboBox.SelectedItem = "Todos"; //Valor Default
+            TipoFuncionario_ComboBox.SelectedIndex = 5; 
         }
 
-        private void ListarFuncionarioDataGrid()
+        private void InitializeDataGridView()
         {
-            List<Funcionario> funcionarios = empresaController.ListarFuncionarios();
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Clear();
+           
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns.Add("Nome", "Nome");
+            dataGridView1.Columns.Add("Tipo", "Tipo");
+            dataGridView1.Columns.Add("Salario", "Salário");
+            dataGridView1.Columns.Add("TotalMes", "Total por Mês");
 
-            ListaFuncionariosValorAPagar_DataGrid.AutoGenerateColumns = false;
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Id", "ID");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Nome", "Nome");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Morada", "Morada");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Contacto", "Contacto");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Tipo", "Tipo");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("Salario", "Salario");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("DataAniversario", "Data Aniversario");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("DataContrato", "Data Contrato");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("DataFimContrato", "Data Fim Contrato");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("DataRegistoCriminal", "Data Registo Criminal");
-            ListaFuncionariosValorAPagar_DataGrid.Columns.Add("DataFimRegistoCriminal", "Data Fim Registo Criminal");
-
-            AtualizarDataGridView(funcionarios);
+            
+            LoadEmployeeData();
         }
 
-        private void AtualizarDataGridView(List<Funcionario> funcionarios)
+        private void LoadEmployeeData()
         {
-            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();   
-            ListaFuncionariosValorAPagar_DataGrid.Rows.Clear();
+            funcionarios = empresaController.ListarFuncionarios();
 
             foreach (var funcionario in funcionarios)
             {
-                if ((funcionario.Tipo == TipoFuncionario_ComboBox.SelectedItem.ToString()) || (TipoFuncionario_ComboBox.SelectedItem.ToString() == "Todos"))
+                
+                decimal totalMes = funcionario.Salario * 30; 
+
+                
+                dataGridView1.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, totalMes);
+            }
+        }
+
+        private void CalcularValorBtn_Click(object sender, EventArgs e)
+        {
+            
+            decimal totalGeral = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
                 {
-                    ListaFuncionariosValorAPagar_DataGrid.Rows.Add(
-                                           funcionario.Id,
-                                                              funcionario.Nome,
-                                                                                 funcionario.Tipo,
-                                                                                                    funcionario.Salario,
-                                                                                                                       funcionario.DataContrato.ToShortDateString(),
-                                                                                                                                          funcionario.DataFimContrato.ToShortDateString());
+                    string tipoFuncionario = row.Cells["Tipo"].Value.ToString();
+                    decimal salario = Convert.ToDecimal(row.Cells["Salario"].Value);
+
+                    totalGeral += salario;
+                }
+            }
+
+            
+            MessageBox.Show($"Total a pagar para todos os funcionários: {totalGeral:C2}");
+        }
+
+        private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
+        {
+            string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text.ToLower(); 
+
+            
+            dataGridView1.Rows.Clear();
+
+            
+            foreach (var funcionario in funcionarios)
+            {
+                if (funcionario.Nome.ToLower().Contains(nomePesquisado))
+                {
                     
+                    dataGridView1.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario);
                 }
             }
         }
 
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ListaFuncionariosValorAPagar_DataGrid.Refresh();
-            ListarFuncionarioDataGrid();
-        }
 
-        private void CalcularValorAPagar_Btn_Click(object sender, EventArgs e)
-        {
-            //CalcularValorAPagarForm calcularValorAPagarForm = new CalcularValorAPagarForm();
-            //calcularValorAPagarForm.ShowDialog();
-        }
-        
+
     }
 }

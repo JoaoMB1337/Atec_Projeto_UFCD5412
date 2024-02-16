@@ -28,104 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NomeFunc_Label = new System.Windows.Forms.Label();
-            this.nome_textbox = new System.Windows.Forms.TextBox();
-            this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
-            this.Filtrar_label = new System.Windows.Forms.Label();
-            this.ListaFuncionariosValorAPagar_DataGrid = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.NomeFunc_label = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Sair_Btn = new System.Windows.Forms.Button();
-            this.atualizarCsv_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionariosValorAPagar_DataGrid)).BeginInit();
+            this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
+            this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // NomeFunc_Label
+            // NomeFunc_label
             // 
-            this.NomeFunc_Label.AutoSize = true;
-            this.NomeFunc_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.NomeFunc_Label.Location = new System.Drawing.Point(49, 14);
-            this.NomeFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NomeFunc_Label.Name = "NomeFunc_Label";
-            this.NomeFunc_Label.Size = new System.Drawing.Size(38, 13);
-            this.NomeFunc_Label.TabIndex = 5;
-            this.NomeFunc_Label.Text = "Nome:";
+            this.NomeFunc_label.AutoSize = true;
+            this.NomeFunc_label.Location = new System.Drawing.Point(10, 5);
+            this.NomeFunc_label.Name = "NomeFunc_label";
+            this.NomeFunc_label.Size = new System.Drawing.Size(38, 13);
+            this.NomeFunc_label.TabIndex = 0;
+            this.NomeFunc_label.Text = "Nome:";
             // 
-            // nome_textbox
+            // dataGridView1
             // 
-            this.nome_textbox.Location = new System.Drawing.Point(95, 12);
-            this.nome_textbox.Margin = new System.Windows.Forms.Padding(4);
-            this.nome_textbox.Name = "nome_textbox";
-            this.nome_textbox.Size = new System.Drawing.Size(82, 20);
-            this.nome_textbox.TabIndex = 12;
-            // 
-            // TipoFuncionario_ComboBox
-            // 
-            this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TipoFuncionario_ComboBox.FormattingEnabled = true;
-            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(625, 8);
-            this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
-            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(121, 21);
-            this.TipoFuncionario_ComboBox.TabIndex = 13;
-            this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
-            // 
-            // Filtrar_label
-            // 
-            this.Filtrar_label.AutoSize = true;
-            this.Filtrar_label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Filtrar_label.Location = new System.Drawing.Point(571, 12);
-            this.Filtrar_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Filtrar_label.Name = "Filtrar_label";
-            this.Filtrar_label.Size = new System.Drawing.Size(35, 13);
-            this.Filtrar_label.TabIndex = 14;
-            this.Filtrar_label.Text = "Filtrar:";
-            // 
-            // ListaFuncionariosValorAPagar_DataGrid
-            // 
-            this.ListaFuncionariosValorAPagar_DataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.PeachPuff;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ListaFuncionariosValorAPagar_DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaFuncionariosValorAPagar_DataGrid.Location = new System.Drawing.Point(12, 35);
-            this.ListaFuncionariosValorAPagar_DataGrid.Name = "ListaFuncionariosValorAPagar_DataGrid";
-            this.ListaFuncionariosValorAPagar_DataGrid.ReadOnly = true;
-            this.ListaFuncionariosValorAPagar_DataGrid.RowHeadersWidth = 51;
-            this.ListaFuncionariosValorAPagar_DataGrid.Size = new System.Drawing.Size(776, 386);
-            this.ListaFuncionariosValorAPagar_DataGrid.TabIndex = 15;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 41);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(792, 358);
+            this.dataGridView1.TabIndex = 1;
             // 
             // Sair_Btn
             // 
             this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.Location = new System.Drawing.Point(625, 399);
+            this.Sair_Btn.Location = new System.Drawing.Point(659, 408);
             this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(150, 50);
-            this.Sair_Btn.TabIndex = 16;
-            this.Sair_Btn.Text = "Sair";
+            this.Sair_Btn.Size = new System.Drawing.Size(129, 30);
+            this.Sair_Btn.TabIndex = 4;
+            this.Sair_Btn.Text = "Voltar";
             this.Sair_Btn.UseVisualStyleBackColor = true;
             // 
-            // atualizarCsv_btn
+            // PesquisarFuncinarioPorNome_Textbox
             // 
-            this.atualizarCsv_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.atualizarCsv_btn.Location = new System.Drawing.Point(469, 399);
-            this.atualizarCsv_btn.Name = "atualizarCsv_btn";
-            this.atualizarCsv_btn.Size = new System.Drawing.Size(150, 50);
-            this.atualizarCsv_btn.TabIndex = 17;
-            this.atualizarCsv_btn.Text = "Atualizar CSV";
-            this.atualizarCsv_btn.UseVisualStyleBackColor = true;
+            this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(54, 2);
+            this.PesquisarFuncinarioPorNome_Textbox.Name = "PesquisarFuncinarioPorNome_Textbox";
+            this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(187, 20);
+            this.PesquisarFuncinarioPorNome_Textbox.TabIndex = 5;
+            this.PesquisarFuncinarioPorNome_Textbox.TextChanged += new System.EventHandler(this.PesquisarFuncinarioPorNome_Textbox_TextChanged);
+            // 
+            // TipoFuncionario_ComboBox
+            // 
+            this.TipoFuncionario_ComboBox.FormattingEnabled = true;
+            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(647, 12);
+            this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
+            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.TipoFuncionario_ComboBox.TabIndex = 6;
             // 
             // CalcularValorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.atualizarCsv_btn);
-            this.Controls.Add(this.Sair_Btn);
-            this.Controls.Add(this.ListaFuncionariosValorAPagar_DataGrid);
-            this.Controls.Add(this.Filtrar_label);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
-            this.Controls.Add(this.nome_textbox);
-            this.Controls.Add(this.NomeFunc_Label);
+            this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
+            this.Controls.Add(this.Sair_Btn);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.NomeFunc_label);
             this.Name = "CalcularValorForm";
             this.Text = "CalcularValorForm";
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionariosValorAPagar_DataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,12 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label NomeFunc_Label;
-        private System.Windows.Forms.TextBox nome_textbox;
-        private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
-        private System.Windows.Forms.Label Filtrar_label;
-        private System.Windows.Forms.DataGridView ListaFuncionariosValorAPagar_DataGrid;
+        private System.Windows.Forms.Label NomeFunc_label;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Sair_Btn;
-        private System.Windows.Forms.Button atualizarCsv_btn;
+        private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
+        private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.View.Forms;
 
@@ -141,6 +142,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ListarFuncionarioDataGrid();
+
         }
 
         private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -148,7 +150,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             ListarFuncionarioDataGrid();
         }
 
-        private void AddFuncionario_Btn_Click(object sender, EventArgs e)
+        private void addfuncionario_textbox_Click(object sender, EventArgs e)
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
             adicionarFuncionarioForm.ShowDialog();
@@ -156,9 +158,10 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
         }
 
-        private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
+        private void editarfuncionario_textbox_Click(object sender, EventArgs e)
         {
            SetParameter("editar");
+
         }
     }
 }

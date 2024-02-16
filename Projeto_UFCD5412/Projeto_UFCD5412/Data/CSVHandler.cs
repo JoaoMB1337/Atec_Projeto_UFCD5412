@@ -199,6 +199,5 @@ namespace Projeto_UFCD5412.Data
                 Console.WriteLine($"Erro ao adicionar novo funcionário ao CSV: {ex.Message}");
             }
         }
-
     }
 }

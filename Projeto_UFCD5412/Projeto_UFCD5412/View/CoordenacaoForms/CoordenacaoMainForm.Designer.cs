@@ -43,13 +43,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.containerDias = new System.Windows.Forms.TableLayoutPanel(); // Alterado para TableLayoutPanel
-            this.DashboardDefinicoes_Btn = new FontAwesome.Sharp.IconButton();
-            this.DashboardCalendario_Btn = new FontAwesome.Sharp.IconButton();
-            this.Sair_Btn = new FontAwesome.Sharp.IconButton();
-            this.DashboardFormadores_Btn = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.Home_Btn = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -64,7 +57,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(1406, 11);
-            this.panelShadow.Size = new System.Drawing.Size(842, 11);
             this.panelShadow.TabIndex = 7;
             // 
             // panelTitleBar
@@ -76,7 +68,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1406, 98);
-            this.panelTitleBar.Size = new System.Drawing.Size(842, 98);
             this.panelTitleBar.TabIndex = 6;
             // 
             // timer_label
@@ -88,9 +79,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.timer_label.Location = new System.Drawing.Point(1406, 0);
             this.timer_label.Name = "timer_label";
             this.timer_label.Size = new System.Drawing.Size(0, 17);
-            this.timer_label.Location = new System.Drawing.Point(842, 0);
-            this.timer_label.Name = "timer_label";
-            this.timer_label.Size = new System.Drawing.Size(0, 20);
             this.timer_label.TabIndex = 0;
             // 
             // panelMenu
@@ -98,9 +86,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelMenu.Controls.Add(this.Definicoes_Btn);
             this.panelMenu.Controls.Add(this.iconButton1);
-            this.panelMenu.Controls.Add(this.DashboardDefinicoes_Btn);
-            this.panelMenu.Controls.Add(this.DashboardCalendario_Btn);
-            this.panelMenu.Controls.Add(this.Sair_Btn);
             this.panelMenu.Controls.Add(this.DashboardFormadores_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -146,68 +131,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Sair";
             this.iconButton1.UseVisualStyleBackColor = true;
-            this.panelMenu.Size = new System.Drawing.Size(293, 583);
-            this.panelMenu.TabIndex = 5;
-            // 
-            // DashboardDefinicoes_Btn
-            // 
-            this.DashboardDefinicoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardDefinicoes_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardDefinicoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardDefinicoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardDefinicoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.DashboardDefinicoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardDefinicoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardDefinicoes_Btn.IconSize = 32;
-            this.DashboardDefinicoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardDefinicoes_Btn.Location = new System.Drawing.Point(0, 292);
-            this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DashboardDefinicoes_Btn.Name = "DashboardDefinicoes_Btn";
-            this.DashboardDefinicoes_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashboardDefinicoes_Btn.Size = new System.Drawing.Size(293, 60);
-            this.DashboardDefinicoes_Btn.TabIndex = 8;
-            this.DashboardDefinicoes_Btn.Text = "Definições";
-            this.DashboardDefinicoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardDefinicoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardDefinicoes_Btn.UseVisualStyleBackColor = true;
-            // 
-            // DashboardCalendario_Btn
-            // 
-            this.DashboardCalendario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardCalendario_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardCalendario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardCalendario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardCalendario_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.DashboardCalendario_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardCalendario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardCalendario_Btn.IconSize = 32;
-            this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 232);
-            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
-            this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashboardCalendario_Btn.Size = new System.Drawing.Size(293, 60);
-            this.DashboardCalendario_Btn.TabIndex = 7;
-            this.DashboardCalendario_Btn.Text = "Calendário";
-            this.DashboardCalendario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardCalendario_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardCalendario_Btn.UseVisualStyleBackColor = true;
-            this.DashboardCalendario_Btn.Click += new System.EventHandler(this.DashboardCalendario_Btn_Click);
-            // 
-            // Sair_Btn
-            // 
-            this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Sair_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Sair_Btn.IconColor = System.Drawing.Color.Black;
-            this.Sair_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Sair_Btn.Location = new System.Drawing.Point(4, 528);
-            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(283, 41);
-            this.Sair_Btn.TabIndex = 5;
-            this.Sair_Btn.Text = "Sair";
-            this.Sair_Btn.UseVisualStyleBackColor = true;
-            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // DashboardFormadores_Btn
             // 
@@ -274,15 +197,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.containerDias.Dock = DockStyle.Fill;
 
 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(293, 105);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 478);
-            this.flowLayoutPanel1.TabIndex = 8;
             // 
             // CoordenacaoMainForm
             // 
@@ -297,11 +211,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.Controls.Add(this.panelMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClientSize = new System.Drawing.Size(1135, 583);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panelShadow);
-            this.Controls.Add(this.panelTitleBar);
-            this.Controls.Add(this.panelMenu);
             this.Name = "CoordenacaoMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CoordenacaoMainForm";
@@ -317,7 +226,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label timer_label;
@@ -328,12 +236,5 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.TableLayoutPanel containerDias; // Alterado para TableLayoutPanel
-        private FontAwesome.Sharp.IconButton DashboardCalendario_Btn;
-        private FontAwesome.Sharp.IconButton Sair_Btn;
-        private FontAwesome.Sharp.IconButton DashboardFormadores_Btn;
-        private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.PictureBox Home_Btn;
-        private FontAwesome.Sharp.IconButton DashboardDefinicoes_Btn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

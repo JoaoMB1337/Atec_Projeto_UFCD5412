@@ -14,6 +14,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class AdicionarFormacaoForm : Form
     {
+        public Formacao FormacaoAdicionada { get; private set; }
+
         private DateTime dataSelecionada;
 
         public AdicionarFormacaoForm(DateTime dataSelecionada)
@@ -66,13 +68,12 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void AdicionarFormacao_btn_Click_1(object sender, EventArgs e)
         {
-
             DateTime dataInicio = DataInicio_calendar.Value;
             DateTime dataFim = DataFim_calendar.Value;
-            string horaInicio = HoraIncio_combo.SelectedItem.ToString();
-            string horaFim = HoraFim_combo.SelectedItem.ToString();
-            string formador = FormadorNomes_combo.SelectedItem.ToString();
-            string turma = Turmas_combo.SelectedItem.ToString();
+            string horaInicio = HoraIncio_combo.SelectedItem?.ToString();
+            string horaFim = HoraFim_combo.SelectedItem?.ToString();
+            string formador = FormadorNomes_combo.SelectedItem?.ToString();
+            string turma = Turmas_combo.SelectedItem?.ToString();
 
             if (string.IsNullOrEmpty(formador) || string.IsNullOrEmpty(turma))
             {
@@ -81,20 +82,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
 
             Formacao novaFormacao = new Formacao(dataInicio, dataFim, horaInicio, horaFim, formador, turma);
+            FormacaoAdicionada = novaFormacao;
 
-            CalendarioForm calendarioForm = Application.OpenForms["CalendarioForm"] as CalendarioForm;
-            if (calendarioForm != null)
-            {
-                calendarioForm.AdicionarFormacaoAoCalendario(novaFormacao);
-            }
-            else
-            {
-                MessageBox.Show("O formulário de calendário não está aberto. Não é possível adicionar a formação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DialogResult = DialogResult.OK;
+        }
 
-            MessageBox.Show("Formação adicionada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            LimparCampos();
+        private void Sair_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

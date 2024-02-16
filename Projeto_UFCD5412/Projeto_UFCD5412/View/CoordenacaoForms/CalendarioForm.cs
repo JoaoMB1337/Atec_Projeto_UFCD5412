@@ -16,6 +16,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
+
         private DateTime dataAtual;
 
         public CalendarioForm()
@@ -99,14 +100,16 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         lbl.Text = diaAtual.ToString();
                         lbl.TextAlign = ContentAlignment.MiddleCenter;
                         lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+                        lbl.BorderStyle = BorderStyle.FixedSingle;
+                        lbl.Margin = new Padding(3);
 
                         if (diaAtual == diaAtualDoMes)
                         {
-                            lbl.BackColor = Color.Yellow;
+                            lbl.BackColor = Color.LightGray;
                         }
                         else
                         {
-                            lbl.BackColor = Color.LightBlue;
+                            lbl.BackColor = Color.White;
                             lbl.Click += (sender, e) =>
                             {
                                 Label selectedLabel = (Label)sender;
@@ -114,6 +117,22 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                 AdicionarEvento(data.Year, data.Month, diaSelecionado);
                             };
                             lbl.Cursor = Cursors.Hand;
+                            lbl.MouseEnter += (sender, e) =>
+                            {
+                                Label hoveredLabel = (Label)sender;
+                                if (hoveredLabel.BackColor != Color.Yellow)
+                                {
+                                    hoveredLabel.BackColor = Color.LightBlue;
+                                }
+                            };
+                            lbl.MouseLeave += (sender, e) =>
+                            {
+                                Label leftLabel = (Label)sender;
+                                if (leftLabel.BackColor != Color.Yellow)
+                                {
+                                    leftLabel.BackColor = Color.White;
+                                }
+                            };
                         }
 
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
@@ -128,9 +147,44 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void AdicionarEvento(int ano, int mes, int dia)
         {
-            MessageBox.Show($"Você está adicionando um evento para o dia {dia}/{mes}/{ano}.");
             AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(new DateTime(ano, mes, dia));
-            adicionarFormacaoForm.ShowDialog();
+            if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
+            {
+                Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
+
+                if (!string.IsNullOrEmpty(novaFormacao.Formador) && !string.IsNullOrEmpty(novaFormacao.Turma))
+                {
+                    foreach (Control control in tableLayoutPanel1.Controls)
+                    {
+                        if (control is Label label && label.Text == dia.ToString())
+                        {
+                            if (label.Tag == null)
+                            {
+                                label.Tag = novaFormacao;
+                                label.Text += $"\n{novaFormacao.Formador} - {novaFormacao.Turma}";
+                                label.BackColor = Color.Yellow; // Pinta o fundo de amarelo
+                            }
+                            else
+                            {
+                                label.Text += $"\n{novaFormacao.Formador} - {novaFormacao.Turma}";
+                            }
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, preencha todos os campos para adicionar a formação.");
+                }
+            }
+        }
+
+
+        private void DadosAulaAgendada(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            Formacao formacao = (Formacao)label.Tag;
+            MessageBox.Show($"Formação agendada para o dia {formacao.DataInicio.ToShortDateString()}:\n{formacao.Formador} - {formacao.Turma}");
         }
 
         private void avancar_btn_Click(object sender, EventArgs e)
@@ -148,7 +202,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         public void AdicionarFormacaoAoCalendario(Formacao formacao)
         {
             MessageBox.Show($"Adicionando formação ao calendário: {formacao.DataInicio.ToShortDateString()} - {formacao.DataFim.ToShortDateString()}");
-            // Aqui você pode adicionar a formação ao calendário e aparecer no dia correto
         }
     }
 }

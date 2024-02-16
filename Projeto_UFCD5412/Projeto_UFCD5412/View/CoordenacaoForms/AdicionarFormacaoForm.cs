@@ -2,13 +2,14 @@
 using System;
 using System.Windows.Forms;
 
-namespace Projeto_UFCD5412.View.SettingsForms
+namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
-    public partial class SettingsForm : Form
+    public partial class AdicionarFormacaoForm : Form
     {
         DateTimeController dateTimeController = DateTimeController.Instance;
 
         public SettingsForm()
+        public AdicionarFormacaoForm()
         {
             InitializeComponent();
             Console.WriteLine("SettingsForm - DateTimeController Instance: " + ReferenceEquals(dateTimeController, DateTimeController.Instance));

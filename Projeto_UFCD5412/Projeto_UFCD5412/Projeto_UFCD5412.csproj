@@ -55,10 +55,23 @@
   <ItemGroup>
     <Compile Include="Controller\DateTimeController.cs" />
     <Compile Include="Data\CSVHandler.cs" />
+    <Compile Include="Model\Calendario.cs" />
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
     <Compile Include="Model\GestaoFormadores.cs" />
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.Designer.cs">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\CalendarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\CalendarioForm.Designer.cs">
+      <DependentUpon>CalendarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CoordenacaoForms\CoordenacaoMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,12 +83,6 @@
     </Compile>
     <Compile Include="View\DashboardForms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FinancasForms\CalcularValorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FinancasForms\CalcularValorForm.Designer.cs">
-      <DependentUpon>CalcularValorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FuncionarioForms\AdicionarFuncionarioForm.cs">
       <SubType>Form</SubType>
@@ -112,20 +119,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Secretaria.cs" />
-    <Compile Include="View\SettingsForms\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SettingsForms\SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FinancasForms\CalcularValorForm.resx">
-      <DependentUpon>CalcularValorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
@@ -152,9 +150,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\SettingsForms\SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,5 +173,6 @@
   <ItemGroup>
     <None Include="Resources\rm314-adj-02.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -103,7 +103,7 @@
             this.DashboardDefinicoes_Btn.IconSize = 32;
             this.DashboardDefinicoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardDefinicoes_Btn.Location = new System.Drawing.Point(0, 238);
-            this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardDefinicoes_Btn.Name = "DashboardDefinicoes_Btn";
             this.DashboardDefinicoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardDefinicoes_Btn.Size = new System.Drawing.Size(220, 49);
@@ -125,7 +125,7 @@
             this.DashboardCalendario_Btn.IconSize = 32;
             this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 189);
-            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
             this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardCalendario_Btn.Size = new System.Drawing.Size(220, 49);
@@ -162,7 +162,7 @@
             this.DashboardFormadores_Btn.IconSize = 32;
             this.DashboardFormadores_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFormadores_Btn.Location = new System.Drawing.Point(0, 140);
-            this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFormadores_Btn.Name = "DashboardFormadores_Btn";
             this.DashboardFormadores_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFormadores_Btn.Size = new System.Drawing.Size(220, 49);
@@ -197,7 +197,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 85);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 388);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CoordenacaoMainForm";
             this.Text = "CoordenacaoMainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

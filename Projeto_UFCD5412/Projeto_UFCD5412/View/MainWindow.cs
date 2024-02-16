@@ -12,7 +12,6 @@ using FontAwesome.Sharp;
 using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
-using Projeto_UFCD5412.View.SettingsForms;
 using System.Windows.Media.Animation;
 using Projeto_UFCD5412.Controller;
 namespace Projeto_UFCD5412
@@ -208,16 +207,16 @@ namespace Projeto_UFCD5412
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsForm = new SettingsForm();
-            ActivateButton(sender, RGBColors.color3);
-            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
-            settingsForm.TopLevel = false;
-            settingsForm.FormBorderStyle = FormBorderStyle.None;
-            settingsForm.Dock = DockStyle.Fill;
-            Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
-            settingsForm.BringToFront();
-            settingsForm.Show();
-            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
+            //SettingsForm settingsForm = new SettingsForm();
+            //ActivateButton(sender, RGBColors.color3);
+            //Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
+            //settingsForm.TopLevel = false;
+            //settingsForm.FormBorderStyle = FormBorderStyle.None;
+            //settingsForm.Dock = DockStyle.Fill;
+            //Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
+            //settingsForm.BringToFront();
+            //settingsForm.Show();
+            //Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
         }
 
 

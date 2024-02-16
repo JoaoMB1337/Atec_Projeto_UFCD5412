@@ -7,6 +7,22 @@ namespace Projeto_UFCD5412.Controller
         private static DateTimeController instance;
         private DateTime currentDateTime;
 
+        private bool isTimerPaused = false;
+
+        public bool IsTimerPaused
+        {
+            get { return isTimerPaused; }
+            set
+            {
+                isTimerPaused = value;
+                if (!isTimerPaused)
+                {
+                    // Se o timer não estiver pausado, reinicia a contagem
+                    OnDateTimeChanged(new DateTimeChangedEventArgs(CurrentDateTime));
+                }
+            }
+        }
+
         public static event EventHandler<DateTimeChangedEventArgs> DateTimeChanged;
 
         public static DateTimeController Instance
@@ -42,12 +58,10 @@ namespace Projeto_UFCD5412.Controller
         public void SetDateTime(DateTime dateTime)
         {
             CurrentDateTime = dateTime;
-            OnDateTimeChanged(new DateTimeChangedEventArgs(dateTime));
-        }
-
-        public DateTime AddDays(DateTime dateTime, int days)
-        {
-            return dateTime.AddDays(days);
+            if (!IsTimerPaused)
+            {
+                OnDateTimeChanged(new DateTimeChangedEventArgs(dateTime));
+            }
         }
 
         private void OnDateTimeChanged(DateTimeChangedEventArgs e)

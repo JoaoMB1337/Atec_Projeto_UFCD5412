@@ -18,10 +18,12 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
     public partial class ListarFuncionariosForm : Form
     {
         private EmpresaController empresaController = EmpresaController.Instance;
+        private DateTimeController dateTimeController = DateTimeController.Instance;
 
         public ListarFuncionariosForm()
         {
             InitializeComponent();
+
         }
 
         internal void SetParameter( string parametro)
@@ -36,6 +38,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             LoadComboBox();
             ListarFuncionarioDataGrid();
+
         }
 
         private void LoadComboBox()
@@ -112,7 +115,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         
@@ -120,7 +122,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             if (RegistoCriminal_CheckBox.Checked)
             {
-                List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(DateTime.Now);
+                DateTime dataAtual = dateTimeController.GetDateTime();
+                List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(dataAtual);
                 AtualizarDataGridView(funcionariosComRegistoExpirado);
             }
             else

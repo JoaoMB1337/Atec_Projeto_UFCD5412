@@ -37,16 +37,16 @@ namespace Projeto_UFCD5412
             //Form
             this.Text = string.Empty;
             this.DoubleBuffered = true;
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-
-
-
-            // Defina a data e hora inicial
+          
+            Timer timer = new Timer(); // Adicione esta linha
+            DateTimeController.DateTimeChanged += DateTimeController_DateTimeChanged;
             dateTimeController.SetDateTime(DateTime.Now);
 
-            // Atualize a exibição inicial
-            timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
+            timer.Interval = 1000;
+            timer.Tick += timer_Tick;
+            timer.Start();
+
+            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
         //Eventos
         private struct RGBColors
@@ -95,23 +95,6 @@ namespace Projeto_UFCD5412
             }
         }
 
-        private void OpenChildForm(object childForm)
-        {
-          if(currentChildForm != null)
-            {
-                //Abrir apenas um formulário
-              currentChildForm.Close();
-          }
-            //currentChildForm = childForm;
-            //childForm.TopLevel = false;
-            //childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Dock = DockStyle.Fill;
-            //panelDesktop.Controls.Add(childForm);
-            //panelDesktop.Tag = childForm;
-            //childForm.BringToFront();
-            //childForm.Show();
-            //HomeDash_Btn.Text = childForm.Text;
-        }
    
         private void Home_Btn_Click(object sender, EventArgs e)
         {
@@ -157,12 +140,18 @@ namespace Projeto_UFCD5412
         {
             DateTime newDateTime = DateTime.Now;
 
-            // Somente atualiza o DateTimeController se o valor mudou
-            if (newDateTime != dateTimeController.GetDateTime())
+            if (newDateTime.Date != dateTimeController.GetDateTime().Date)
+            {
+                // Mantém o dia e atualiza a hora
+                dateTimeController.SetDateTime(dateTimeController.GetDateTime().Date.Add(newDateTime.TimeOfDay));
+            }
+            else
             {
                 dateTimeController.SetDateTime(newDateTime);
-                timer_label.Text = newDateTime.ToString("dd/MM/yyyy HH:mm:ss");
             }
+
+            timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
+
         }
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
@@ -220,7 +209,6 @@ namespace Projeto_UFCD5412
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
         }
 
-
         private void AdicionarFuncionario_Btn_Click_1(object sender, EventArgs e)
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
@@ -251,7 +239,6 @@ namespace Projeto_UFCD5412
 
         }
 
-
         private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
         {
 
@@ -265,6 +252,11 @@ namespace Projeto_UFCD5412
             Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
+        }
+
+        private void DateTimeController_DateTimeChanged(object sender, DateTimeChangedEventArgs e)
+        {
+            timer_label.Text = e.NewDateTime.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

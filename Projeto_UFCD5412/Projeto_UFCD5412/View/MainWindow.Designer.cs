@@ -127,10 +127,6 @@
             this.iconButton1.Location = new System.Drawing.Point(3, 544);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(212, 33);
-            this.iconButton1.Location = new System.Drawing.Point(4, 670);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(283, 41);
             this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Sair";
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -222,6 +218,7 @@
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Home_Btn.TabIndex = 0;
             this.Home_Btn.TabStop = false;
+            this.Home_Btn.Click += new System.EventHandler(this.Home_Btn_Click);
             // 
             // panelTitleBar
             // 
@@ -285,6 +282,7 @@
             // 
             // tabDashboardFuncionario
             // 
+            this.tabDashboardFuncionario.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.rm314_adj_02;
             this.tabDashboardFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabDashboardFuncionario.Location = new System.Drawing.Point(4, 22);
             this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

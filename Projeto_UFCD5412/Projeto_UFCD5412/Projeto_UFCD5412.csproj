@@ -58,7 +58,7 @@
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
-    <Compile Include="Model\GestaoFormadores.cs" />
+    <Compile Include="Model\Formacao.cs" />
     <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +118,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Secretaria.cs" />
+    <EmbeddedResource Include="View\CoordenacaoForms\AdicionarFormacaoForm.resx">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
     </EmbeddedResource>

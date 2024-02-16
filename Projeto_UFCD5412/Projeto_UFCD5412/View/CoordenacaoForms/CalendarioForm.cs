@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_UFCD5412.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Markup;
+
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
@@ -133,9 +135,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         }
 
-
-
-
         private void avancar_btn_Click(object sender, EventArgs e)
         {
             dataAtual = dataAtual.AddMonths(1);
@@ -147,5 +146,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             dataAtual = dataAtual.AddMonths(-1);
             AtualizarCalendario();
         }
+
+        public void AdicionarFormacaoAoCalendario(Formacao formacao)
+        {
+           //aqui temos de adicionar a formação ao calendário e aparecer no dia correto
+
+            MessageBox.Show($"Adicionando formação ao calendário: {formacao.DataInicio.ToShortDateString()} - {formacao.DataFim.ToShortDateString()}");
+
+            
+        }
+
     }
 }

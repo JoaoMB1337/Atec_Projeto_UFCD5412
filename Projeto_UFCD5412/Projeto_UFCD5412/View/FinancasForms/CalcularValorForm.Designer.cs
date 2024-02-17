@@ -36,6 +36,7 @@
             this.Sair_Btn = new System.Windows.Forms.Button();
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
+            this.CalcularFormadorBtnButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,17 +101,33 @@
             // 
             // TipoFuncionario_ComboBox
             // 
+            this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
             this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(647, 12);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoFuncionario_ComboBox.TabIndex = 6;
+            this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
+            // 
+            // CalcularFormadorBtnButton
+            // 
+            this.CalcularFormadorBtnButton.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.CalcularFormadorBtnButton.IconColor = System.Drawing.Color.Black;
+            this.CalcularFormadorBtnButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.CalcularFormadorBtnButton.Location = new System.Drawing.Point(472, 10);
+            this.CalcularFormadorBtnButton.Name = "CalcularFormadorBtnButton";
+            this.CalcularFormadorBtnButton.Size = new System.Drawing.Size(75, 23);
+            this.CalcularFormadorBtnButton.TabIndex = 7;
+            this.CalcularFormadorBtnButton.Text = "CalcularValorBtn_Click";
+            this.CalcularFormadorBtnButton.UseVisualStyleBackColor = true;
+            this.CalcularFormadorBtnButton.Click += new System.EventHandler(this.CalcularFormadorBtnButton_Click);
             // 
             // CalcularValorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CalcularFormadorBtnButton);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
             this.Controls.Add(this.Sair_Btn);
@@ -131,5 +148,6 @@
         private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
+        private FontAwesome.Sharp.IconButton CalcularFormadorBtnButton;
     }
 }

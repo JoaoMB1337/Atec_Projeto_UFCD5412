@@ -62,6 +62,8 @@ namespace Projeto_UFCD5412.View.FinancasForms
             if (tipoSelecionado == "Todos")
             {
                 AtualizarDataGridView(funcionarios);
+                // Tornar o botão de cálculo do formador invisível quando o tipo for "Todos"
+                CalcularFormadorBtnButton.Visible = false;
             }
             else
             {
@@ -73,8 +75,12 @@ namespace Projeto_UFCD5412.View.FinancasForms
                     }
                 }
                 AtualizarDataGridView(funcionariosFiltrados);
+
+                // Tornar o botão de cálculo do formador visível quando o tipo for "Formador"
+                CalcularFormadorBtnButton.Visible = tipoSelecionado == "Formador";
             }
         }
+
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)
         {
@@ -121,32 +127,40 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
         private void CalcularFormadorBtnButton_Click(object sender, EventArgs e)
         {
-            
-
-            if (TipoFuncionario_ComboBox.SelectedItem.ToString() == "Formador")
+           
+            if (TipoFuncionario_ComboBox.SelectedItem != null)
             {
-                decimal totalGeral = 0;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
+
+                if (tipoSelecionado == "Formador")
                 {
-                    if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
+                    decimal totalGeral = 0;
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        decimal salarioHora = Convert.ToDecimal(row.Cells["Salario"].Value);
-                        DateTime dataInicio = Convert.ToDateTime(row.Cells["DataContrato"].Value);
-                        DateTime dataFim = Convert.ToDateTime(row.Cells["DataFimContrato"].Value);
+                        if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
+                        {
+                            decimal salarioHora = Convert.ToDecimal(row.Cells["Salario"].Value);
+                            DateTime dataInicio = Convert.ToDateTime(row.Cells["DataContrato"].Value);
+                            DateTime dataFim = Convert.ToDateTime(row.Cells["DataFimContrato"].Value);
 
-                        int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
-                        int totalHoras = totalDias * 6;
-                        decimal totalFormador = totalHoras * salarioHora;
+                            int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
+                            int totalHoras = totalDias * 6;
+                            decimal totalFormador = totalHoras * salarioHora;
 
-                        totalGeral += totalFormador;
+                            totalGeral += totalFormador;
+                        }
                     }
-                }
 
-                MessageBox.Show($"Total a pagar para os funcionários formadores: {totalGeral}");
+                    MessageBox.Show($"Total a pagar para os funcionários formadores: {totalGeral}");
+                }
+                else
+                {
+                    MessageBox.Show("Selecione 'Formador' no tipo de funcionário para calcular o valor.");
+                }
             }
             else
             {
-                MessageBox.Show("Selecione 'Formador' no tipo de funcionário para calcular o valor.");
+                MessageBox.Show("Selecione um tipo de funcionário na ComboBox.");
             }
         }
     }

@@ -44,6 +44,8 @@
             this.panelShadow = new System.Windows.Forms.Panel();
             this.Menus_TabControl = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BemVindo_Label = new System.Windows.Forms.Label();
             this.tabDashboardFuncionario = new System.Windows.Forms.TabPage();
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.Menus_TabControl.SuspendLayout();
+            this.tabDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -271,6 +274,9 @@
             // 
             // tabDashboard
             // 
+            this.tabDashboard.BackColor = System.Drawing.Color.SlateGray;
+            this.tabDashboard.Controls.Add(this.label1);
+            this.tabDashboard.Controls.Add(this.BemVindo_Label);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Name = "tabDashboard";
@@ -278,7 +284,26 @@
             this.tabDashboard.Size = new System.Drawing.Size(730, 474);
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
-            this.tabDashboard.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(237, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(280, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ADOSMELHORES ";
+            // 
+            // BemVindo_Label
+            // 
+            this.BemVindo_Label.AutoSize = true;
+            this.BemVindo_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BemVindo_Label.Location = new System.Drawing.Point(228, 163);
+            this.BemVindo_Label.Name = "BemVindo_Label";
+            this.BemVindo_Label.Size = new System.Drawing.Size(306, 24);
+            this.BemVindo_Label.TabIndex = 0;
+            this.BemVindo_Label.Text = "Bem Vindo/a à Nossa Empresa ";
             // 
             // tabDashboardFuncionario
             // 
@@ -343,6 +368,8 @@
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.Menus_TabControl.ResumeLayout(false);
+            this.tabDashboard.ResumeLayout(false);
+            this.tabDashboard.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -368,6 +395,8 @@
         private System.Windows.Forms.TabPage tabDashboardFinancas;
         private System.Windows.Forms.TabPage tabDashboardDefinicoes;
         private System.Windows.Forms.Label timer_label;
+        private System.Windows.Forms.Label BemVindo_Label;
+        private System.Windows.Forms.Label label1;
     }
 }
 

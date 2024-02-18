@@ -37,6 +37,19 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
+        public int CountNumeroTotalFuncionarios()
+        {
+            return Funcionarios.Count;
+        }   
+
+        public int CountNumeroTipoFuncionarios(string tipo)
+        {
+            return Funcionarios.Count(f => f.Tipo == tipo);
+        }
+
+
+
+
 
         public Funcionario GetFuncionarioById(int id)
         {

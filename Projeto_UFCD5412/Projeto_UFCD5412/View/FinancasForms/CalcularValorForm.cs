@@ -65,6 +65,15 @@ namespace Projeto_UFCD5412.View.FinancasForms
                 AtualizarDataGridView(funcionarios);
                 // Tornar o botão de cálculo do formador invisível quando o tipo for "Todos"
                 CalcularFormadorBtnButton.Visible = false;
+                // Exibir a coluna "Total por Mês"
+                dataGridView1.Columns["TotalMes"].Visible = true;
+            }
+            else if (tipoSelecionado == "Formador")
+            {
+                // Esconder a coluna "Total por Mês"
+                dataGridView1.Columns["TotalMes"].Visible = false;
+                // Tornar o botão de cálculo do formador visível quando o tipo for "Formador"
+                CalcularFormadorBtnButton.Visible = true;
             }
             else
             {
@@ -76,11 +85,13 @@ namespace Projeto_UFCD5412.View.FinancasForms
                     }
                 }
                 AtualizarDataGridView(funcionariosFiltrados);
-
-                // Tornar o botão de cálculo do formador visível quando o tipo for "Formador"
-                CalcularFormadorBtnButton.Visible = tipoSelecionado == "Formador";
+                // Tornar o botão de cálculo do formador invisível para outros tipos de funcionários
+                CalcularFormadorBtnButton.Visible = false;
+                // Exibir a coluna "Total por Mês"
+                dataGridView1.Columns["TotalMes"].Visible = true;
             }
         }
+
 
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)

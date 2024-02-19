@@ -93,7 +93,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             lblMes.Text = data.ToString("MMMM yyyy");
             lblMes.TextAlign = ContentAlignment.MiddleCenter;
             lblMes.Font = new Font(lblMes.Font, FontStyle.Bold);
-            lblMes.ForeColor = Color.DarkBlue;
+            lblMes.ForeColor = Color.White;
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
 
@@ -104,7 +104,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 lblDiaSemana.Text = diasDaSemana[i];
                 lblDiaSemana.TextAlign = ContentAlignment.MiddleCenter;
                 lblDiaSemana.Font = new Font(lblDiaSemana.Font, FontStyle.Bold);
-                lblDiaSemana.ForeColor = Color.DarkBlue;
+                lblDiaSemana.ForeColor = Color.White;
                 tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
             }
 

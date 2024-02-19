@@ -122,6 +122,9 @@
     <EmbeddedResource Include="View\CoordenacaoForms\AdicionarFormacaoForm.resx">
       <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CoordenacaoForms\CalendarioForm.resx">
+      <DependentUpon>CalendarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
     </EmbeddedResource>

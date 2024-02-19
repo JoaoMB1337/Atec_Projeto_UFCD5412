@@ -104,7 +104,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 lblDiaSemana.Text = diasDaSemana[i];
                 lblDiaSemana.TextAlign = ContentAlignment.MiddleCenter;
                 lblDiaSemana.Font = new Font(lblDiaSemana.Font, FontStyle.Bold);
-                lblDiaSemana.ForeColor = Color.White;
+                lblDiaSemana.ForeColor = Color.Orange;
                 tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
             }
 
@@ -128,7 +128,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
                         if (diaAtual == diaAtualDoMes)
                         {
-                            lbl.BackColor = Color.LightGray;
+                            lbl.BackColor = Color.DarkGray;
                         }
                         else
                         {
@@ -154,6 +154,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 linhaAtual++;
             }
         }
+
 
         private void AdicionarEvento(int ano, int mes, int dia)
         {
@@ -193,7 +194,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         {
                             if (new DateTime(data.Year, data.Month, diaCelula) == data)
                             {
-                                label.Text = $"{diaCelula}\n({eventosPorDia[data].Count} aula)";
                                 if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
                                 {
                                     label.BackColor = Color.LightGreen;

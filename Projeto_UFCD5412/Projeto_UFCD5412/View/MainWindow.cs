@@ -13,6 +13,7 @@ using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 using Projeto_UFCD5412.View.SettingsForms;
+using Projeto_UFCD5412.View.FinancasForms;
 using System.Windows.Media.Animation;
 using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.View.DashboardForms;
@@ -201,15 +202,15 @@ namespace Projeto_UFCD5412
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
             ActivateButton(sender, RGBColors.color4);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
-            //CalcularValorForm financasMainForm = new CalcularValorForm();
-            //financasMainForm.TopLevel = false;
-            //financasMainForm.FormBorderStyle = FormBorderStyle.None;
-            //financasMainForm.Dock = DockStyle.Fill;
-            //Menus_TabControl.SelectedTab.Controls.Add(financasMainForm);
-            //financasMainForm.BringToFront();
-            //financasMainForm.Show();
+            CalcularValorForm financasMainForm = new CalcularValorForm();
+            financasMainForm.TopLevel = false;
+            financasMainForm.FormBorderStyle = FormBorderStyle.None;
+            financasMainForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(financasMainForm);
+            financasMainForm.BringToFront();
+            financasMainForm.Show();
 
-            
+
         }
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)

@@ -86,6 +86,12 @@
     <Compile Include="View\DashboardForms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FinancasForms\CalcularValorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FinancasForms\CalcularValorForm.Designer.cs">
+      <DependentUpon>CalcularValorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FuncionarioForms\AdicionarFuncionarioForm.cs">
       <SubType>Form</SubType>
     </Compile>

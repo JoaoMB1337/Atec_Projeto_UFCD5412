@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.Contador_Formadores_label = new System.Windows.Forms.Label();
+            this.Contador_Secretari_label = new System.Windows.Forms.Label();
+            this.Contador_Diretores_label = new System.Windows.Forms.Label();
+            this.ContFuncionarios_label = new System.Windows.Forms.Label();
             this.ContadorFunc_label = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ContadorContratos_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.ProximoAniversarioLabel = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -98,10 +103,10 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.DimGray;
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.Contador_Formadores_label);
+            this.panel7.Controls.Add(this.Contador_Secretari_label);
+            this.panel7.Controls.Add(this.Contador_Diretores_label);
+            this.panel7.Controls.Add(this.ContFuncionarios_label);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Controls.Add(this.label6);
@@ -112,6 +117,42 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(258, 208);
             this.panel7.TabIndex = 9;
+            // 
+            // Contador_Formadores_label
+            // 
+            this.Contador_Formadores_label.AutoSize = true;
+            this.Contador_Formadores_label.Location = new System.Drawing.Point(126, 184);
+            this.Contador_Formadores_label.Name = "Contador_Formadores_label";
+            this.Contador_Formadores_label.Size = new System.Drawing.Size(67, 13);
+            this.Contador_Formadores_label.TabIndex = 8;
+            this.Contador_Formadores_label.Text = "Funcionarios";
+            // 
+            // Contador_Secretari_label
+            // 
+            this.Contador_Secretari_label.AutoSize = true;
+            this.Contador_Secretari_label.Location = new System.Drawing.Point(126, 160);
+            this.Contador_Secretari_label.Name = "Contador_Secretari_label";
+            this.Contador_Secretari_label.Size = new System.Drawing.Size(67, 13);
+            this.Contador_Secretari_label.TabIndex = 7;
+            this.Contador_Secretari_label.Text = "Funcionarios";
+            // 
+            // Contador_Diretores_label
+            // 
+            this.Contador_Diretores_label.AutoSize = true;
+            this.Contador_Diretores_label.Location = new System.Drawing.Point(126, 133);
+            this.Contador_Diretores_label.Name = "Contador_Diretores_label";
+            this.Contador_Diretores_label.Size = new System.Drawing.Size(67, 13);
+            this.Contador_Diretores_label.TabIndex = 6;
+            this.Contador_Diretores_label.Text = "Funcionarios";
+            // 
+            // ContFuncionarios_label
+            // 
+            this.ContFuncionarios_label.AutoSize = true;
+            this.ContFuncionarios_label.Location = new System.Drawing.Point(126, 105);
+            this.ContFuncionarios_label.Name = "ContFuncionarios_label";
+            this.ContFuncionarios_label.Size = new System.Drawing.Size(67, 13);
+            this.ContFuncionarios_label.TabIndex = 5;
+            this.ContFuncionarios_label.Text = "Funcionarios";
             // 
             // ContadorFunc_label
             // 
@@ -142,7 +183,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(334, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(258, 130);
+            this.panel2.Size = new System.Drawing.Size(367, 91);
             this.panel2.TabIndex = 10;
             // 
             // ContadorContratos_label
@@ -150,7 +191,7 @@
             this.ContadorContratos_label.AutoSize = true;
             this.ContadorContratos_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContadorContratos_label.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.ContadorContratos_label.Location = new System.Drawing.Point(21, 59);
+            this.ContadorContratos_label.Location = new System.Drawing.Point(18, 38);
             this.ContadorContratos_label.Name = "ContadorContratos_label";
             this.ContadorContratos_label.Size = new System.Drawing.Size(115, 32);
             this.ContadorContratos_label.TabIndex = 3;
@@ -167,49 +208,24 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Contratos Ativos";
             // 
-            // label2
+            // ProximoAniversarioLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(126, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Funcionarios";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(126, 133);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Funcionarios";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(126, 160);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Funcionarios";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(126, 184);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Funcionarios";
+            this.ProximoAniversarioLabel.AutoSize = true;
+            this.ProximoAniversarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProximoAniversarioLabel.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.ProximoAniversarioLabel.Location = new System.Drawing.Point(18, 47);
+            this.ProximoAniversarioLabel.Name = "ProximoAniversarioLabel";
+            this.ProximoAniversarioLabel.Size = new System.Drawing.Size(115, 32);
+            this.ProximoAniversarioLabel.TabIndex = 4;
+            this.ProximoAniversarioLabel.Text = "label11";
             // 
             // iconButton1
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(661, 9);
+            this.iconButton1.Location = new System.Drawing.Point(817, 86);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(96, 33);
             this.iconButton1.TabIndex = 11;
@@ -217,13 +233,36 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.ProximoAniversarioLabel);
+            this.panel1.Location = new System.Drawing.Point(334, 174);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(367, 90);
+            this.panel1.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(19, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(219, 25);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Proximo aniversariante";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1113, 604);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
@@ -235,6 +274,8 @@
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,10 +293,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label ContadorContratos_label;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Contador_Formadores_label;
+        private System.Windows.Forms.Label Contador_Secretari_label;
+        private System.Windows.Forms.Label Contador_Diretores_label;
+        private System.Windows.Forms.Label ContFuncionarios_label;
+        private System.Windows.Forms.Label ProximoAniversarioLabel;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
     }
 }

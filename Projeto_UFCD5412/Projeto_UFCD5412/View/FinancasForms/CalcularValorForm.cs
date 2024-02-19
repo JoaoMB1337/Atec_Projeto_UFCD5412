@@ -2,6 +2,7 @@
 using Projeto_UFCD5412.Model;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Projeto_UFCD5412.View.FinancasForms
@@ -127,14 +128,14 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
         private void CalcularFormadorBtnButton_Click(object sender, EventArgs e)
         {
-           
             if (TipoFuncionario_ComboBox.SelectedItem != null)
             {
                 string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
 
                 if (tipoSelecionado == "Formador")
                 {
-                    decimal totalGeral = 0;
+                    StringBuilder message = new StringBuilder();
+
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
@@ -147,11 +148,12 @@ namespace Projeto_UFCD5412.View.FinancasForms
                             int totalHoras = totalDias * 6;
                             decimal totalFormador = totalHoras * salarioHora;
 
-                            totalGeral += totalFormador;
+                            
+                            message.AppendLine($"Formador: {row.Cells["Nome"].Value}, Total a pagar: {totalFormador}");
                         }
                     }
 
-                    MessageBox.Show($"Total a pagar para os funcionários formadores: {totalGeral}");
+                    MessageBox.Show(message.ToString(), "Valor a pagar para Formadores");
                 }
                 else
                 {

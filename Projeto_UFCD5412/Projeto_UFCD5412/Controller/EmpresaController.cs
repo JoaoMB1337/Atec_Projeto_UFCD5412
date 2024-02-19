@@ -114,6 +114,27 @@ namespace Projeto_UFCD5412.Controller
             return valorTotal;
         }
 
+        private Funcionario EncontrarFuncionarioComSalarioMaisAlto(List<Funcionario> funcionarios)
+        {
+            if (funcionarios == null || funcionarios.Count == 0)
+                return null;
+
+            
+            Funcionario funcionarioComSalarioMaisAlto = funcionarios[0];
+
+           
+            foreach (var funcionario in funcionarios)
+            {
+                if (funcionario.Salario > funcionarioComSalarioMaisAlto.Salario)
+                {
+                    funcionarioComSalarioMaisAlto = funcionario;
+                }
+            }
+
+            return funcionarioComSalarioMaisAlto;
+        }
+
+
         public void UpdateFuncionario(Funcionario updateFuncionario)
         {
            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == updateFuncionario.Id);

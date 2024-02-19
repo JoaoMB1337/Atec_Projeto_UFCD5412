@@ -45,12 +45,16 @@
             this.ContadorContratos_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.ProximoAniversarioLabel = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.Home_Button = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.ContadorContratosInativos_label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -219,20 +223,6 @@
             this.ProximoAniversarioLabel.TabIndex = 4;
             this.ProximoAniversarioLabel.Text = "label11";
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(817, 86);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(96, 33);
-            this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "Home";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
@@ -254,6 +244,51 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Proximo aniversariante";
             // 
+            // Home_Button
+            // 
+            this.Home_Button.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.Home_Button.IconColor = System.Drawing.Color.Black;
+            this.Home_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home_Button.Location = new System.Drawing.Point(1004, 12);
+            this.Home_Button.Name = "Home_Button";
+            this.Home_Button.Size = new System.Drawing.Size(75, 23);
+            this.Home_Button.TabIndex = 12;
+            this.Home_Button.Text = "Home";
+            this.Home_Button.UseVisualStyleBackColor = true;
+            this.Home_Button.Click += new System.EventHandler(this.Home_Button_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Controls.Add(this.ContadorContratosInativos_label);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(734, 56);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(367, 91);
+            this.panel3.TabIndex = 11;
+            // 
+            // ContadorContratosInativos_label
+            // 
+            this.ContadorContratosInativos_label.AutoSize = true;
+            this.ContadorContratosInativos_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContadorContratosInativos_label.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.ContadorContratosInativos_label.Location = new System.Drawing.Point(18, 38);
+            this.ContadorContratosInativos_label.Name = "ContadorContratosInativos_label";
+            this.ContadorContratosInativos_label.Size = new System.Drawing.Size(115, 32);
+            this.ContadorContratosInativos_label.TabIndex = 3;
+            this.ContadorContratosInativos_label.Text = "label11";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(19, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(193, 25);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Contratos Expirados";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,8 +297,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1113, 604);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.Home_Button);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label1);
@@ -276,6 +312,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +336,11 @@
         private System.Windows.Forms.Label Contador_Diretores_label;
         private System.Windows.Forms.Label ContFuncionarios_label;
         private System.Windows.Forms.Label ProximoAniversarioLabel;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
+        private FontAwesome.Sharp.IconButton Home_Button;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label ContadorContratosInativos_label;
+        private System.Windows.Forms.Label label9;
     }
 }

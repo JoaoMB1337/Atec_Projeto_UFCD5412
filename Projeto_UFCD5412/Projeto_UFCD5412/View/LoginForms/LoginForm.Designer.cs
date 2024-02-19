@@ -32,9 +32,9 @@
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.User_Textbox = new System.Windows.Forms.TextBox();
             this.UserLogin_Btn = new FontAwesome.Sharp.IconButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Password_TextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,12 +76,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // User_Textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(303, 309);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 19);
-            this.textBox1.TabIndex = 4;
+            this.User_Textbox.Location = new System.Drawing.Point(303, 309);
+            this.User_Textbox.Name = "User_Textbox";
+            this.User_Textbox.Size = new System.Drawing.Size(135, 19);
+            this.User_Textbox.TabIndex = 4;
             // 
             // UserLogin_Btn
             // 
@@ -96,12 +96,13 @@
             this.UserLogin_Btn.UseVisualStyleBackColor = true;
             this.UserLogin_Btn.Click += new System.EventHandler(this.UserLogin_Btn_Click);
             // 
-            // textBox2
+            // Password_TextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(303, 369);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 19);
-            this.textBox2.TabIndex = 5;
+            this.Password_TextBox.Location = new System.Drawing.Point(303, 369);
+            this.Password_TextBox.Name = "Password_TextBox";
+            this.Password_TextBox.PasswordChar = '*';
+            this.Password_TextBox.Size = new System.Drawing.Size(135, 19);
+            this.Password_TextBox.TabIndex = 5;
             // 
             // LoginForm
             // 
@@ -112,8 +113,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(640, 650);
             this.Controls.Add(this.UserLogin_Btn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Password_TextBox);
+            this.Controls.Add(this.User_Textbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Home_Btn);
@@ -133,8 +134,8 @@
         private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox User_Textbox;
         private FontAwesome.Sharp.IconButton UserLogin_Btn;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Password_TextBox;
     }
 }

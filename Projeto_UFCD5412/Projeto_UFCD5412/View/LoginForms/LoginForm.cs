@@ -21,11 +21,17 @@ namespace Projeto_UFCD5412.View.LoginForms
 
         private void UserLogin_Btn_Click(object sender, EventArgs e)
         {
-             MainWindow mainWindow = new MainWindow();
-
-            mainWindow.FormClosed += MainWindow_FormClosed;
-
-            mainWindow.Show();
+            if(loginController.Login(User_Textbox.Text, Password_TextBox.Text))
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.FormClosed += MainWindow_FormClosed;
+                mainWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Username or Password is incorrect");
+            }
 
             this.Hide();
         }

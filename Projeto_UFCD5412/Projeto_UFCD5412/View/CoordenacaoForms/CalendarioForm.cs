@@ -11,22 +11,38 @@ using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Markup;
 using System.Text.RegularExpressions;
+using Projeto_UFCD5412.Data;
+
 
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
+        private string caminhoArquivoCSV = "formacoes.csv";
         private DateTime dataAtual;
-
         private Dictionary<DateTime, List<Formacao.FormacaoAgendada>> eventosPorDia = new Dictionary<DateTime, List<Formacao.FormacaoAgendada>>();
 
         public CalendarioForm()
         {
             InitializeComponent();
             dataAtual = DateTime.Today;
+            CarregarAulasSalvas(); // Carrega as aulas salvas do arquivo CSV
             AtualizarCalendario();
             this.Resize += CalendarioForm_Resize;
+            this.FormClosing += CalendarioForm_FormClosing;
+        }
+
+        private void CarregarAulasSalvas()
+        {
+            eventosPorDia = CSVFormacao.ImportarFormacoes();
+            AtualizarCalendario(); 
+        }
+
+
+        private void CalendarioForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CSVFormacao.ExportarFormacoes(eventosPorDia);
         }
 
         private void CalendarioForm_Resize(object sender, EventArgs e)
@@ -139,63 +155,30 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-
         private void AdicionarEvento(int ano, int mes, int dia)
         {
             DateTime dataSelecionada = new DateTime(ano, mes, dia);
 
-            // Verificar se já existem aulas agendadas para o dia selecionado
-            if (eventosPorDia.ContainsKey(dataSelecionada) && eventosPorDia[dataSelecionada].Count > 0)
+            if (!eventosPorDia.ContainsKey(dataSelecionada))
             {
-                MessageBox.Show("Já existem aulas agendadas para este dia. Por favor, escolha outro dia.");
-                return;
+                eventosPorDia[dataSelecionada] = new List<Formacao.FormacaoAgendada>();
             }
 
-            // Se não houver aulas agendadas, exibir o formulário para adicionar uma nova aula
             AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
             if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
             {
                 Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
 
-                // Adicionar aula ao calendário
-                eventosPorDia[dataSelecionada] = new List<Formacao.FormacaoAgendada> {
-            new Formacao.FormacaoAgendada {
-                Data = novaFormacao.DataInicio,
-                Formador = novaFormacao.Formador,
-                Turma = novaFormacao.Turma
-            }
-        };
+                eventosPorDia[dataSelecionada].Add(new Formacao.FormacaoAgendada
+                {
+                    Data = novaFormacao.DataInicio,
+                    Formador = novaFormacao.Formador,
+                    Turma = novaFormacao.Turma
+                });
 
                 AtualizarCelula(dataSelecionada);
             }
         }
-
-        private bool VerificarHorarioDisponivel(Formacao novaFormacao)
-        {
-            // Recuperar as formações agendadas para o mesmo dia que a nova formação
-            List<Formacao.FormacaoAgendada> formacoesAgendadas = eventosPorDia[novaFormacao.DataInicio.Date];
-
-            // Calcular o horário de término da nova formação
-            DateTime horarioTerminoNovaFormacao = novaFormacao.DataInicio.AddHours(Convert.ToInt32(novaFormacao.HoraFim.Split(':')[0]));
-
-            // Verificar se há conflito de horário com as formações agendadas
-            foreach (Formacao.FormacaoAgendada formacaoAgendada in formacoesAgendadas)
-            {
-                // Calcular o horário de término da formação agendada
-                DateTime horarioTerminoFormacaoAgendada = formacaoAgendada.Data.AddHours(Convert.ToInt32(formacaoAgendada.HoraFim.Split(':')[0]));
-
-                // Verificar se o horário de início ou término da nova formação se sobrepõe com alguma formação agendada
-                if ((novaFormacao.DataInicio >= formacaoAgendada.Data && novaFormacao.DataInicio < horarioTerminoFormacaoAgendada) ||
-                    (horarioTerminoNovaFormacao > formacaoAgendada.Data && horarioTerminoNovaFormacao <= horarioTerminoFormacaoAgendada))
-                {
-                    return false; // Conflito de horário encontrado
-                }
-            }
-
-            return true; // Horário disponível
-        }
-
-
 
         private void AtualizarCelula(DateTime data)
         {
@@ -235,7 +218,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 }
             }
         }
-
 
         private void avancar_btn_Click(object sender, EventArgs e)
         {

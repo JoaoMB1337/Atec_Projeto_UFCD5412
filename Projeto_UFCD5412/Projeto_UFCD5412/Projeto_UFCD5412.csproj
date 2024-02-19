@@ -53,6 +53,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\CSVFormacao.cs" />
     <Compile Include="Data\CSVHandler.cs" />
     <Compile Include="Model\Calendario.cs" />
     <Compile Include="Model\Coordenador.cs" />

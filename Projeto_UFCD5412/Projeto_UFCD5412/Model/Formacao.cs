@@ -8,7 +8,7 @@ namespace Projeto_UFCD5412.Model
 {
     public class Formacao
     {
-        // Campos da formação
+        //campos da formação
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
         public string HoraInicio { get; set; }
@@ -16,7 +16,7 @@ namespace Projeto_UFCD5412.Model
         public string Formador { get; set; }
         public string Turma { get; set; }
 
-        // Construtor
+        //construtor
         public Formacao(DateTime dataInicio, DateTime dataFim, string horaInicio, string horaFim, string formador, string turma)
         {
             DataInicio = dataInicio;
@@ -32,6 +32,9 @@ namespace Projeto_UFCD5412.Model
             public DateTime Data { get; set; }
             public string Formador { get; set; }
             public string Turma { get; set; }
+            public string HoraInicio { get; set; }
+            public string HoraFim { get; set; }
+
         }
     }
 }

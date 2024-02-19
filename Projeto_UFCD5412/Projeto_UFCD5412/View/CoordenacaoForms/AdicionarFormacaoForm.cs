@@ -16,7 +16,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
     {
         public Formacao FormacaoAdicionada { get; private set; }
 
-        private DateTime dataSelecionada;
+        private readonly DateTime dataSelecionada;
 
         public AdicionarFormacaoForm(DateTime dataSelecionada)
         {
@@ -45,16 +45,9 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             Turmas_combo.Items.Clear();
 
-            // Criar turmas estaticamente
-            Turmas_combo.Items.Add("UFCD 5412");
-            Turmas_combo.Items.Add("UFCD 5413");
-            Turmas_combo.Items.Add("UFCD 5414");
-            Turmas_combo.Items.Add("UFCD 5415");
-            Turmas_combo.Items.Add("UFCD 5416");
-            Turmas_combo.Items.Add("UFCD 5417");
+            string[] turmas = { "UFCD 5412", "UFCD 5413", "UFCD 5414", "UFCD 5415", "UFCD 5416", "UFCD 5417" };
+            Turmas_combo.Items.AddRange(turmas);
         }
-
-       
 
         private void LimparCampos()
         {
@@ -89,7 +82,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

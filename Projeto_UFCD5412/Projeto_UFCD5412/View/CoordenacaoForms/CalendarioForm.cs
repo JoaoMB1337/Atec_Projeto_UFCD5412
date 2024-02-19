@@ -10,26 +10,37 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using System.Text.RegularExpressions;
 
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
-
         private DateTime dataAtual;
+
+        private Dictionary<DateTime, List<Formacao.FormacaoAgendada>> eventosPorDia = new Dictionary<DateTime, List<Formacao.FormacaoAgendada>>();
 
         public CalendarioForm()
         {
             InitializeComponent();
-
             dataAtual = DateTime.Today;
             AtualizarCalendario();
-
             this.Resize += CalendarioForm_Resize;
         }
 
         private void CalendarioForm_Resize(object sender, EventArgs e)
+        {
+            AjustarTamanhoCelulas();
+        }
+
+        private void AtualizarCalendario()
+        {
+            PreencherCalendario(dataAtual);
+            AjustarTamanhoCelulas();
+        }
+
+        private void AjustarTamanhoCelulas()
         {
             int larguraCelula = tableLayoutPanel1.Width / tableLayoutPanel1.ColumnCount;
             int alturaCelula = tableLayoutPanel1.Height / tableLayoutPanel1.RowCount;
@@ -45,14 +56,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-        private void AtualizarCalendario()
-        {
-            PreencherCalendario(dataAtual);
-        }
-
         private void PreencherCalendario(DateTime data)
         {
             tableLayoutPanel1.Controls.Clear();
+            eventosPorDia.Clear();
 
             int diasNoMes = DateTime.DaysInMonth(data.Year, data.Month);
             DayOfWeek primeiroDiaDoMes = new DateTime(data.Year, data.Month, 1).DayOfWeek;
@@ -110,32 +117,19 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         else
                         {
                             lbl.BackColor = Color.White;
-                            lbl.Click += (sender, e) =>
-                            {
-                                Label selectedLabel = (Label)sender;
-                                int diaSelecionado = int.Parse(selectedLabel.Text);
-                                AdicionarEvento(data.Year, data.Month, diaSelecionado);
-                            };
-                            lbl.Cursor = Cursors.Hand;
-                            lbl.MouseEnter += (sender, e) =>
-                            {
-                                Label hoveredLabel = (Label)sender;
-                                if (hoveredLabel.BackColor != Color.Yellow)
-                                {
-                                    hoveredLabel.BackColor = Color.LightBlue;
-                                }
-                            };
-                            lbl.MouseLeave += (sender, e) =>
-                            {
-                                Label leftLabel = (Label)sender;
-                                if (leftLabel.BackColor != Color.Yellow)
-                                {
-                                    leftLabel.BackColor = Color.White;
-                                }
-                            };
                         }
 
+                        lbl.Click += (sender, e) =>
+                        {
+                            Label selectedLabel = (Label)sender;
+                            int diaSelecionado = int.Parse(selectedLabel.Text);
+                            AdicionarEvento(data.Year, data.Month, diaSelecionado);
+                        };
+                        lbl.Cursor = Cursors.Hand;
+
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
+
+                        eventosPorDia[new DateTime(data.Year, data.Month, diaAtual)] = new List<Formacao.FormacaoAgendada>();
                         diaAtual++;
                     }
                 }
@@ -145,47 +139,103 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
+
         private void AdicionarEvento(int ano, int mes, int dia)
         {
-            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(new DateTime(ano, mes, dia));
+            DateTime dataSelecionada = new DateTime(ano, mes, dia);
+
+            // Verificar se já existem aulas agendadas para o dia selecionado
+            if (eventosPorDia.ContainsKey(dataSelecionada) && eventosPorDia[dataSelecionada].Count > 0)
+            {
+                MessageBox.Show("Já existem aulas agendadas para este dia. Por favor, escolha outro dia.");
+                return;
+            }
+
+            // Se não houver aulas agendadas, exibir o formulário para adicionar uma nova aula
+            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
             if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
             {
                 Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
 
-                if (!string.IsNullOrEmpty(novaFormacao.Formador) && !string.IsNullOrEmpty(novaFormacao.Turma))
+                // Adicionar aula ao calendário
+                eventosPorDia[dataSelecionada] = new List<Formacao.FormacaoAgendada> {
+            new Formacao.FormacaoAgendada {
+                Data = novaFormacao.DataInicio,
+                Formador = novaFormacao.Formador,
+                Turma = novaFormacao.Turma
+            }
+        };
+
+                AtualizarCelula(dataSelecionada);
+            }
+        }
+
+        private bool VerificarHorarioDisponivel(Formacao novaFormacao)
+        {
+            // Recuperar as formações agendadas para o mesmo dia que a nova formação
+            List<Formacao.FormacaoAgendada> formacoesAgendadas = eventosPorDia[novaFormacao.DataInicio.Date];
+
+            // Calcular o horário de término da nova formação
+            DateTime horarioTerminoNovaFormacao = novaFormacao.DataInicio.AddHours(Convert.ToInt32(novaFormacao.HoraFim.Split(':')[0]));
+
+            // Verificar se há conflito de horário com as formações agendadas
+            foreach (Formacao.FormacaoAgendada formacaoAgendada in formacoesAgendadas)
+            {
+                // Calcular o horário de término da formação agendada
+                DateTime horarioTerminoFormacaoAgendada = formacaoAgendada.Data.AddHours(Convert.ToInt32(formacaoAgendada.HoraFim.Split(':')[0]));
+
+                // Verificar se o horário de início ou término da nova formação se sobrepõe com alguma formação agendada
+                if ((novaFormacao.DataInicio >= formacaoAgendada.Data && novaFormacao.DataInicio < horarioTerminoFormacaoAgendada) ||
+                    (horarioTerminoNovaFormacao > formacaoAgendada.Data && horarioTerminoNovaFormacao <= horarioTerminoFormacaoAgendada))
                 {
-                    foreach (Control control in tableLayoutPanel1.Controls)
+                    return false; // Conflito de horário encontrado
+                }
+            }
+
+            return true; // Horário disponível
+        }
+
+
+
+        private void AtualizarCelula(DateTime data)
+        {
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                if (control is Label label && label.Text != "")
+                {
+                    string[] splitText = label.Text.Split('\n');
+                    if (splitText.Length > 0)
                     {
-                        if (control is Label label && label.Text == dia.ToString())
+                        if (int.TryParse(splitText[0], out int diaCelula))
                         {
-                            if (label.Tag == null)
+                            if (new DateTime(data.Year, data.Month, diaCelula) == data)
                             {
-                                label.Tag = novaFormacao;
-                                label.Text += $"\n{novaFormacao.Formador} - {novaFormacao.Turma}";
-                                label.BackColor = Color.Yellow; // Pinta o fundo de amarelo
+                                label.Text = $"{diaCelula}\n({eventosPorDia[data].Count} aula)";
+                                if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
+                                {
+                                    label.BackColor = Color.LightGreen;
+                                    label.Text += "\n";
+                                    foreach (var evento in eventosPorDia[data])
+                                    {
+                                        label.Text += $"{evento.Formador} - {evento.Turma}\n";
+                                    }
+                                    label.Font = new Font(label.Font, FontStyle.Bold);
+
+                                    // Ajustar o tamanho da label com base no conteúdo
+                                    Size size = TextRenderer.MeasureText(label.Text, label.Font);
+                                    label.Size = new Size(size.Width + 10, size.Height + 10); // Aumenta um pouco o tamanho para folga
+                                }
                             }
-                            else
-                            {
-                                label.Text += $"\n{novaFormacao.Formador} - {novaFormacao.Turma}";
-                            }
-                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
                         }
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, preencha todos os campos para adicionar a formação.");
                 }
             }
         }
 
-
-        private void DadosAulaAgendada(object sender, EventArgs e)
-        {
-            Label label = (Label)sender;
-            Formacao formacao = (Formacao)label.Tag;
-            MessageBox.Show($"Formação agendada para o dia {formacao.DataInicio.ToShortDateString()}:\n{formacao.Formador} - {formacao.Turma}");
-        }
 
         private void avancar_btn_Click(object sender, EventArgs e)
         {
@@ -197,11 +247,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             dataAtual = dataAtual.AddMonths(-1);
             AtualizarCalendario();
-        }
-
-        public void AdicionarFormacaoAoCalendario(Formacao formacao)
-        {
-            MessageBox.Show($"Adicionando formação ao calendário: {formacao.DataInicio.ToShortDateString()} - {formacao.DataFim.ToShortDateString()}");
         }
     }
 }

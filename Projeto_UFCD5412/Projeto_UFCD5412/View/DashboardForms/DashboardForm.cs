@@ -45,10 +45,13 @@ namespace Projeto_UFCD5412.View.DashboardForms
             int contratosAtivos = funcionarios.Count(f => f.DataFimContrato > DateTime.Today);
             ContadorContratos_label.Text = $"Contratos Ativos: {contratosAtivos}";
 
+            int contratosInativos = funcionarios.Count(f => f.DataFimContrato < DateTime.Today);
+            ContadorContratosInativos_label.Text = $"Contratos Inativos: {contratosInativos}";                                                                                                                                      
+
             // Encontra o próximo aniversário de um funcionário
             var proximoAniversario = funcionarios.OrderBy(f => (f.DataAniversario.Month < DateTime.Today.Month || (f.DataAniversario.Month == DateTime.Today.Month && f.DataAniversario.Day >= DateTime.Today.Day)) ? f.DataAniversario.Month * 100 + f.DataAniversario.Day : (f.DataAniversario.Month + 12) * 100 + f.DataAniversario.Day)
                                                   .FirstOrDefault();
-
+                                                                                            
             if (proximoAniversario != null)
             {
                 ProximoAniversarioLabel.Text = $" {proximoAniversario.Id} {proximoAniversario.Nome} {proximoAniversario.DataAniversario.Day}/{proximoAniversario.DataAniversario.Month}";
@@ -58,19 +61,18 @@ namespace Projeto_UFCD5412.View.DashboardForms
                 ProximoAniversarioLabel.Text = "Não há aniversários próximos.";
             }
         }
-       
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void Home_Button_Click(object sender, EventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Hide();
             mainWindow.TopLevel = false;
             mainWindow.FormBorderStyle = FormBorderStyle.None;
-            mainWindow.Dock = DockStyle.Fill; 
+            mainWindow.Dock = DockStyle.Fill;
             mainWindow.BringToFront();
-            mainWindow.Show();        
-        }
+            mainWindow.Show();
+        }      
     }
 }
 

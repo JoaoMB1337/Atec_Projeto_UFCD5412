@@ -110,6 +110,12 @@
     <Compile Include="View\FuncionarioForms\ListarFuncionariosForm.Designer.cs">
       <DependentUpon>ListarFuncionariosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginForms\AlterarPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForms\AlterarPasswordForm.Designer.cs">
+      <DependentUpon>AlterarPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\ListarFuncionariosForm.resx">
       <DependentUpon>ListarFuncionariosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForms\AlterarPasswordForm.resx">
+      <DependentUpon>AlterarPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

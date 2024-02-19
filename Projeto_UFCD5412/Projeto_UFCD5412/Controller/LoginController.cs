@@ -18,25 +18,38 @@ namespace Projeto_UFCD5412.Controller
             funcionarios = CSVHandler.LoadFromCSV();
         }   
 
-        public bool Login(string username, string password)
+        public string Login(string username, string password)
         {
+            if (username == "admin" && password == "admin")
+            {
+                return "admin";
+            }
             Funcionario funcionario = funcionarios.Find(f => f.Username == username && f.Password == password);  
             if (funcionario != null)
             {
                 if(funcionario.PrimeiroLogin)
                 {
-                    MessageBox.Show("You are logging in for the first time, please change your password");
-                    return true;
+                    return "PrimeiroLogin"; 
                 }
                 else
                 {
-                    return true;
+                    return funcionario.Tipo;  
                 }
             }
             else
             {
-                return false;
+                return null;
             }
+           
+        }
+
+        public bool AlterarPassword(string username, string novaPassword)
+        {
+            Funcionario funcionario = funcionarios.Find(f => f.Username == username);
+            funcionario.Password = novaPassword;
+            funcionario.PrimeiroLogin = false;
+            CSVHandler.ExportToCSV(funcionarios);
+            return true;
         }
     }
 }

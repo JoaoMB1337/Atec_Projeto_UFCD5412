@@ -21,8 +21,12 @@ namespace Projeto_UFCD5412.View.LoginForms
 
         private void UserLogin_Btn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(User_Textbox.Text) || string.IsNullOrEmpty(Password_TextBox.Text))
+            {
+                MessageBox.Show("Por favor, preencha ambos os campos de user e password.");
+                return;
+            }
             string loginResult = loginController.Login(User_Textbox.Text, Password_TextBox.Text);
-
             if (loginResult != null)
             {
                 if (loginResult == "PrimeiroLogin")

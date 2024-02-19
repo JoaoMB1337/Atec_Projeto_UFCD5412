@@ -64,7 +64,6 @@ namespace Projeto_UFCD5412
             Application.Run(new MainWindow());
 
 
-
         }
     }
 }

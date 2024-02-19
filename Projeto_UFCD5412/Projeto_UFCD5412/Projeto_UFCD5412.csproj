@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DateTimeController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Data\CSVHandler.cs" />
     <Compile Include="Model\Calendario.cs" />
     <Compile Include="Model\Coordenador.cs" />

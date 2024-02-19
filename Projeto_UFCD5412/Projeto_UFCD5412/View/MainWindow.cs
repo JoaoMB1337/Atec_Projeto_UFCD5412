@@ -33,7 +33,7 @@ namespace Projeto_UFCD5412
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
+            leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
             //Form
@@ -72,15 +72,12 @@ namespace Projeto_UFCD5412
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
-                //Icone Atual
-
-
             }
         }
 
@@ -88,7 +85,7 @@ namespace Projeto_UFCD5412
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(0,0,64);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -175,7 +172,7 @@ namespace Projeto_UFCD5412
 
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color2);
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
 
 
@@ -189,10 +186,6 @@ namespace Projeto_UFCD5412
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
             
-
-
-
-
         }
 
         private void DashboardFormadores_Btn_Click(object sender, EventArgs e)
@@ -206,15 +199,15 @@ namespace Projeto_UFCD5412
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)
         {
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color4);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
-            CalcularValorForm financasMainForm = new CalcularValorForm();
-            financasMainForm.TopLevel = false;
-            financasMainForm.FormBorderStyle = FormBorderStyle.None;
-            financasMainForm.Dock = DockStyle.Fill;
-            Menus_TabControl.SelectedTab.Controls.Add(financasMainForm);
-            financasMainForm.BringToFront();
-            financasMainForm.Show();
+            //CalcularValorForm financasMainForm = new CalcularValorForm();
+            //financasMainForm.TopLevel = false;
+            //financasMainForm.FormBorderStyle = FormBorderStyle.None;
+            //financasMainForm.Dock = DockStyle.Fill;
+            //Menus_TabControl.SelectedTab.Controls.Add(financasMainForm);
+            //financasMainForm.BringToFront();
+            //financasMainForm.Show();
 
             
         }
@@ -222,7 +215,7 @@ namespace Projeto_UFCD5412
         private void Defincoes_Btn_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            ActivateButton(sender, RGBColors.color3);
+            ActivateButton(sender, RGBColors.color5);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
             settingsForm.TopLevel = false;
             settingsForm.FormBorderStyle = FormBorderStyle.None;

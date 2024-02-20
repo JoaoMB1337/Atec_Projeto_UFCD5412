@@ -48,24 +48,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(74, 173);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 24);
+            this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Data de início";
+            this.label1.Text = "Data de início:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(464, 174);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 24);
+            this.label2.Size = new System.Drawing.Size(93, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Data de fim";
+            this.label2.Text = "Data de fim:";
             // 
             // DataInicio_calendar
             // 
@@ -161,86 +163,97 @@
             // 
             // AdicionarFormacao_btn
             // 
+            this.AdicionarFormacao_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(255)))));
+            this.AdicionarFormacao_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdicionarFormacao_btn.ForeColor = System.Drawing.Color.White;
             this.AdicionarFormacao_btn.Location = new System.Drawing.Point(621, 437);
             this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2);
             this.AdicionarFormacao_btn.Name = "AdicionarFormacao_btn";
             this.AdicionarFormacao_btn.Size = new System.Drawing.Size(107, 23);
             this.AdicionarFormacao_btn.TabIndex = 26;
             this.AdicionarFormacao_btn.Text = "Adicionar";
-            this.AdicionarFormacao_btn.UseVisualStyleBackColor = true;
+            this.AdicionarFormacao_btn.UseVisualStyleBackColor = false;
             this.AdicionarFormacao_btn.Click += new System.EventHandler(this.AdicionarFormacao_btn_Click_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(74, 237);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 24);
+            this.label3.Size = new System.Drawing.Size(108, 18);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Hora de inicio";
+            this.label3.Text = "Hora de início:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(460, 237);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 24);
+            this.label4.Size = new System.Drawing.Size(93, 18);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Hora de fim";
+            this.label4.Text = "Hora de fim:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(74, 311);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 24);
+            this.label5.Size = new System.Drawing.Size(81, 18);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Formador";
+            this.label5.Text = "Formador:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(479, 311);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 24);
+            this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Turma";
+            this.label6.Text = "Turma:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(179, 45);
+            this.label7.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(131, 46);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(539, 55);
+            this.label7.Size = new System.Drawing.Size(578, 42);
             this.label7.TabIndex = 31;
-            this.label7.Text = "Agendamento de UFCD";
+            this.label7.Text = "Agendamento de Formação UFCD";
             // 
             // Sair_Btn
             // 
+            this.Sair_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(94)))), ((int)(((byte)(87)))));
+            this.Sair_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sair_Btn.ForeColor = System.Drawing.Color.White;
             this.Sair_Btn.Location = new System.Drawing.Point(734, 437);
             this.Sair_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Sair_Btn.Name = "Sair_Btn";
             this.Sair_Btn.Size = new System.Drawing.Size(107, 23);
             this.Sair_Btn.TabIndex = 32;
             this.Sair_Btn.Text = "Sair";
-            this.Sair_Btn.UseVisualStyleBackColor = true;
+            this.Sair_Btn.UseVisualStyleBackColor = false;
             this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // AdicionarFormacaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(867, 471);
             this.ControlBox = false;
             this.Controls.Add(this.Sair_Btn);
@@ -262,7 +275,7 @@
             this.Name = "AdicionarFormacaoForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdicionarFormacaoForm";
+            this.Text = "Agendamento de Formação UFCD";
             this.ResumeLayout(false);
             this.PerformLayout();
 

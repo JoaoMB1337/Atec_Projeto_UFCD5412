@@ -69,7 +69,7 @@ namespace Projeto_UFCD5412
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(45,52,54);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -86,7 +86,7 @@ namespace Projeto_UFCD5412
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(0,0,64);
+                currentBtn.BackColor = Color.FromArgb(45, 52, 54);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -275,6 +275,11 @@ namespace Projeto_UFCD5412
         private void DateTimeController_DateTimeChanged(object sender, DateTimeChangedEventArgs e)
         {
             timer_label.Text = e.NewDateTime.ToString("dd/MM/yyyy HH:mm:ss");
+        }
+
+        private void Sair_btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

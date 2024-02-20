@@ -73,6 +73,36 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aniversario_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("aniversario-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cativo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("cativo-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cexpirado_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("cexpirado-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_ADOSMELHORES_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("icon-ADOSMELHORES-removebg-preview", resourceCulture);
@@ -86,6 +116,36 @@ namespace Projeto_UFCD5412.Properties {
         internal static System.Drawing.Bitmap rm314_adj_02 {
             get {
                 object obj = ResourceManager.GetObject("rm314-adj-02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salarionewicon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("salarionewicon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salarionovo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("salarionovo-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salarios_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("salarios-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

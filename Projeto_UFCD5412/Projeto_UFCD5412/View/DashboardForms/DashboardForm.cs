@@ -24,6 +24,7 @@ namespace Projeto_UFCD5412.View.DashboardForms
         {
             InitializeComponent();
             LoadData();
+            totalSalario_lbl.Text = empresaController.CalcularTotalSalarios().ToString();
            
         }
 
@@ -72,7 +73,14 @@ namespace Projeto_UFCD5412.View.DashboardForms
             mainWindow.Dock = DockStyle.Fill;
             mainWindow.BringToFront();
             mainWindow.Show();
-        }      
+        }
+
+        private void TipoFuncionario_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipoFuncionario = TipoFuncionario_comboBox.SelectedItem.ToString();
+            decimal totalSalarios = empresaController.CalcularTotalSalarios(tipoFuncionario);
+            totalSalario_lbl.Text = totalSalarios.ToString();
+        }
     }
 }
 

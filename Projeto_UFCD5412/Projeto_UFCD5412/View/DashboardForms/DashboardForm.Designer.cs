@@ -35,21 +35,35 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.ProximoAniversarioLabel = new System.Windows.Forms.Label();
-            this.Home_Button = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ContadorContratosInativos_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.totalSalario_lbl = new System.Windows.Forms.Label();
+            this.dolar_lbl = new System.Windows.Forms.Label();
+            this.TipoFuncionario_comboBox = new System.Windows.Forms.ComboBox();
+            this.Salarios_lbl = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            this.Home_Button = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 45);
@@ -69,9 +83,10 @@
             this.panel7.Controls.Add(this.label4);
             this.panel7.Controls.Add(this.ContadorFunc_label);
             this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(44, 69);
+            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel7.Location = new System.Drawing.Point(101, 111);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(320, 266);
+            this.panel7.Size = new System.Drawing.Size(388, 266);
             this.panel7.TabIndex = 9;
             // 
             // Contador_Formadores_label
@@ -79,7 +94,7 @@
             this.Contador_Formadores_label.AutoSize = true;
             this.Contador_Formadores_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Formadores_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Formadores_label.Location = new System.Drawing.Point(163, 177);
+            this.Contador_Formadores_label.Location = new System.Drawing.Point(172, 207);
             this.Contador_Formadores_label.Name = "Contador_Formadores_label";
             this.Contador_Formadores_label.Size = new System.Drawing.Size(80, 21);
             this.Contador_Formadores_label.TabIndex = 8;
@@ -90,7 +105,7 @@
             this.Contador_Secretari_label.AutoSize = true;
             this.Contador_Secretari_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Secretari_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Secretari_label.Location = new System.Drawing.Point(163, 151);
+            this.Contador_Secretari_label.Location = new System.Drawing.Point(172, 181);
             this.Contador_Secretari_label.Name = "Contador_Secretari_label";
             this.Contador_Secretari_label.Size = new System.Drawing.Size(67, 21);
             this.Contador_Secretari_label.TabIndex = 7;
@@ -101,7 +116,7 @@
             this.Contador_Diretores_label.AutoSize = true;
             this.Contador_Diretores_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Diretores_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Diretores_label.Location = new System.Drawing.Point(163, 124);
+            this.Contador_Diretores_label.Location = new System.Drawing.Point(172, 154);
             this.Contador_Diretores_label.Name = "Contador_Diretores_label";
             this.Contador_Diretores_label.Size = new System.Drawing.Size(89, 21);
             this.Contador_Diretores_label.TabIndex = 6;
@@ -112,7 +127,7 @@
             this.ContFuncionarios_label.AutoSize = true;
             this.ContFuncionarios_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContFuncionarios_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ContFuncionarios_label.Location = new System.Drawing.Point(163, 96);
+            this.ContFuncionarios_label.Location = new System.Drawing.Point(172, 126);
             this.ContFuncionarios_label.Name = "ContFuncionarios_label";
             this.ContFuncionarios_label.Size = new System.Drawing.Size(77, 21);
             this.ContFuncionarios_label.TabIndex = 5;
@@ -123,7 +138,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(23, 177);
+            this.label7.Location = new System.Drawing.Point(32, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 21);
             this.label7.TabIndex = 4;
@@ -134,7 +149,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(23, 151);
+            this.label5.Location = new System.Drawing.Point(32, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 3;
@@ -145,7 +160,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(23, 124);
+            this.label6.Location = new System.Drawing.Point(32, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 2;
@@ -156,7 +171,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 96);
+            this.label4.Location = new System.Drawing.Point(32, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 21);
             this.label4.TabIndex = 1;
@@ -167,7 +182,7 @@
             this.ContadorFunc_label.AutoSize = true;
             this.ContadorFunc_label.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContadorFunc_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ContadorFunc_label.Location = new System.Drawing.Point(19, 54);
+            this.ContadorFunc_label.Location = new System.Drawing.Point(28, 63);
             this.ContadorFunc_label.Name = "ContadorFunc_label";
             this.ContadorFunc_label.Size = new System.Drawing.Size(100, 47);
             this.ContadorFunc_label.TabIndex = 3;
@@ -187,21 +202,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.iconPictureBox3);
             this.panel2.Controls.Add(this.ContadorContratos_label);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(402, 69);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(539, 111);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(537, 120);
+            this.panel2.Size = new System.Drawing.Size(558, 120);
             this.panel2.TabIndex = 10;
             // 
             // ContadorContratos_label
             // 
             this.ContadorContratos_label.AutoSize = true;
-            this.ContadorContratos_label.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContadorContratos_label.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContadorContratos_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ContadorContratos_label.Location = new System.Drawing.Point(19, 49);
             this.ContadorContratos_label.Name = "ContadorContratos_label";
-            this.ContadorContratos_label.Size = new System.Drawing.Size(140, 65);
+            this.ContadorContratos_label.Size = new System.Drawing.Size(92, 45);
             this.ContadorContratos_label.TabIndex = 3;
             this.ContadorContratos_label.Text = "1234";
             // 
@@ -219,11 +236,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.iconPictureBox2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.ProximoAniversarioLabel);
-            this.panel1.Location = new System.Drawing.Point(402, 215);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(1179, 111);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 120);
+            this.panel1.Size = new System.Drawing.Size(671, 120);
             this.panel1.TabIndex = 11;
             // 
             // label8
@@ -248,37 +267,26 @@
             this.ProximoAniversarioLabel.TabIndex = 4;
             this.ProximoAniversarioLabel.Text = "John Doe";
             // 
-            // Home_Button
-            // 
-            this.Home_Button.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.Home_Button.IconColor = System.Drawing.Color.Black;
-            this.Home_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Home_Button.Location = new System.Drawing.Point(1813, 12);
-            this.Home_Button.Name = "Home_Button";
-            this.Home_Button.Size = new System.Drawing.Size(84, 56);
-            this.Home_Button.TabIndex = 12;
-            this.Home_Button.Text = "Home";
-            this.Home_Button.UseVisualStyleBackColor = true;
-            this.Home_Button.Click += new System.EventHandler(this.Home_Button_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.iconPictureBox4);
             this.panel3.Controls.Add(this.ContadorContratosInativos_label);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(945, 69);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(539, 262);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(531, 120);
+            this.panel3.Size = new System.Drawing.Size(558, 120);
             this.panel3.TabIndex = 11;
             // 
             // ContadorContratosInativos_label
             // 
             this.ContadorContratosInativos_label.AutoSize = true;
-            this.ContadorContratosInativos_label.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContadorContratosInativos_label.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContadorContratosInativos_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ContadorContratosInativos_label.Location = new System.Drawing.Point(19, 49);
             this.ContadorContratosInativos_label.Name = "ContadorContratosInativos_label";
-            this.ContadorContratosInativos_label.Size = new System.Drawing.Size(140, 65);
+            this.ContadorContratosInativos_label.Size = new System.Drawing.Size(92, 45);
             this.ContadorContratosInativos_label.TabIndex = 3;
             this.ContadorContratosInativos_label.Text = "1234";
             // 
@@ -293,12 +301,154 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Contratos Expirados";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.iconPictureBox1);
+            this.panel4.Controls.Add(this.totalSalario_lbl);
+            this.panel4.Controls.Add(this.dolar_lbl);
+            this.panel4.Controls.Add(this.TipoFuncionario_comboBox);
+            this.panel4.Controls.Add(this.Salarios_lbl);
+            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(101, 469);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(388, 266);
+            this.panel4.TabIndex = 10;
+            // 
+            // totalSalario_lbl
+            // 
+            this.totalSalario_lbl.AutoSize = true;
+            this.totalSalario_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSalario_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.totalSalario_lbl.Location = new System.Drawing.Point(43, 177);
+            this.totalSalario_lbl.Name = "totalSalario_lbl";
+            this.totalSalario_lbl.Size = new System.Drawing.Size(0, 37);
+            this.totalSalario_lbl.TabIndex = 6;
+            // 
+            // dolar_lbl
+            // 
+            this.dolar_lbl.AutoSize = true;
+            this.dolar_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dolar_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dolar_lbl.Location = new System.Drawing.Point(21, 177);
+            this.dolar_lbl.Name = "dolar_lbl";
+            this.dolar_lbl.Size = new System.Drawing.Size(35, 37);
+            this.dolar_lbl.TabIndex = 5;
+            this.dolar_lbl.Text = "$";
+            // 
+            // TipoFuncionario_comboBox
+            // 
+            this.TipoFuncionario_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipoFuncionario_comboBox.FormattingEnabled = true;
+            this.TipoFuncionario_comboBox.Items.AddRange(new object[] {
+            "Todos",
+            "Funcionários",
+            "Diretores",
+            "Secretaria",
+            "Formadores"});
+            this.TipoFuncionario_comboBox.Location = new System.Drawing.Point(27, 75);
+            this.TipoFuncionario_comboBox.Name = "TipoFuncionario_comboBox";
+            this.TipoFuncionario_comboBox.Size = new System.Drawing.Size(121, 26);
+            this.TipoFuncionario_comboBox.TabIndex = 4;
+            this.TipoFuncionario_comboBox.Text = "Todos";
+            this.TipoFuncionario_comboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_comboBox_SelectedIndexChanged);
+            // 
+            // Salarios_lbl
+            // 
+            this.Salarios_lbl.AutoSize = true;
+            this.Salarios_lbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salarios_lbl.ForeColor = System.Drawing.Color.White;
+            this.Salarios_lbl.Location = new System.Drawing.Point(23, 13);
+            this.Salarios_lbl.Name = "Salarios_lbl";
+            this.Salarios_lbl.Size = new System.Drawing.Size(81, 25);
+            this.Salarios_lbl.TabIndex = 3;
+            this.Salarios_lbl.Text = "Salários";
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox1.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.salarionewicon_removebg_preview;
+            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 108;
+            this.iconPictureBox1.Location = new System.Drawing.Point(271, 13);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(114, 108);
+            this.iconPictureBox1.TabIndex = 7;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox4.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cexpirado_removebg_preview;
+            this.iconPictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 107;
+            this.iconPictureBox4.Location = new System.Drawing.Point(428, 0);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(107, 117);
+            this.iconPictureBox4.TabIndex = 10;
+            this.iconPictureBox4.TabStop = false;
+            // 
+            // Home_Button
+            // 
+            this.Home_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Home_Button.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.Home_Button.IconColor = System.Drawing.Color.Black;
+            this.Home_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Home_Button.Location = new System.Drawing.Point(1813, 12);
+            this.Home_Button.Name = "Home_Button";
+            this.Home_Button.Size = new System.Drawing.Size(84, 56);
+            this.Home_Button.TabIndex = 12;
+            this.Home_Button.Text = "Home";
+            this.Home_Button.UseVisualStyleBackColor = true;
+            this.Home_Button.Click += new System.EventHandler(this.Home_Button_Click);
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox2.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.aniversario_removebg_preview;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 118;
+            this.iconPictureBox2.Location = new System.Drawing.Point(475, 3);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(193, 118);
+            this.iconPictureBox2.TabIndex = 8;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox3.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cativo_removebg_preview;
+            this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 107;
+            this.iconPictureBox3.Location = new System.Drawing.Point(428, 9);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(107, 108);
+            this.iconPictureBox3.TabIndex = 9;
+            this.iconPictureBox3.TabStop = false;
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1909, 851);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Home_Button);
             this.Controls.Add(this.panel1);
@@ -316,6 +466,12 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +501,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label ContadorContratosInativos_label;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label totalSalario_lbl;
+        private System.Windows.Forms.Label dolar_lbl;
+        private System.Windows.Forms.ComboBox TipoFuncionario_comboBox;
+        private System.Windows.Forms.Label Salarios_lbl;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
     }
 }

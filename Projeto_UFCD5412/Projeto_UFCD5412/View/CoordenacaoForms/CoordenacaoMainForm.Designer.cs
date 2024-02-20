@@ -89,25 +89,25 @@
             // 
             // Sair_btn
             // 
-            this.DashboardDefinicoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardDefinicoes_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardDefinicoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardDefinicoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardDefinicoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.DashboardDefinicoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardDefinicoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardDefinicoes_Btn.IconSize = 32;
-            this.DashboardDefinicoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardDefinicoes_Btn.Location = new System.Drawing.Point(0, 238);
-            this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(2);
-            this.DashboardDefinicoes_Btn.Name = "DashboardDefinicoes_Btn";
-            this.DashboardDefinicoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.DashboardDefinicoes_Btn.Size = new System.Drawing.Size(220, 49);
-            this.DashboardDefinicoes_Btn.TabIndex = 8;
-            this.DashboardDefinicoes_Btn.Text = "Definições";
-            this.DashboardDefinicoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardDefinicoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardDefinicoes_Btn.UseVisualStyleBackColor = true;
+            //this.DashboardDefinicoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            //this.DashboardDefinicoes_Btn.FlatAppearance.BorderSize = 0;
+            //this.DashboardDefinicoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.DashboardDefinicoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            //this.DashboardDefinicoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
+            //this.DashboardDefinicoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            //this.DashboardDefinicoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            //this.DashboardDefinicoes_Btn.IconSize = 32;
+            //this.DashboardDefinicoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.DashboardDefinicoes_Btn.Location = new System.Drawing.Point(0, 238);
+            //this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(2);
+            //this.DashboardDefinicoes_Btn.Name = "DashboardDefinicoes_Btn";
+            //this.DashboardDefinicoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            //this.DashboardDefinicoes_Btn.Size = new System.Drawing.Size(220, 49);
+            //this.DashboardDefinicoes_Btn.TabIndex = 8;
+            //this.DashboardDefinicoes_Btn.Text = "Definições";
+            //this.DashboardDefinicoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.DashboardDefinicoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            //this.DashboardDefinicoes_Btn.UseVisualStyleBackColor = true;
             this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.Sair_btn.FlatAppearance.BorderSize = 0;
@@ -150,40 +150,40 @@
             // 
             // Sair_Btn
             // 
-            this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Sair_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.Sair_Btn.IconColor = System.Drawing.Color.Black;
-            this.Sair_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Sair_Btn.Location = new System.Drawing.Point(3, 429);
-            this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(212, 33);
-            this.Sair_Btn.TabIndex = 5;
-            this.Sair_Btn.Text = "Sair";
-            this.Sair_Btn.UseVisualStyleBackColor = true;
-            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
+            //this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            //this.Sair_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            //this.Sair_Btn.IconColor = System.Drawing.Color.Black;
+            //this.Sair_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            //this.Sair_Btn.Location = new System.Drawing.Point(3, 429);
+            //this.Sair_Btn.Name = "Sair_Btn";
+            //this.Sair_Btn.Size = new System.Drawing.Size(212, 33);
+            //this.Sair_Btn.TabIndex = 5;
+            //this.Sair_Btn.Text = "Sair";
+            //this.Sair_Btn.UseVisualStyleBackColor = true;
+            //this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // DashboardFormadores_Btn
             // 
-            this.DashboardFormadores_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardFormadores_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardFormadores_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardFormadores_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFormadores_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            this.DashboardFormadores_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFormadores_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardFormadores_Btn.IconSize = 32;
-            this.DashboardFormadores_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFormadores_Btn.Location = new System.Drawing.Point(0, 140);
-            this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2);
-            this.DashboardFormadores_Btn.Name = "DashboardFormadores_Btn";
-            this.DashboardFormadores_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.DashboardFormadores_Btn.Size = new System.Drawing.Size(220, 49);
-            this.DashboardFormadores_Btn.TabIndex = 2;
-            this.DashboardFormadores_Btn.Text = "Formadores";
-            this.DashboardFormadores_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
-            // 
+            //this.DashboardFormadores_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            //this.DashboardFormadores_Btn.FlatAppearance.BorderSize = 0;
+            //this.DashboardFormadores_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.DashboardFormadores_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            //this.DashboardFormadores_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
+            //this.DashboardFormadores_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            //this.DashboardFormadores_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            //this.DashboardFormadores_Btn.IconSize = 32;
+            //this.DashboardFormadores_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.DashboardFormadores_Btn.Location = new System.Drawing.Point(0, 140);
+            //this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2);
+            //this.DashboardFormadores_Btn.Name = "DashboardFormadores_Btn";
+            //this.DashboardFormadores_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            //this.DashboardFormadores_Btn.Size = new System.Drawing.Size(220, 49);
+            //this.DashboardFormadores_Btn.TabIndex = 2;
+            //this.DashboardFormadores_Btn.Text = "Formadores";
+            //this.DashboardFormadores_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            //this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
+            //// 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.Home_Btn);

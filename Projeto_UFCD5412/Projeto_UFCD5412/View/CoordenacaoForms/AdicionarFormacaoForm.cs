@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto_UFCD5412.Controller;
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
@@ -30,6 +31,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void DataSistema_DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             MessageBox.Show("Data alterada com sucesso");
+        }
         public Formacao FormacaoAdicionada { get; private set; }
 
         private readonly DateTime dataSelecionada;

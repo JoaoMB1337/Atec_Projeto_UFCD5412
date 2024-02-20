@@ -2,6 +2,7 @@
 using Projeto_UFCD5412.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -70,10 +71,12 @@ namespace Projeto_UFCD5412.View.FinancasForms
             }
             else if (tipoSelecionado == "Formador")
             {
-                // Esconder a coluna "Total por Mês"
-                dataGridView1.Columns["TotalMes"].Visible = false;
+                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == "Formador").ToList();
+                AtualizarDataGridView(funcionariosFiltrados);
                 // Tornar o botão de cálculo do formador visível quando o tipo for "Formador"
                 CalcularFormadorBtnButton.Visible = true;
+                // Esconder a coluna "Total por Mês"
+                dataGridView1.Columns["TotalMes"].Visible = false;
             }
             else
             {
@@ -118,7 +121,7 @@ namespace Projeto_UFCD5412.View.FinancasForms
                 }
             }
 
-            MessageBox.Show($"Total a pagar para todos os funcionários: {totalGeral:C2}");
+            MessageBox.Show($"Total a pagar para todos os funcionários: {totalGeral}");
         }
 
         private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)

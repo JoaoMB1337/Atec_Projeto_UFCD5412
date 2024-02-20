@@ -24,11 +24,22 @@ namespace Projeto_UFCD5412.View.DashboardForms
         {
             InitializeComponent();
             LoadData();
-            totalSalario_lbl.Text = empresaController.CalcularTotalSalarios().ToString();
+            LoadComboBox();
            
         }
 
-        private void LoadData()
+        private void LoadComboBox()
+        {
+            TipoFuncionarioComboBox.Items.Add("Funcionario");
+            TipoFuncionarioComboBox.Items.Add("Formador");
+            TipoFuncionarioComboBox.Items.Add("Coordenador");
+            TipoFuncionarioComboBox.Items.Add("Secretaria");
+            TipoFuncionarioComboBox.Items.Add("Diretor");
+            TipoFuncionarioComboBox.Items.Add("Todos");
+            
+            }
+
+            private void LoadData()
         {
             // Carrega a lista de funcionários
             funcionarios = empresaController.ListarFuncionarios();
@@ -50,8 +61,7 @@ namespace Projeto_UFCD5412.View.DashboardForms
             ContadorContratosInativos_label.Text = $"Contratos Inativos: {contratosInativos}";                                                                                                                                      
 
             // Encontra o próximo aniversário de um funcionário
-            var proximoAniversario = funcionarios.OrderBy(f => (f.DataAniversario.Month < DateTime.Today.Month || (f.DataAniversario.Month == DateTime.Today.Month && f.DataAniversario.Day >= DateTime.Today.Day)) ? f.DataAniversario.Month * 100 + f.DataAniversario.Day : (f.DataAniversario.Month + 12) * 100 + f.DataAniversario.Day)
-                                                  .FirstOrDefault();
+            var proximoAniversario = funcionarios.OrderBy(f => (f.DataAniversario.Month < DateTime.Today.Month || (f.DataAniversario.Month == DateTime.Today.Month && f.DataAniversario.Day >= DateTime.Today.Day)) ? f.DataAniversario.Month * 100 + f.DataAniversario.Day : (f.DataAniversario.Month + 12) * 100 + f.DataAniversario.Day).FirstOrDefault();
                                                                                             
             if (proximoAniversario != null)
             {
@@ -61,6 +71,17 @@ namespace Projeto_UFCD5412.View.DashboardForms
             {
                 ProximoAniversarioLabel.Text = "Não há aniversários próximos.";
             }
+
+            int RegistosCriminaisAtivos = funcionarios.Count(f => f.DataFimRegistoCriminal > DateTime.Today);
+            ContadorRegistosCriminais_label.Text = $"Registos Criminais Ativos: {RegistosCriminaisAtivos}";
+
+            int RegistosCriminaisInativos = funcionarios.Count(f => f.DataFimRegistoCriminal < DateTime.Today);
+            ContadorRegistosCriminaisInativos_label.Text = $"Registos Criminais Inativos: {RegistosCriminaisInativos}";
+
+            // salarios por tipo
+            decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
+            totalSalario_lbl.Text = totalSalarios.ToString();
+
         }
 
         private void Home_Button_Click(object sender, EventArgs e)
@@ -73,14 +94,8 @@ namespace Projeto_UFCD5412.View.DashboardForms
             mainWindow.Dock = DockStyle.Fill;
             mainWindow.BringToFront();
             mainWindow.Show();
-        }
-
-        private void TipoFuncionario_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string tipoFuncionario = TipoFuncionario_comboBox.SelectedItem.ToString();
-            decimal totalSalarios = empresaController.CalcularTotalSalarios(tipoFuncionario);
-            totalSalario_lbl.Text = totalSalarios.ToString();
-        }
+        }    
+      
     }
 }
 

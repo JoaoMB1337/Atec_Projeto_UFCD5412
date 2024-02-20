@@ -54,7 +54,7 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.DimGray;
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
             this.panelTitleBar.Controls.Add(this.timer_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
@@ -76,7 +76,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.DimGray;
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panelMenu.Controls.Add(this.Sair_btn);
             this.panelMenu.Controls.Add(this.DashboardCalendario_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -89,25 +89,6 @@
             // 
             // Sair_btn
             // 
-            //this.DashboardDefinicoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            //this.DashboardDefinicoes_Btn.FlatAppearance.BorderSize = 0;
-            //this.DashboardDefinicoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.DashboardDefinicoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            //this.DashboardDefinicoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            //this.DashboardDefinicoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            //this.DashboardDefinicoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            //this.DashboardDefinicoes_Btn.IconSize = 32;
-            //this.DashboardDefinicoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.DashboardDefinicoes_Btn.Location = new System.Drawing.Point(0, 238);
-            //this.DashboardDefinicoes_Btn.Margin = new System.Windows.Forms.Padding(2);
-            //this.DashboardDefinicoes_Btn.Name = "DashboardDefinicoes_Btn";
-            //this.DashboardDefinicoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            //this.DashboardDefinicoes_Btn.Size = new System.Drawing.Size(220, 49);
-            //this.DashboardDefinicoes_Btn.TabIndex = 8;
-            //this.DashboardDefinicoes_Btn.Text = "Definições";
-            //this.DashboardDefinicoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.DashboardDefinicoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            //this.DashboardDefinicoes_Btn.UseVisualStyleBackColor = true;
             this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.Sair_btn.FlatAppearance.BorderSize = 0;
@@ -115,10 +96,10 @@
             this.Sair_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sair_btn.ForeColor = System.Drawing.Color.White;
             this.Sair_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Sair_btn.Location = new System.Drawing.Point(43, 431);
+            this.Sair_btn.Location = new System.Drawing.Point(11, 431);
             this.Sair_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Sair_btn.Name = "Sair_btn";
-            this.Sair_btn.Size = new System.Drawing.Size(112, 32);
+            this.Sair_btn.Size = new System.Drawing.Size(193, 32);
             this.Sair_btn.TabIndex = 9;
             this.Sair_btn.Text = "Sair";
             this.Sair_btn.UseVisualStyleBackColor = false;
@@ -135,7 +116,6 @@
             this.DashboardCalendario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DashboardCalendario_Btn.IconSize = 32;
             this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 189);
             this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 140);
             this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
@@ -148,44 +128,9 @@
             this.DashboardCalendario_Btn.UseVisualStyleBackColor = true;
             this.DashboardCalendario_Btn.Click += new System.EventHandler(this.DashboardCalendario_Btn_Click);
             // 
-            // Sair_Btn
-            // 
-            //this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            //this.Sair_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
-            //this.Sair_Btn.IconColor = System.Drawing.Color.Black;
-            //this.Sair_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            //this.Sair_Btn.Location = new System.Drawing.Point(3, 429);
-            //this.Sair_Btn.Name = "Sair_Btn";
-            //this.Sair_Btn.Size = new System.Drawing.Size(212, 33);
-            //this.Sair_Btn.TabIndex = 5;
-            //this.Sair_Btn.Text = "Sair";
-            //this.Sair_Btn.UseVisualStyleBackColor = true;
-            //this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
-            // 
-            // DashboardFormadores_Btn
-            // 
-            //this.DashboardFormadores_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            //this.DashboardFormadores_Btn.FlatAppearance.BorderSize = 0;
-            //this.DashboardFormadores_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.DashboardFormadores_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            //this.DashboardFormadores_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
-            //this.DashboardFormadores_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            //this.DashboardFormadores_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            //this.DashboardFormadores_Btn.IconSize = 32;
-            //this.DashboardFormadores_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.DashboardFormadores_Btn.Location = new System.Drawing.Point(0, 140);
-            //this.DashboardFormadores_Btn.Margin = new System.Windows.Forms.Padding(2);
-            //this.DashboardFormadores_Btn.Name = "DashboardFormadores_Btn";
-            //this.DashboardFormadores_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            //this.DashboardFormadores_Btn.Size = new System.Drawing.Size(220, 49);
-            //this.DashboardFormadores_Btn.TabIndex = 2;
-            //this.DashboardFormadores_Btn.Text = "Formadores";
-            //this.DashboardFormadores_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            //this.DashboardFormadores_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            //this.DashboardFormadores_Btn.UseVisualStyleBackColor = true;
-            //// 
             // panelLogo
             // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
             this.panelLogo.Controls.Add(this.Home_Btn);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -195,7 +140,7 @@
             // 
             // Home_Btn
             // 
-            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.icon_ADOSMELHORES_removebg_preview;
+            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
             this.Home_Btn.Location = new System.Drawing.Point(52, 12);
             this.Home_Btn.Name = "Home_Btn";
             this.Home_Btn.Size = new System.Drawing.Size(113, 112);
@@ -208,7 +153,7 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gray;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 85);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";

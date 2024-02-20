@@ -158,5 +158,26 @@ namespace Projeto_UFCD5412.Controller
                 Console.WriteLine("Funcionário não encontrado.");
             }
         }
+
+        public decimal CalcularTotalSalarios(string tipoFuncionario)
+        {
+            var funcionarios = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList();
+            decimal totalSalarios = 0;
+            foreach (var funcionario in funcionarios)
+            {
+                totalSalarios += funcionario.Salario;
+            }
+            return totalSalarios;
+        }
+
+        public decimal CalcularTotalSalarios()
+        {
+            decimal totalSalarios = 0;
+            foreach (var funcionario in Funcionarios)
+            {
+                totalSalarios += funcionario.Salario;
+            }
+            return totalSalarios;
+        }
     }
 }

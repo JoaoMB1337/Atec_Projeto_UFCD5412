@@ -113,6 +113,26 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoEmpresa_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("LogoEmpresa-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NewLogo {
+            get {
+                object obj = ResourceManager.GetObject("NewLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rm314_adj_02 {
             get {
                 object obj = ResourceManager.GetObject("rm314-adj-02", resourceCulture);

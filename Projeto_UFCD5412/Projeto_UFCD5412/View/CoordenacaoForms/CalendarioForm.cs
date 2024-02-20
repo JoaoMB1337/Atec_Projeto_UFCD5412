@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_UFCD5412.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,25 +10,53 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using System.Text.RegularExpressions;
+using Projeto_UFCD5412.Data;
+
+
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
+        private string caminhoArquivoCSV = "formacoes.csv";
         private DateTime dataAtual;
+        private Dictionary<DateTime, List<Formacao.FormacaoAgendada>> eventosPorDia = new Dictionary<DateTime, List<Formacao.FormacaoAgendada>>();
 
         public CalendarioForm()
         {
             InitializeComponent();
-
             dataAtual = DateTime.Today;
+            CarregarAulasSalvas(); // Carrega as aulas salvas do arquivo CSV
             AtualizarCalendario();
-
             this.Resize += CalendarioForm_Resize;
+            this.FormClosing += CalendarioForm_FormClosing;
+        }
+
+        private void CarregarAulasSalvas()
+        {
+            eventosPorDia = CSVFormacao.ImportarFormacoes();
+            AtualizarCalendario(); 
         }
 
 
+        private void CalendarioForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CSVFormacao.ExportarFormacoes(eventosPorDia);
+        }
+
         private void CalendarioForm_Resize(object sender, EventArgs e)
+        {
+            AjustarTamanhoCelulas();
+        }
+
+        private void AtualizarCalendario()
+        {
+            PreencherCalendario(dataAtual);
+            AjustarTamanhoCelulas();
+        }
+
+        private void AjustarTamanhoCelulas()
         {
             int larguraCelula = tableLayoutPanel1.Width / tableLayoutPanel1.ColumnCount;
             int alturaCelula = tableLayoutPanel1.Height / tableLayoutPanel1.RowCount;
@@ -43,14 +72,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-        private void AtualizarCalendario()
-        {
-            PreencherCalendario(dataAtual);
-        }
-
         private void PreencherCalendario(DateTime data)
         {
             tableLayoutPanel1.Controls.Clear();
+            eventosPorDia.Clear();
 
             int diasNoMes = DateTime.DaysInMonth(data.Year, data.Month);
             DayOfWeek primeiroDiaDoMes = new DateTime(data.Year, data.Month, 1).DayOfWeek;
@@ -68,7 +93,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             lblMes.Text = data.ToString("MMMM yyyy");
             lblMes.TextAlign = ContentAlignment.MiddleCenter;
             lblMes.Font = new Font(lblMes.Font, FontStyle.Bold);
-            lblMes.ForeColor = Color.DarkBlue;
+            lblMes.ForeColor = Color.White;
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
 
@@ -79,7 +104,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 lblDiaSemana.Text = diasDaSemana[i];
                 lblDiaSemana.TextAlign = ContentAlignment.MiddleCenter;
                 lblDiaSemana.Font = new Font(lblDiaSemana.Font, FontStyle.Bold);
-                lblDiaSemana.ForeColor = Color.DarkBlue;
+                lblDiaSemana.ForeColor = Color.Orange;
                 tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
             }
 
@@ -98,24 +123,29 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         lbl.Text = diaAtual.ToString();
                         lbl.TextAlign = ContentAlignment.MiddleCenter;
                         lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+                        lbl.BorderStyle = BorderStyle.FixedSingle;
+                        lbl.Margin = new Padding(3);
 
                         if (diaAtual == diaAtualDoMes)
                         {
-                            lbl.BackColor = Color.Yellow;
+                            lbl.BackColor = Color.DarkGray;
                         }
                         else
                         {
-                            lbl.BackColor = Color.LightBlue;
-                            lbl.Click += (sender, e) =>
-                            {
-                                Label selectedLabel = (Label)sender;
-                                int diaSelecionado = int.Parse(selectedLabel.Text);
-                                AdicionarEvento(data.Year, data.Month, diaSelecionado);
-                            };
-                            lbl.Cursor = Cursors.Hand;
+                            lbl.BackColor = Color.White;
                         }
 
+                        lbl.Click += (sender, e) =>
+                        {
+                            Label selectedLabel = (Label)sender;
+                            int diaSelecionado = int.Parse(selectedLabel.Text);
+                            AdicionarEvento(data.Year, data.Month, diaSelecionado);
+                        };
+                        lbl.Cursor = Cursors.Hand;
+
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
+
+                        eventosPorDia[new DateTime(data.Year, data.Month, diaAtual)] = new List<Formacao.FormacaoAgendada>();
                         diaAtual++;
                     }
                 }
@@ -125,16 +155,69 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
+
         private void AdicionarEvento(int ano, int mes, int dia)
         {
-            MessageBox.Show($"Você está adicionando um evento para o dia {dia}/{mes}/{ano}.");
-            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm();
-            adicionarFormacaoForm.ShowDialog();
+            DateTime dataSelecionada = new DateTime(ano, mes, dia);
 
+            if (!eventosPorDia.ContainsKey(dataSelecionada))
+            {
+                eventosPorDia[dataSelecionada] = new List<Formacao.FormacaoAgendada>();
+            }
+
+            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
+            if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
+            {
+                Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
+
+                eventosPorDia[dataSelecionada].Add(new Formacao.FormacaoAgendada
+                {
+                    Data = novaFormacao.DataInicio,
+                    Formador = novaFormacao.Formador,
+                    Turma = novaFormacao.Turma
+                });
+
+                AtualizarCelula(dataSelecionada);
+            }
         }
 
+        private void AtualizarCelula(DateTime data)
+        {
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                if (control is Label label && label.Text != "")
+                {
+                    string[] splitText = label.Text.Split('\n');
+                    if (splitText.Length > 0)
+                    {
+                        if (int.TryParse(splitText[0], out int diaCelula))
+                        {
+                            if (new DateTime(data.Year, data.Month, diaCelula) == data)
+                            {
+                                if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
+                                {
+                                    label.BackColor = Color.LightGreen;
+                                    label.Text += "\n";
+                                    foreach (var evento in eventosPorDia[data])
+                                    {
+                                        label.Text += $"{evento.Formador} - {evento.Turma}\n";
+                                    }
+                                    label.Font = new Font(label.Font, FontStyle.Bold);
 
-
+                                    // Ajustar o tamanho da label com base no conteúdo
+                                    Size size = TextRenderer.MeasureText(label.Text, label.Font);
+                                    label.Size = new Size(size.Width + 10, size.Height + 10); // Aumenta um pouco o tamanho para folga
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
+                        }
+                    }
+                }
+            }
+        }
 
         private void avancar_btn_Click(object sender, EventArgs e)
         {

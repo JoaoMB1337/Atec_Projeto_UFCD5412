@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using Projeto_UFCD5412.View.FinancasForms;
 using Projeto_UFCD5412.View.CoordenacaoForms;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
 using Projeto_UFCD5412.View.SettingsForms;
+using Projeto_UFCD5412.View.FinancasForms;
+using System.Windows.Media.Animation;
+using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.View.DashboardForms;
 
 namespace Projeto_UFCD5412
@@ -23,6 +25,9 @@ namespace Projeto_UFCD5412
         //Variáveis
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+
+        DateTimeController dateTimeController = DateTimeController.Instance;
+        private Form currentChildForm;
         
 
         public MainWindow()
@@ -31,15 +36,20 @@ namespace Projeto_UFCD5412
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
+
             //Form
             this.Text = string.Empty;
-            //this.ControlBox = false;
             this.DoubleBuffered = true;
+          
+            Timer timer = new Timer(); // Adicione esta linha
+            DateTimeController.DateTimeChanged += DateTimeController_DateTimeChanged;
+            dateTimeController.SetDateTime(DateTime.Now);
 
-            Timer timer = new Timer();
-            timer.Interval = (1 * 1000); // 10 secs
-            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = 1000;
+            timer.Tick += timer_Tick;
             timer.Start();
+
+            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
         //Eventos
         private struct RGBColors
@@ -63,7 +73,7 @@ namespace Projeto_UFCD5412
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText; 
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
@@ -76,7 +86,7 @@ namespace Projeto_UFCD5412
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(0, 0, 64);
+                currentBtn.BackColor = Color.FromArgb(0,0,64);
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
@@ -85,7 +95,15 @@ namespace Projeto_UFCD5412
             }
         }
 
-  
+   
+        private void Home_Btn_Click(object sender, EventArgs e)
+        {
+            Reset();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+        }
 
         private void Reset()
         {
@@ -120,12 +138,26 @@ namespace Projeto_UFCD5412
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            DateTime newDateTime = DateTime.Now;
+
+            if (newDateTime.Date != dateTimeController.GetDateTime().Date)
+            {
+                // Mantém o dia e atualiza a hora
+                dateTimeController.SetDateTime(dateTimeController.GetDateTime().Date.Add(newDateTime.TimeOfDay));
+            }
+            else
+            {
+                dateTimeController.SetDateTime(newDateTime);
+            }
+
+            timer_label.Text = dateTimeController.GetDateTime().ToString("dd/MM/yyyy HH:mm:ss");
 
         }
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
+
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
             ActivateButton(sender, RGBColors.color1);
             DashboardForm dashboardForm = new DashboardForm();
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
@@ -141,9 +173,12 @@ namespace Projeto_UFCD5412
 
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color2);
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
+
+
+            //abrir form de listagem de funcionarios dentro do tabcontrol
             ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
-            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
             listarFuncionariosForm.TopLevel = false;
             listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
             listarFuncionariosForm.Dock = DockStyle.Fill;
@@ -151,23 +186,21 @@ namespace Projeto_UFCD5412
             Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
-
+            
         }
 
         private void DashboardFormadores_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFormadores"];
 
-            CoordenacaoMainForm coordenacaoMainForm = new CoordenacaoMainForm();
-            coordenacaoMainForm.TopLevel = false;
-            coordenacaoMainForm.FormBorderStyle = FormBorderStyle.None;
-            coordenacaoMainForm.Dock = DockStyle.Fill;
+
         }
 
         private void DashboardFinancas_Btn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+           Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
+            ActivateButton(sender, RGBColors.color4);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFinancas"];
             CalcularValorForm financasMainForm = new CalcularValorForm();
             financasMainForm.TopLevel = false;
@@ -177,25 +210,42 @@ namespace Projeto_UFCD5412
             financasMainForm.BringToFront();
             financasMainForm.Show();
 
-            
+
         }
 
         private void Defincoes_Btn_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color3);
+            SettingsForm settingsForm = new SettingsForm();
+            ActivateButton(sender, RGBColors.color5);
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
-            //settingsForm.TopLevel = false;
-            //settingsForm.FormBorderStyle = FormBorderStyle.None;
-            //settingsForm.Dock = DockStyle.Fill;
-            //Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
-            //settingsForm.BringToFront();
-            //settingsForm.Show();
+            settingsForm.TopLevel = false;
+            settingsForm.FormBorderStyle = FormBorderStyle.None;
+            settingsForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(settingsForm);
+            settingsForm.BringToFront();
+            settingsForm.Show();
+            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardDefinicoes"];
         }
 
-        private void CalcularValorAPagar_button_Click(object sender, EventArgs e)
+        private void AdicionarFuncionario_Btn_Click_1(object sender, EventArgs e)
         {
+            AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
 
-            CalcularValorForm listarFuncionariosForm = new CalcularValorForm();
+            adicionarFuncionarioForm.TopLevel = false;
+            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            adicionarFuncionarioForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(adicionarFuncionarioForm);
+            adicionarFuncionarioForm.BringToFront();
+
+            // Exibe o formulário
+            adicionarFuncionarioForm.Show();
+
+        }
+
+        private void ListarFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
             listarFuncionariosForm.TopLevel = false;
             listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
             listarFuncionariosForm.Dock = DockStyle.Fill;
@@ -205,8 +255,26 @@ namespace Projeto_UFCD5412
             listarFuncionariosForm.BringToFront();
             listarFuncionariosForm.Show();
 
+        }
 
+        private void EditarFuncionario_Btn_Click(object sender, EventArgs e)
+        {
 
+            ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
+
+            listarFuncionariosForm.SetParameter("editar");  // enviar parametro para o form
+            listarFuncionariosForm.TopLevel = false;
+            listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
+            listarFuncionariosForm.Dock = DockStyle.Fill;
+
+            Menus_TabControl.SelectedTab.Controls.Add(listarFuncionariosForm);
+            listarFuncionariosForm.BringToFront();
+            listarFuncionariosForm.Show();
+        }
+
+        private void DateTimeController_DateTimeChanged(object sender, DateTimeChangedEventArgs e)
+        {
+            timer_label.Text = e.NewDateTime.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

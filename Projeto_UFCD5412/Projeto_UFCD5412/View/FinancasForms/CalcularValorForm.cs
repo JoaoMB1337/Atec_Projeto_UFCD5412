@@ -27,8 +27,8 @@ namespace Projeto_UFCD5412.View.FinancasForms
             TipoFuncionario_ComboBox.Items.Add("Secretaria");
             TipoFuncionario_ComboBox.Items.Add("Diretor");
             TipoFuncionario_ComboBox.Items.Add("Todos");
-            TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged; 
-         
+            TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged;
+
         }
 
         private void InitializeDataGridView()
@@ -159,7 +159,7 @@ namespace Projeto_UFCD5412.View.FinancasForms
                             int totalHoras = totalDias * 6;
                             decimal totalFormador = totalHoras * salarioHora;
 
-                            
+
                             message.AppendLine($"Formador: {row.Cells["Nome"].Value}, Total a pagar: {totalFormador}");
                         }
                     }

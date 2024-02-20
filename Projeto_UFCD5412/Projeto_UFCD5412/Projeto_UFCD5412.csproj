@@ -54,11 +54,27 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DateTimeController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Data\CSVFormacao.cs" />
     <Compile Include="Data\CSVHandler.cs" />
+    <Compile Include="Model\Calendario.cs" />
     <Compile Include="Model\Coordenador.cs" />
     <Compile Include="Model\Diretor.cs" />
     <Compile Include="Controller\EmpresaController.cs" />
-    <Compile Include="Model\GestaoFormadores.cs" />
+    <Compile Include="Model\Formacao.cs" />
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\AdicionarFormacaoForm.Designer.cs">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\CalendarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\CalendarioForm.Designer.cs">
+      <DependentUpon>CalendarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CoordenacaoForms\CoordenacaoMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,14 +134,17 @@
     <Compile Include="View\SettingsForms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CoordenacaoForms\AdicionarFormacaoForm.resx">
+      <DependentUpon>AdicionarFormacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CoordenacaoForms\CalendarioForm.resx">
+      <DependentUpon>CalendarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FinancasForms\CalcularValorForm.resx">
-      <DependentUpon>CalcularValorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
@@ -196,5 +215,6 @@
   <ItemGroup>
     <None Include="Resources\salarionewicon-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

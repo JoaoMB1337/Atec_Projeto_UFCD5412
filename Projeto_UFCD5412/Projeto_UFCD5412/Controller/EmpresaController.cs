@@ -22,6 +22,7 @@ namespace Projeto_UFCD5412.Controller
             contadorId = Funcionarios.Count > 0 ? Funcionarios.Max(f => f.Id) + 1 : 1;
         }
 
+        // Singleton Pattern - Garante que apenas existe uma instancia da classe
         public static EmpresaController Instance
         {
             get
@@ -37,6 +38,9 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
+
+        #region Regiao de Contadores
+
         public int CountNumeroTotalFuncionarios()
         {
             return Funcionarios.Count;
@@ -47,23 +51,30 @@ namespace Projeto_UFCD5412.Controller
             return Funcionarios.Count(f => f.Tipo == tipo);
         }
 
-
-
-
-
-        public Funcionario GetFuncionarioById(int id)
+        public int CountContratosAtivos(DateTime dataAtual)
         {
-            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);
-            return funcionario;
+            return Funcionarios.Count(f => f.DataFimContrato > dataAtual);
         }
 
-
-        public void AdicionarFuncionario(Funcionario funcionario)
+        public int CountContratosInativos(DateTime dataAtual)
         {
-            funcionario.Id = Funcionarios.Count +1;
-            Funcionarios.Add(funcionario);
-            CSVHandler.AddFuncionario(funcionario);
+            return Funcionarios.Count(f => f.DataFimContrato < dataAtual);
         }
+
+        public int CountRegistosCriminaisExpirados(DateTime dataAtual)
+        {
+            return Funcionarios.Count(f => f.DataFimRegistoCriminal < dataAtual);
+        }
+
+        public int CountRegistosCriminaisValidos(DateTime dataAtual)
+        {
+            return Funcionarios.Count(f => f.DataFimRegistoCriminal > dataAtual);
+        }
+
+        #endregion
+
+
+        #region Regiao Listagem funcionarios
 
         public List<Funcionario> ListarFuncionarios()
         {
@@ -88,56 +99,28 @@ namespace Projeto_UFCD5412.Controller
             var funcionariosComRegistoCriminalExpirado = Funcionarios.Where(f => f.DataFimRegistoCriminal <= dataAtual).ToList();
             return funcionariosComRegistoCriminalExpirado;
         }
-
-        public void AtualizarRegistoCriminal(int id, DateTime dataFimRegistoCriminal)
+        
+        public Funcionario GetFuncionarioById(int id)
         {
-            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);//FirstOrDefault() retorna o primeiro elemento que satisfaça a condição ou null se não existir nenhum
-            if (funcionario != null)
-            {
-                funcionario.DataFimRegistoCriminal = dataFimRegistoCriminal;
-                Console.WriteLine("Registo criminal atualizado com sucesso.");
-            }
-            else
-            {
-                Console.WriteLine("Funcionário não encontrado.");
-            }
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);
+            return funcionario;
         }
 
-        public decimal CalcularValorAPagar(Formador formador, DateTime dataInicio, DateTime dataFim)
+
+        #endregion
+
+
+        #region Regiao de Adicionar, Atualizar e Remover Funcionarios
+        public void AdicionarFuncionario(Funcionario funcionario)
         {
-            int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
-
-            int totalHoras = totalDias * 6;
-
-            decimal valorTotal = totalHoras * formador.ValorHora;
-
-            return valorTotal;
+            funcionario.Id = Funcionarios.Count + 1;
+            Funcionarios.Add(funcionario);
+            CSVHandler.AddFuncionario(funcionario);
         }
-
-        private Funcionario EncontrarFuncionarioComSalarioMaisAlto(List<Funcionario> funcionarios)
-        {
-            if (funcionarios == null || funcionarios.Count == 0)
-                return null;
-
-            
-            Funcionario funcionarioComSalarioMaisAlto = funcionarios[0];
-
-           
-            foreach (var funcionario in funcionarios)
-            {
-                if (funcionario.Salario > funcionarioComSalarioMaisAlto.Salario)
-                {
-                    funcionarioComSalarioMaisAlto = funcionario;
-                }
-            }
-
-            return funcionarioComSalarioMaisAlto;
-        }
-
 
         public void UpdateFuncionario(Funcionario updateFuncionario)
         {
-           var funcionario = Funcionarios.FirstOrDefault(f => f.Id == updateFuncionario.Id);
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == updateFuncionario.Id);
 
             if (funcionario != null)
             {
@@ -159,25 +142,60 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
-        public decimal CalcularTotalSalarios(string tipoFuncionario)
+        public void AtualizarRegistoCriminal(int id, DateTime dataFimRegistoCriminal)
         {
-            var funcionarios = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList();
-            decimal totalSalarios = 0;
-            foreach (var funcionario in funcionarios)
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);//FirstOrDefault() retorna o primeiro elemento que satisfaça a condição ou null se não existir nenhum
+            if (funcionario != null)
             {
-                totalSalarios += funcionario.Salario;
+                funcionario.DataFimRegistoCriminal = dataFimRegistoCriminal;
+                Console.WriteLine("Registo criminal atualizado com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("Funcionário não encontrado.");
+            }
+        }
+
+        #endregion
+
+
+        #region Calcular Salarios
+
+        public decimal CalcularValorAPagar(Formador formador, DateTime dataInicio, DateTime dataFim)
+        {
+            int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
+
+            int totalHoras = totalDias * 6;
+
+            decimal valorTotal = totalHoras * formador.ValorHora;
+
+            return valorTotal;
+        }
+
+        public decimal CalcularTotalSalariosPorTipo(string tipoFuncionario)
+        {
+            decimal totalSalarios = 0;
+
+            if (tipoFuncionario == "Todos")
+            {
+                foreach (var funcionario in Funcionarios)
+                {
+                    totalSalarios += funcionario.Salario;
+                }
+            }
+            else
+            {
+                var funcionarios = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList();
+                foreach (var funcionario in funcionarios)
+                {
+                    totalSalarios += funcionario.Salario;
+                }
             }
             return totalSalarios;
         }
 
-        public decimal CalcularTotalSalarios()
-        {
-            decimal totalSalarios = 0;
-            foreach (var funcionario in Funcionarios)
-            {
-                totalSalarios += funcionario.Salario;
-            }
-            return totalSalarios;
-        }
+
+        #endregion
+
     }
 }

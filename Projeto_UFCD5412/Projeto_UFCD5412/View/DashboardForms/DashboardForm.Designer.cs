@@ -42,6 +42,7 @@
             this.ContadorContratosInativos_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.TipoFuncionarioComboBox = new System.Windows.Forms.ComboBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.totalSalario_lbl = new System.Windows.Forms.Label();
             this.dolar_lbl = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorRegistosCriminaisInativos_label = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.TipoFuncionarioComboBox = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -375,6 +375,16 @@
             this.panel4.Size = new System.Drawing.Size(388, 266);
             this.panel4.TabIndex = 10;
             // 
+            // TipoFuncionarioComboBox
+            // 
+            this.TipoFuncionarioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TipoFuncionarioComboBox.FormattingEnabled = true;
+            this.TipoFuncionarioComboBox.Location = new System.Drawing.Point(36, 90);
+            this.TipoFuncionarioComboBox.Name = "TipoFuncionarioComboBox";
+            this.TipoFuncionarioComboBox.Size = new System.Drawing.Size(121, 28);
+            this.TipoFuncionarioComboBox.TabIndex = 8;
+            this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -536,14 +546,6 @@
             this.label13.Size = new System.Drawing.Size(258, 25);
             this.label13.TabIndex = 3;
             this.label13.Text = "Registo Criminais Expirados";
-            // 
-            // TipoFuncionarioComboBox
-            // 
-            this.TipoFuncionarioComboBox.FormattingEnabled = true;
-            this.TipoFuncionarioComboBox.Location = new System.Drawing.Point(36, 90);
-            this.TipoFuncionarioComboBox.Name = "TipoFuncionarioComboBox";
-            this.TipoFuncionarioComboBox.Size = new System.Drawing.Size(121, 28);
-            this.TipoFuncionarioComboBox.TabIndex = 8;
             // 
             // DashboardForm
             // 

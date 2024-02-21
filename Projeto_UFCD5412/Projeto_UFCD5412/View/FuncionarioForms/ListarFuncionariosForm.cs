@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.View.Forms;
 
@@ -38,19 +37,18 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             LoadComboBox();
             ListarFuncionarioDataGrid();
-
         }
 
         private void LoadComboBox()
         {
+            TipoFuncionario_ComboBox.Items.Add("Todos");
             TipoFuncionario_ComboBox.Items.Add("Funcionario");
             TipoFuncionario_ComboBox.Items.Add("Formador");
             TipoFuncionario_ComboBox.Items.Add("Coordenador");
             TipoFuncionario_ComboBox.Items.Add("Secretaria");
             TipoFuncionario_ComboBox.Items.Add("Diretor");
-            TipoFuncionario_ComboBox.Items.Add("Todos");
-            TipoFuncionario_ComboBox.SelectedItem = "Todos"; //Valor Default
 
+            TipoFuncionario_ComboBox.SelectedIndex = 0;
         }
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)
@@ -145,7 +143,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ListarFuncionarioDataGrid();
-
         }
 
         private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -153,18 +150,31 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             ListarFuncionarioDataGrid();
         }
 
-        private void addfuncionario_textbox_Click(object sender, EventArgs e)
+        private void Addfuncionario_Btn_Click(object sender, EventArgs e)
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
             adicionarFuncionarioForm.ShowDialog();
             adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
-
         }
 
-        private void editarfuncionario_textbox_Click(object sender, EventArgs e)
+        private void Editarfuncionario_Btn_Click(object sender, EventArgs e)
         {
            SetParameter("editar");
 
+        }
+
+        private void ContratoValido_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ContratoValido_CheckBox.Checked)
+            {
+                DateTime dataAtual = dateTimeController.GetDateTime();
+                List<Funcionario> funcionariosComContratoValido = empresaController.ListarFuncionariosComContratoValido(dataAtual);
+                AtualizarDataGridView(funcionariosComContratoValido);
+            }
+            else
+            {
+                ListarFuncionarioDataGrid();
+            }
         }
     }
 }

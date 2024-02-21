@@ -83,6 +83,16 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bday_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bday-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cativo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("cativo-removebg-preview", resourceCulture);
@@ -96,6 +106,16 @@ namespace Projeto_UFCD5412.Properties {
         internal static System.Drawing.Bitmap cexpirado_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("cexpirado-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contExp_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("contExp-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace Projeto_UFCD5412.Properties {
         internal static System.Drawing.Bitmap salarios_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("salarios-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salIncome_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("salIncome-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

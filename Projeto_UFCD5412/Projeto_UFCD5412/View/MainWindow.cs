@@ -50,6 +50,14 @@ namespace Projeto_UFCD5412
             timer.Start();
 
             timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.TopLevel = false;
+            dashboardForm.FormBorderStyle = FormBorderStyle.None;
+            dashboardForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(dashboardForm);
+            dashboardForm.BringToFront();
+            dashboardForm.Show();
+
         }
         //Eventos
         private struct RGBColors

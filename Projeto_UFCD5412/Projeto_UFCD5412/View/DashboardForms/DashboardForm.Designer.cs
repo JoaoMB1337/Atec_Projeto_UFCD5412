@@ -30,45 +30,45 @@
             this.ContadorFunc_label = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorContratos_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ProximoAniversarioLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorContratosInativos_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.TipoFuncionarioComboBox = new System.Windows.Forms.ComboBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.totalSalario_lbl = new System.Windows.Forms.Label();
             this.dolar_lbl = new System.Windows.Forms.Label();
             this.Salarios_lbl = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorRegistosCriminais_label = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorRegistosCriminaisInativos_label = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.Home_Button = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -223,6 +223,22 @@
             this.panel2.Size = new System.Drawing.Size(594, 120);
             this.panel2.TabIndex = 10;
             // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox3.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cativo_removebg_preview;
+            this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.IconSize = 107;
+            this.iconPictureBox3.Location = new System.Drawing.Point(472, 9);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(107, 108);
+            this.iconPictureBox3.TabIndex = 9;
+            this.iconPictureBox3.TabStop = false;
+            // 
             // ContadorContratos_label
             // 
             this.ContadorContratos_label.AutoSize = true;
@@ -257,6 +273,22 @@
             this.panel1.Size = new System.Drawing.Size(671, 120);
             this.panel1.TabIndex = 11;
             // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox2.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.bday_removebg_preview;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 104;
+            this.iconPictureBox2.Location = new System.Drawing.Point(548, 6);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(104, 104);
+            this.iconPictureBox2.TabIndex = 8;
+            this.iconPictureBox2.TabStop = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -290,6 +322,22 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(594, 120);
             this.panel3.TabIndex = 11;
+            // 
+            // iconPictureBox4
+            // 
+            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox4.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.contExp_removebg_preview;
+            this.iconPictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox4.IconSize = 173;
+            this.iconPictureBox4.Location = new System.Drawing.Point(446, -16);
+            this.iconPictureBox4.Name = "iconPictureBox4";
+            this.iconPictureBox4.Size = new System.Drawing.Size(173, 176);
+            this.iconPictureBox4.TabIndex = 10;
+            this.iconPictureBox4.TabStop = false;
             // 
             // ContadorContratosInativos_label
             // 
@@ -337,6 +385,22 @@
             this.TipoFuncionarioComboBox.TabIndex = 8;
             this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox1.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.salIncome_removebg_preview;
+            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 108;
+            this.iconPictureBox1.Location = new System.Drawing.Point(254, 13);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(114, 108);
+            this.iconPictureBox1.TabIndex = 7;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // totalSalario_lbl
             // 
             this.totalSalario_lbl.AutoSize = true;
@@ -381,6 +445,22 @@
             this.panel5.Size = new System.Drawing.Size(594, 120);
             this.panel5.TabIndex = 11;
             // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox5.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cativo_removebg_preview;
+            this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 107;
+            this.iconPictureBox5.Location = new System.Drawing.Point(472, 9);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(107, 108);
+            this.iconPictureBox5.TabIndex = 9;
+            this.iconPictureBox5.TabStop = false;
+            // 
             // ContadorRegistosCriminais_label
             // 
             this.ContadorRegistosCriminais_label.AutoSize = true;
@@ -415,6 +495,22 @@
             this.panel6.Size = new System.Drawing.Size(594, 120);
             this.panel6.TabIndex = 11;
             // 
+            // iconPictureBox6
+            // 
+            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPictureBox6.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.contExp_removebg_preview;
+            this.iconPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 176;
+            this.iconPictureBox6.Location = new System.Drawing.Point(434, -19);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(196, 176);
+            this.iconPictureBox6.TabIndex = 11;
+            this.iconPictureBox6.TabStop = false;
+            // 
             // ContadorRegistosCriminaisInativos_label
             // 
             this.ContadorRegistosCriminaisInativos_label.AutoSize = true;
@@ -437,77 +533,13 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Registo Criminais Expirados";
             // 
-            // iconPictureBox6
-            // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox6.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.contExp_removebg_preview;
-            this.iconPictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox6.IconSize = 176;
-            this.iconPictureBox6.Location = new System.Drawing.Point(434, -19);
-            this.iconPictureBox6.Name = "iconPictureBox6";
-            this.iconPictureBox6.Size = new System.Drawing.Size(196, 176);
-            this.iconPictureBox6.TabIndex = 11;
-            this.iconPictureBox6.TabStop = false;
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox5.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cativo_removebg_preview;
-            this.iconPictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 107;
-            this.iconPictureBox5.Location = new System.Drawing.Point(472, 9);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(107, 108);
-            this.iconPictureBox5.TabIndex = 9;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox1.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.salIncome_removebg_preview;
-            this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 108;
-            this.iconPictureBox1.Location = new System.Drawing.Point(254, 13);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(114, 108);
-            this.iconPictureBox1.TabIndex = 7;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox4.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.contExp_removebg_preview;
-            this.iconPictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.IconSize = 176;
-            this.iconPictureBox4.Location = new System.Drawing.Point(434, -16);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(196, 176);
-            this.iconPictureBox4.TabIndex = 10;
-            this.iconPictureBox4.TabStop = false;
-            // 
             // Home_Button
             // 
             this.Home_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Home_Button.IconChar = FontAwesome.Sharp.IconChar.House;
             this.Home_Button.IconColor = System.Drawing.Color.Black;
             this.Home_Button.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Home_Button.Location = new System.Drawing.Point(1813, 12);
+            this.Home_Button.Location = new System.Drawing.Point(2116, 12);
             this.Home_Button.Name = "Home_Button";
             this.Home_Button.Size = new System.Drawing.Size(84, 56);
             this.Home_Button.TabIndex = 12;
@@ -515,44 +547,12 @@
             this.Home_Button.UseVisualStyleBackColor = true;
             this.Home_Button.Click += new System.EventHandler(this.Home_Button_Click);
             // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox2.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.bday_removebg_preview;
-            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 104;
-            this.iconPictureBox2.Location = new System.Drawing.Point(548, 6);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(104, 104);
-            this.iconPictureBox2.TabIndex = 8;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.iconPictureBox3.BackgroundImage = global::Projeto_UFCD5412.Properties.Resources.cativo_removebg_preview;
-            this.iconPictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.IconSize = 107;
-            this.iconPictureBox3.Location = new System.Drawing.Point(472, 9);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(107, 108);
-            this.iconPictureBox3.TabIndex = 9;
-            this.iconPictureBox3.TabStop = false;
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1909, 851);
+            this.ClientSize = new System.Drawing.Size(1556, 851);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -569,22 +569,22 @@
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

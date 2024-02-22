@@ -101,7 +101,7 @@
             this.Defincoes_Btn.IconSize = 32;
             this.Defincoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Defincoes_Btn.Location = new System.Drawing.Point(0, 290);
-            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Defincoes_Btn.Name = "Defincoes_Btn";
             this.Defincoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.Defincoes_Btn.Size = new System.Drawing.Size(220, 50);
@@ -125,7 +125,7 @@
             this.DashboardFinancas_Btn.IconSize = 32;
             this.DashboardFinancas_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFinancas_Btn.Location = new System.Drawing.Point(0, 240);
-            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DashboardFinancas_Btn.Name = "DashboardFinancas_Btn";
             this.DashboardFinancas_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFinancas_Btn.Size = new System.Drawing.Size(220, 50);
@@ -149,7 +149,7 @@
             this.DashboardFuncionario_Btn.IconSize = 32;
             this.DashboardFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFuncionario_Btn.Location = new System.Drawing.Point(0, 190);
-            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DashboardFuncionario_Btn.Name = "DashboardFuncionario_Btn";
             this.DashboardFuncionario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFuncionario_Btn.Size = new System.Drawing.Size(220, 50);
@@ -246,7 +246,7 @@
             this.Menus_TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Menus_TabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.Menus_TabControl.Location = new System.Drawing.Point(220, 140);
-            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2);
+            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Menus_TabControl.Name = "Menus_TabControl";
             this.Menus_TabControl.SelectedIndex = 0;
             this.Menus_TabControl.Size = new System.Drawing.Size(738, 449);
@@ -258,9 +258,9 @@
             this.tabDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tabDashboard.Controls.Add(this.BemVindo_Label);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2);
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboard.Size = new System.Drawing.Size(730, 423);
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
@@ -281,9 +281,9 @@
             // 
             this.tabDashboardFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabDashboardFuncionario.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2);
+            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboardFuncionario.Name = "tabDashboardFuncionario";
-            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2);
+            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboardFuncionario.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFuncionario.TabIndex = 1;
             this.tabDashboardFuncionario.Text = "tabPage2";
@@ -292,7 +292,7 @@
             // tabDashboardFormadoes
             // 
             this.tabDashboardFormadoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2);
+            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboardFormadoes.Name = "tabDashboardFormadoes";
             this.tabDashboardFormadoes.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFormadoes.TabIndex = 2;
@@ -302,7 +302,7 @@
             // tabDashboardFinancas
             // 
             this.tabDashboardFinancas.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2);
+            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboardFinancas.Name = "tabDashboardFinancas";
             this.tabDashboardFinancas.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFinancas.TabIndex = 3;
@@ -312,7 +312,7 @@
             // tabDashboardDefinicoes
             // 
             this.tabDashboardDefinicoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2);
+            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabDashboardDefinicoes.Name = "tabDashboardDefinicoes";
             this.tabDashboardDefinicoes.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardDefinicoes.TabIndex = 4;

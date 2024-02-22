@@ -26,6 +26,7 @@ namespace Projeto_UFCD5412.View.DashboardForms
             InitializeComponent();
             LoadComboBox();
             LoadData();
+
         }
 
         private void LoadComboBox()
@@ -106,6 +107,8 @@ namespace Projeto_UFCD5412.View.DashboardForms
             decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(tipoFuncionarioSelecionado);
             totalSalario_lbl.Text = totalSalarios.ToString();
         }
+
+     
     }
 }
 

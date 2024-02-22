@@ -31,13 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Sair_btn = new System.Windows.Forms.Button();
-            this.Defincoes_Btn = new FontAwesome.Sharp.IconButton();
-            this.DashboardFinancas_Btn = new FontAwesome.Sharp.IconButton();
-            this.DashboardFuncionario_Btn = new FontAwesome.Sharp.IconButton();
-            this.Dashboard_Btn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.timer_label = new System.Windows.Forms.Label();
             this.panelShadow = new System.Windows.Forms.Panel();
@@ -48,18 +42,25 @@
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
+            this.Exit_iconPictureBox = new FontAwesome.Sharp.IconPictureBox();
+            this.Defincoes_Btn = new FontAwesome.Sharp.IconButton();
+            this.DashboardFinancas_Btn = new FontAwesome.Sharp.IconButton();
+            this.DashboardFuncionario_Btn = new FontAwesome.Sharp.IconButton();
+            this.Dashboard_Btn = new FontAwesome.Sharp.IconButton();
+            this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.Menus_TabControl.SuspendLayout();
             this.tabDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_iconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.panelMenu.Controls.Add(this.Sair_btn);
+            this.panelMenu.Controls.Add(this.Exit_iconPictureBox);
             this.panelMenu.Controls.Add(this.Defincoes_Btn);
             this.panelMenu.Controls.Add(this.DashboardFinancas_Btn);
             this.panelMenu.Controls.Add(this.DashboardFuncionario_Btn);
@@ -73,119 +74,6 @@
             this.panelMenu.Size = new System.Drawing.Size(293, 725);
             this.panelMenu.TabIndex = 1;
             // 
-            // Sair_btn
-            // 
-            this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
-            this.Sair_btn.FlatAppearance.BorderSize = 0;
-            this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Sair_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sair_btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_btn.Location = new System.Drawing.Point(16, 672);
-            this.Sair_btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Sair_btn.Name = "Sair_btn";
-            this.Sair_btn.Size = new System.Drawing.Size(256, 38);
-            this.Sair_btn.TabIndex = 8;
-            this.Sair_btn.Text = "Sair";
-            this.Sair_btn.UseVisualStyleBackColor = false;
-            this.Sair_btn.Click += new System.EventHandler(this.Sair_btn_Click);
-            // 
-            // Defincoes_Btn
-            // 
-            this.Defincoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Defincoes_Btn.FlatAppearance.BorderSize = 0;
-            this.Defincoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Defincoes_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Defincoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Defincoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Gear;
-            this.Defincoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.Defincoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Defincoes_Btn.IconSize = 32;
-            this.Defincoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Defincoes_Btn.Location = new System.Drawing.Point(0, 358);
-            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Defincoes_Btn.Name = "Defincoes_Btn";
-            this.Defincoes_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.Defincoes_Btn.Size = new System.Drawing.Size(293, 62);
-            this.Defincoes_Btn.TabIndex = 7;
-            this.Defincoes_Btn.Text = "Definições";
-            this.Defincoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Defincoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Defincoes_Btn.UseVisualStyleBackColor = true;
-            this.Defincoes_Btn.Click += new System.EventHandler(this.Defincoes_Btn_Click);
-            // 
-            // DashboardFinancas_Btn
-            // 
-            this.DashboardFinancas_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardFinancas_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardFinancas_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardFinancas_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardFinancas_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFinancas_Btn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
-            this.DashboardFinancas_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFinancas_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardFinancas_Btn.IconSize = 32;
-            this.DashboardFinancas_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFinancas_Btn.Location = new System.Drawing.Point(0, 296);
-            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DashboardFinancas_Btn.Name = "DashboardFinancas_Btn";
-            this.DashboardFinancas_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashboardFinancas_Btn.Size = new System.Drawing.Size(293, 62);
-            this.DashboardFinancas_Btn.TabIndex = 6;
-            this.DashboardFinancas_Btn.Text = "Finanças";
-            this.DashboardFinancas_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFinancas_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardFinancas_Btn.UseVisualStyleBackColor = true;
-            this.DashboardFinancas_Btn.Click += new System.EventHandler(this.DashboardFinancas_Btn_Click);
-            // 
-            // DashboardFuncionario_Btn
-            // 
-            this.DashboardFuncionario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DashboardFuncionario_Btn.FlatAppearance.BorderSize = 0;
-            this.DashboardFuncionario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardFuncionario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardFuncionario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.DashboardFuncionario_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.DashboardFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DashboardFuncionario_Btn.IconSize = 32;
-            this.DashboardFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFuncionario_Btn.Location = new System.Drawing.Point(0, 234);
-            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DashboardFuncionario_Btn.Name = "DashboardFuncionario_Btn";
-            this.DashboardFuncionario_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashboardFuncionario_Btn.Size = new System.Drawing.Size(293, 62);
-            this.DashboardFuncionario_Btn.TabIndex = 1;
-            this.DashboardFuncionario_Btn.Text = "Funcionários";
-            this.DashboardFuncionario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardFuncionario_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DashboardFuncionario_Btn.UseVisualStyleBackColor = true;
-            this.DashboardFuncionario_Btn.Click += new System.EventHandler(this.DashboardFuncionario_Btn_Click);
-            // 
-            // Dashboard_Btn
-            // 
-            this.Dashboard_Btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Dashboard_Btn.FlatAppearance.BorderSize = 0;
-            this.Dashboard_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dashboard_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dashboard_Btn.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Dashboard_Btn.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.Dashboard_Btn.IconColor = System.Drawing.Color.Gainsboro;
-            this.Dashboard_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Dashboard_Btn.IconSize = 32;
-            this.Dashboard_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dashboard_Btn.Location = new System.Drawing.Point(0, 172);
-            this.Dashboard_Btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Dashboard_Btn.Name = "Dashboard_Btn";
-            this.Dashboard_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.Dashboard_Btn.Size = new System.Drawing.Size(293, 62);
-            this.Dashboard_Btn.TabIndex = 0;
-            this.Dashboard_Btn.Text = "Dashboard";
-            this.Dashboard_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Dashboard_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Dashboard_Btn.UseVisualStyleBackColor = true;
-            this.Dashboard_Btn.Click += new System.EventHandler(this.Dashboard_Btn_Click);
-            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
@@ -196,18 +84,6 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(293, 172);
             this.panelLogo.TabIndex = 0;
-            // 
-            // Home_Btn
-            // 
-            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
-            this.Home_Btn.Location = new System.Drawing.Point(69, 15);
-            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4);
-            this.Home_Btn.Name = "Home_Btn";
-            this.Home_Btn.Size = new System.Drawing.Size(151, 138);
-            this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Home_Btn.TabIndex = 0;
-            this.Home_Btn.TabStop = false;
-            this.Home_Btn.Click += new System.EventHandler(this.Home_Btn_Click);
             // 
             // panelTitleBar
             // 
@@ -326,6 +202,132 @@
             this.tabDashboardDefinicoes.Text = "tabPage5";
             this.tabDashboardDefinicoes.UseVisualStyleBackColor = true;
             // 
+            // Exit_iconPictureBox
+            // 
+            this.Exit_iconPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Exit_iconPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.Exit_iconPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Exit_iconPictureBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Exit_iconPictureBox.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+
+            this.Exit_iconPictureBox.IconColor = System.Drawing.SystemColors.Window;
+            this.Exit_iconPictureBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Exit_iconPictureBox.IconSize = 67;
+            this.Exit_iconPictureBox.Location = new System.Drawing.Point(12, 638);
+            this.Exit_iconPictureBox.Name = "Exit_iconPictureBox";
+            this.Exit_iconPictureBox.Size = new System.Drawing.Size(67, 75);
+            this.Exit_iconPictureBox.TabIndex = 9;
+            this.Exit_iconPictureBox.TabStop = false;
+
+            // 
+            // Defincoes_Btn
+            // 
+            this.Defincoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Defincoes_Btn.FlatAppearance.BorderSize = 0;
+            this.Defincoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Defincoes_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Defincoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Defincoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.Defincoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            this.Defincoes_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Defincoes_Btn.IconSize = 32;
+            this.Defincoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Defincoes_Btn.Location = new System.Drawing.Point(0, 358);
+            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Defincoes_Btn.Name = "Defincoes_Btn";
+            this.Defincoes_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.Defincoes_Btn.Size = new System.Drawing.Size(293, 62);
+            this.Defincoes_Btn.TabIndex = 7;
+            this.Defincoes_Btn.Text = "Definições";
+            this.Defincoes_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Defincoes_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Defincoes_Btn.UseVisualStyleBackColor = true;
+            this.Defincoes_Btn.Click += new System.EventHandler(this.Defincoes_Btn_Click);
+            // 
+            // DashboardFinancas_Btn
+            // 
+            this.DashboardFinancas_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DashboardFinancas_Btn.FlatAppearance.BorderSize = 0;
+            this.DashboardFinancas_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DashboardFinancas_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardFinancas_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.DashboardFinancas_Btn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
+            this.DashboardFinancas_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            this.DashboardFinancas_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DashboardFinancas_Btn.IconSize = 32;
+            this.DashboardFinancas_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DashboardFinancas_Btn.Location = new System.Drawing.Point(0, 296);
+            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DashboardFinancas_Btn.Name = "DashboardFinancas_Btn";
+            this.DashboardFinancas_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.DashboardFinancas_Btn.Size = new System.Drawing.Size(293, 62);
+            this.DashboardFinancas_Btn.TabIndex = 6;
+            this.DashboardFinancas_Btn.Text = "Finanças";
+            this.DashboardFinancas_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DashboardFinancas_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DashboardFinancas_Btn.UseVisualStyleBackColor = true;
+            this.DashboardFinancas_Btn.Click += new System.EventHandler(this.DashboardFinancas_Btn_Click);
+            // 
+            // DashboardFuncionario_Btn
+            // 
+            this.DashboardFuncionario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DashboardFuncionario_Btn.FlatAppearance.BorderSize = 0;
+            this.DashboardFuncionario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DashboardFuncionario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardFuncionario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.DashboardFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.DashboardFuncionario_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            this.DashboardFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DashboardFuncionario_Btn.IconSize = 32;
+            this.DashboardFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DashboardFuncionario_Btn.Location = new System.Drawing.Point(0, 234);
+            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DashboardFuncionario_Btn.Name = "DashboardFuncionario_Btn";
+            this.DashboardFuncionario_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
+            this.DashboardFuncionario_Btn.Size = new System.Drawing.Size(293, 62);
+            this.DashboardFuncionario_Btn.TabIndex = 1;
+            this.DashboardFuncionario_Btn.Text = "Funcionários";
+            this.DashboardFuncionario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DashboardFuncionario_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DashboardFuncionario_Btn.UseVisualStyleBackColor = true;
+            this.DashboardFuncionario_Btn.Click += new System.EventHandler(this.DashboardFuncionario_Btn_Click);
+            // 
+            // Dashboard_Btn
+            // 
+            this.Dashboard_Btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Dashboard_Btn.FlatAppearance.BorderSize = 0;
+            this.Dashboard_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Dashboard_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dashboard_Btn.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Dashboard_Btn.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.Dashboard_Btn.IconColor = System.Drawing.Color.Gainsboro;
+            this.Dashboard_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Dashboard_Btn.IconSize = 32;
+            this.Dashboard_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dashboard_Btn.Location = new System.Drawing.Point(0, 172);
+            this.Dashboard_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Dashboard_Btn.Name = "Dashboard_Btn";
+            this.Dashboard_Btn.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.Dashboard_Btn.Size = new System.Drawing.Size(293, 62);
+            this.Dashboard_Btn.TabIndex = 0;
+            this.Dashboard_Btn.Text = "Dashboard";
+            this.Dashboard_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Dashboard_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Dashboard_Btn.UseVisualStyleBackColor = true;
+            this.Dashboard_Btn.Click += new System.EventHandler(this.Dashboard_Btn_Click);
+            // 
+            // Home_Btn
+            // 
+            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
+            this.Home_Btn.Location = new System.Drawing.Point(69, 15);
+            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Home_Btn.Name = "Home_Btn";
+            this.Home_Btn.Size = new System.Drawing.Size(151, 138);
+            this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Home_Btn.TabIndex = 0;
+            this.Home_Btn.TabStop = false;
+            this.Home_Btn.Click += new System.EventHandler(this.Home_Btn_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -343,12 +345,13 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.Menus_TabControl.ResumeLayout(false);
             this.tabDashboard.ResumeLayout(false);
             this.tabDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_iconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,7 +376,7 @@
         private System.Windows.Forms.TabPage tabDashboardDefinicoes;
         private System.Windows.Forms.Label timer_label;
         private System.Windows.Forms.Label BemVindo_Label;
-        private System.Windows.Forms.Button Sair_btn;
+        private FontAwesome.Sharp.IconPictureBox Exit_iconPictureBox;
     }
 }
 

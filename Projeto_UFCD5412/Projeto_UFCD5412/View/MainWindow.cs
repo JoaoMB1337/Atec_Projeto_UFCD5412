@@ -49,7 +49,19 @@ namespace Projeto_UFCD5412
             timer.Tick += timer_Tick;
             timer.Start();
 
-            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+            timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");  
+            
+            //abrir em tabDashboard o form de dashboard com as dimensoes dinamicas do tabcontrol
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.TopLevel = false;
+            dashboardForm.FormBorderStyle = FormBorderStyle.None;
+            dashboardForm.Dock = DockStyle.Fill;
+            Menus_TabControl.SelectedTab.Controls.Add(dashboardForm);
+            dashboardForm.BringToFront();
+            dashboardForm.Show();
+
+            
+
         }
         //Eventos
         private struct RGBColors
@@ -156,7 +168,6 @@ namespace Projeto_UFCD5412
 
         private void Dashboard_Btn_Click(object sender, EventArgs e)
         {
-
             Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboard"];
             ActivateButton(sender, RGBColors.color1);
             DashboardForm dashboardForm = new DashboardForm();
@@ -165,11 +176,14 @@ namespace Projeto_UFCD5412
             dashboardForm.FormBorderStyle = FormBorderStyle.None;
             dashboardForm.Dock = DockStyle.Fill;
 
+            // Define o tamanho da janela com base no tamanho da aba do TabControl
+            dashboardForm.Size = Menus_TabControl.SelectedTab.ClientSize;
 
             Menus_TabControl.SelectedTab.Controls.Add(dashboardForm);
             dashboardForm.BringToFront();
             dashboardForm.Show();
         }
+
 
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {

@@ -221,5 +221,14 @@
   <ItemGroup>
     <None Include="Resources\LogoEmpresa-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bday-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contExp-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salIncome-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

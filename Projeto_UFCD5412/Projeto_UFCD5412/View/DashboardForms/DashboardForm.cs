@@ -26,6 +26,7 @@ namespace Projeto_UFCD5412.View.DashboardForms
             InitializeComponent();
             LoadComboBox();
             LoadData();
+            
 
         }
 

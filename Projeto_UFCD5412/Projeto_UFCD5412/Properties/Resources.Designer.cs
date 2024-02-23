@@ -83,6 +83,16 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bday_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bday-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cativo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("cativo-removebg-preview", resourceCulture);
@@ -103,9 +113,39 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap contExp_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("contExp-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exportcsvicon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("exportcsvicon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_ADOSMELHORES_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("icon-ADOSMELHORES-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jsonexport_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("jsonexport-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +183,16 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sairIcon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("sairIcon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salarionewicon_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("salarionewicon-removebg-preview", resourceCulture);
@@ -166,6 +216,16 @@ namespace Projeto_UFCD5412.Properties {
         internal static System.Drawing.Bitmap salarios_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("salarios-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salIncome_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("salIncome-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,6 +12,7 @@ using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Model;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
+using Projeto_UFCD5412.View.SettingsForms;
 
 namespace Projeto_UFCD5412.View.DashboardForms
 {
@@ -86,16 +87,18 @@ namespace Projeto_UFCD5412.View.DashboardForms
 
         private void Home_Button_Click(object sender, EventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Hide();
-            mainWindow.TopLevel = false;
-            mainWindow.FormBorderStyle = FormBorderStyle.None;
-            mainWindow.Dock = DockStyle.Fill;
-            mainWindow.BringToFront();
-            mainWindow.Show();
-        }    
-      
+            DashboardForm dashboard = new DashboardForm();
+
+            dashboard.TopLevel = false;
+            dashboard.FormBorderStyle = FormBorderStyle.None;
+            dashboard.Dock = DockStyle.Fill;
+            dashboard.BringToFront();
+            dashboard.Show();
+        }
+
+
+
+
     }
 }
 

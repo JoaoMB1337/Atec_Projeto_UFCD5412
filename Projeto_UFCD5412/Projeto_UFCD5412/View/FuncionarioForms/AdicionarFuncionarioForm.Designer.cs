@@ -66,6 +66,7 @@
             this.password_textbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cursoresponsavel_textbox = new System.Windows.Forms.TextBox();
+            this.ValorHoralabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -273,7 +274,7 @@
             // Sair_Btn
             // 
             this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.Location = new System.Drawing.Point(1597, 640);
+            this.Sair_Btn.Location = new System.Drawing.Point(1638, 677);
             this.Sair_Btn.Name = "Sair_Btn";
             this.Sair_Btn.Size = new System.Drawing.Size(159, 44);
             this.Sair_Btn.TabIndex = 23;
@@ -312,7 +313,7 @@
             // 
             this.salario_label.AutoSize = true;
             this.salario_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.salario_label.Location = new System.Drawing.Point(598, 318);
+            this.salario_label.Location = new System.Drawing.Point(598, 320);
             this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salario_label.Name = "salario_label";
             this.salario_label.Size = new System.Drawing.Size(58, 18);
@@ -322,7 +323,7 @@
             // isencaohorario_checkbox
             // 
             this.isencaohorario_checkbox.AutoSize = true;
-            this.isencaohorario_checkbox.Location = new System.Drawing.Point(893, 282);
+            this.isencaohorario_checkbox.Location = new System.Drawing.Point(903, 280);
             this.isencaohorario_checkbox.Name = "isencaohorario_checkbox";
             this.isencaohorario_checkbox.Size = new System.Drawing.Size(150, 22);
             this.isencaohorario_checkbox.TabIndex = 28;
@@ -342,7 +343,7 @@
             // carroempresa_checkbox
             // 
             this.carroempresa_checkbox.AutoSize = true;
-            this.carroempresa_checkbox.Location = new System.Drawing.Point(1199, 282);
+            this.carroempresa_checkbox.Location = new System.Drawing.Point(1137, 282);
             this.carroempresa_checkbox.Name = "carroempresa_checkbox";
             this.carroempresa_checkbox.Size = new System.Drawing.Size(147, 22);
             this.carroempresa_checkbox.TabIndex = 30;
@@ -351,7 +352,7 @@
             // 
             // secretariaNomeDiretor_textbox
             // 
-            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(893, 282);
+            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(903, 280);
             this.secretariaNomeDiretor_textbox.Name = "secretariaNomeDiretor_textbox";
             this.secretariaNomeDiretor_textbox.Size = new System.Drawing.Size(308, 24);
             this.secretariaNomeDiretor_textbox.TabIndex = 31;
@@ -361,7 +362,7 @@
             // 
             // areaensino_textbox
             // 
-            this.areaensino_textbox.Location = new System.Drawing.Point(1087, 282);
+            this.areaensino_textbox.Location = new System.Drawing.Point(903, 280);
             this.areaensino_textbox.Name = "areaensino_textbox";
             this.areaensino_textbox.Size = new System.Drawing.Size(308, 24);
             this.areaensino_textbox.TabIndex = 35;
@@ -372,7 +373,7 @@
             // laboral_checkbox
             // 
             this.laboral_checkbox.AutoSize = true;
-            this.laboral_checkbox.Location = new System.Drawing.Point(1002, 284);
+            this.laboral_checkbox.Location = new System.Drawing.Point(1256, 280);
             this.laboral_checkbox.Name = "laboral_checkbox";
             this.laboral_checkbox.Size = new System.Drawing.Size(76, 22);
             this.laboral_checkbox.TabIndex = 33;
@@ -382,7 +383,7 @@
             // poslaboral_checkbox
             // 
             this.poslaboral_checkbox.AutoSize = true;
-            this.poslaboral_checkbox.Location = new System.Drawing.Point(893, 284);
+            this.poslaboral_checkbox.Location = new System.Drawing.Point(1380, 282);
             this.poslaboral_checkbox.Name = "poslaboral_checkbox";
             this.poslaboral_checkbox.Size = new System.Drawing.Size(103, 22);
             this.poslaboral_checkbox.TabIndex = 32;
@@ -391,7 +392,7 @@
             // 
             // valorhora_textbox
             // 
-            this.valorhora_textbox.Location = new System.Drawing.Point(1414, 282);
+            this.valorhora_textbox.Location = new System.Drawing.Point(687, 314);
             this.valorhora_textbox.Name = "valorhora_textbox";
             this.valorhora_textbox.Size = new System.Drawing.Size(122, 24);
             this.valorhora_textbox.TabIndex = 36;
@@ -439,11 +440,22 @@
             // 
             // cursoresponsavel_textbox
             // 
-            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(893, 281);
+            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(903, 282);
             this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
             this.cursoresponsavel_textbox.Size = new System.Drawing.Size(142, 24);
             this.cursoresponsavel_textbox.TabIndex = 41;
             this.cursoresponsavel_textbox.Text = "Curso Responsavél";
+            // 
+            // ValorHoralabel
+            // 
+            this.ValorHoralabel.AutoSize = true;
+            this.ValorHoralabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ValorHoralabel.Location = new System.Drawing.Point(582, 320);
+            this.ValorHoralabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ValorHoralabel.Name = "ValorHoralabel";
+            this.ValorHoralabel.Size = new System.Drawing.Size(83, 18);
+            this.ValorHoralabel.TabIndex = 42;
+            this.ValorHoralabel.Text = "Valor Hora:";
             // 
             // AdicionarFuncionarioForm
             // 
@@ -451,7 +463,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1777, 696);
+            this.ClientSize = new System.Drawing.Size(1818, 733);
+            this.Controls.Add(this.ValorHoralabel);
             this.Controls.Add(this.cursoresponsavel_textbox);
             this.Controls.Add(this.password_textbox);
             this.Controls.Add(this.label2);
@@ -543,5 +556,6 @@
         private System.Windows.Forms.TextBox password_textbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox cursoresponsavel_textbox;
+        private System.Windows.Forms.Label ValorHoralabel;
     }
 }

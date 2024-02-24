@@ -50,6 +50,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.addFoto_btn = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.EditFuncionario_Btn = new FontAwesome.Sharp.IconButton();
+            this.SalarioHoraTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -300,6 +302,25 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.EditFuncionario_Btn.UseVisualStyleBackColor = false;
             this.EditFuncionario_Btn.Click += new System.EventHandler(this.EditFuncionario_Btn_Click);
             // 
+            // SalarioHoraTextBox
+            // 
+            this.SalarioHoraTextBox.Location = new System.Drawing.Point(687, 362);
+            this.SalarioHoraTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.SalarioHoraTextBox.Name = "SalarioHoraTextBox";
+            this.SalarioHoraTextBox.Size = new System.Drawing.Size(148, 24);
+            this.SalarioHoraTextBox.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(576, 368);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 18);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Salário Hora:";
+            // 
             // EditarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -307,6 +328,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1710, 696);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.SalarioHoraTextBox);
             this.Controls.Add(this.salario_textbox);
             this.Controls.Add(this.salario_label);
             this.Controls.Add(this.DataNascimento_DateTimePicker);
@@ -371,5 +394,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox salario_textbox;
         private System.Windows.Forms.Label salario_label;
+        private System.Windows.Forms.TextBox SalarioHoraTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

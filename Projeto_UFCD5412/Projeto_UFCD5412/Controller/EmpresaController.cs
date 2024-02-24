@@ -57,6 +57,12 @@ namespace Projeto_UFCD5412.Controller
             return funcionario;
         }
 
+        public Formador GetFormadorById(int id)
+        {
+            var formador = Funcionarios.FirstOrDefault(f => f.Id == id) as Formador;
+            return formador;
+        }
+
 
         public void AdicionarFuncionario(Funcionario funcionario)
         {

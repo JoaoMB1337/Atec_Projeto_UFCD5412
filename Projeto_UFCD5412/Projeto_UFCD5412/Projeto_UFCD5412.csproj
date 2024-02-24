@@ -146,6 +146,9 @@
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FinancasForms\CalcularValorForm.resx">
+      <DependentUpon>CalcularValorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>

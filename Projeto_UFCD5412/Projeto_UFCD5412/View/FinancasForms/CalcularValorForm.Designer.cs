@@ -28,58 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NomeFunc_label = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ValorPagarDataGridView = new System.Windows.Forms.DataGridView();
             this.Sair_Btn = new System.Windows.Forms.Button();
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
             this.CalcularFormadorBtnButton = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValorPagarDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // NomeFunc_label
             // 
             this.NomeFunc_label.AutoSize = true;
-            this.NomeFunc_label.Location = new System.Drawing.Point(10, 5);
+            this.NomeFunc_label.Location = new System.Drawing.Point(10, 13);
             this.NomeFunc_label.Name = "NomeFunc_label";
             this.NomeFunc_label.Size = new System.Drawing.Size(38, 13);
             this.NomeFunc_label.TabIndex = 0;
             this.NomeFunc_label.Text = "Nome:";
             // 
-            // dataGridView1
+            // ValorPagarDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PeachPuff;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.ValorPagarDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ValorPagarDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ValorPagarDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ValorPagarDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(792, 358);
-            this.dataGridView1.TabIndex = 1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ValorPagarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ValorPagarDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ValorPagarDataGridView.EnableHeadersVisualStyles = false;
+            this.ValorPagarDataGridView.Location = new System.Drawing.Point(3, 41);
+            this.ValorPagarDataGridView.Name = "ValorPagarDataGridView";
+            this.ValorPagarDataGridView.Size = new System.Drawing.Size(792, 358);
+            this.ValorPagarDataGridView.TabIndex = 1;
             // 
             // Sair_Btn
             // 
@@ -90,10 +88,11 @@
             this.Sair_Btn.TabIndex = 4;
             this.Sair_Btn.Text = "Voltar";
             this.Sair_Btn.UseVisualStyleBackColor = true;
+            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // PesquisarFuncinarioPorNome_Textbox
             // 
-            this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(54, 2);
+            this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(54, 10);
             this.PesquisarFuncinarioPorNome_Textbox.Name = "PesquisarFuncinarioPorNome_Textbox";
             this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(187, 20);
             this.PesquisarFuncinarioPorNome_Textbox.TabIndex = 5;
@@ -131,11 +130,11 @@
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
             this.Controls.Add(this.Sair_Btn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ValorPagarDataGridView);
             this.Controls.Add(this.NomeFunc_label);
             this.Name = "CalcularValorForm";
             this.Text = "CalcularValorForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValorPagarDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +143,7 @@
         #endregion
 
         private System.Windows.Forms.Label NomeFunc_label;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ValorPagarDataGridView;
         private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;

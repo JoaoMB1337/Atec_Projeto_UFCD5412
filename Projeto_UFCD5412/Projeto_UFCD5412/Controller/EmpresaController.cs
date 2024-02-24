@@ -56,6 +56,12 @@ namespace Projeto_UFCD5412.Controller
             return Funcionarios.Count(f => f.DataFimContrato > dataAtual);
         }
 
+        public Formador GetFormadorById(int id)
+        {
+            var formador = Funcionarios.FirstOrDefault(f => f.Id == id) as Formador;
+            return formador;
+        }
+
         public int CountContratosInativos(DateTime dataAtual)
         {
             return Funcionarios.Count(f => f.DataFimContrato < dataAtual);

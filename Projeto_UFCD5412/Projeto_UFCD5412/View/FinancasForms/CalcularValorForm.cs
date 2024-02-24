@@ -1,9 +1,11 @@
 ﻿using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Model;
+using Projeto_UFCD5412.View.DashboardForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Projeto_UFCD5412.View.FinancasForms
@@ -15,9 +17,9 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
         public CalcularValorForm()
         {
-            InitializeComponent();
-            LoadComboBox();
-            InitializeDataGridView();
+            InitializeComponent(); 
+            LoadComboBox(); 
+            InitializeDataGridView(); 
         }
 
         private void LoadComboBox()
@@ -29,34 +31,45 @@ namespace Projeto_UFCD5412.View.FinancasForms
             TipoFuncionario_ComboBox.Items.Add("Diretor");
             TipoFuncionario_ComboBox.Items.Add("Todos");
             TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged;
-
         }
 
         private void InitializeDataGridView()
         {
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.Columns.Add("Nome", "Nome");
-            dataGridView1.Columns.Add("Tipo", "Tipo");
-            dataGridView1.Columns.Add("Salario", "Salário");
-            dataGridView1.Columns.Add("TotalMes", "Total por Mês");
-            dataGridView1.Columns.Add("DataContrato", "Data Contrato");
-            dataGridView1.Columns.Add("DataFimContrato", "Data Fim Contrato");
+            ValorPagarDataGridView.AutoGenerateColumns = false;
+            ValorPagarDataGridView.Columns.Add("Nome", "Nome");
+            ValorPagarDataGridView.Columns.Add("Tipo", "Tipo");
+            ValorPagarDataGridView.Columns.Add("Salario", "Salário");
+            ValorPagarDataGridView.Columns.Add("DataContrato", "Data Contrato");
+            ValorPagarDataGridView.Columns.Add("DataFimContrato", "Data Fim Contrato");
 
             LoadEmployeeData();
         }
 
-        private void LoadEmployeeData()
+        private void LoadEmployeeData()  // funcao para carregar os dados dos funcionarios
         {
-            funcionarios = empresaController.ListarFuncionarios();
+            funcionarios = empresaController.ListarFuncionarios(); 
 
-            foreach (var funcionario in funcionarios)
+            foreach (var funcionario in funcionarios) 
             {
-                decimal totalMes = funcionario.Salario * 8;
-                dataGridView1.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, totalMes, funcionario.DataContrato, funcionario.DataFimContrato);
+                string salarioFormatado = funcionario.Tipo == "Formador" ? "h " + funcionario.Salario.ToString() : funcionario.Salario.ToString();
+
+                if (funcionario.Tipo == "Formador")
+                {
+                    DateTime dataInicio = funcionario.DataContrato;
+                    DateTime dataFim = funcionario.DataFimContrato;
+
+                    int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
+                    int totalHoras = totalDias * 6; 
+                    decimal salario = totalHoras * funcionario.Salario; 
+                    salarioFormatado = "h " + salario.ToString();
+                }
+
+                ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, salarioFormatado, funcionario.DataContrato, funcionario.DataFimContrato);
             }
         }
 
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e) //filtrar funcionarios
         {
             string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
             List<Funcionario> funcionariosFiltrados = new List<Funcionario>();
@@ -64,83 +77,25 @@ namespace Projeto_UFCD5412.View.FinancasForms
             if (tipoSelecionado == "Todos")
             {
                 AtualizarDataGridView(funcionarios);
-                // Tornar o botão de cálculo do formador invisível quando o tipo for "Todos"
-                CalcularFormadorBtnButton.Visible = false;
-                // Exibir a coluna "Total por Mês"
-                dataGridView1.Columns["TotalMes"].Visible = true;
-            }
-            else if (tipoSelecionado == "Formador")
-            {
-                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == "Formador").ToList();
-                AtualizarDataGridView(funcionariosFiltrados);
-                // Tornar o botão de cálculo do formador visível quando o tipo for "Formador"
-                CalcularFormadorBtnButton.Visible = true;
-                // Esconder a coluna "Total por Mês"
-                dataGridView1.Columns["TotalMes"].Visible = false;
             }
             else
             {
-                foreach (var funcionario in funcionarios)
-                {
-                    if (funcionario.Tipo == tipoSelecionado)
-                    {
-                        funcionariosFiltrados.Add(funcionario);
-                    }
-                }
+                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == tipoSelecionado).ToList();
                 AtualizarDataGridView(funcionariosFiltrados);
-                // Tornar o botão de cálculo do formador invisível para outros tipos de funcionários
-                CalcularFormadorBtnButton.Visible = false;
-                // Exibir a coluna "Total por Mês"
-                dataGridView1.Columns["TotalMes"].Visible = true;
             }
         }
-
-
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)
         {
-
-            dataGridView1.Rows.Clear();
-
-            foreach (var funcionario in funcionarios)
-            {
-                decimal totalMes = funcionario.Salario * 30;
-                dataGridView1.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, totalMes, funcionario.DataContrato, funcionario.DataFimContrato);
-            }
-        }
-
-        private void CalcularValorBtn_Click(object sender, EventArgs e)
-        {
-            decimal totalGeral = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    decimal salario = Convert.ToDecimal(row.Cells["Salario"].Value);
-                    totalGeral += salario;
-                }
-            }
-
-            MessageBox.Show($"Total a pagar para todos os funcionários: {totalGeral}");
-        }
-
-        private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
-        {
-            string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text.ToLower();
-            List<Funcionario> funcionariosFiltrados = new List<Funcionario>();
+            ValorPagarDataGridView.Rows.Clear();
 
             foreach (var funcionario in funcionarios)
             {
-                if (funcionario.Nome.ToLower().Contains(nomePesquisado))
-                {
-                    funcionariosFiltrados.Add(funcionario);
-                }
+                ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, funcionario.DataContrato, funcionario.DataFimContrato);
             }
-
-            AtualizarDataGridView(funcionariosFiltrados);
         }
 
-        private void CalcularFormadorBtnButton_Click(object sender, EventArgs e)
+        private void CalcularFormadorBtnButton_Click(object sender, EventArgs e) // funcao para calcular o valor aos formadores
         {
             if (TipoFuncionario_ComboBox.SelectedItem != null)
             {
@@ -150,18 +105,17 @@ namespace Projeto_UFCD5412.View.FinancasForms
                 {
                     StringBuilder message = new StringBuilder();
 
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    foreach (DataGridViewRow row in ValorPagarDataGridView.Rows)
                     {
                         if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
                         {
-                            decimal salarioHora = Convert.ToDecimal(row.Cells["Salario"].Value);
+                            decimal valorHora = Convert.ToDecimal(row.Cells["Salario"].Value); 
                             DateTime dataInicio = Convert.ToDateTime(row.Cells["DataContrato"].Value);
                             DateTime dataFim = Convert.ToDateTime(row.Cells["DataFimContrato"].Value);
 
                             int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
                             int totalHoras = totalDias * 6;
-                            decimal totalFormador = totalHoras * salarioHora;
-
+                            decimal totalFormador = totalHoras * valorHora;
 
                             message.AppendLine($"Formador: {row.Cells["Nome"].Value}, Total a pagar: {totalFormador}");
                         }
@@ -178,6 +132,20 @@ namespace Projeto_UFCD5412.View.FinancasForms
             {
                 MessageBox.Show("Selecione um tipo de funcionário na ComboBox.");
             }
+        }
+
+        private void Sair_Btn_Click(object sender, EventArgs e)
+        {
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Show();
+            this.Hide();
+        }
+
+        private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
+        {
+            string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text;
+            List<Funcionario> funcionariosFiltrados = empresaController.PesquisarFuncionariosPorNome(nomePesquisado);
+            AtualizarDataGridView(funcionariosFiltrados);
         }
     }
 }

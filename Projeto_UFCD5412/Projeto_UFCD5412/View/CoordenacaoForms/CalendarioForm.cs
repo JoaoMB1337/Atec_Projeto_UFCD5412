@@ -27,7 +27,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             InitializeComponent();
             dataAtual = DateTime.Today;
-            CarregarAulasSalvas(); // Carrega as aulas salvas do arquivo CSV
+            CarregarAulasSalvas(); 
             AtualizarCalendario();
             this.Resize += CalendarioForm_Resize;
             this.FormClosing += CalendarioForm_FormClosing;

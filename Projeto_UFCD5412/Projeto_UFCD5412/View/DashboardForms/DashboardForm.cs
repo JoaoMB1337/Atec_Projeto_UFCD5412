@@ -81,6 +81,7 @@ namespace Projeto_UFCD5412.View.DashboardForms
 
             // salarios por tipo
             //decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
+           // decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
             //totalSalario_lbl.Text = totalSalarios.ToString();
 
         }

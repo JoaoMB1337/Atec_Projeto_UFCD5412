@@ -68,14 +68,9 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void EditFuncionario_Btn_Click(object sender, EventArgs e)
         {
             UpdateInfoFuncionario();
-
         }
 
-        private void Sair_Btn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+     
         private void UpdateInfoFuncionario()
         {
             var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
@@ -104,6 +99,33 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 MessageBox.Show("Funcionário atualizado com sucesso");
                 this.Close();
             }
+        }
+
+        private void RemoverFuncionario_Btn_Click(object sender, EventArgs e)
+        {
+            var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
+
+            if (funcionario == null)
+            {
+                MessageBox.Show("Funcionário não encontrado");
+                this.Close();
+            }
+            else
+            {
+                var confirmResult = MessageBox.Show("Tem certeza que deseja remover este funcionário?", "Confirmar Remoção", MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    empresaController.RemoverFuncionario(funcionario);
+                    MessageBox.Show("Funcionário removido com sucesso");
+                    this.Close();
+                }
+            }
+        }
+
+        private void Sair_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

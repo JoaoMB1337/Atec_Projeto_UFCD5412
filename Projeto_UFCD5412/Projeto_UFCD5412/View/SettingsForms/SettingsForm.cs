@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Data;
 
 namespace Projeto_UFCD5412.View.SettingsForms
 {
     public partial class SettingsForm : Form
     {
+        
         DateTimeController dateTimeController = DateTimeController.Instance;
         public SettingsForm()
         {
@@ -31,5 +33,36 @@ namespace Projeto_UFCD5412.View.SettingsForms
             // Retoma o timer após alterar a hora
             dateTimeController.IsTimerPaused = false;
         }
+
+        private void ExportCsv_Btn_Click(object sender, EventArgs e)
+        {
+            CSVHandler csvHandler = new CSVHandler();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "Arquivos CSV (*.csv)|*.csv";
+
+            saveFileDialog.Title = "Salvar arquivo CSV";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string filePath = saveFileDialog.FileName;
+                    csvHandler.ExportCsvToSystem(filePath);
+                    MessageBox.Show("Ficheiro CSV exportado com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao exportar o ficheiro CSV: " + ex.Message);
+                }
+            }
+        }
+
+        private void ExportJson_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

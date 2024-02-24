@@ -31,5 +31,11 @@ namespace Projeto_UFCD5412.View.LoginForms
                 MessageBox.Show("As passwords não coincidem. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

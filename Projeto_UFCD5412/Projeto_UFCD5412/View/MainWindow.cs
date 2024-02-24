@@ -291,7 +291,7 @@ namespace Projeto_UFCD5412
             timer_label.Text = e.NewDateTime.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
-        private void Sair_btn_Click(object sender, EventArgs e)
+        private void Exit_Btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

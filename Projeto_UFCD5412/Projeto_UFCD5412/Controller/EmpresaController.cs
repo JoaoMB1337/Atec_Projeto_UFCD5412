@@ -90,7 +90,7 @@ namespace Projeto_UFCD5412.Controller
 
         public List<Funcionario> ListarFuncionariosComContratoValido(DateTime dataAtual)
         {
-            var funcionariosComContratoValido = Funcionarios.Where(f => f.DataContrato <= dataAtual).ToList();
+            var funcionariosComContratoValido = Funcionarios.Where(f => f.DataFimContrato >= dataAtual).ToList();
             return funcionariosComContratoValido;
         }
 
@@ -135,6 +135,22 @@ namespace Projeto_UFCD5412.Controller
                 funcionario.DataAniversario = updateFuncionario.DataAniversario;
                 funcionario.Salario = updateFuncionario.Salario;
                 CSVHandler.ExportToCSV(Funcionarios);
+            }
+            else
+            {
+                Console.WriteLine("Funcionário não encontrado.");
+            }
+        }
+
+        public void RemoverFuncionario(Funcionario removerFuncionario)
+       {
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Id == removerFuncionario.Id);
+
+            if (funcionario != null)
+            {
+                Funcionarios.Remove(funcionario);
+                CSVHandler.ExportToCSV(Funcionarios);
+                Console.WriteLine("Funcionário removido com sucesso.");
             }
             else
             {

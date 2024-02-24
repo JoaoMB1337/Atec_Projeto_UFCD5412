@@ -32,6 +32,7 @@
             this.ConfirmarPassword_TextBox = new System.Windows.Forms.TextBox();
             this.ConfirmarBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.CancelarBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NovaPassword_TextBox
@@ -52,9 +53,9 @@
             // 
             // ConfirmarBtn
             // 
-            this.ConfirmarBtn.Location = new System.Drawing.Point(111, 107);
+            this.ConfirmarBtn.Location = new System.Drawing.Point(48, 107);
             this.ConfirmarBtn.Name = "ConfirmarBtn";
-            this.ConfirmarBtn.Size = new System.Drawing.Size(75, 23);
+            this.ConfirmarBtn.Size = new System.Drawing.Size(90, 23);
             this.ConfirmarBtn.TabIndex = 2;
             this.ConfirmarBtn.Text = "Confirmar";
             this.ConfirmarBtn.UseVisualStyleBackColor = true;
@@ -70,6 +71,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Insira uma nova password";
             // 
+            // CancelarBtn
+            // 
+            this.CancelarBtn.Location = new System.Drawing.Point(158, 107);
+            this.CancelarBtn.Name = "CancelarBtn";
+            this.CancelarBtn.Size = new System.Drawing.Size(90, 23);
+            this.CancelarBtn.TabIndex = 4;
+            this.CancelarBtn.Text = "Cancelar";
+            this.CancelarBtn.UseVisualStyleBackColor = true;
+            this.CancelarBtn.Click += new System.EventHandler(this.CancelarBtn_Click);
+            // 
             // AlterarPasswordForm
             // 
             this.AcceptButton = this.ConfirmarBtn;
@@ -77,6 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 144);
             this.ControlBox = false;
+            this.Controls.Add(this.CancelarBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ConfirmarBtn);
             this.Controls.Add(this.ConfirmarPassword_TextBox);
@@ -98,6 +110,7 @@
         private System.Windows.Forms.TextBox ConfirmarPassword_TextBox;
         private System.Windows.Forms.Button ConfirmarBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CancelarBtn;
     }
 
 }

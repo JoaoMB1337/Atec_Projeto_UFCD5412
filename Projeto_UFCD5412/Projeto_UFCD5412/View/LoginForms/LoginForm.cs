@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.View.CoordenacaoForms;
 
 namespace Projeto_UFCD5412.View.LoginForms
 {
@@ -19,7 +20,43 @@ namespace Projeto_UFCD5412.View.LoginForms
             InitializeComponent();
         }
 
-        private void UserLogin_Btn_Click(object sender, EventArgs e)
+
+
+        private void MostrarMenuConsoanteTipoUtilizador(string tipoUtilizador)
+        {
+            switch(tipoUtilizador)
+            {
+
+                case "Diretor":
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.ShowDialog();
+                    break;
+
+                case "Coordenador":
+                    CoordenacaoMainForm CoordenacaoMainForm = new CoordenacaoMainForm();
+                    CoordenacaoMainForm.ShowDialog();
+                    break;
+
+                 case "Formador":
+                    MainWindow mainWindow2 = new MainWindow();
+                    mainWindow2.ShowDialog();
+                    break;
+
+                default:
+                    MainWindow mainWindow3 = new MainWindow();
+                    mainWindow3.ShowDialog(); ;
+                break;
+
+            }
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            Application.Exit();
+        }
+
+        private void UserLogin_Btn_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(User_Textbox.Text) || string.IsNullOrEmpty(Password_TextBox.Text))
             {
@@ -34,15 +71,16 @@ namespace Projeto_UFCD5412.View.LoginForms
                     AlterarPasswordForm alterarPasswordForm = new AlterarPasswordForm();
                     alterarPasswordForm.ShowDialog();
 
-                    if(alterarPasswordForm.DialogResult == DialogResult.OK)
+                    if (alterarPasswordForm.DialogResult == DialogResult.OK)
                     {
                         string novaPassword = alterarPasswordForm.NovaPassword;
                         bool verificaNovaPassword = loginController.AlterarPassword(User_Textbox.Text, novaPassword);
-                        if(verificaNovaPassword)
-                        {                            
+                        if (verificaNovaPassword)
+                        {
                             MessageBox.Show("Password alterada com sucesso!");
-                            MainWindow mainWindow = new MainWindow();
-                            mainWindow.ShowDialog();
+                            MessageBox.Show("Por favor, faça login novamente.");
+                            User_Textbox.Text = null;
+                            Password_TextBox.Text = null;
                         }
                         else
                         {
@@ -52,29 +90,25 @@ namespace Projeto_UFCD5412.View.LoginForms
                 }
                 else
                 {
-                   MainWindow mainWindow = new MainWindow();
-                   mainWindow.ShowDialog();
+                    MostrarMenuConsoanteTipoUtilizador(loginResult);
                 }
             }
             else
             {
-               if(User_Textbox.Text == "admin" && Password_TextBox.Text == "admin")
-               {
+                if (User_Textbox.Text == "admin" && Password_TextBox.Text == "admin")
+                {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.ShowDialog();
                 }
-               else
-               {
-                   MessageBox.Show("Username ou Password incorretos!");
-               }
+                else
+                {
+                    MessageBox.Show("Username ou Password incorretos!");
+                }
             }
-
-            this.Hide();
         }
 
-        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        private void Sair_btn_Click(object sender, EventArgs e)
         {
-            this.Show();
             Application.Exit();
         }
     }

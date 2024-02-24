@@ -50,6 +50,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.addFoto_btn = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.EditFuncionario_Btn = new FontAwesome.Sharp.IconButton();
+            this.RemoverFuncionario_Btn = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -291,7 +292,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.EditFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EditFuncionario_Btn.IconColor = System.Drawing.Color.Black;
             this.EditFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.EditFuncionario_Btn.Location = new System.Drawing.Point(1111, 637);
+            this.EditFuncionario_Btn.Location = new System.Drawing.Point(834, 637);
             this.EditFuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.EditFuncionario_Btn.Name = "EditFuncionario_Btn";
             this.EditFuncionario_Btn.Size = new System.Drawing.Size(274, 46);
@@ -300,6 +301,21 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.EditFuncionario_Btn.UseVisualStyleBackColor = false;
             this.EditFuncionario_Btn.Click += new System.EventHandler(this.EditFuncionario_Btn_Click);
             // 
+            // RemoverFuncionario_Btn
+            // 
+            this.RemoverFuncionario_Btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RemoverFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.RemoverFuncionario_Btn.IconColor = System.Drawing.Color.Black;
+            this.RemoverFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.RemoverFuncionario_Btn.Location = new System.Drawing.Point(1129, 637);
+            this.RemoverFuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.RemoverFuncionario_Btn.Name = "RemoverFuncionario_Btn";
+            this.RemoverFuncionario_Btn.Size = new System.Drawing.Size(274, 46);
+            this.RemoverFuncionario_Btn.TabIndex = 28;
+            this.RemoverFuncionario_Btn.Text = "Remover Funcionario";
+            this.RemoverFuncionario_Btn.UseVisualStyleBackColor = false;
+            this.RemoverFuncionario_Btn.Click += new System.EventHandler(this.RemoverFuncionario_Btn_Click);
+            // 
             // EditarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -307,6 +323,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1710, 696);
+            this.Controls.Add(this.RemoverFuncionario_Btn);
             this.Controls.Add(this.salario_textbox);
             this.Controls.Add(this.salario_label);
             this.Controls.Add(this.DataNascimento_DateTimePicker);
@@ -371,5 +388,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox salario_textbox;
         private System.Windows.Forms.Label salario_label;
+        private FontAwesome.Sharp.IconButton RemoverFuncionario_Btn;
     }
 }

@@ -37,6 +37,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             LoadComboBox();
             ListarFuncionarioDataGrid();
+           
         }
 
         private void LoadComboBox()
@@ -110,12 +111,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             AtualizarDataGridView(funcionariosFiltrados);
         }
 
-        private void Sair_Btn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        
         private void RegistoCriminal_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (RegistoCriminal_CheckBox.Checked)
@@ -123,6 +118,20 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 DateTime dataAtual = dateTimeController.GetDateTime();
                 List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(dataAtual);
                 AtualizarDataGridView(funcionariosComRegistoExpirado);
+            }
+            else
+            {
+                ListarFuncionarioDataGrid();
+            }
+        }
+
+        private void ContratoValido_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ContratoValido_CheckBox.Checked)
+            {
+                DateTime dataAtual = dateTimeController.GetDateTime();
+                List<Funcionario> funcionariosComContratoValido = empresaController.ListarFuncionariosComContratoValido(dataAtual);
+                AtualizarDataGridView(funcionariosComContratoValido);
             }
             else
             {
@@ -163,18 +172,9 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
         }
 
-        private void ContratoValido_CheckBox_CheckedChanged(object sender, EventArgs e)
+        private void Sair_Btn_Click(object sender, EventArgs e)
         {
-            if (ContratoValido_CheckBox.Checked)
-            {
-                DateTime dataAtual = dateTimeController.GetDateTime();
-                List<Funcionario> funcionariosComContratoValido = empresaController.ListarFuncionariosComContratoValido(dataAtual);
-                AtualizarDataGridView(funcionariosComContratoValido);
-            }
-            else
-            {
-                ListarFuncionarioDataGrid();
-            }
+            this.Close();
         }
     }
 }

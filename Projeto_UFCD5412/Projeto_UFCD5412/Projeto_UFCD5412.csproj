@@ -111,6 +111,12 @@
     <Compile Include="View\FuncionarioForms\ListarFuncionariosForm.Designer.cs">
       <DependentUpon>ListarFuncionariosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\LoginForms\AlterarPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForms\AlterarPasswordForm.Designer.cs">
+      <DependentUpon>AlterarPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FuncionarioForms\ListarFuncionariosForm.resx">
       <DependentUpon>ListarFuncionariosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForms\AlterarPasswordForm.resx">
+      <DependentUpon>AlterarPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -223,6 +232,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LogoEmpresa-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bday-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contExp-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salIncome-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportcsvicon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jsonexport-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sairIcon-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

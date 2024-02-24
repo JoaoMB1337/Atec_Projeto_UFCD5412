@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Data;
 
 namespace Projeto_UFCD5412.View.Forms

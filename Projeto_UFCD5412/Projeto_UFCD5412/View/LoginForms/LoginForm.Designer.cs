@@ -19,13 +19,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.User_Textbox = new System.Windows.Forms.TextBox();
+            this.Password_TextBox = new System.Windows.Forms.TextBox();
+            this.UserLogin_Btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Sair_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +41,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(640, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -64,36 +75,37 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
-            // txtUsername
+            // User_Textbox
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(140, 147);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(300, 29);
-            this.txtUsername.TabIndex = 2;
+            this.User_Textbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Textbox.Location = new System.Drawing.Point(140, 147);
+            this.User_Textbox.Name = "User_Textbox";
+            this.User_Textbox.Size = new System.Drawing.Size(300, 29);
+            this.User_Textbox.TabIndex = 2;
             // 
-            // txtPassword
+            // Password_TextBox
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(140, 200);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(300, 29);
-            this.txtPassword.TabIndex = 4;
+            this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_TextBox.Location = new System.Drawing.Point(140, 200);
+            this.Password_TextBox.Name = "Password_TextBox";
+            this.Password_TextBox.PasswordChar = '*';
+            this.Password_TextBox.Size = new System.Drawing.Size(300, 29);
+            this.Password_TextBox.TabIndex = 4;
             // 
-            // btnLogin
+            // UserLogin_Btn
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(140, 260);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(100, 40);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.UserLogin_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.UserLogin_Btn.FlatAppearance.BorderSize = 0;
+            this.UserLogin_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserLogin_Btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLogin_Btn.ForeColor = System.Drawing.Color.White;
+            this.UserLogin_Btn.Location = new System.Drawing.Point(140, 260);
+            this.UserLogin_Btn.Name = "UserLogin_Btn";
+            this.UserLogin_Btn.Size = new System.Drawing.Size(100, 40);
+            this.UserLogin_Btn.TabIndex = 5;
+            this.UserLogin_Btn.Text = "Login";
+            this.UserLogin_Btn.UseVisualStyleBackColor = false;
+            this.UserLogin_Btn.Click += new System.EventHandler(this.UserLogin_Btn_Click_1);
             // 
             // label3
             // 
@@ -106,15 +118,20 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Password:";
             // 
-            // pictureBox1
+            // Sair_btn
             // 
-            this.pictureBox1.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.Sair_btn.BackColor = System.Drawing.Color.Red;
+            this.Sair_btn.FlatAppearance.BorderSize = 0;
+            this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sair_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sair_btn.ForeColor = System.Drawing.Color.White;
+            this.Sair_btn.Location = new System.Drawing.Point(286, 260);
+            this.Sair_btn.Name = "Sair_btn";
+            this.Sair_btn.Size = new System.Drawing.Size(100, 40);
+            this.Sair_btn.TabIndex = 8;
+            this.Sair_btn.Text = "Sair";
+            this.Sair_btn.UseVisualStyleBackColor = false;
+            this.Sair_btn.Click += new System.EventHandler(this.Sair_btn_Click);
             // 
             // LoginForm
             // 
@@ -122,13 +139,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(640, 400);
+            this.Controls.Add(this.Sair_btn);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.UserLogin_Btn);
+            this.Controls.Add(this.Password_TextBox);
+            this.Controls.Add(this.User_Textbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -147,9 +165,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.TextBox User_Textbox;
+        private System.Windows.Forms.TextBox Password_TextBox;
+        private System.Windows.Forms.Button UserLogin_Btn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Sair_btn;
     }
 }

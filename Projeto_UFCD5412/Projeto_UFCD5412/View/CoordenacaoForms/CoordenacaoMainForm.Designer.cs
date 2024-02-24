@@ -47,7 +47,7 @@
             // 
             this.panelShadow.BackColor = System.Drawing.Color.Gray;
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 80);
+            this.panelShadow.Location = new System.Drawing.Point(220, 140);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(631, 9);
             this.panelShadow.TabIndex = 7;
@@ -59,7 +59,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(631, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(631, 140);
             this.panelTitleBar.TabIndex = 6;
             // 
             // timer_label
@@ -77,6 +77,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.Sair_btn);
             this.panelMenu.Controls.Add(this.DashboardCalendario_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
@@ -96,7 +97,7 @@
             this.Sair_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sair_btn.ForeColor = System.Drawing.Color.White;
             this.Sair_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Sair_btn.Location = new System.Drawing.Point(11, 431);
+            this.Sair_btn.Location = new System.Drawing.Point(9, 429);
             this.Sair_btn.Margin = new System.Windows.Forms.Padding(2);
             this.Sair_btn.Name = "Sair_btn";
             this.Sair_btn.Size = new System.Drawing.Size(193, 32);
@@ -120,7 +121,7 @@
             this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
             this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.DashboardCalendario_Btn.Size = new System.Drawing.Size(220, 49);
+            this.DashboardCalendario_Btn.Size = new System.Drawing.Size(218, 49);
             this.DashboardCalendario_Btn.TabIndex = 7;
             this.DashboardCalendario_Btn.Text = "Calendário";
             this.DashboardCalendario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,7 +136,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 140);
+            this.panelLogo.Size = new System.Drawing.Size(218, 140);
             this.panelLogo.TabIndex = 0;
             // 
             // Home_Btn
@@ -154,10 +155,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 85);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 140);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 388);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 333);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // CoordenacaoMainForm

@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Model;
 
-
 namespace Projeto_UFCD5412.Data
 {
     internal class CSVHandler
@@ -148,7 +147,6 @@ namespace Projeto_UFCD5412.Data
             return Funcionarios;
         }
 
-
         public static void AddFuncionario(Funcionario novoFuncionario)
         {
             string filePath = @"funcionarios.csv";
@@ -198,6 +196,61 @@ namespace Projeto_UFCD5412.Data
             {
                 Console.WriteLine($"Erro ao adicionar novo funcionário ao CSV: {ex.Message}");
             }
+        }
+
+        public void ExportCsvToSystem( string caminho)
+        {
+            try
+            {
+                List<Funcionario> funcionarios = LoadFromCSV(); // Load data from CSV
+
+                using (StreamWriter sw = new StreamWriter(caminho, false, Encoding.UTF8))
+                {
+                    sw.WriteLine("ID;Nome;Morada;Contacto;Tipo;Salario;DataAniversario;DataContrato;DataFimContrato;DataRegistoCriminal;DataFimRegistoCriminal;Username;Password;PrimeiroLogin");
+
+                    foreach (var funcionario in funcionarios)
+                    {
+                        string commonAttributes = $"{funcionario.Id};{funcionario.Nome};{funcionario.Morada};{funcionario.Contacto};" +
+                            $"{funcionario.Tipo};{funcionario.Salario};{funcionario.DataAniversario};" +
+                            $"{funcionario.DataContrato};{funcionario.DataFimContrato};{funcionario.DataRegistoCriminal};" +
+                            $"{funcionario.DataFimRegistoCriminal};{funcionario.Username};{funcionario.Password};{funcionario.PrimeiroLogin}";
+
+                        if (funcionario is Diretor diretor)
+                        {
+                            sw.WriteLine($"{commonAttributes};{diretor.IseHorario};{diretor.BonusMensal};{diretor.CarroEmpresa};{diretor.Departamento}");
+                        }
+                        else if (funcionario is Secretaria secretaria)
+                        {
+                            sw.WriteLine($"{commonAttributes};{secretaria.DiretorResponsavel};{secretaria.Area}");
+                        }
+                        else if (funcionario is Formador formador)
+                        {
+                            sw.WriteLine($"{commonAttributes};{formador.AreaLecionada};{formador.Disponibilidade};{formador.ValorHora}");
+                        }
+                        else if (funcionario is Coordenador coordenador)
+                        {
+                            sw.WriteLine($"{commonAttributes};{coordenador.Curso};{coordenador.FormadoresAssociados}");
+                        }
+                        else if (funcionario is Funcionario)
+                        {
+                            sw.WriteLine(commonAttributes);
+                        }
+
+                        Console.WriteLine(funcionario.ToString());
+                    }
+
+                    Console.WriteLine("Sucesso!!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro a exportar {ex.Message}");
+            } 
+        }
+
+        public void ExportJsonToSystem(string caminho)
+        {
+         
         }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Sair_btn = new System.Windows.Forms.Button();
+            this.Exit_Btn = new FontAwesome.Sharp.IconPictureBox();
             this.Defincoes_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardFinancas_Btn = new FontAwesome.Sharp.IconButton();
             this.DashboardFuncionario_Btn = new FontAwesome.Sharp.IconButton();
@@ -49,6 +49,7 @@
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.panelTitleBar.SuspendLayout();
@@ -59,7 +60,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.panelMenu.Controls.Add(this.Sair_btn);
+            this.panelMenu.Controls.Add(this.Exit_Btn);
             this.panelMenu.Controls.Add(this.Defincoes_Btn);
             this.panelMenu.Controls.Add(this.DashboardFinancas_Btn);
             this.panelMenu.Controls.Add(this.DashboardFuncionario_Btn);
@@ -72,21 +73,24 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 589);
             this.panelMenu.TabIndex = 1;
             // 
-            // Sair_btn
+            // Exit_Btn
             // 
-            this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
-            this.Sair_btn.FlatAppearance.BorderSize = 0;
-            this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Sair_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sair_btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_btn.Location = new System.Drawing.Point(12, 537);
-            this.Sair_btn.Name = "Sair_btn";
-            this.Sair_btn.Size = new System.Drawing.Size(192, 40);
-            this.Sair_btn.TabIndex = 8;
-            this.Sair_btn.Text = "Sair";
-            this.Sair_btn.UseVisualStyleBackColor = false;
-            this.Sair_btn.Click += new System.EventHandler(this.Sair_btn_Click);
+            this.Exit_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Exit_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.Exit_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Exit_Btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.Exit_Btn.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.Exit_Btn.IconColor = System.Drawing.SystemColors.Window;
+            this.Exit_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Exit_Btn.IconSize = 61;
+            this.Exit_Btn.Location = new System.Drawing.Point(9, 518);
+            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Exit_Btn.Name = "Exit_Btn";
+            this.Exit_Btn.Size = new System.Drawing.Size(207, 61);
+            this.Exit_Btn.TabIndex = 9;
+            this.Exit_Btn.TabStop = false;
+            this.Exit_Btn.Text = "Sair";
+            this.Exit_Btn.Click += new System.EventHandler(this.Exit_Btn_Click);
             // 
             // Defincoes_Btn
             // 
@@ -334,6 +338,7 @@
             this.Text = "Academia de Formação";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
@@ -365,7 +370,7 @@
         private System.Windows.Forms.TabPage tabDashboardDefinicoes;
         private System.Windows.Forms.Label timer_label;
         private System.Windows.Forms.Label BemVindo_Label;
-        private System.Windows.Forms.Button Sair_btn;
+        private FontAwesome.Sharp.IconPictureBox Exit_Btn;
     }
 }
 

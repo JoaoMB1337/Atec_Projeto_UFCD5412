@@ -58,6 +58,7 @@ namespace Projeto_UFCD5412.View.LoginForms
 
         private void UserLogin_Btn_Click_1(object sender, EventArgs e)
         {
+            
             if (string.IsNullOrEmpty(User_Textbox.Text) || string.IsNullOrEmpty(Password_TextBox.Text))
             {
                 MessageBox.Show("Por favor, preencha ambos os campos de user e password.");
@@ -105,6 +106,7 @@ namespace Projeto_UFCD5412.View.LoginForms
                     MessageBox.Show("Username ou Password incorretos!");
                 }
             }
+
         }
 
         private void Sair_btn_Click(object sender, EventArgs e)

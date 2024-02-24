@@ -113,7 +113,7 @@
             this.Contador_Formadores_label.Location = new System.Drawing.Point(229, 255);
             this.Contador_Formadores_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Formadores_label.Name = "Contador_Formadores_label";
-            this.Contador_Formadores_label.Size = new System.Drawing.Size(102, 28);
+            this.Contador_Formadores_label.Size = new System.Drawing.Size(80, 21);
             this.Contador_Formadores_label.TabIndex = 8;
             this.Contador_Formadores_label.Text = "123 Form";
             // 
@@ -125,7 +125,7 @@
             this.Contador_Secretari_label.Location = new System.Drawing.Point(229, 223);
             this.Contador_Secretari_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Secretari_label.Name = "Contador_Secretari_label";
-            this.Contador_Secretari_label.Size = new System.Drawing.Size(86, 28);
+            this.Contador_Secretari_label.Size = new System.Drawing.Size(67, 21);
             this.Contador_Secretari_label.TabIndex = 7;
             this.Contador_Secretari_label.Text = "123 Sec";
             // 
@@ -137,7 +137,7 @@
             this.Contador_Diretores_label.Location = new System.Drawing.Point(229, 190);
             this.Contador_Diretores_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Diretores_label.Name = "Contador_Diretores_label";
-            this.Contador_Diretores_label.Size = new System.Drawing.Size(114, 28);
+            this.Contador_Diretores_label.Size = new System.Drawing.Size(89, 21);
             this.Contador_Diretores_label.TabIndex = 6;
             this.Contador_Diretores_label.Text = "123 Direto";
             // 
@@ -149,7 +149,7 @@
             this.ContFuncionarios_label.Location = new System.Drawing.Point(229, 155);
             this.ContFuncionarios_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContFuncionarios_label.Name = "ContFuncionarios_label";
-            this.ContFuncionarios_label.Size = new System.Drawing.Size(98, 28);
+            this.ContFuncionarios_label.Size = new System.Drawing.Size(77, 21);
             this.ContFuncionarios_label.TabIndex = 5;
             this.ContFuncionarios_label.Text = "123 Func";
             // 
@@ -161,7 +161,7 @@
             this.label7.Location = new System.Drawing.Point(43, 255);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 28);
+            this.label7.Size = new System.Drawing.Size(108, 21);
             this.label7.TabIndex = 4;
             this.label7.Text = "Formadores: ";
             // 
@@ -173,7 +173,7 @@
             this.label5.Location = new System.Drawing.Point(43, 223);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 28);
+            this.label5.Size = new System.Drawing.Size(94, 21);
             this.label5.TabIndex = 3;
             this.label5.Text = "Secretaria: ";
             // 
@@ -185,7 +185,7 @@
             this.label6.Location = new System.Drawing.Point(43, 190);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 28);
+            this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 2;
             this.label6.Text = "Diretores: ";
             // 
@@ -197,7 +197,7 @@
             this.label4.Location = new System.Drawing.Point(43, 155);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 28);
+            this.label4.Size = new System.Drawing.Size(116, 21);
             this.label4.TabIndex = 1;
             this.label4.Text = "Funcionários: ";
             // 
@@ -209,7 +209,7 @@
             this.ContadorFunc_label.Location = new System.Drawing.Point(37, 78);
             this.ContadorFunc_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContadorFunc_label.Name = "ContadorFunc_label";
-            this.ContadorFunc_label.Size = new System.Drawing.Size(125, 60);
+            this.ContadorFunc_label.Size = new System.Drawing.Size(100, 47);
             this.ContadorFunc_label.TabIndex = 3;
             this.ContadorFunc_label.Text = "1234";
             // 
@@ -221,7 +221,7 @@
             this.label10.Location = new System.Drawing.Point(31, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(259, 32);
+            this.label10.Size = new System.Drawing.Size(202, 25);
             this.label10.TabIndex = 3;
             this.label10.Text = "Total de Funcionários";
             // 
@@ -247,9 +247,9 @@
             this.TipoFuncionarioComboBox.Location = new System.Drawing.Point(48, 111);
             this.TipoFuncionarioComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoFuncionarioComboBox.Name = "TipoFuncionarioComboBox";
-            this.TipoFuncionarioComboBox.Size = new System.Drawing.Size(160, 33);
+            this.TipoFuncionarioComboBox.Size = new System.Drawing.Size(160, 28);
             this.TipoFuncionarioComboBox.TabIndex = 8;
-           // this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
+            this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
             // 
             // iconPictureBox1
             // 
@@ -276,7 +276,7 @@
             this.totalSalario_lbl.Location = new System.Drawing.Point(57, 218);
             this.totalSalario_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalSalario_lbl.Name = "totalSalario_lbl";
-            this.totalSalario_lbl.Size = new System.Drawing.Size(0, 46);
+            this.totalSalario_lbl.Size = new System.Drawing.Size(0, 37);
             this.totalSalario_lbl.TabIndex = 6;
             // 
             // dolar_lbl
@@ -287,7 +287,7 @@
             this.dolar_lbl.Location = new System.Drawing.Point(28, 218);
             this.dolar_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dolar_lbl.Name = "dolar_lbl";
-            this.dolar_lbl.Size = new System.Drawing.Size(42, 46);
+            this.dolar_lbl.Size = new System.Drawing.Size(35, 37);
             this.dolar_lbl.TabIndex = 5;
             this.dolar_lbl.Text = "$";
             // 
@@ -299,7 +299,7 @@
             this.Salarios_lbl.Location = new System.Drawing.Point(31, 16);
             this.Salarios_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Salarios_lbl.Name = "Salarios_lbl";
-            this.Salarios_lbl.Size = new System.Drawing.Size(103, 32);
+            this.Salarios_lbl.Size = new System.Drawing.Size(81, 25);
             this.Salarios_lbl.TabIndex = 3;
             this.Salarios_lbl.Text = "Salários";
             // 
@@ -341,7 +341,7 @@
             this.ContadorRegistosCriminaisInativos_label.Location = new System.Drawing.Point(25, 60);
             this.ContadorRegistosCriminaisInativos_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContadorRegistosCriminaisInativos_label.Name = "ContadorRegistosCriminaisInativos_label";
-            this.ContadorRegistosCriminaisInativos_label.Size = new System.Drawing.Size(81, 38);
+            this.ContadorRegistosCriminaisInativos_label.Size = new System.Drawing.Size(65, 30);
             this.ContadorRegistosCriminaisInativos_label.TabIndex = 3;
             this.ContadorRegistosCriminaisInativos_label.Text = "1234";
             // 
@@ -353,7 +353,7 @@
             this.label13.Location = new System.Drawing.Point(31, 16);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(332, 32);
+            this.label13.Size = new System.Drawing.Size(258, 25);
             this.label13.TabIndex = 3;
             this.label13.Text = "Registo Criminais Expirados";
             // 
@@ -395,7 +395,7 @@
             this.ContadorRegistosCriminais_label.Location = new System.Drawing.Point(25, 60);
             this.ContadorRegistosCriminais_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContadorRegistosCriminais_label.Name = "ContadorRegistosCriminais_label";
-            this.ContadorRegistosCriminais_label.Size = new System.Drawing.Size(81, 38);
+            this.ContadorRegistosCriminais_label.Size = new System.Drawing.Size(65, 30);
             this.ContadorRegistosCriminais_label.TabIndex = 3;
             this.ContadorRegistosCriminais_label.Text = "1234";
             // 
@@ -407,7 +407,7 @@
             this.label11.Location = new System.Drawing.Point(31, 16);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(292, 32);
+            this.label11.Size = new System.Drawing.Size(225, 25);
             this.label11.TabIndex = 3;
             this.label11.Text = "Registo Criminais Ativos";
             // 
@@ -449,7 +449,7 @@
             this.ContadorContratosInativos_label.Location = new System.Drawing.Point(25, 60);
             this.ContadorContratosInativos_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContadorContratosInativos_label.Name = "ContadorContratosInativos_label";
-            this.ContadorContratosInativos_label.Size = new System.Drawing.Size(81, 38);
+            this.ContadorContratosInativos_label.Size = new System.Drawing.Size(65, 30);
             this.ContadorContratosInativos_label.TabIndex = 3;
             this.ContadorContratosInativos_label.Text = "1234";
             // 
@@ -461,7 +461,7 @@
             this.label9.Location = new System.Drawing.Point(31, 16);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(245, 32);
+            this.label9.Size = new System.Drawing.Size(193, 25);
             this.label9.TabIndex = 3;
             this.label9.Text = "Contratos Expirados";
             // 
@@ -503,7 +503,7 @@
             this.ContadorContratos_label.Location = new System.Drawing.Point(25, 60);
             this.ContadorContratos_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContadorContratos_label.Name = "ContadorContratos_label";
-            this.ContadorContratos_label.Size = new System.Drawing.Size(81, 38);
+            this.ContadorContratos_label.Size = new System.Drawing.Size(65, 30);
             this.ContadorContratos_label.TabIndex = 3;
             this.ContadorContratos_label.Text = "1234";
             // 
@@ -515,7 +515,7 @@
             this.label3.Location = new System.Drawing.Point(31, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 32);
+            this.label3.Size = new System.Drawing.Size(160, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Contratos Ativos";
             // 
@@ -557,7 +557,7 @@
             this.label8.Location = new System.Drawing.Point(31, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(284, 32);
+            this.label8.Size = new System.Drawing.Size(222, 25);
             this.label8.TabIndex = 3;
             this.label8.Text = "Próximo Aniversariante";
             // 
@@ -569,7 +569,7 @@
             this.ProximoAniversarioLabel.Location = new System.Drawing.Point(25, 60);
             this.ProximoAniversarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProximoAniversarioLabel.Name = "ProximoAniversarioLabel";
-            this.ProximoAniversarioLabel.Size = new System.Drawing.Size(200, 54);
+            this.ProximoAniversarioLabel.Size = new System.Drawing.Size(162, 45);
             this.ProximoAniversarioLabel.TabIndex = 4;
             this.ProximoAniversarioLabel.Text = "John Doe";
             // 

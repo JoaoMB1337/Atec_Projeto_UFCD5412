@@ -12,41 +12,36 @@ using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Model;
 using Projeto_UFCD5412.View.Forms;
 using Projeto_UFCD5412.View.FuncionarioForms;
+using Projeto_UFCD5412.View.SettingsForms;
 
 namespace Projeto_UFCD5412.View.DashboardForms
 {
     public partial class DashboardForm : Form
     {
         EmpresaController empresaController = EmpresaController.Instance;
-        DateTimeController dateTimeController = DateTimeController.Instance;
         List<Funcionario> funcionarios = new List<Funcionario>();
 
         public DashboardForm()
         {
             InitializeComponent();
-            LoadComboBox();
             LoadData();
-            
-
+            LoadComboBox();
+           
         }
 
         private void LoadComboBox()
         {
-            TipoFuncionarioComboBox.Items.Add("Todos");
             TipoFuncionarioComboBox.Items.Add("Funcionario");
             TipoFuncionarioComboBox.Items.Add("Formador");
             TipoFuncionarioComboBox.Items.Add("Coordenador");
             TipoFuncionarioComboBox.Items.Add("Secretaria");
             TipoFuncionarioComboBox.Items.Add("Diretor");
+            TipoFuncionarioComboBox.Items.Add("Todos");
+            
+            }
 
-            TipoFuncionarioComboBox.SelectedIndex = 0;
-        }
-
-        private void LoadData()
+            private void LoadData()
         {
-            //Vai Buscar a data definida no sistema.
-            DateTime dataAtual = dateTimeController.GetDateTime();
-
             // Carrega a lista de funcionários
             funcionarios = empresaController.ListarFuncionarios();
 
@@ -56,14 +51,14 @@ namespace Projeto_UFCD5412.View.DashboardForms
 
             // Calcula o total de funcionários por tipo
             ContFuncionarios_label.Text = empresaController.CountNumeroTipoFuncionarios("Formador").ToString();
-            Contador_Diretores_label.Text = empresaController.CountNumeroTipoFuncionarios("Diretor").ToString();
+            Contador_Diretores_label.Text = empresaController.CountNumeroTipoFuncionarios("Coordenador").ToString();
             Contador_Secretari_label.Text = empresaController.CountNumeroTipoFuncionarios("Secretaria").ToString();
-            Contador_Formadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Coordenador").ToString();
+            Contador_Formadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Diretor").ToString();
 
-            int contratosAtivos = empresaController.CountContratosAtivos(dataAtual);
+            int contratosAtivos = funcionarios.Count(f => f.DataFimContrato > DateTime.Today);
             ContadorContratos_label.Text = $"Contratos Ativos: {contratosAtivos}";
 
-            int contratosInativos = empresaController.CountContratosInativos(dataAtual);
+            int contratosInativos = funcionarios.Count(f => f.DataFimContrato < DateTime.Today);
             ContadorContratosInativos_label.Text = $"Contratos Inativos: {contratosInativos}";                                                                                                                                      
 
             // Encontra o próximo aniversário de um funcionário
@@ -78,38 +73,32 @@ namespace Projeto_UFCD5412.View.DashboardForms
                 ProximoAniversarioLabel.Text = "Não há aniversários próximos.";
             }
 
-            int RegistosCriminaisAtivos = empresaController.CountRegistosCriminaisValidos(dataAtual);
+            int RegistosCriminaisAtivos = funcionarios.Count(f => f.DataFimRegistoCriminal > DateTime.Today);
             ContadorRegistosCriminais_label.Text = $"Registos Criminais Ativos: {RegistosCriminaisAtivos}";
 
-            int RegistosCriminaisInativos = empresaController.CountRegistosCriminaisExpirados(DateTime.Today);
+            int RegistosCriminaisInativos = funcionarios.Count(f => f.DataFimRegistoCriminal < DateTime.Today);
             ContadorRegistosCriminaisInativos_label.Text = $"Registos Criminais Inativos: {RegistosCriminaisInativos}";
 
             // salarios por tipo
-            decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo("Todos");
+            decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
             totalSalario_lbl.Text = totalSalarios.ToString();
 
         }
 
         private void Home_Button_Click(object sender, EventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Hide();
-            mainWindow.TopLevel = false;
-            mainWindow.FormBorderStyle = FormBorderStyle.None;
-            mainWindow.Dock = DockStyle.Fill;
-            mainWindow.BringToFront();
-            mainWindow.Show();
+            DashboardForm dashboard = new DashboardForm();
+
+            dashboard.TopLevel = false;
+            dashboard.FormBorderStyle = FormBorderStyle.None;
+            dashboard.Dock = DockStyle.Fill;
+            dashboard.BringToFront();
+            dashboard.Show();
         }
 
-        private void TipoFuncionarioComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string tipoFuncionarioSelecionado = TipoFuncionarioComboBox.SelectedItem.ToString();
-            decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(tipoFuncionarioSelecionado);
-            totalSalario_lbl.Text = totalSalarios.ToString();
-        }
 
-     
+
+
     }
 }
 

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace Projeto_UFCD5412.View.FinancasForms
@@ -16,9 +17,9 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
         public CalcularValorForm()
         {
-            InitializeComponent();
-            LoadComboBox();
-            InitializeDataGridView();
+            InitializeComponent(); 
+            LoadComboBox(); 
+            InitializeDataGridView(); 
         }
 
         private void LoadComboBox()
@@ -30,7 +31,6 @@ namespace Projeto_UFCD5412.View.FinancasForms
             TipoFuncionario_ComboBox.Items.Add("Diretor");
             TipoFuncionario_ComboBox.Items.Add("Todos");
             TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged;
-
         }
 
         private void InitializeDataGridView()
@@ -47,12 +47,13 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
         private void LoadEmployeeData()  // funcao para carregar os dados dos funcionarios
         {
-            funcionarios = empresaController.ListarFuncionarios();
+            funcionarios = empresaController.ListarFuncionarios(); 
 
-            foreach (var funcionario in funcionarios)
+            foreach (var funcionario in funcionarios) 
             {
                 string salarioFormatado = funcionario.Tipo == "Formador" ? "h " +
                     funcionario.Salario.ToString() : funcionario.Salario.ToString();
+                string salarioFormatado = funcionario.Tipo == "Formador" ? "h " + funcionario.Salario.ToString() : funcionario.Salario.ToString();
 
                 if (funcionario.Tipo == "Formador")
                 {
@@ -62,6 +63,8 @@ namespace Projeto_UFCD5412.View.FinancasForms
                     int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
                     int totalHoras = totalDias * 6;
                     decimal salario = totalHoras * funcionario.Salario;
+                    int totalHoras = totalDias * 6; 
+                    decimal salario = totalHoras * funcionario.Salario; 
                     salarioFormatado = "h " + salario.ToString();
                 }
 
@@ -71,7 +74,8 @@ namespace Projeto_UFCD5412.View.FinancasForms
     
         
 
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e) //filtrar funcionarios
         {
             string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
             List<Funcionario> funcionariosFiltrados = new List<Funcionario>();
@@ -79,6 +83,7 @@ namespace Projeto_UFCD5412.View.FinancasForms
             if (tipoSelecionado == "Todos")
             {
               AtualizarDataGridView(funcionarios);
+                AtualizarDataGridView(funcionarios);
             }
             else
             {
@@ -86,8 +91,6 @@ namespace Projeto_UFCD5412.View.FinancasForms
                 AtualizarDataGridView(funcionariosFiltrados);
             }
         }
-
-
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)
         {
@@ -137,6 +140,10 @@ namespace Projeto_UFCD5412.View.FinancasForms
             AtualizarDataGridView(funcionariosFiltrados);
         }
 
+                ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, funcionario.DataContrato, funcionario.DataFimContrato);
+            }
+        }
+
         private void CalcularFormadorBtnButton_Click(object sender, EventArgs e) // funcao para calcular o valor aos formadores
         {
             if (TipoFuncionario_ComboBox.SelectedItem != null)
@@ -152,6 +159,7 @@ namespace Projeto_UFCD5412.View.FinancasForms
                         if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
                         {
                             decimal valorHora = Convert.ToDecimal(row.Cells["Salario"].Value);
+                            decimal valorHora = Convert.ToDecimal(row.Cells["Salario"].Value); 
                             DateTime dataInicio = Convert.ToDateTime(row.Cells["DataContrato"].Value);
                             DateTime dataFim = Convert.ToDateTime(row.Cells["DataFimContrato"].Value);
 
@@ -184,5 +192,12 @@ namespace Projeto_UFCD5412.View.FinancasForms
             this.Hide();
         }
    
+
+        private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
+        {
+            string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text;
+            List<Funcionario> funcionariosFiltrados = empresaController.PesquisarFuncionariosPorNome(nomePesquisado);
+            AtualizarDataGridView(funcionariosFiltrados);
+        }
     }
 }

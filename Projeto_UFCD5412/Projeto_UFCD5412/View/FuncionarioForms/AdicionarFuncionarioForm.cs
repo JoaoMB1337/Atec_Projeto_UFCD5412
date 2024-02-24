@@ -107,9 +107,10 @@ namespace Projeto_UFCD5412.View.Forms
         private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e){
             switch (TipoFuncionario_ComboBox.SelectedIndex)
             {
-                case 0: // Funcionaria
+                case 0: // Funcionario
                     username_label.Visible = true;
                     username_textbox.Visible = true;
+                    
                     break;
                 case 1: //Diretor
                     isencaohorario_checkbox.Visible = true;
@@ -122,13 +123,19 @@ namespace Projeto_UFCD5412.View.Forms
                     poslaboral_checkbox.Visible = false;
                     laboral_checkbox.Visible = false;
                     valorhora_textbox.Visible = false;
+                    ValorHoralabel.Visible = false;
                     areaensino_textbox.Visible = false;    
                     secretariaNomeDiretor_textbox.Visible = false;
+                    salario_textbox.Visible = true;
+                    salario_label.Visible = true;
+                    
+
                     break;
                 case 2: //Formador
                     poslaboral_checkbox.Visible = true;
                     laboral_checkbox.Visible = true;
                     valorhora_textbox.Visible = true;
+                    ValorHoralabel.Visible = true;
                     areaensino_textbox.Visible = true;
                     password_textbox.Visible = true;
                     username_label.Visible = true;
@@ -138,6 +145,9 @@ namespace Projeto_UFCD5412.View.Forms
                     bonusmensal_checkbox.Visible = false;
                     carroempresa_checkbox.Visible = false;
                     secretariaNomeDiretor_textbox.Visible = false;
+                    salario_textbox.Visible = false;
+                    salario_label.Visible = false;
+                    
                     break;
                 case 3: //Secretaria
                     secretariaNomeDiretor_textbox.Visible = true;
@@ -151,8 +161,11 @@ namespace Projeto_UFCD5412.View.Forms
                     poslaboral_checkbox.Visible = false;
                     laboral_checkbox.Visible = false;
                     valorhora_textbox.Visible = false;
+                    ValorHoralabel.Visible = false;
                     areaensino_textbox.Visible = false;
-                   break;
+                    salario_textbox.Visible = true;
+                    salario_label.Visible = true;
+                    break;
                 case 4: //Coordenador
                     password_textbox.Visible = true;
                     username_label.Visible = true;
@@ -164,8 +177,11 @@ namespace Projeto_UFCD5412.View.Forms
                     poslaboral_checkbox.Visible = false;
                     laboral_checkbox.Visible = false;
                     valorhora_textbox.Visible = false;
+                    ValorHoralabel.Visible = false;
                     areaensino_textbox.Visible = false;
                     cursoresponsavel_textbox.Visible = true;
+                    salario_textbox.Visible = true;
+                    salario_label.Visible = true;
                     break;
 
             }

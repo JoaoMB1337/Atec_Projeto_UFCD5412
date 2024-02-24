@@ -28,6 +28,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void LoadInformacaoFuncionario()
         {
             var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
+            var formador = empresaController.GetFormadorById(_funcionarioId);
             if(funcionario == null)
             {
                 MessageBox.Show("Funcionário não encontrado");
@@ -45,6 +46,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 DataFimRegistoCriminal_DateTimePicker.Value = funcionario.DataFimRegistoCriminal;
                 DataNascimento_DateTimePicker.Value = funcionario.DataAniversario;
                 salario_textbox.Text = funcionario.Salario.ToString();
+                SalarioHoraTextBox.Text = formador.ValorHora.ToString();
                 TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;
             }
            

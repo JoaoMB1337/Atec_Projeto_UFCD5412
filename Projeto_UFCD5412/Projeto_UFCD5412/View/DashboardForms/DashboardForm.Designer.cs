@@ -409,7 +409,7 @@
             this.TipoFuncionarioComboBox.Name = "TipoFuncionarioComboBox";
             this.TipoFuncionarioComboBox.Size = new System.Drawing.Size(160, 33);
             this.TipoFuncionarioComboBox.TabIndex = 8;
-            this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
+           // this.TipoFuncionarioComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionarioComboBox_SelectedIndexChanged);
             // 
             // iconPictureBox1
             // 

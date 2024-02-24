@@ -50,21 +50,21 @@
             // 
             // ValorPagarDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.PeachPuff;
-            this.ValorPagarDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            //dataGridViewCellStyle1.BackColor = System.Drawing.Color.PeachPuff;
+            //this.ValorPagarDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ValorPagarDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ValorPagarDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ValorPagarDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            //dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            //dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            //dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            //dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            //dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            //dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            //this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ValorPagarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ValorPagarDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 

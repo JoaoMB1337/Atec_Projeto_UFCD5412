@@ -80,8 +80,8 @@ namespace Projeto_UFCD5412.View.DashboardForms
             ContadorRegistosCriminaisInativos_label.Text = $"Registos Criminais Inativos: {RegistosCriminaisInativos}";
 
             // salarios por tipo
-            decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
-            totalSalario_lbl.Text = totalSalarios.ToString();
+           // decimal totalSalarios = empresaController.CalcularTotalSalarios("Formador");
+            //totalSalario_lbl.Text = totalSalarios.ToString();
 
         }
 

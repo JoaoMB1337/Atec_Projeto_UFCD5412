@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NomeFunc_label = new System.Windows.Forms.Label();
             this.ValorPagarDataGridView = new System.Windows.Forms.DataGridView();
             this.Sair_Btn = new System.Windows.Forms.Button();
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
-            this.CalcularFormadorBtnButton = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.ValorPagarDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,23 +55,23 @@
             this.ValorPagarDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ValorPagarDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ValorPagarDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ValorPagarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ValorPagarDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ValorPagarDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.ValorPagarDataGridView.EnableHeadersVisualStyles = false;
             this.ValorPagarDataGridView.Location = new System.Drawing.Point(3, 41);
             this.ValorPagarDataGridView.Name = "ValorPagarDataGridView";
@@ -109,25 +108,11 @@
             this.TipoFuncionario_ComboBox.TabIndex = 6;
             this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
             // 
-            // CalcularFormadorBtnButton
-            // 
-            this.CalcularFormadorBtnButton.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.CalcularFormadorBtnButton.IconColor = System.Drawing.Color.Black;
-            this.CalcularFormadorBtnButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.CalcularFormadorBtnButton.Location = new System.Drawing.Point(439, 10);
-            this.CalcularFormadorBtnButton.Name = "CalcularFormadorBtnButton";
-            this.CalcularFormadorBtnButton.Size = new System.Drawing.Size(185, 23);
-            this.CalcularFormadorBtnButton.TabIndex = 7;
-            this.CalcularFormadorBtnButton.Text = "Calcular Valor Para Formadores";
-            this.CalcularFormadorBtnButton.UseVisualStyleBackColor = true;
-            this.CalcularFormadorBtnButton.Click += new System.EventHandler(this.CalcularFormadorBtnButton_Click);
-            // 
             // CalcularValorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CalcularFormadorBtnButton);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
             this.Controls.Add(this.Sair_Btn);
@@ -148,6 +133,5 @@
         private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
-        private FontAwesome.Sharp.IconButton CalcularFormadorBtnButton;
     }
 }

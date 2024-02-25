@@ -30,13 +30,11 @@ namespace Projeto_UFCD5412.View.FinancasForms
             TipoFuncionario_ComboBox.Items.Add("Secretaria");
             TipoFuncionario_ComboBox.Items.Add("Diretor");
             TipoFuncionario_ComboBox.Items.Add("Todos");
-            
-
+            TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged;
         }
 
         private void InitializeDataGridView()
         {
-          
             ValorPagarDataGridView.AutoGenerateColumns = false;
             ValorPagarDataGridView.Columns.Add("Nome", "Nome");
             ValorPagarDataGridView.Columns.Add("Tipo", "Tipo");
@@ -47,108 +45,51 @@ namespace Projeto_UFCD5412.View.FinancasForms
             LoadEmployeeData();
         }
 
-        
-        private void LoadEmployeeData()  // funcao para carregar os dados dos funcionarios
+        private void LoadEmployeeData()
         {
             funcionarios = empresaController.ListarFuncionarios();
-            funcionarios = empresaController.ListarFuncionarios();
-
-            foreach (var funcionario in funcionarios)
-                
-                {
-                    ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, funcionario.Salario, funcionario.DataContrato, funcionario.DataFimContrato);
-                    string salarioFormatado = funcionario.Tipo == "Formador" ? "h " + funcionario.Salario.ToString() : funcionario.Salario.ToString();
-
-                    if (funcionario.Tipo == "Formador")
-                    {
-                        DateTime dataInicio = funcionario.DataContrato;
-                        DateTime dataFim = funcionario.DataFimContrato;
-
-                        int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
-                        int totalHoras = totalDias * 6;
-                        decimal salario = totalHoras * funcionario.Salario;
-                        salarioFormatado = "h " + salario.ToString();
-                    }
-
-                    ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, salarioFormatado, funcionario.DataContrato, funcionario.DataFimContrato);
-                }
+            AtualizarDataGridView(funcionarios);
         }
-
-       
-
-        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e) //filtrar funcionarios
-        {
-            string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
-            List<Funcionario> funcionariosFiltrados = new List<Funcionario>();
-
-            if (tipoSelecionado == "Todos")
-            {
-                AtualizarDataGridView(funcionarios);
-                
-            }
-            else
-            {
-                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == tipoSelecionado).ToList();
-                AtualizarDataGridView(funcionariosFiltrados);
-            }
-        }
-
-
 
         private void AtualizarDataGridView(List<Funcionario> funcionarios)
         {
-
             ValorPagarDataGridView.Rows.Clear();
-
             foreach (var funcionario in funcionarios)
             {
-
-                ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, 
-                    funcionario.Salario, funcionario.DataContrato, funcionario.DataFimContrato);
+                decimal salario = CalcularSalario(funcionario);
+                ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, salario, funcionario.DataContrato, funcionario.DataFimContrato);
             }
         }
 
-        
-        private void CalcularFormadorBtnButton_Click(object sender, EventArgs e) // funcao para calcular o valor aos formadores
+        private decimal CalcularSalario(Funcionario funcionario)
         {
-            if (TipoFuncionario_ComboBox.SelectedItem != null)
+            if (funcionario is Formador formador)
             {
-                string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
-                if (tipoSelecionado == "Formador")
-                {
-                    StringBuilder message = new StringBuilder();
-
-
-                        foreach (DataGridViewRow row in ValorPagarDataGridView.Rows)
-                        {
-                            if (!row.IsNewRow && row.Cells["Tipo"].Value.ToString() == "Formador")
-                            {
-                                
-                                decimal valorHora = Convert.ToDecimal(row.Cells["Salario"].Value);
-                                DateTime dataInicio = Convert.ToDateTime(row.Cells["DataContrato"].Value);
-                                DateTime dataFim = Convert.ToDateTime(row.Cells["DataFimContrato"].Value);
-
-                                int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
-                                int totalHoras = totalDias * 6;
-                                decimal totalFormador = totalHoras * valorHora;
-                             
-
-
-                                message.AppendLine($"Formador: {row.Cells["Nome"].Value}, Total a pagar: {totalFormador}");
-                            }
-                        }
-                    MessageBox.Show(message.ToString(), "Valor a pagar para Formadores");
-                }
-                else
-                {
-                    MessageBox.Show("Selecione 'Formador' no tipo de funcionário para calcular o valor.");
-                }
+                DateTime dataInicio = funcionario.DataContrato;
+                DateTime dataFim = funcionario.DataFimContrato;
+                int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
+                int totalHoras = totalDias * 6; 
+                return totalHoras * formador.ValorHora; 
             }
             else
             {
-                MessageBox.Show("Selecione um tipo de funcionário na ComboBox.");
+                return funcionario.Salario; 
             }
         }
+
+        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string tipoSelecionado = TipoFuncionario_ComboBox.SelectedItem.ToString();
+            List<Funcionario> funcionariosFiltrados = funcionarios;
+
+            if (tipoSelecionado != "Todos")
+            {
+                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == tipoSelecionado).ToList();
+            }
+            AtualizarDataGridView(funcionariosFiltrados);
+        }
+
+ 
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
@@ -165,3 +106,4 @@ namespace Projeto_UFCD5412.View.FinancasForms
         }
     }
 }
+

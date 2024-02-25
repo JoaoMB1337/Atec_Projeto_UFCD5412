@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.View.Forms;
+using System.Runtime.CompilerServices;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -37,7 +38,9 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             LoadComboBox();
             ListarFuncionarioDataGrid();
-           
+            
+
+
         }
 
         private void LoadComboBox()
@@ -60,22 +63,44 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             {
                 if ((funcionario.Tipo == TipoFuncionario_ComboBox.SelectedItem.ToString()) || (TipoFuncionario_ComboBox.SelectedItem.ToString() == "Todos"))
                 {
-                    ListaFuncionarios_DataGrid.Rows.Add(
-                    funcionario.Id,
-                    funcionario.Nome,
-                    funcionario.Morada,
-                    funcionario.Contacto,
-                    funcionario.Tipo,
-                    funcionario.Salario,
-                    funcionario.DataAniversario.ToShortDateString(),
-                    funcionario.DataContrato.ToShortDateString(),
-                    funcionario.DataFimContrato.ToShortDateString(),
-                    funcionario.DataRegistoCriminal.ToShortDateString(),
-                    funcionario.DataFimRegistoCriminal.ToShortDateString());
+                    if (funcionario is Formador) 
+                    {
+                        var formador = funcionario as Formador;
+                        ListaFuncionarios_DataGrid.Rows.Add(
+                            formador.Id,
+                            formador.Nome,
+                            formador.Morada,
+                            formador.Contacto,
+                            formador.Tipo,
+                            formador.ValorHora, 
+                            formador.DataAniversario.ToShortDateString(),
+                            formador.DataContrato.ToShortDateString(),
+                            formador.DataFimContrato.ToShortDateString(),
+                            formador.DataRegistoCriminal.ToShortDateString(),
+                            formador.DataFimRegistoCriminal.ToShortDateString());
+                    }
+                    else
+                    {
+                        
+                        ListaFuncionarios_DataGrid.Rows.Add(
+                            funcionario.Id,
+                            funcionario.Nome,
+                            funcionario.Morada,
+                            funcionario.Contacto,
+                            funcionario.Tipo,
+                            funcionario.Salario,
+                            funcionario.DataAniversario.ToShortDateString(),
+                            funcionario.DataContrato.ToShortDateString(),
+                            funcionario.DataFimContrato.ToShortDateString(),
+                            funcionario.DataRegistoCriminal.ToShortDateString(),
+                            funcionario.DataFimRegistoCriminal.ToShortDateString());
+                    }
                 }
-
             }
         }
+
+
+
 
         private void ListarFuncionarioDataGrid()
         {
@@ -88,7 +113,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             ListaFuncionarios_DataGrid.Columns.Add("Morada", "Morada");
             ListaFuncionarios_DataGrid.Columns.Add("Contacto", "Contacto");
             ListaFuncionarios_DataGrid.Columns.Add("Tipo", "Tipo");
-            ListaFuncionarios_DataGrid.Columns.Add("Salario", "Salario");
+            ListaFuncionarios_DataGrid.Columns.Add("Salario", "Salário");
             ListaFuncionarios_DataGrid.Columns.Add("DataAniversario", "Data Aniversario");
             ListaFuncionarios_DataGrid.Columns.Add("DataContrato", "Data Contrato");
             ListaFuncionarios_DataGrid.Columns.Add("DataFimContrato", "Data Fim Contrato");

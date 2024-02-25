@@ -110,7 +110,10 @@ namespace Projeto_UFCD5412.View.Forms
                 case 0: // Funcionario
                     username_label.Visible = true;
                     username_textbox.Visible = true;
-                    
+                    ValorHoralabel.Visible = false;
+                    areaensino_textbox.Visible = false;
+
+
                     break;
                 case 1: //Diretor
                     isencaohorario_checkbox.Visible = true;
@@ -119,7 +122,6 @@ namespace Projeto_UFCD5412.View.Forms
                     password_textbox.Visible = true;                
                     username_label.Visible = true;
                     username_textbox.Visible = true;    
-                    //se mudar outra vez para outro tipo de funcionario esconder os campos
                     poslaboral_checkbox.Visible = false;
                     laboral_checkbox.Visible = false;
                     valorhora_textbox.Visible = false;
@@ -140,7 +142,6 @@ namespace Projeto_UFCD5412.View.Forms
                     password_textbox.Visible = true;
                     username_label.Visible = true;
                     username_textbox.Visible = true;
-                    //se mudar outra vez para outro tipo de funcionario esconder os campos
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
                     carroempresa_checkbox.Visible = false;
@@ -153,8 +154,7 @@ namespace Projeto_UFCD5412.View.Forms
                     secretariaNomeDiretor_textbox.Visible = true;
                     password_textbox.Visible = true;
                     username_label.Visible = true;
-                    username_textbox.Visible = true;
-                    //se mudar outra vez para outro tipo de funcionario esconder os campos
+                    username_textbox.Visible = true; 
                     isencaohorario_checkbox.Visible = false;
                     bonusmensal_checkbox.Visible = false;
                     carroempresa_checkbox.Visible = false;
@@ -215,6 +215,8 @@ namespace Projeto_UFCD5412.View.Forms
             string morada = morada_textbox.Text;
             string contacto = contacto_textbox.Text;
             decimal salario = 0;
+            decimal valorHora = 0;
+            decimal.TryParse(valorhora_textbox.Text, out valorHora);
             decimal.TryParse(salario_textbox.Text, out salario); 
             DateTime dataAniversario = DataNascimento_DateTimePicker.Value;
             DateTime dataContrato = DataContrato_DateTimePicker.Value;
@@ -228,7 +230,7 @@ namespace Projeto_UFCD5412.View.Forms
             string departamento = areaensino_textbox.Text; 
             string nomeDiretor = secretariaNomeDiretor_textbox.Text; 
             string areaEnsino = areaensino_textbox.Text; 
-            decimal valorHora = 0; 
+            
             
 
             // Criar o novo funcionário com base no tipo selecionado
@@ -236,6 +238,25 @@ namespace Projeto_UFCD5412.View.Forms
 
             switch (tipoFuncionario)
             {
+                case "Funcionario":
+                    novoFuncionario = new Funcionario(
+                         id: 0,
+                         nome: nome,
+                         morada: morada,
+                         contacto: contacto,
+                         tipo: tipoFuncionario,
+                         salario: salario,
+                         dataAniverario: dataAniversario,
+                         dataContrato: dataContrato,
+                         dataFimContrato: dataFimContrato,
+                         dataRegistoCriminal: dataRegistoCriminal,
+                         dataFimRegistoCriminal: dataFimRegistoCriminal,
+                         username: username_textbox.Text,
+                         password: password_textbox.Text,
+                         primeiroLogin: true
+                         );
+                    break;
+
                 case "Diretor":
                     novoFuncionario = new Diretor(
                         id: 0, 
@@ -281,12 +302,7 @@ namespace Projeto_UFCD5412.View.Forms
                     break;
                 case "Formador":
 
-                    decimal.TryParse(valorhora_textbox.Text, out valorHora);
-                    TimeSpan duracaoContrato = DataFimContrato_DateTimePicker.Value - DataContrato_DateTimePicker.Value;
-                    int diasTrabalhados = duracaoContrato.Days;
-                    int horasPorDia = 6; 
-                    int totalHorasTrabalhadas = diasTrabalhados * horasPorDia;
-                    decimal salarioFormador = valorHora * totalHorasTrabalhadas;
+                   
 
                     novoFuncionario = new Formador(
                         id: 0, 
@@ -294,7 +310,7 @@ namespace Projeto_UFCD5412.View.Forms
                         morada: morada,
                         contacto: contacto,
                         tipo: tipoFuncionario,
-                        salario: salarioFormador,
+                        salario: salario,
                         dataAniverario: dataAniversario,
                         dataContrato: dataContrato,
                         dataFimContrato: dataFimContrato,
@@ -356,6 +372,7 @@ namespace Projeto_UFCD5412.View.Forms
             morada_textbox.Text = string.Empty;
             contacto_textbox.Text = string.Empty;
             salario_textbox.Text = string.Empty;
+            valorhora_textbox.Text = string.Empty;
             DataNascimento_DateTimePicker.Value = DateTime.Now;
             DataContrato_DateTimePicker.Value = DateTime.Now;
             DataFimContrato_DateTimePicker.Value = DateTime.Now;

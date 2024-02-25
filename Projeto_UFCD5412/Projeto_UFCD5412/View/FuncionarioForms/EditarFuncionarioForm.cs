@@ -39,18 +39,19 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 nome_textbox.Text = funcionario.Nome;
                 morada_textbox.Text = funcionario.Morada;
                 contacto_textbox.Text = funcionario.Contacto;
-                TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;
+                TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;             
                 DataContrato_DateTimePicker.Value = funcionario.DataContrato;
                 DataFimContrato_DateTimePicker.Value = funcionario.DataFimContrato;
                 DataRegistoCriminal_DateTimePicker.Value = funcionario.DataRegistoCriminal;
                 DataFimRegistoCriminal_DateTimePicker.Value = funcionario.DataFimRegistoCriminal;
                 DataNascimento_DateTimePicker.Value = funcionario.DataAniversario;
                 salario_textbox.Text = funcionario.Salario.ToString();
-                SalarioHoraTextBox.Text = formador.ValorHora.ToString();
                 TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;
             }
            
         }
+
+
 
         private void LoadTipoFuncionarioComboBox()
         {
@@ -72,11 +73,11 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             UpdateInfoFuncionario();
         }
 
-     
+
         private void UpdateInfoFuncionario()
         {
             var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
-            if(funcionario == null)
+            if (funcionario == null)
             {
                 MessageBox.Show("Funcionário não encontrado");
                 this.Close();
@@ -92,16 +93,24 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 funcionario.DataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
                 funcionario.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
                 funcionario.DataAniversario = DataNascimento_DateTimePicker.Value;
-                if (!decimal.TryParse(salario_textbox.Text, out decimal salario))
+
+                // Verificar se o TextBox está vazio antes de tentar converter para decimal
+                if (!string.IsNullOrWhiteSpace(salario_textbox.Text) && decimal.TryParse(salario_textbox.Text, out decimal salario))
+                {
+                    funcionario.Salario = salario; 
+                }
+                else
                 {
                     MessageBox.Show("Por favor, insira um valor de salário válido.");
                     return;
                 }
+
                 empresaController.UpdateFuncionario(funcionario);
                 MessageBox.Show("Funcionário atualizado com sucesso");
                 this.Close();
             }
         }
+
 
         private void RemoverFuncionario_Btn_Click(object sender, EventArgs e)
         {
@@ -129,5 +138,44 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             this.Close();
         }
+
+        private void TipoFuncionario_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TipoFuncionario_ComboBox.SelectedIndex)
+            {
+                case 0: //Funcionario
+                    SalarioHoralabel.Visible = false;
+                    SalarioHoraTextBox.Visible = false;
+                    salario_label.Visible = true;
+                    salario_textbox.Visible = true;
+                    break;
+                case 1: //Diretor
+                    SalarioHoralabel.Visible = false;
+                    SalarioHoraTextBox.Visible = false;
+                    salario_label.Visible = true;
+                    salario_textbox.Visible = true;
+                    break;
+                case 2: //Formador
+                    salario_label.Visible = false;
+                    salario_textbox.Visible = false;
+                    SalarioHoralabel.Visible = true;
+                    SalarioHoraTextBox.Visible = true;
+
+                    break;
+                case 3: //Secretaria
+                    SalarioHoralabel.Visible = false;
+                    SalarioHoraTextBox.Visible = false;
+                    salario_label.Visible = true;
+                    salario_textbox.Visible = true;
+                    break;
+                case 4: //Coordenador
+                    SalarioHoralabel.Visible = false;
+                    SalarioHoraTextBox.Visible = false;
+                    salario_label.Visible = true;
+                    salario_textbox.Visible = true;
+                    break;
+
+               }
+            }
+        }
     }
-}

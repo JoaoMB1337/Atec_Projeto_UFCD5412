@@ -86,7 +86,7 @@ namespace Projeto_UFCD5412.View.Forms
                 areaensino_textbox.ForeColor = SystemColors.GrayText;
             }
         }
-        /// 
+
         private void secretariaNomeDiretor_textbox_GotFocus(object sender, EventArgs e)
         {
             if (secretariaNomeDiretor_textbox.Text == "Introduza o nome do diretor de departamento")
@@ -280,13 +280,21 @@ namespace Projeto_UFCD5412.View.Forms
 
                     break;
                 case "Formador":
+
+                    decimal.TryParse(valorhora_textbox.Text, out valorHora);
+                    TimeSpan duracaoContrato = DataFimContrato_DateTimePicker.Value - DataContrato_DateTimePicker.Value;
+                    int diasTrabalhados = duracaoContrato.Days;
+                    int horasPorDia = 6; 
+                    int totalHorasTrabalhadas = diasTrabalhados * horasPorDia;
+                    decimal salarioFormador = valorHora * totalHorasTrabalhadas;
+
                     novoFuncionario = new Formador(
                         id: 0, 
                         nome: nome,
                         morada: morada,
                         contacto: contacto,
                         tipo: tipoFuncionario,
-                        salario: salario,
+                        salario: salarioFormador,
                         dataAniverario: dataAniversario,
                         dataContrato: dataContrato,
                         dataFimContrato: dataFimContrato,
@@ -298,6 +306,8 @@ namespace Projeto_UFCD5412.View.Forms
                         areaLecionada: areaEnsino, 
                         disponibilidade: posLaboral ? "Pós-laboral" : (laboral ? "Laboral" : "Ambas"), 
                         valorHora: valorHora 
+
+
                     );
                     break;
                 case "Coordenador":

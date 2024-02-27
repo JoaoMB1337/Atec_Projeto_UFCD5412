@@ -77,6 +77,11 @@ namespace Projeto_UFCD5412.Controller
             return Funcionarios.Count(f => f.DataFimRegistoCriminal > dataAtual);
         }
 
+        public int CountTotalFuncionarios()
+        {
+            return Funcionarios.Count;
+        }
+
         #endregion
 
 
@@ -110,6 +115,28 @@ namespace Projeto_UFCD5412.Controller
         {
             var funcionario = Funcionarios.FirstOrDefault(f => f.Id == id);
             return funcionario;
+        }
+
+        public Funcionario ProximoAniversario(DateTime dataAtual)
+        {
+            var proximoAniversario = Funcionarios
+            .OrderBy(f =>
+            {
+                int mesAniversario = f.DataAniversario.Month;
+                int diaAniversario = f.DataAniversario.Day;
+
+                if (mesAniversario < dataAtual.Month || (mesAniversario == dataAtual.Month && diaAniversario < dataAtual.Day))
+                {
+                    return mesAniversario * 100 + diaAniversario + 10000;
+                }
+                else
+                {
+                    return mesAniversario * 100 + diaAniversario;
+                }
+            })
+            .FirstOrDefault();
+
+                return proximoAniversario;
         }
 
 
@@ -218,6 +245,8 @@ namespace Projeto_UFCD5412.Controller
 
 
         #endregion
+
+
 
     }
 }

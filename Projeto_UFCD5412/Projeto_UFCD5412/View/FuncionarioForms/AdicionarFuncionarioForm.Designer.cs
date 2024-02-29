@@ -73,8 +73,11 @@
             // NomeFunc_Label
             // 
             this.NomeFunc_Label.AutoSize = true;
-            this.NomeFunc_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.NomeFunc_Label.Location = new System.Drawing.Point(582, 117);
+            this.NomeFunc_Label.BackColor = System.Drawing.Color.Transparent;
+            this.NomeFunc_Label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NomeFunc_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFunc_Label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NomeFunc_Label.Location = new System.Drawing.Point(409, 113);
             this.NomeFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NomeFunc_Label.Name = "NomeFunc_Label";
             this.NomeFunc_Label.Size = new System.Drawing.Size(53, 18);
@@ -84,8 +87,10 @@
             // MoradaFunc_Label
             // 
             this.MoradaFunc_Label.AutoSize = true;
-            this.MoradaFunc_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MoradaFunc_Label.Location = new System.Drawing.Point(583, 205);
+            this.MoradaFunc_Label.BackColor = System.Drawing.Color.Transparent;
+            this.MoradaFunc_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoradaFunc_Label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MoradaFunc_Label.Location = new System.Drawing.Point(401, 163);
             this.MoradaFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MoradaFunc_Label.Name = "MoradaFunc_Label";
             this.MoradaFunc_Label.Size = new System.Drawing.Size(63, 18);
@@ -95,52 +100,61 @@
             // ContactoFunc_Label
             // 
             this.ContactoFunc_Label.AutoSize = true;
-            this.ContactoFunc_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ContactoFunc_Label.Location = new System.Drawing.Point(573, 247);
+            this.ContactoFunc_Label.BackColor = System.Drawing.Color.Transparent;
+            this.ContactoFunc_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactoFunc_Label.ForeColor = System.Drawing.Color.Transparent;
+            this.ContactoFunc_Label.Location = new System.Drawing.Point(839, 167);
             this.ContactoFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContactoFunc_Label.Name = "ContactoFunc_Label";
-            this.ContactoFunc_Label.Size = new System.Drawing.Size(73, 18);
+            this.ContactoFunc_Label.Size = new System.Drawing.Size(74, 18);
             this.ContactoFunc_Label.TabIndex = 6;
             this.ContactoFunc_Label.Text = "Contacto:";
             // 
             // TipoFunc_Label
             // 
             this.TipoFunc_Label.AutoSize = true;
-            this.TipoFunc_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TipoFunc_Label.Location = new System.Drawing.Point(609, 286);
+            this.TipoFunc_Label.BackColor = System.Drawing.Color.Transparent;
+            this.TipoFunc_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TipoFunc_Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.TipoFunc_Label.Location = new System.Drawing.Point(395, 241);
             this.TipoFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TipoFunc_Label.Name = "TipoFunc_Label";
-            this.TipoFunc_Label.Size = new System.Drawing.Size(41, 18);
+            this.TipoFunc_Label.Size = new System.Drawing.Size(42, 18);
             this.TipoFunc_Label.TabIndex = 7;
             this.TipoFunc_Label.Text = "Tipo:";
             // 
             // DataContrato_Label
             // 
             this.DataContrato_Label.AutoSize = true;
-            this.DataContrato_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DataContrato_Label.Location = new System.Drawing.Point(483, 438);
+            this.DataContrato_Label.BackColor = System.Drawing.Color.Transparent;
+            this.DataContrato_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataContrato_Label.ForeColor = System.Drawing.Color.White;
+            this.DataContrato_Label.Location = new System.Drawing.Point(384, 462);
             this.DataContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataContrato_Label.Name = "DataContrato_Label";
-            this.DataContrato_Label.Size = new System.Drawing.Size(123, 18);
+            this.DataContrato_Label.Size = new System.Drawing.Size(125, 18);
             this.DataContrato_Label.TabIndex = 8;
             this.DataContrato_Label.Text = "Data do contrato:";
             // 
             // FimContrato_Label
             // 
             this.FimContrato_Label.AutoSize = true;
-            this.FimContrato_Label.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.FimContrato_Label.Location = new System.Drawing.Point(463, 470);
+            this.FimContrato_Label.BackColor = System.Drawing.Color.Transparent;
+            this.FimContrato_Label.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FimContrato_Label.ForeColor = System.Drawing.Color.White;
+            this.FimContrato_Label.Location = new System.Drawing.Point(908, 458);
             this.FimContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FimContrato_Label.Name = "FimContrato_Label";
-            this.FimContrato_Label.Size = new System.Drawing.Size(167, 18);
+            this.FimContrato_Label.Size = new System.Drawing.Size(170, 18);
             this.FimContrato_Label.TabIndex = 9;
             this.FimContrato_Label.Text = "Data do fim de contrato:";
             // 
             // DataRegistoCriminal_Label
             // 
             this.DataRegistoCriminal_Label.AutoSize = true;
-            this.DataRegistoCriminal_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DataRegistoCriminal_Label.Location = new System.Drawing.Point(477, 511);
+            this.DataRegistoCriminal_Label.BackColor = System.Drawing.Color.Transparent;
+            this.DataRegistoCriminal_Label.ForeColor = System.Drawing.Color.White;
+            this.DataRegistoCriminal_Label.Location = new System.Drawing.Point(378, 535);
             this.DataRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataRegistoCriminal_Label.Name = "DataRegistoCriminal_Label";
             this.DataRegistoCriminal_Label.Size = new System.Drawing.Size(156, 18);
@@ -149,24 +163,24 @@
             // 
             // nome_textbox
             // 
-            this.nome_textbox.Location = new System.Drawing.Point(687, 114);
-            this.nome_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.nome_textbox.Location = new System.Drawing.Point(472, 110);
+            this.nome_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nome_textbox.Name = "nome_textbox";
             this.nome_textbox.Size = new System.Drawing.Size(277, 24);
             this.nome_textbox.TabIndex = 11;
             // 
             // morada_textbox
             // 
-            this.morada_textbox.Location = new System.Drawing.Point(687, 202);
-            this.morada_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.morada_textbox.Location = new System.Drawing.Point(472, 163);
+            this.morada_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.morada_textbox.Name = "morada_textbox";
             this.morada_textbox.Size = new System.Drawing.Size(277, 24);
             this.morada_textbox.TabIndex = 12;
             // 
             // contacto_textbox
             // 
-            this.contacto_textbox.Location = new System.Drawing.Point(687, 244);
-            this.contacto_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.contacto_textbox.Location = new System.Drawing.Point(921, 163);
+            this.contacto_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contacto_textbox.Name = "contacto_textbox";
             this.contacto_textbox.Size = new System.Drawing.Size(148, 24);
             this.contacto_textbox.TabIndex = 13;
@@ -175,8 +189,8 @@
             // 
             this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
-            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(687, 280);
-            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(473, 235);
+            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(180, 26);
             this.TipoFuncionario_ComboBox.TabIndex = 14;
@@ -184,24 +198,24 @@
             // 
             // DataContrato_DateTimePicker
             // 
-            this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(687, 429);
-            this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(588, 453);
+            this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataContrato_DateTimePicker.Name = "DataContrato_DateTimePicker";
             this.DataContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataContrato_DateTimePicker.TabIndex = 15;
             // 
             // DataFimContrato_DateTimePicker
             // 
-            this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(687, 465);
-            this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(1102, 453);
+            this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataFimContrato_DateTimePicker.Name = "DataFimContrato_DateTimePicker";
             this.DataFimContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataFimContrato_DateTimePicker.TabIndex = 16;
             // 
             // DataRegistoCriminal_DateTimePicker
             // 
-            this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 511);
-            this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(588, 535);
+            this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataRegistoCriminal_DateTimePicker.Name = "DataRegistoCriminal_DateTimePicker";
             this.DataRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataRegistoCriminal_DateTimePicker.TabIndex = 17;
@@ -209,8 +223,9 @@
             // DataFimRegistoCriminal_Label
             // 
             this.DataFimRegistoCriminal_Label.AutoSize = true;
-            this.DataFimRegistoCriminal_Label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DataFimRegistoCriminal_Label.Location = new System.Drawing.Point(440, 553);
+            this.DataFimRegistoCriminal_Label.BackColor = System.Drawing.Color.Transparent;
+            this.DataFimRegistoCriminal_Label.ForeColor = System.Drawing.Color.White;
+            this.DataFimRegistoCriminal_Label.Location = new System.Drawing.Point(909, 535);
             this.DataFimRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataFimRegistoCriminal_Label.Name = "DataFimRegistoCriminal_Label";
             this.DataFimRegistoCriminal_Label.Size = new System.Drawing.Size(185, 18);
@@ -219,8 +234,8 @@
             // 
             // DataFimRegistoCriminal_DateTimePicker
             // 
-            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(687, 553);
-            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1102, 535);
+            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
             this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataFimRegistoCriminal_DateTimePicker.TabIndex = 19;
@@ -230,10 +245,10 @@
             this.addFoto_btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.addFoto_btn.IconColor = System.Drawing.Color.Black;
             this.addFoto_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addFoto_btn.Location = new System.Drawing.Point(75, 362);
-            this.addFoto_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.addFoto_btn.Location = new System.Drawing.Point(73, 309);
+            this.addFoto_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addFoto_btn.Name = "addFoto_btn";
-            this.addFoto_btn.Size = new System.Drawing.Size(263, 32);
+            this.addFoto_btn.Size = new System.Drawing.Size(191, 32);
             this.addFoto_btn.TabIndex = 22;
             this.addFoto_btn.Text = "Adicionar foto";
             this.addFoto_btn.UseVisualStyleBackColor = true;
@@ -247,24 +262,26 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconPictureBox1.IconColor = System.Drawing.Color.GhostWhite;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 262;
-            this.iconPictureBox1.Location = new System.Drawing.Point(75, 92);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconPictureBox1.IconSize = 191;
+            this.iconPictureBox1.Location = new System.Drawing.Point(73, 108);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(263, 262);
+            this.iconPictureBox1.Size = new System.Drawing.Size(191, 193);
             this.iconPictureBox1.TabIndex = 21;
             this.iconPictureBox1.TabStop = false;
             // 
             // addFuncionarioSistema_btn
             // 
-            this.addFuncionarioSistema_btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addFuncionarioSistema_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(255)))));
+            this.addFuncionarioSistema_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addFuncionarioSistema_btn.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addFuncionarioSistema_btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.addFuncionarioSistema_btn.IconColor = System.Drawing.Color.Black;
             this.addFuncionarioSistema_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(711, 621);
-            this.addFuncionarioSistema_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(1189, 645);
+            this.addFuncionarioSistema_btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.addFuncionarioSistema_btn.Name = "addFuncionarioSistema_btn";
-            this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(274, 32);
+            this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(274, 43);
             this.addFuncionarioSistema_btn.TabIndex = 20;
             this.addFuncionarioSistema_btn.Text = "Adicionar ao sistema";
             this.addFuncionarioSistema_btn.UseVisualStyleBackColor = false;
@@ -283,8 +300,8 @@
             // 
             // DataNascimento_DateTimePicker
             // 
-            this.DataNascimento_DateTimePicker.Location = new System.Drawing.Point(687, 162);
-            this.DataNascimento_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataNascimento_DateTimePicker.Location = new System.Drawing.Point(970, 107);
+            this.DataNascimento_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DataNascimento_DateTimePicker.Name = "DataNascimento_DateTimePicker";
             this.DataNascimento_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataNascimento_DateTimePicker.TabIndex = 25;
@@ -292,8 +309,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(500, 166);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(818, 110);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 18);
@@ -302,8 +320,8 @@
             // 
             // salario_textbox
             // 
-            this.salario_textbox.Location = new System.Drawing.Point(687, 319);
-            this.salario_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.salario_textbox.Location = new System.Drawing.Point(500, 309);
+            this.salario_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.salario_textbox.Name = "salario_textbox";
             this.salario_textbox.Size = new System.Drawing.Size(148, 24);
             this.salario_textbox.TabIndex = 27;
@@ -312,7 +330,7 @@
             // 
             this.salario_label.AutoSize = true;
             this.salario_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.salario_label.Location = new System.Drawing.Point(598, 325);
+            this.salario_label.Location = new System.Drawing.Point(411, 315);
             this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salario_label.Name = "salario_label";
             this.salario_label.Size = new System.Drawing.Size(58, 18);
@@ -323,7 +341,7 @@
             // 
             this.isencaohorario_checkbox.AutoSize = true;
             this.isencaohorario_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.isencaohorario_checkbox.Location = new System.Drawing.Point(903, 280);
+            this.isencaohorario_checkbox.Location = new System.Drawing.Point(692, 233);
             this.isencaohorario_checkbox.Name = "isencaohorario_checkbox";
             this.isencaohorario_checkbox.Size = new System.Drawing.Size(150, 22);
             this.isencaohorario_checkbox.TabIndex = 28;
@@ -334,7 +352,7 @@
             // 
             this.bonusmensal_checkbox.AutoSize = true;
             this.bonusmensal_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bonusmensal_checkbox.Location = new System.Drawing.Point(1059, 282);
+            this.bonusmensal_checkbox.Location = new System.Drawing.Point(848, 235);
             this.bonusmensal_checkbox.Name = "bonusmensal_checkbox";
             this.bonusmensal_checkbox.Size = new System.Drawing.Size(122, 22);
             this.bonusmensal_checkbox.TabIndex = 29;
@@ -345,7 +363,7 @@
             // 
             this.carroempresa_checkbox.AutoSize = true;
             this.carroempresa_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.carroempresa_checkbox.Location = new System.Drawing.Point(1137, 282);
+            this.carroempresa_checkbox.Location = new System.Drawing.Point(1004, 237);
             this.carroempresa_checkbox.Name = "carroempresa_checkbox";
             this.carroempresa_checkbox.Size = new System.Drawing.Size(147, 22);
             this.carroempresa_checkbox.TabIndex = 30;
@@ -354,7 +372,7 @@
             // 
             // secretariaNomeDiretor_textbox
             // 
-            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(903, 280);
+            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(692, 233);
             this.secretariaNomeDiretor_textbox.Name = "secretariaNomeDiretor_textbox";
             this.secretariaNomeDiretor_textbox.Size = new System.Drawing.Size(308, 24);
             this.secretariaNomeDiretor_textbox.TabIndex = 31;
@@ -364,7 +382,7 @@
             // 
             // areaensino_textbox
             // 
-            this.areaensino_textbox.Location = new System.Drawing.Point(903, 281);
+            this.areaensino_textbox.Location = new System.Drawing.Point(692, 234);
             this.areaensino_textbox.Name = "areaensino_textbox";
             this.areaensino_textbox.Size = new System.Drawing.Size(308, 24);
             this.areaensino_textbox.TabIndex = 35;
@@ -376,7 +394,7 @@
             // 
             this.laboral_checkbox.AutoSize = true;
             this.laboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.laboral_checkbox.Location = new System.Drawing.Point(1256, 280);
+            this.laboral_checkbox.Location = new System.Drawing.Point(1045, 233);
             this.laboral_checkbox.Name = "laboral_checkbox";
             this.laboral_checkbox.Size = new System.Drawing.Size(76, 22);
             this.laboral_checkbox.TabIndex = 33;
@@ -387,7 +405,7 @@
             // 
             this.poslaboral_checkbox.AutoSize = true;
             this.poslaboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.poslaboral_checkbox.Location = new System.Drawing.Point(1380, 282);
+            this.poslaboral_checkbox.Location = new System.Drawing.Point(1157, 233);
             this.poslaboral_checkbox.Name = "poslaboral_checkbox";
             this.poslaboral_checkbox.Size = new System.Drawing.Size(103, 22);
             this.poslaboral_checkbox.TabIndex = 32;
@@ -396,7 +414,7 @@
             // 
             // valorhora_textbox
             // 
-            this.valorhora_textbox.Location = new System.Drawing.Point(687, 319);
+            this.valorhora_textbox.Location = new System.Drawing.Point(500, 309);
             this.valorhora_textbox.Name = "valorhora_textbox";
             this.valorhora_textbox.Size = new System.Drawing.Size(122, 24);
             this.valorhora_textbox.TabIndex = 36;
@@ -406,8 +424,8 @@
             // 
             // username_textbox
             // 
-            this.username_textbox.Location = new System.Drawing.Point(687, 351);
-            this.username_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.username_textbox.Location = new System.Drawing.Point(716, 386);
+            this.username_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.username_textbox.Name = "username_textbox";
             this.username_textbox.Size = new System.Drawing.Size(148, 24);
             this.username_textbox.TabIndex = 38;
@@ -415,8 +433,9 @@
             // username_label
             // 
             this.username_label.AutoSize = true;
-            this.username_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.username_label.Location = new System.Drawing.Point(583, 355);
+            this.username_label.BackColor = System.Drawing.Color.Transparent;
+            this.username_label.ForeColor = System.Drawing.Color.White;
+            this.username_label.Location = new System.Drawing.Point(619, 385);
             this.username_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.username_label.Name = "username_label";
             this.username_label.Size = new System.Drawing.Size(77, 18);
@@ -425,8 +444,8 @@
             // 
             // password_textbox
             // 
-            this.password_textbox.Location = new System.Drawing.Point(944, 349);
-            this.password_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.password_textbox.Location = new System.Drawing.Point(980, 385);
+            this.password_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.password_textbox.Name = "password_textbox";
             this.password_textbox.Size = new System.Drawing.Size(148, 24);
             this.password_textbox.TabIndex = 40;
@@ -434,8 +453,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(843, 354);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(897, 388);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
@@ -444,7 +464,7 @@
             // 
             // cursoresponsavel_textbox
             // 
-            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(903, 282);
+            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(692, 235);
             this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
             this.cursoresponsavel_textbox.Size = new System.Drawing.Size(142, 24);
             this.cursoresponsavel_textbox.TabIndex = 41;
@@ -453,8 +473,9 @@
             // ValorHoralabel
             // 
             this.ValorHoralabel.AutoSize = true;
-            this.ValorHoralabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ValorHoralabel.Location = new System.Drawing.Point(573, 325);
+            this.ValorHoralabel.BackColor = System.Drawing.Color.Transparent;
+            this.ValorHoralabel.ForeColor = System.Drawing.Color.White;
+            this.ValorHoralabel.Location = new System.Drawing.Point(386, 315);
             this.ValorHoralabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ValorHoralabel.Name = "ValorHoralabel";
             this.ValorHoralabel.Size = new System.Drawing.Size(83, 18);
@@ -509,7 +530,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdicionarFuncionarioForm";

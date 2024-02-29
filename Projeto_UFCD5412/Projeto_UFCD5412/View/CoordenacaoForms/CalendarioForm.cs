@@ -12,37 +12,45 @@ using System.Windows.Forms;
 using System.Windows.Markup;
 using System.Text.RegularExpressions;
 using Projeto_UFCD5412.Data;
-
-
+using Projeto_UFCD5412.Controller;
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
-        private string caminhoArquivoCSV = "formacoes.csv";
         private DateTime dataAtual;
-        private Dictionary<DateTime, List<Formacao.FormacaoAgendada>> eventosPorDia = new Dictionary<DateTime, List<Formacao.FormacaoAgendada>>();
+        private Dictionary<DateTime, List<Formacao>> eventosPorDia = new Dictionary<DateTime, List<Formacao>>();
+        private CoordenadorController coordenadorController = CoordenadorController.Instance;
+
+        public enum DiaDaSemana
+        {             
+            Domingo,
+            Segunda,
+            Terca,
+            Quarta,
+            Quinta,
+            Sexta,
+            Sabado
+        }
 
         public CalendarioForm()
         {
             InitializeComponent();
             dataAtual = DateTime.Today;
-            CarregarAulasSalvas(); // Carrega as aulas salvas do arquivo CSV
+            CarregarAulasSalvas();
             AtualizarCalendario();
             this.Resize += CalendarioForm_Resize;
-            this.FormClosing += CalendarioForm_FormClosing;
+            ExibirDiasSalvosNoCalendario();
         }
 
         private void CarregarAulasSalvas()
         {
-            eventosPorDia = CSVFormacao.ImportarFormacoes();
-            AtualizarCalendario(); 
-        }
+            List<Formacao> listaFormacoes = CSVFormacao.LoadFromCSV();
+            eventosPorDia = listaFormacoes.GroupBy(f => f.DataInicio)
+                                          .ToDictionary(g => g.Key, g => g.ToList());
 
-
-        private void CalendarioForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CSVFormacao.ExportarFormacoes(eventosPorDia);
+            AtualizarCalendario();
+            ExibirDiasSalvosNoCalendario();
         }
 
         private void CalendarioForm_Resize(object sender, EventArgs e)
@@ -75,7 +83,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void PreencherCalendario(DateTime data)
         {
             tableLayoutPanel1.Controls.Clear();
-            eventosPorDia.Clear();
 
             int diasNoMes = DateTime.DaysInMonth(data.Year, data.Month);
             DayOfWeek primeiroDiaDoMes = new DateTime(data.Year, data.Month, 1).DayOfWeek;
@@ -97,7 +104,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
 
-            string[] diasDaSemana = { "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" };
+            string[] diasDaSemana = Enum.GetNames(typeof(DiaDaSemana));
             for (int i = 0; i < numColunas; i++)
             {
                 Label lblDiaSemana = new Label();
@@ -126,26 +133,44 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         lbl.BorderStyle = BorderStyle.FixedSingle;
                         lbl.Margin = new Padding(3);
 
-                        if (diaAtual == diaAtualDoMes)
+                        // Verifica se há formações para este dia
+                        DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
+                        if (eventosPorDia.ContainsKey(dataAtual) && eventosPorDia[dataAtual].Count > 0)
                         {
-                            lbl.BackColor = Color.DarkGray;
+                            lbl.BackColor = Color.LightGreen;
+                            lbl.Text += "\n";
+                            foreach (var formacao in eventosPorDia[dataAtual])
+                            {
+                                lbl.Text += $"{formacao.Formador} - {formacao.Turma}\n";
+                            }
+                            lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+
+                            // Ajusta o tamanho da label com base no conteúdo
+                            Size size = TextRenderer.MeasureText(lbl.Text, lbl.Font);
+                            lbl.Size = new Size(size.Width + 10, size.Height + 10); // Aumenta um pouco o tamanho para folga
                         }
                         else
                         {
-                            lbl.BackColor = Color.White;
-                        }
+                            if (diaAtual == diaAtualDoMes)
+                            {
+                                lbl.BackColor = Color.DarkGray;
+                            }
+                            else
+                            {
+                                lbl.BackColor = Color.White;
+                            }
 
-                        lbl.Click += (sender, e) =>
-                        {
-                            Label selectedLabel = (Label)sender;
-                            int diaSelecionado = int.Parse(selectedLabel.Text);
-                            AdicionarEvento(data.Year, data.Month, diaSelecionado);
-                        };
-                        lbl.Cursor = Cursors.Hand;
+                            lbl.Click += (sender, e) =>
+                            {
+                                Label selectedLabel = (Label)sender;
+                                int diaSelecionado = int.Parse(selectedLabel.Text);
+                                AdicionarEvento(data.Year, data.Month, diaSelecionado);
+                            };
+                            lbl.Cursor = Cursors.Hand;
+                        }
 
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
 
-                        eventosPorDia[new DateTime(data.Year, data.Month, diaAtual)] = new List<Formacao.FormacaoAgendada>();
                         diaAtual++;
                     }
                 }
@@ -160,9 +185,16 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             DateTime dataSelecionada = new DateTime(ano, mes, dia);
 
+            // Verificar se a data selecionada é anterior ao dia atual
+            if (dataSelecionada < DateTime.Today)
+            {
+                MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);   
+                return;
+            }
+
             if (!eventosPorDia.ContainsKey(dataSelecionada))
             {
-                eventosPorDia[dataSelecionada] = new List<Formacao.FormacaoAgendada>();
+                eventosPorDia[dataSelecionada] = new List<Formacao>();
             }
 
             AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
@@ -170,12 +202,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             {
                 Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
 
-                eventosPorDia[dataSelecionada].Add(new Formacao.FormacaoAgendada
-                {
-                    Data = novaFormacao.DataInicio,
-                    Formador = novaFormacao.Formador,
-                    Turma = novaFormacao.Turma
-                });
+                eventosPorDia[dataSelecionada].Add(novaFormacao);
 
                 AtualizarCelula(dataSelecionada);
             }
@@ -198,9 +225,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                 {
                                     label.BackColor = Color.LightGreen;
                                     label.Text += "\n";
-                                    foreach (var evento in eventosPorDia[data])
+                                    foreach (var formacao in eventosPorDia[data])
                                     {
-                                        label.Text += $"{evento.Formador} - {evento.Turma}\n";
+                                       // label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
+                                       label.Text += $"Hey\n";
+                                         
                                     }
                                     label.Font = new Font(label.Font, FontStyle.Bold);
 
@@ -215,6 +244,17 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
                         }
                     }
+                }
+            }
+        }
+
+        private void ExibirDiasSalvosNoCalendario()
+        {
+            foreach (var formacaoList in eventosPorDia.Values)
+            {
+                foreach (var formacao in formacaoList)
+                {
+                    AtualizarCelula(formacao.DataInicio);
                 }
             }
         }

@@ -55,9 +55,9 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(100, 100, 100, 100);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(100);
             this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.29F));
@@ -78,7 +78,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.retroceder_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retroceder_btn.ForeColor = System.Drawing.Color.White;
             this.retroceder_btn.Location = new System.Drawing.Point(745, 639);
-            this.retroceder_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.retroceder_btn.Margin = new System.Windows.Forms.Padding(2);
             this.retroceder_btn.Name = "retroceder_btn";
             this.retroceder_btn.Size = new System.Drawing.Size(120, 50);
             this.retroceder_btn.TabIndex = 1;
@@ -95,7 +95,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.avancar_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avancar_btn.ForeColor = System.Drawing.Color.White;
             this.avancar_btn.Location = new System.Drawing.Point(869, 639);
-            this.avancar_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.avancar_btn.Margin = new System.Windows.Forms.Padding(2);
             this.avancar_btn.Name = "avancar_btn";
             this.avancar_btn.Size = new System.Drawing.Size(120, 50);
             this.avancar_btn.TabIndex = 2;
@@ -127,7 +127,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.Controls.Add(this.avancar_btn);
             this.Controls.Add(this.retroceder_btn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CalendarioForm";
             this.Text = "Calendário";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -15,17 +15,12 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class AdicionarFormacaoForm : Form
     {
-        DateTimeController dateTimeController = DateTimeController.Instance;
+        private CoordenadorController coordenadorController = CoordenadorController.Instance;
 
         public AdicionarFormacaoForm()
         {
             InitializeComponent();
-            Console.WriteLine("SettingsForm - DateTimeController Instance: " + ReferenceEquals(dateTimeController, DateTimeController.Instance));
-            DateTimeController.DateTimeChanged += DateTimeController_DateTimeChanged;
-        }
-
-        private void DateTimeController_DateTimeChanged(object sender, DateTimeChangedEventArgs e)
-        {
+         
         }
 
         private void DataSistema_DateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -34,7 +29,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         }
         public Formacao FormacaoAdicionada { get; private set; }
 
-        private readonly DateTime dataSelecionada;
+        private  DateTime dataSelecionada;
 
         public AdicionarFormacaoForm(DateTime dataSelecionada)
         {
@@ -47,9 +42,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void CarregarFormadores()
         {
             FormadorNomes_combo.Items.Clear();
-
             List<Funcionario> funcionarios = CSVHandler.LoadFromCSV();
-
             foreach (var funcionario in funcionarios)
             {
                 if (funcionario is Formador formador)
@@ -62,19 +55,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void CarregarTurmas()
         {
             Turmas_combo.Items.Clear();
-
             string[] turmas = { "UFCD 5412", "UFCD 5413", "UFCD 5414", "UFCD 5415", "UFCD 5416", "UFCD 5417" };
             Turmas_combo.Items.AddRange(turmas);
-        }
-
-        private void LimparCampos()
-        {
-            DataInicio_calendar.Value = DateTime.Today;
-            DataFim_calendar.Value = DateTime.Today;
-            HoraIncio_combo.SelectedIndex = -1;
-            HoraFim_combo.SelectedIndex = -1;
-            FormadorNomes_combo.SelectedIndex = -1;
-            Turmas_combo.SelectedIndex = -1;
         }
 
         private void AdicionarFormacao_btn_Click_1(object sender, EventArgs e)
@@ -93,8 +75,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
 
             Formacao novaFormacao = new Formacao(dataInicio, dataFim, horaInicio, horaFim, formador, turma);
-            FormacaoAdicionada = novaFormacao;
 
+            coordenadorController.AdicionarFormacao(novaFormacao);
             DialogResult = DialogResult.OK;
         }
 

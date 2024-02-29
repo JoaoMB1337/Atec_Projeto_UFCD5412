@@ -27,14 +27,5 @@ namespace Projeto_UFCD5412.Model
             Turma = turma;
         }
 
-        public class FormacaoAgendada
-        {
-            public DateTime Data { get; set; }
-            public string Formador { get; set; }
-            public string Turma { get; set; }
-            public string HoraInicio { get; set; }
-            public string HoraFim { get; set; }
-
-        }
     }
 }

@@ -47,7 +47,7 @@
             // 
             this.panelShadow.BackColor = System.Drawing.Color.Gray;
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 140);
+            this.panelShadow.Location = new System.Drawing.Point(220, 141);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(631, 9);
             this.panelShadow.TabIndex = 7;
@@ -59,7 +59,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(631, 140);
+            this.panelTitleBar.Size = new System.Drawing.Size(631, 141);
             this.panelTitleBar.TabIndex = 6;
             // 
             // timer_label

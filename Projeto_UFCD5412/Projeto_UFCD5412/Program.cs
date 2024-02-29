@@ -61,8 +61,7 @@ namespace Projeto_UFCD5412
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CoordenacaoMainForm());
-
+            Application.Run(new MainWindow());
 
         }
     }

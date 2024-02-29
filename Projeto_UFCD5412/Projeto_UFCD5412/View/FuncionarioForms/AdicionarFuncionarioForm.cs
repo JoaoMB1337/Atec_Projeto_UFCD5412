@@ -112,6 +112,7 @@ namespace Projeto_UFCD5412.View.Forms
                     username_textbox.Visible = true;
                     ValorHoralabel.Visible = false;
                     areaensino_textbox.Visible = false;
+                    cursoresponsavel_textbox.Visible = false;
 
 
                     break;
@@ -130,7 +131,9 @@ namespace Projeto_UFCD5412.View.Forms
                     secretariaNomeDiretor_textbox.Visible = false;
                     salario_textbox.Visible = true;
                     salario_label.Visible = true;
-                    
+                    cursoresponsavel_textbox.Visible = false;
+
+
 
                     break;
                 case 2: //Formador
@@ -148,7 +151,9 @@ namespace Projeto_UFCD5412.View.Forms
                     secretariaNomeDiretor_textbox.Visible = false;
                     salario_textbox.Visible = false;
                     salario_label.Visible = false;
-                    
+                    cursoresponsavel_textbox.Visible = false;
+
+
                     break;
                 case 3: //Secretaria
                     secretariaNomeDiretor_textbox.Visible = true;
@@ -165,6 +170,7 @@ namespace Projeto_UFCD5412.View.Forms
                     areaensino_textbox.Visible = false;
                     salario_textbox.Visible = true;
                     salario_label.Visible = true;
+                    cursoresponsavel_textbox.Visible = false;
                     break;
                 case 4: //Coordenador
                     password_textbox.Visible = true;
@@ -210,7 +216,6 @@ namespace Projeto_UFCD5412.View.Forms
 
         private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)
         {
-            // Obter valores dos campos da interface do usuário
             string nome = nome_textbox.Text;
             string morada = morada_textbox.Text;
             string contacto = contacto_textbox.Text;
@@ -233,7 +238,6 @@ namespace Projeto_UFCD5412.View.Forms
             
             
 
-            // Criar o novo funcionário com base no tipo selecionado
             Funcionario novoFuncionario = null;
 
             switch (tipoFuncionario)
@@ -348,21 +352,17 @@ namespace Projeto_UFCD5412.View.Forms
                     ); ; 
                     break;
 
-                // Adicione casos para outros tipos de funcionários, se necessário
                 default:
                     MessageBox.Show("Tipo de funcionário não suportado.");
                     return;
             }
 
-            // Adicionar o novo funcionário à lista de funcionários ou fazer qualquer outra operação necessária
             empresaController.AdicionarFuncionario(novoFuncionario);
 
-            // Exportar para CSV, se necessário
             CSVHandler.ExportToCSV(empresaController.Funcionarios);
 
             MessageBox.Show("Funcionário adicionado com sucesso!");
 
-            // Limpar os campos após adicionar o funcionário
             LimparCampos();
         }
 

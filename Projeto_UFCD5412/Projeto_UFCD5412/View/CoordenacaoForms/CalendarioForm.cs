@@ -46,12 +46,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void CarregarAulasSalvas()
         {
             List<Formacao> listaFormacoes = CSVFormacao.LoadFromCSV();
+           MessageBox.Show($"Loaded {listaFormacoes.Count} formations from CSV.");
+
             eventosPorDia = listaFormacoes.GroupBy(f => f.DataInicio)
                                           .ToDictionary(g => g.Key, g => g.ToList());
 
             AtualizarCalendario();
             ExibirDiasSalvosNoCalendario();
         }
+
 
         private void CalendarioForm_Resize(object sender, EventArgs e)
         {
@@ -227,9 +230,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                     label.Text += "\n";
                                     foreach (var formacao in eventosPorDia[data])
                                     {
-                                       // label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
-                                       label.Text += $"Hey\n";
-                                         
+                                       label.Text += $"{formacao.Formador} - {formacao.Turma}\n"; 
                                     }
                                     label.Font = new Font(label.Font, FontStyle.Bold);
 
@@ -244,12 +245,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
                         }
                     }
+                    
                 }
             }
         }
 
         private void ExibirDiasSalvosNoCalendario()
         {
+
             foreach (var formacaoList in eventosPorDia.Values)
             {
                 foreach (var formacao in formacaoList)

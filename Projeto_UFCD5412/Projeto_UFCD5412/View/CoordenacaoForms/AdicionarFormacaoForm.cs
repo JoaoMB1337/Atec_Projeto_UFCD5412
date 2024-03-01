@@ -78,6 +78,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
             coordenadorController.AdicionarFormacao(novaFormacao);
             DialogResult = DialogResult.OK;
+            FormacaoAdicionada = novaFormacao;
+            Close();
         }
 
         private void Sair_Btn_Click(object sender, EventArgs e)

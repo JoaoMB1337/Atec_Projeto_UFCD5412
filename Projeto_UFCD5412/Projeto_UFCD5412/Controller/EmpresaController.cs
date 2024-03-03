@@ -234,8 +234,8 @@ namespace Projeto_UFCD5412.Controller
             }
             else
             {
-                var funcionarios = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList();
-                foreach (var funcionario in funcionarios)
+                var funcionariosPorTipo = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList(); 
+                foreach (var funcionario in funcionariosPorTipo)
                 {
                     totalSalarios += funcionario.Salario;
                 }

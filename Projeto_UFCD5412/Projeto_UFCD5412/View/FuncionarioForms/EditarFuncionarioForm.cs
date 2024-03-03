@@ -20,6 +20,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         public EditarFuncionarioForm()
         {
             InitializeComponent();
+            
         }
 
         internal void SetParameter(int funcionarioId)
@@ -50,7 +51,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 salario_textbox.Text = funcionario.Salario.ToString();
                 TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;
 
-                if (funcionario.Tipo == "Formador")
+                if (funcionario.Tipo == "Formador" && formador != null)
                 {
                     SalarioHoraTextBox.Text = formador.ValorHora.ToString();
                 }
@@ -81,52 +82,62 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         }
 
 
-        private void UpdateInfoFuncionario()
-        {   
-          
-            var formador = empresaController.GetFormadorById(_funcionarioId);
 
-            if (formador == null)
+        private void UpdateInfoFuncionario()
+        {
+            var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
+
+            if (funcionario == null)
             {
                 MessageBox.Show("Funcionário não encontrado");
                 this.Close();
+                return;
+            }
+
+            funcionario.Nome = nome_textbox.Text;
+            funcionario.Morada = morada_textbox.Text;
+            funcionario.Contacto = contacto_textbox.Text;
+            funcionario.Tipo = TipoFuncionario_ComboBox.SelectedItem.ToString();
+            funcionario.DataContrato = DataContrato_DateTimePicker.Value;
+            funcionario.DataFimContrato = DataFimContrato_DateTimePicker.Value;
+            funcionario.DataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
+            funcionario.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
+            funcionario.DataAniversario = DataNascimento_DateTimePicker.Value;
+
+            // Verificar se o TextBox está vazio antes de tentar converter para decimal
+            if (!string.IsNullOrWhiteSpace(salario_textbox.Text) && decimal.TryParse(salario_textbox.Text, out decimal salario))
+            {
+                funcionario.Salario = salario;
             }
             else
             {
-                formador.Nome = nome_textbox.Text;
-                formador.Morada = morada_textbox.Text;
-                formador.Contacto = contacto_textbox.Text;
-                formador.Tipo = TipoFuncionario_ComboBox.SelectedItem.ToString();
-                formador.DataContrato = DataContrato_DateTimePicker.Value;
-                formador.DataFimContrato = DataFimContrato_DateTimePicker.Value;
-                formador.DataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
-                formador.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
-                formador.DataAniversario = DataNascimento_DateTimePicker.Value;
-                formador.Salario = decimal.Parse(salario_textbox.Text);
-
-                if (formador.Tipo == "Formador")
-                {
-                   formador.ValorHora = decimal.Parse(SalarioHoraTextBox.Text);
-                }
-           
-
-
-                // Verificar se o TextBox está vazio antes de tentar converter para decimal
-                if (!string.IsNullOrWhiteSpace(salario_textbox.Text) && decimal.TryParse(salario_textbox.Text, out decimal salario))
-                {
-                    formador.Salario = salario; 
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, insira um valor de salário válido.");
-                    return;
-                }
-
-                empresaController.UpdateFuncionario(formador);
-                MessageBox.Show("Funcionário atualizado com sucesso");
-                this.Close();
+                MessageBox.Show("Por favor, insira um valor de salário válido.");
+                return;
             }
+
+            // Se for formador, atribuir o valor da hora
+            if (funcionario.Tipo == "Formador")
+            {
+                var formador = empresaController.GetFormadorById(_funcionarioId);
+                if (formador != null)
+                {
+                    if (!string.IsNullOrWhiteSpace(SalarioHoraTextBox.Text) && decimal.TryParse(SalarioHoraTextBox.Text, out decimal valorHora))
+                    {
+                        formador.ValorHora = valorHora;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, insira um valor de hora válido para formadores.");
+                        return;
+                    }
+                }
+            }
+
+            empresaController.UpdateFuncionario(funcionario);
+            MessageBox.Show("Funcionário atualizado com sucesso");
+            this.Close();
         }
+
 
 
         private void RemoverFuncionario_Btn_Click(object sender, EventArgs e)

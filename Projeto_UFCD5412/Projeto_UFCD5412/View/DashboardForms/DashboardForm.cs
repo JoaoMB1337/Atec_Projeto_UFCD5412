@@ -78,9 +78,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             int RegistosCriminaisInativos = empresaController.CountRegistosCriminaisExpirados(dataAtual);
             ContadorRegistosCriminaisInativos_label.Text = $"Registos Criminais Inativos: {RegistosCriminaisInativos}";
 
-            decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo("Formador");
-            totalSalario_lbl.Text = totalSalarios.ToString();
-
         }
 
         private void Home_Button_Click(object sender, EventArgs e)
@@ -98,8 +95,11 @@ namespace Projeto_UFCD5412.View.DashboardForms
         {
             string selectedTipo = TipoFuncionarioComboBox.SelectedItem.ToString();
 
+
             decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(selectedTipo);
             totalSalario_lbl.Text = totalSalarios.ToString();
+
+
 
         }
     }

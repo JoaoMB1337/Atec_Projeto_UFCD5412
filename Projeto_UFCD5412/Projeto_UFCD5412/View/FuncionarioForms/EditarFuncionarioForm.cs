@@ -1,4 +1,5 @@
 ﻿using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -47,6 +49,11 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 DataNascimento_DateTimePicker.Value = funcionario.DataAniversario;
                 salario_textbox.Text = funcionario.Salario.ToString();
                 TipoFuncionario_ComboBox.SelectedItem = funcionario.Tipo;
+
+                if (funcionario.Tipo == "Formador")
+                {
+                    SalarioHoraTextBox.Text = formador.ValorHora.ToString();
+                }
             }
            
         }
@@ -75,29 +82,39 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
 
         private void UpdateInfoFuncionario()
-        {
-            var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
-            if (funcionario == null)
+        {   
+          
+            var formador = empresaController.GetFormadorById(_funcionarioId);
+
+            if (formador == null)
             {
                 MessageBox.Show("Funcionário não encontrado");
                 this.Close();
             }
             else
             {
-                funcionario.Nome = nome_textbox.Text;
-                funcionario.Morada = morada_textbox.Text;
-                funcionario.Contacto = contacto_textbox.Text;
-                funcionario.Tipo = TipoFuncionario_ComboBox.SelectedItem.ToString();
-                funcionario.DataContrato = DataContrato_DateTimePicker.Value;
-                funcionario.DataFimContrato = DataFimContrato_DateTimePicker.Value;
-                funcionario.DataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
-                funcionario.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
-                funcionario.DataAniversario = DataNascimento_DateTimePicker.Value;
+                formador.Nome = nome_textbox.Text;
+                formador.Morada = morada_textbox.Text;
+                formador.Contacto = contacto_textbox.Text;
+                formador.Tipo = TipoFuncionario_ComboBox.SelectedItem.ToString();
+                formador.DataContrato = DataContrato_DateTimePicker.Value;
+                formador.DataFimContrato = DataFimContrato_DateTimePicker.Value;
+                formador.DataRegistoCriminal = DataRegistoCriminal_DateTimePicker.Value;
+                formador.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
+                formador.DataAniversario = DataNascimento_DateTimePicker.Value;
+                formador.Salario = decimal.Parse(salario_textbox.Text);
+
+                if (formador.Tipo == "Formador")
+                {
+                   formador.ValorHora = decimal.Parse(SalarioHoraTextBox.Text);
+                }
+           
+
 
                 // Verificar se o TextBox está vazio antes de tentar converter para decimal
                 if (!string.IsNullOrWhiteSpace(salario_textbox.Text) && decimal.TryParse(salario_textbox.Text, out decimal salario))
                 {
-                    funcionario.Salario = salario; 
+                    formador.Salario = salario; 
                 }
                 else
                 {
@@ -105,7 +122,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                     return;
                 }
 
-                empresaController.UpdateFuncionario(funcionario);
+                empresaController.UpdateFuncionario(formador);
                 MessageBox.Show("Funcionário atualizado com sucesso");
                 this.Close();
             }

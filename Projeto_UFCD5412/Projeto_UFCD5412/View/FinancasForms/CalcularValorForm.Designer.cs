@@ -55,6 +55,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ValorPagarDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ValorPagarDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+
+            this.ValorPagarDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ValorPagarDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,7 +67,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ValorPagarDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+
             this.ValorPagarDataGridView.ColumnHeadersHeight = 50;
+
+            this.ValorPagarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+          
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,6 +81,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ValorPagarDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+          
+            this.ValorPagarDataGridView.EnableHeadersVisualStyles = false;
+
             this.ValorPagarDataGridView.Location = new System.Drawing.Point(3, 41);
             this.ValorPagarDataGridView.Name = "ValorPagarDataGridView";
             this.ValorPagarDataGridView.ReadOnly = true;

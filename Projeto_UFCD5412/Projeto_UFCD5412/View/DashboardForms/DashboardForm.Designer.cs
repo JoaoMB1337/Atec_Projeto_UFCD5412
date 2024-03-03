@@ -541,11 +541,11 @@
             this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox6.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox6.IconSize = 98;
-            this.iconPictureBox6.Location = new System.Drawing.Point(416, 25);
+            this.iconPictureBox6.IconSize = 78;
+            this.iconPictureBox6.Location = new System.Drawing.Point(439, 25);
             this.iconPictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox6.Name = "iconPictureBox6";
-            this.iconPictureBox6.Size = new System.Drawing.Size(101, 98);
+            this.iconPictureBox6.Size = new System.Drawing.Size(78, 80);
             this.iconPictureBox6.TabIndex = 8;
             this.iconPictureBox6.TabStop = false;
             // 
@@ -577,7 +577,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1666, 1078);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel6);

@@ -63,7 +63,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             {
                 if ((funcionario.Tipo == TipoFuncionario_ComboBox.SelectedItem.ToString()) || (TipoFuncionario_ComboBox.SelectedItem.ToString() == "Todos"))
                 {
-                    if (funcionario is Formador) 
+                    if (funcionario is Formador)
                     {
                         var formador = funcionario as Formador;
                         ListaFuncionarios_DataGrid.Rows.Add(
@@ -72,7 +72,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                             formador.Morada,
                             formador.Contacto,
                             formador.Tipo,
-                            formador.ValorHora, 
+                            
                             formador.DataAniversario.ToShortDateString(),
                             formador.DataContrato.ToShortDateString(),
                             formador.DataFimContrato.ToShortDateString(),
@@ -81,14 +81,13 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                     }
                     else
                     {
-                        
                         ListaFuncionarios_DataGrid.Rows.Add(
                             funcionario.Id,
                             funcionario.Nome,
                             funcionario.Morada,
                             funcionario.Contacto,
                             funcionario.Tipo,
-                            funcionario.Salario,
+                            
                             funcionario.DataAniversario.ToShortDateString(),
                             funcionario.DataContrato.ToShortDateString(),
                             funcionario.DataFimContrato.ToShortDateString(),
@@ -98,6 +97,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 }
             }
         }
+
 
 
 
@@ -113,7 +113,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             ListaFuncionarios_DataGrid.Columns.Add("Morada", "Morada");
             ListaFuncionarios_DataGrid.Columns.Add("Contacto", "Contacto");
             ListaFuncionarios_DataGrid.Columns.Add("Tipo", "Tipo");
-            ListaFuncionarios_DataGrid.Columns.Add("Salario", "Salário");
+           
             ListaFuncionarios_DataGrid.Columns.Add("DataAniversario", "Data Aniversario");
             ListaFuncionarios_DataGrid.Columns.Add("DataContrato", "Data Contrato");
             ListaFuncionarios_DataGrid.Columns.Add("DataFimContrato", "Data Fim Contrato");

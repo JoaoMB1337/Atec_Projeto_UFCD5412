@@ -260,7 +260,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // salario_label
             // 
             this.salario_label.AutoSize = true;
-            this.salario_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.salario_label.BackColor = System.Drawing.Color.Transparent;
+            this.salario_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.salario_label.Location = new System.Drawing.Point(462, 318);
             this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salario_label.Name = "salario_label";
@@ -325,7 +326,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.SalarioHoralabel.AutoSize = true;
             this.SalarioHoralabel.BackColor = System.Drawing.Color.Transparent;
             this.SalarioHoralabel.ForeColor = System.Drawing.Color.White;
-            this.SalarioHoralabel.Location = new System.Drawing.Point(425, 318);
+            this.SalarioHoralabel.Location = new System.Drawing.Point(419, 321);
             this.SalarioHoralabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SalarioHoralabel.Name = "SalarioHoralabel";
             this.SalarioHoralabel.Size = new System.Drawing.Size(95, 18);

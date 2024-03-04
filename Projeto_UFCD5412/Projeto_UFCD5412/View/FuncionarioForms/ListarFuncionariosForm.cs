@@ -189,6 +189,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
             adicionarFuncionarioForm.ShowDialog();
             adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
+            
+
         }
 
         private void Editarfuncionario_Btn_Click(object sender, EventArgs e)

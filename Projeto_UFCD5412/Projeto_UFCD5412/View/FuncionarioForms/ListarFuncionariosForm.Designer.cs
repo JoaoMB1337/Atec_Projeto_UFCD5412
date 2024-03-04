@@ -33,7 +33,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ListaFuncionarios_DataGrid = new System.Windows.Forms.DataGridView();
             this.PesquisarFuncinarioPorNome_Textbox = new System.Windows.Forms.TextBox();
             this.TipoFuncionario_ComboBox = new System.Windows.Forms.ComboBox();
-            this.Sair_Btn = new System.Windows.Forms.Button();
             this.RegistoCriminal_CheckBox = new System.Windows.Forms.CheckBox();
             this.Editarfuncionario_Btn = new System.Windows.Forms.Button();
             this.Addfuncionario_Btn = new System.Windows.Forms.Button();
@@ -50,7 +49,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ListaFuncionarios_DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ListaFuncionarios_DataGrid.ColumnHeadersHeight = 50;
             this.ListaFuncionarios_DataGrid.Location = new System.Drawing.Point(16, 76);
-            this.ListaFuncionarios_DataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListaFuncionarios_DataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.ListaFuncionarios_DataGrid.Name = "ListaFuncionarios_DataGrid";
             this.ListaFuncionarios_DataGrid.ReadOnly = true;
             this.ListaFuncionarios_DataGrid.RowHeadersWidth = 51;
@@ -60,7 +59,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // PesquisarFuncinarioPorNome_Textbox
             // 
             this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(16, 15);
-            this.PesquisarFuncinarioPorNome_Textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PesquisarFuncinarioPorNome_Textbox.Margin = new System.Windows.Forms.Padding(4);
             this.PesquisarFuncinarioPorNome_Textbox.Name = "PesquisarFuncinarioPorNome_Textbox";
             this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(248, 22);
             this.PesquisarFuncinarioPorNome_Textbox.TabIndex = 1;
@@ -71,31 +70,17 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
             this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(879, 16);
-            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(160, 24);
             this.TipoFuncionario_ComboBox.TabIndex = 2;
             this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
             // 
-            // Sair_Btn
-            // 
-            this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
-            this.Sair_Btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_Btn.Location = new System.Drawing.Point(879, 559);
-            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(172, 37);
-            this.Sair_Btn.TabIndex = 3;
-            this.Sair_Btn.Text = "Voltar";
-            this.Sair_Btn.UseVisualStyleBackColor = false;
-            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
-            // 
             // RegistoCriminal_CheckBox
             // 
             this.RegistoCriminal_CheckBox.AutoSize = true;
             this.RegistoCriminal_CheckBox.Location = new System.Drawing.Point(628, 20);
-            this.RegistoCriminal_CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RegistoCriminal_CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.RegistoCriminal_CheckBox.Name = "RegistoCriminal_CheckBox";
             this.RegistoCriminal_CheckBox.Size = new System.Drawing.Size(184, 20);
             this.RegistoCriminal_CheckBox.TabIndex = 5;
@@ -109,7 +94,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.Editarfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
             this.Editarfuncionario_Btn.ForeColor = System.Drawing.Color.White;
             this.Editarfuncionario_Btn.Location = new System.Drawing.Point(208, 559);
-            this.Editarfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Editarfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.Editarfuncionario_Btn.Name = "Editarfuncionario_Btn";
             this.Editarfuncionario_Btn.Size = new System.Drawing.Size(172, 37);
             this.Editarfuncionario_Btn.TabIndex = 6;
@@ -123,7 +108,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.Addfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
             this.Addfuncionario_Btn.ForeColor = System.Drawing.Color.White;
             this.Addfuncionario_Btn.Location = new System.Drawing.Point(16, 559);
-            this.Addfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Addfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.Addfuncionario_Btn.Name = "Addfuncionario_Btn";
             this.Addfuncionario_Btn.Size = new System.Drawing.Size(172, 37);
             this.Addfuncionario_Btn.TabIndex = 7;
@@ -135,7 +120,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             this.ContratoValido_CheckBox.AutoSize = true;
             this.ContratoValido_CheckBox.Location = new System.Drawing.Point(436, 20);
-            this.ContratoValido_CheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContratoValido_CheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.ContratoValido_CheckBox.Name = "ContratoValido_CheckBox";
             this.ContratoValido_CheckBox.Size = new System.Drawing.Size(119, 20);
             this.ContratoValido_CheckBox.TabIndex = 8;
@@ -153,13 +138,12 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.Controls.Add(this.Addfuncionario_Btn);
             this.Controls.Add(this.Editarfuncionario_Btn);
             this.Controls.Add(this.RegistoCriminal_CheckBox);
-            this.Controls.Add(this.Sair_Btn);
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
             this.Controls.Add(this.ListaFuncionarios_DataGrid);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListarFuncionariosForm";
-            this.Text = "ListarFuncionariosForm";
+            this.Text = "Listar Funcionarios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ListarFuncionariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios_DataGrid)).EndInit();
@@ -173,7 +157,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private System.Windows.Forms.DataGridView ListaFuncionarios_DataGrid;
         private System.Windows.Forms.TextBox PesquisarFuncinarioPorNome_Textbox;
         private System.Windows.Forms.ComboBox TipoFuncionario_ComboBox;
-        private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.CheckBox RegistoCriminal_CheckBox;
         private System.Windows.Forms.Button Editarfuncionario_Btn;
         private System.Windows.Forms.Button Addfuncionario_Btn;

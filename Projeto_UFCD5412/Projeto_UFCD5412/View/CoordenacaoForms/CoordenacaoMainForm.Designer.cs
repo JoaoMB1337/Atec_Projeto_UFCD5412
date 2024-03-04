@@ -48,7 +48,7 @@
             this.panelShadow.BackColor = System.Drawing.Color.Gray;
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(293, 174);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(842, 11);
             this.panelShadow.TabIndex = 7;
@@ -59,7 +59,7 @@
             this.panelTitleBar.Controls.Add(this.timer_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(842, 174);
             this.panelTitleBar.TabIndex = 6;
@@ -85,7 +85,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 583);
             this.panelMenu.TabIndex = 5;
@@ -137,7 +137,7 @@
             this.panelLogo.Controls.Add(this.Home_Btn);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(291, 172);
             this.panelLogo.TabIndex = 0;
@@ -146,7 +146,7 @@
             // 
             this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
             this.Home_Btn.Location = new System.Drawing.Point(69, 15);
-            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.Home_Btn.Name = "Home_Btn";
             this.Home_Btn.Size = new System.Drawing.Size(151, 138);
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -176,7 +176,7 @@
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CoordenacaoMainForm";
-            this.Text = "CoordenacaoMainForm";
+            this.Text = "Coordenação";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();

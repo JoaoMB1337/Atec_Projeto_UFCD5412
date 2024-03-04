@@ -396,16 +396,6 @@ namespace Projeto_UFCD5412.View.Forms
 
         }
 
-        private void addFoto_btn_Click(object sender, EventArgs e)
-        {//adicionar foto de funcionario
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;)|*.jpg; *.jpeg; *.gif; *.bmp;";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string imageLocation = openFileDialog.FileName;
-                iconPictureBox1.ImageLocation = imageLocation;
-                iconPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-        }
+       
     }
 }

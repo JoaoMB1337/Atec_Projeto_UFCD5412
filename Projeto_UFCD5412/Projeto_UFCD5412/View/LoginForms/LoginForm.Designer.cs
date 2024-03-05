@@ -38,7 +38,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 123);
             this.panel1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.pictureBox1.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(87, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,7 +83,7 @@
             // 
             this.User_Textbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User_Textbox.Location = new System.Drawing.Point(187, 181);
-            this.User_Textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.User_Textbox.Margin = new System.Windows.Forms.Padding(4);
             this.User_Textbox.Name = "User_Textbox";
             this.User_Textbox.Size = new System.Drawing.Size(399, 34);
             this.User_Textbox.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password_TextBox.Location = new System.Drawing.Point(187, 246);
-            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.PasswordChar = '*';
             this.Password_TextBox.Size = new System.Drawing.Size(399, 34);
@@ -106,7 +106,7 @@
             this.UserLogin_Btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLogin_Btn.ForeColor = System.Drawing.Color.White;
             this.UserLogin_Btn.Location = new System.Drawing.Point(187, 320);
-            this.UserLogin_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserLogin_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.UserLogin_Btn.Name = "UserLogin_Btn";
             this.UserLogin_Btn.Size = new System.Drawing.Size(133, 49);
             this.UserLogin_Btn.TabIndex = 5;
@@ -133,8 +133,8 @@
             this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sair_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sair_btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_btn.Location = new System.Drawing.Point(381, 320);
-            this.Sair_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Sair_btn.Location = new System.Drawing.Point(351, 320);
+            this.Sair_btn.Margin = new System.Windows.Forms.Padding(4);
             this.Sair_btn.Name = "Sair_btn";
             this.Sair_btn.Size = new System.Drawing.Size(133, 49);
             this.Sair_btn.TabIndex = 8;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

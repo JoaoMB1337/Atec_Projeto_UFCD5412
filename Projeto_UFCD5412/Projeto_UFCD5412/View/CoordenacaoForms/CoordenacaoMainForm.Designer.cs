@@ -37,6 +37,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NomeFuncionario_Label = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -56,6 +57,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.panelTitleBar.Controls.Add(this.NomeFuncionario_Label);
             this.panelTitleBar.Controls.Add(this.timer_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
@@ -165,6 +167,18 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(843, 410);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
+            // NomeFuncionario_Label
+            // 
+            this.NomeFuncionario_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NomeFuncionario_Label.AutoSize = true;
+            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFuncionario_Label.ForeColor = System.Drawing.Color.White;
+            this.NomeFuncionario_Label.Location = new System.Drawing.Point(507, 116);
+            this.NomeFuncionario_Label.Name = "NomeFuncionario_Label";
+            this.NomeFuncionario_Label.Size = new System.Drawing.Size(158, 38);
+            this.NomeFuncionario_Label.TabIndex = 2;
+            this.NomeFuncionario_Label.Text = "Bem vindo";
+            // 
             // CoordenacaoMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,5 +212,6 @@
         private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button Sair_btn;
+        private System.Windows.Forms.Label NomeFuncionario_Label;
     }
 }

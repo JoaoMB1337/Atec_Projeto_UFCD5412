@@ -37,8 +37,8 @@
             // DataSistema_DateTimePicker
             // 
             this.DataSistema_DateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataSistema_DateTimePicker.Location = new System.Drawing.Point(31, 110);
-            this.DataSistema_DateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataSistema_DateTimePicker.Location = new System.Drawing.Point(31, 75);
+            this.DataSistema_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataSistema_DateTimePicker.Name = "DataSistema_DateTimePicker";
             this.DataSistema_DateTimePicker.Size = new System.Drawing.Size(320, 30);
             this.DataSistema_DateTimePicker.TabIndex = 0;
@@ -66,11 +66,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, 68);
+            this.label1.Location = new System.Drawing.Point(25, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 31);
+            this.label1.Size = new System.Drawing.Size(418, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Controlador da data do software";
             // 
@@ -83,7 +83,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExportCsv_Btn);
             this.Controls.Add(this.DataSistema_DateTimePicker);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SettingsForm";
             this.Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)(this.ExportCsv_Btn)).EndInit();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Model;
 using Projeto_UFCD5412.View.CoordenacaoForms;
 
 namespace Projeto_UFCD5412.View.LoginForms
@@ -19,8 +20,6 @@ namespace Projeto_UFCD5412.View.LoginForms
         {
             InitializeComponent();
         }
-
-
 
         private void MostrarMenuConsoanteTipoUtilizador(string tipoUtilizador)
         {
@@ -44,16 +43,10 @@ namespace Projeto_UFCD5412.View.LoginForms
 
                 default:
                     MainWindow mainWindow3 = new MainWindow();
-                    mainWindow3.ShowDialog(); ;
-                break;
+                    mainWindow3.ShowDialog();
+                    break;
 
             }
-        }
-
-        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Show();
-            Application.Exit();
         }
 
         private void UserLogin_Btn_Click_1(object sender, EventArgs e)
@@ -75,7 +68,7 @@ namespace Projeto_UFCD5412.View.LoginForms
                     if (alterarPasswordForm.DialogResult == DialogResult.OK)
                     {
                         string novaPassword = alterarPasswordForm.NovaPassword;
-                        bool verificaNovaPassword = loginController.AlterarPassword(User_Textbox.Text, novaPassword);
+                        bool verificaNovaPassword = loginController.AlterarPassword(novaPassword);
                         if (verificaNovaPassword)
                         {
                             MessageBox.Show("Password alterada com sucesso!");
@@ -113,5 +106,12 @@ namespace Projeto_UFCD5412.View.LoginForms
         {
             Application.Exit();
         }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            Application.Exit();
+        }
     }
+
 }

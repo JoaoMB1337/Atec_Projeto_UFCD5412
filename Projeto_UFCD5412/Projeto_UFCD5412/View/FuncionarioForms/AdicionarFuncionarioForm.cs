@@ -236,7 +236,9 @@ namespace Projeto_UFCD5412.View.Forms
             string nomeDiretor = secretariaNomeDiretor_textbox.Text; 
             string areaEnsino = areaensino_textbox.Text; 
             
-            
+            string passwordEncriptada = EncryptController.EncryptPasswordStatic(password_textbox.Text);
+
+
 
             Funcionario novoFuncionario = null;
 
@@ -256,7 +258,7 @@ namespace Projeto_UFCD5412.View.Forms
                          dataRegistoCriminal: dataRegistoCriminal,
                          dataFimRegistoCriminal: dataFimRegistoCriminal,
                          username: username_textbox.Text,
-                         password: password_textbox.Text,
+                         password: passwordEncriptada,
                          primeiroLogin: true
                          );
                     break;
@@ -275,7 +277,7 @@ namespace Projeto_UFCD5412.View.Forms
                         dataRegistoCriminal: dataRegistoCriminal,
                         dataFimRegistoCriminal: dataFimRegistoCriminal,
                         username: username_textbox.Text,
-                        password: password_textbox.Text,
+                        password: passwordEncriptada,
                         primeiroLogin: true,
                         isencaoHorario: isencaoHorario,
                         bonusMensal: bonusMensal ? salario : 0,
@@ -297,7 +299,7 @@ namespace Projeto_UFCD5412.View.Forms
                         dataRegistoCriminal: dataRegistoCriminal,
                         dataFimRegistoCriminal: dataFimRegistoCriminal,
                         username: username_textbox.Text,
-                        password: password_textbox.Text,
+                        password: passwordEncriptada,
                         primeiroLogin: true,
                         diretorResponsavel: nomeDiretor,
                         area: areaEnsino
@@ -305,9 +307,6 @@ namespace Projeto_UFCD5412.View.Forms
 
                     break;
                 case "Formador":
-
-                   
-
                     novoFuncionario = new Formador(
                         id: 0, 
                         nome: nome,
@@ -321,13 +320,11 @@ namespace Projeto_UFCD5412.View.Forms
                         dataRegistoCriminal: dataRegistoCriminal,
                         dataFimRegistoCriminal: dataFimRegistoCriminal,
                         username: username_textbox.Text,
-                        password: password_textbox.Text,
+                        password: passwordEncriptada,
                         primeiroLogin: true,
                         areaLecionada: areaEnsino, 
                         disponibilidade: posLaboral ? "Pós-laboral" : (laboral ? "Laboral" : "Ambas"), 
                         valorHora: valorHora 
-
-
                     );
                     break;
                 case "Coordenador":
@@ -344,12 +341,11 @@ namespace Projeto_UFCD5412.View.Forms
                         dataRegistoCriminal: dataRegistoCriminal,
                         dataFimRegistoCriminal: dataFimRegistoCriminal,
                         username: username_textbox.Text,
-                        password: password_textbox.Text,
+                        password: passwordEncriptada,
                         primeiroLogin: true,
                         curso: cursoresponsavel_textbox.Text,
                         formadoresAssociados: new List<Formador>()
-
-                    ); ; 
+                    );
                     break;
 
                 default:

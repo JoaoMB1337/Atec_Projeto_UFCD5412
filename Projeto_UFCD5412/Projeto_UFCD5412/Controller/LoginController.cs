@@ -1,55 +1,59 @@
-﻿using Projeto_UFCD5412.Model;
-using System;
+﻿using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.Controller;
+
 
 namespace Projeto_UFCD5412.Controller
 {
     internal class LoginController
     {
-
         private List<Funcionario> funcionarios = new List<Funcionario>();
+        private Funcionario funcionarioLogado; 
+
         public LoginController()
         {
             funcionarios = CSVHandler.LoadFromCSV();
-        }   
+        }
 
         public string Login(string username, string password)
         {
             if (username == "admin" && password == "admin")
             {
+                funcionarioLogado = null;
                 return "admin";
             }
-            Funcionario funcionario = funcionarios.Find(f => f.Username == username && f.Password == password);  
+            Funcionario funcionario = funcionarios.Find(f => f.Username == username && f.Password == EncryptController.EncryptPasswordStatic(password));
+
             if (funcionario != null)
             {
-                if(funcionario.PrimeiroLogin)
+                if (funcionario.PrimeiroLogin)
                 {
-                    return "PrimeiroLogin"; 
+                    funcionarioLogado = funcionario;
+                    return "PrimeiroLogin";
                 }
                 else
                 {
-                    return funcionario.Tipo;  
+                    funcionarioLogado = funcionario;
+                    return funcionario.Tipo;
                 }
             }
             else
             {
                 return null;
             }
-           
         }
-
-        public bool AlterarPassword(string username, string novaPassword)
+        public bool AlterarPassword(string novaPassword)
         {
-            Funcionario funcionario = funcionarios.Find(f => f.Username == username);
-            funcionario.Password = novaPassword;
-            funcionario.PrimeiroLogin = false;
-            CSVHandler.ExportToCSV(funcionarios);
-            return true;
+            if (funcionarioLogado != null)
+            {
+                string passwordEncripatada = EncryptController.EncryptPasswordStatic(novaPassword);
+                funcionarioLogado.Password = passwordEncripatada;
+                funcionarioLogado.PrimeiroLogin = false;
+                CSVHandler.ExportToCSV(funcionarios);
+                return true;
+            }
+            return false; 
         }
     }
 }

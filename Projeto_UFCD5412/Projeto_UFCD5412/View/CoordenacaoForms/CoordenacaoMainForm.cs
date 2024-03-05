@@ -30,15 +30,12 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             calendarioForm.FormBorderStyle = FormBorderStyle.None;
             flowLayoutPanel1.Controls.Add(calendarioForm);
             calendarioForm.Show();
-
-
-
         }
 
         private void MostrarNomeUtilizador()
         {
             //mostrar o nome do utilizador
-            NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
+            //NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
         }
 
 

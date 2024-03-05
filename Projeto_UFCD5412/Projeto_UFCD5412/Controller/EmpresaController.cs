@@ -246,5 +246,16 @@ namespace Projeto_UFCD5412.Controller
 
         #endregion
 
+
+        #region Algumas Verificacoes
+
+        public bool VerificarSeUsernameExite(string username)
+        {
+            var funcionario = Funcionarios.FirstOrDefault(f => f.Username == username);
+            return funcionario != null;
+        }
+
+        #endregion
+
     }
 }

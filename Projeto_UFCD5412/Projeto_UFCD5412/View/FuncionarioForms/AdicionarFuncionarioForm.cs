@@ -354,9 +354,7 @@ namespace Projeto_UFCD5412.View.Forms
             }
 
             empresaController.AdicionarFuncionario(novoFuncionario);
-
             CSVHandler.ExportToCSV(empresaController.Funcionarios);
-
             MessageBox.Show("Funcionário adicionado com sucesso!");
 
             LimparCampos();
@@ -389,9 +387,6 @@ namespace Projeto_UFCD5412.View.Forms
             username_textbox.Text = string.Empty;
             password_textbox.Text = string.Empty;
             cursoresponsavel_textbox.Text = string.Empty;
-
         }
-
-       
     }
 }

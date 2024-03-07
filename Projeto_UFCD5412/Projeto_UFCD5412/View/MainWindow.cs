@@ -159,6 +159,7 @@ namespace Projeto_UFCD5412
             dashboardForm.Show();
         }
 
+
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);

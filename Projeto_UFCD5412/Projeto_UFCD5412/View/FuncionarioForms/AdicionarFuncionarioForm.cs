@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.View.FuncionarioForms;
 
 namespace Projeto_UFCD5412.View.Forms
 {
@@ -211,7 +212,7 @@ namespace Projeto_UFCD5412.View.Forms
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); 
         }
 
         private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         public ListarFuncionariosForm()
         {
             InitializeComponent();
+            panelEditar.Visible = false;
         }
 
         internal void SetParameter( string parametro)
@@ -30,7 +31,9 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             if (parametro == "editar")
             {
                 ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
+           
             }
+            
         }
 
         private void ListarFuncionariosForm_Load(object sender, EventArgs e)
@@ -140,27 +143,43 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         { 
             int rowIndex = e.RowIndex;
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
-            EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
+            panelEditar.Visible = true;
+            EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm();
             editarFuncionarioForm.SetParameter(funcionarioId);
-            editarFuncionarioForm.FormClosed += (s, args) => ListarFuncionarioDataGrid();
-            editarFuncionarioForm.ShowDialog();
+            editarFuncionarioForm.TopLevel = false;
+            editarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            editarFuncionarioForm.Dock = DockStyle.Fill;
+            panelEditar.Controls.Add(editarFuncionarioForm);
+            editarFuncionarioForm.BringToFront();
+            editarFuncionarioForm.Show();
+            
         }
 
         private void Addfuncionario_Btn_Click(object sender, EventArgs e)
         {
+            panelEditar.Visible = true;
+
+            //abrir o form de adicionar funcionario dentro da panelAddFuncionario
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            adicionarFuncionarioForm.FormClosed += (s, args) => ListarFuncionarioDataGrid();
-            adicionarFuncionarioForm.ShowDialog();
+            adicionarFuncionarioForm.TopLevel = false;
+            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            adicionarFuncionarioForm.Dock = DockStyle.Fill;
+            panelEditar.Controls.Add(adicionarFuncionarioForm);
+            adicionarFuncionarioForm.BringToFront();
+            adicionarFuncionarioForm.Show();
+
         }
 
         private void Editarfuncionario_Btn_Click(object sender, EventArgs e)
         {
            SetParameter("editar");
+                
         }
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
+            panelEditar.Visible = false;
         }
     }
 }

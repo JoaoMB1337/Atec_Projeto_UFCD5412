@@ -46,7 +46,6 @@
             this.DataFimRegistoCriminal_Label = new System.Windows.Forms.Label();
             this.DataFimRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addFuncionarioSistema_btn = new FontAwesome.Sharp.IconButton();
-            this.Sair_Btn = new System.Windows.Forms.Button();
             this.DataNascimento_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.salario_textbox = new System.Windows.Forms.TextBox();
@@ -65,6 +64,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cursoresponsavel_textbox = new System.Windows.Forms.TextBox();
             this.ValorHoralabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // NomeFunc_Label
@@ -231,7 +232,7 @@
             // 
             // DataFimRegistoCriminal_DateTimePicker
             // 
-            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1054, 626);
+            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1017, 575);
             this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
             this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 29);
@@ -242,29 +243,19 @@
             this.addFuncionarioSistema_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addFuncionarioSistema_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.addFuncionarioSistema_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addFuncionarioSistema_btn.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFuncionarioSistema_btn.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFuncionarioSistema_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.addFuncionarioSistema_btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.addFuncionarioSistema_btn.IconColor = System.Drawing.Color.Black;
             this.addFuncionarioSistema_btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(926, 711);
+            this.addFuncionarioSistema_btn.Location = new System.Drawing.Point(1172, 727);
             this.addFuncionarioSistema_btn.Margin = new System.Windows.Forms.Padding(0);
             this.addFuncionarioSistema_btn.Name = "addFuncionarioSistema_btn";
-            this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(274, 44);
+            this.addFuncionarioSistema_btn.Size = new System.Drawing.Size(217, 40);
             this.addFuncionarioSistema_btn.TabIndex = 20;
             this.addFuncionarioSistema_btn.Text = "Adicionar ao sistema";
             this.addFuncionarioSistema_btn.UseVisualStyleBackColor = false;
             this.addFuncionarioSistema_btn.Click += new System.EventHandler(this.addFuncionarioSistema_btn_Click);
-            // 
-            // Sair_Btn
-            // 
-            this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.Location = new System.Drawing.Point(1216, 711);
-            this.Sair_Btn.Name = "Sair_Btn";
-            this.Sair_Btn.Size = new System.Drawing.Size(159, 44);
-            this.Sair_Btn.TabIndex = 23;
-            this.Sair_Btn.Text = "Sair";
-            this.Sair_Btn.UseVisualStyleBackColor = true;
-            this.Sair_Btn.Click += new System.EventHandler(this.Sair_Btn_Click);
             // 
             // DataNascimento_DateTimePicker
             // 
@@ -450,13 +441,24 @@
             this.ValorHoralabel.TabIndex = 42;
             this.ValorHoralabel.Text = "Valor Hora:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.DataFimRegistoCriminal_DateTimePicker);
+            this.panel1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Location = new System.Drawing.Point(36, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1353, 644);
+            this.panel1.TabIndex = 43;
+            // 
             // AdicionarFuncionarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1401, 787);
+            this.ClientSize = new System.Drawing.Size(1419, 787);
             this.Controls.Add(this.ValorHoralabel);
             this.Controls.Add(this.cursoresponsavel_textbox);
             this.Controls.Add(this.password_textbox);
@@ -475,9 +477,7 @@
             this.Controls.Add(this.salario_label);
             this.Controls.Add(this.DataNascimento_DateTimePicker);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Sair_Btn);
             this.Controls.Add(this.addFuncionarioSistema_btn);
-            this.Controls.Add(this.DataFimRegistoCriminal_DateTimePicker);
             this.Controls.Add(this.DataFimRegistoCriminal_Label);
             this.Controls.Add(this.DataRegistoCriminal_DateTimePicker);
             this.Controls.Add(this.DataFimContrato_DateTimePicker);
@@ -493,6 +493,7 @@
             this.Controls.Add(this.ContactoFunc_Label);
             this.Controls.Add(this.MoradaFunc_Label);
             this.Controls.Add(this.NomeFunc_Label);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -503,6 +504,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar funcionario";
             this.Load += new System.EventHandler(this.AdicionarFuncionarioForm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,7 +528,6 @@
         private System.Windows.Forms.Label DataFimRegistoCriminal_Label;
         private System.Windows.Forms.DateTimePicker DataFimRegistoCriminal_DateTimePicker;
         private FontAwesome.Sharp.IconButton addFuncionarioSistema_btn;
-        private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.DateTimePicker DataNascimento_DateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox salario_textbox;
@@ -545,5 +546,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox cursoresponsavel_textbox;
         private System.Windows.Forms.Label ValorHoralabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

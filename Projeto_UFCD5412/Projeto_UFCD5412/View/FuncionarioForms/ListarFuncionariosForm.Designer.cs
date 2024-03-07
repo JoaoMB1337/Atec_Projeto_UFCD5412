@@ -37,6 +37,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.Editarfuncionario_Btn = new System.Windows.Forms.Button();
             this.Addfuncionario_Btn = new System.Windows.Forms.Button();
             this.ContratoValido_CheckBox = new System.Windows.Forms.CheckBox();
+            this.panelEditar = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ListaFuncionarios_DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,12 +129,25 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ContratoValido_CheckBox.UseVisualStyleBackColor = true;
             this.ContratoValido_CheckBox.CheckedChanged += new System.EventHandler(this.ContratoValido_CheckBox_CheckedChanged);
             // 
+            // panelEditar
+            // 
+            this.panelEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEditar.BackColor = System.Drawing.Color.Transparent;
+            this.panelEditar.Location = new System.Drawing.Point(16, 76);
+            this.panelEditar.Name = "panelEditar";
+            this.panelEditar.Size = new System.Drawing.Size(1035, 475);
+            this.panelEditar.TabIndex = 9;
+            this.panelEditar.Visible = false;
+            // 
             // ListarFuncionariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1067, 602);
+            this.Controls.Add(this.panelEditar);
             this.Controls.Add(this.ContratoValido_CheckBox);
             this.Controls.Add(this.Addfuncionario_Btn);
             this.Controls.Add(this.Editarfuncionario_Btn);
@@ -161,5 +175,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private System.Windows.Forms.Button Editarfuncionario_Btn;
         private System.Windows.Forms.Button Addfuncionario_Btn;
         private CheckBox ContratoValido_CheckBox;
+        private Panel panelEditar;
     }
 }

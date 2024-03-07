@@ -50,6 +50,9 @@ namespace Projeto_UFCD5412.View.Forms
             username_textbox.Visible = false;
 
             cursoresponsavel_textbox.Visible = false;
+            cursoresponsavel_textbox.Text = "Introduza o nome do curso responsável";
+            cursoresponsavel_textbox.ForeColor = SystemColors.GrayText;
+
 
 
         }
@@ -102,6 +105,24 @@ namespace Projeto_UFCD5412.View.Forms
             {
                 secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento";
                 secretariaNomeDiretor_textbox.ForeColor = SystemColors.GrayText; 
+            }
+        }
+
+        private void cursoresponsavel_textbox_GotFocus(object sender, EventArgs e)
+        {
+            if (cursoresponsavel_textbox.Text == "Introduza o nome do curso responsável")
+            {
+                cursoresponsavel_textbox.Text = "";
+                cursoresponsavel_textbox.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void cursoresponsavel_textbox_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cursoresponsavel_textbox.Text))
+            {
+                cursoresponsavel_textbox.Text = "Introduza o nome do curso responsável";
+                cursoresponsavel_textbox.ForeColor = SystemColors.GrayText;
             }
         }
 

@@ -142,31 +142,15 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
             EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
             editarFuncionarioForm.SetParameter(funcionarioId);
+            editarFuncionarioForm.FormClosed += (s, args) => ListarFuncionarioDataGrid();
             editarFuncionarioForm.ShowDialog();
-            editarFuncionarioForm.FormClosed += EditarFuncionarioForm_FormClosed;
-
-        }
-
-        private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            MessageBox.Show("Funcionário editado com sucesso");
-            AtualizarDataGridView(empresaController.ListarFuncionarios());
-            ListarFuncionarioDataGrid();
-            ListaFuncionarios_DataGrid.Refresh();
-        }
-
-        private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            AtualizarDataGridView(empresaController.ListarFuncionarios());
-            ListaFuncionarios_DataGrid.Columns.Clear();
-            ListarFuncionarioDataGrid();
         }
 
         private void Addfuncionario_Btn_Click(object sender, EventArgs e)
         {
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
+            adicionarFuncionarioForm.FormClosed += (s, args) => ListarFuncionarioDataGrid();
             adicionarFuncionarioForm.ShowDialog();
-            adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
         }
 
         private void Editarfuncionario_Btn_Click(object sender, EventArgs e)

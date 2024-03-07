@@ -23,7 +23,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             InitializeComponent();
             LoadData();
             LoadComboBox();
-           
         }
 
         private void LoadComboBox()
@@ -49,10 +48,10 @@ namespace Projeto_UFCD5412.View.DashboardForms
             ContadorFunc_label.Text = totalFuncionarios.ToString();
 
             // Calcula o total de funcionários por tipo
-            ContFuncionarios_label.Text = empresaController.CountNumeroTipoFuncionarios("Formador").ToString();
-            Contador_Diretores_label.Text = empresaController.CountNumeroTipoFuncionarios("Coordenador").ToString();
+            ContFuncionarios_label.Text = empresaController.CountNumeroTipoFuncionarios("Funcionario").ToString();
+            Contador_Diretores_label.Text = empresaController.CountNumeroTipoFuncionarios("Diretor").ToString();
             Contador_Secretari_label.Text = empresaController.CountNumeroTipoFuncionarios("Secretaria").ToString();
-            Contador_Formadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Diretor").ToString();
+            Contador_Formadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Formador").ToString();
 
             int contratosAtivos = empresaController.CountContratosAtivos(dataAtual);
             ContadorContratos_label.Text = $"Contratos Ativos: {contratosAtivos}";
@@ -98,8 +97,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
 
             decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(selectedTipo);
             totalSalario_lbl.Text = totalSalarios.ToString();
-
-
 
         }
     }

@@ -61,7 +61,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.NomeFunc_Label.Location = new System.Drawing.Point(381, 150);
             this.NomeFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NomeFunc_Label.Name = "NomeFunc_Label";
-            this.NomeFunc_Label.Size = new System.Drawing.Size(67, 24);
+            this.NomeFunc_Label.Size = new System.Drawing.Size(53, 18);
             this.NomeFunc_Label.TabIndex = 4;
             this.NomeFunc_Label.Text = "Nome:";
             // 
@@ -73,7 +73,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.MoradaFunc_Label.Location = new System.Drawing.Point(369, 233);
             this.MoradaFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MoradaFunc_Label.Name = "MoradaFunc_Label";
-            this.MoradaFunc_Label.Size = new System.Drawing.Size(79, 24);
+            this.MoradaFunc_Label.Size = new System.Drawing.Size(63, 18);
             this.MoradaFunc_Label.TabIndex = 5;
             this.MoradaFunc_Label.Text = "Morada:";
             // 
@@ -85,7 +85,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ContactoFunc_Label.Location = new System.Drawing.Point(358, 275);
             this.ContactoFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContactoFunc_Label.Name = "ContactoFunc_Label";
-            this.ContactoFunc_Label.Size = new System.Drawing.Size(89, 24);
+            this.ContactoFunc_Label.Size = new System.Drawing.Size(73, 18);
             this.ContactoFunc_Label.TabIndex = 6;
             this.ContactoFunc_Label.Text = "Contacto:";
             // 
@@ -97,7 +97,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.TipoFunc_Label.Location = new System.Drawing.Point(369, 318);
             this.TipoFunc_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TipoFunc_Label.Name = "TipoFunc_Label";
-            this.TipoFunc_Label.Size = new System.Drawing.Size(53, 24);
+            this.TipoFunc_Label.Size = new System.Drawing.Size(41, 18);
             this.TipoFunc_Label.TabIndex = 7;
             this.TipoFunc_Label.Text = "Tipo:";
             // 
@@ -109,7 +109,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataContrato_Label.Location = new System.Drawing.Point(839, 179);
             this.DataContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataContrato_Label.Name = "DataContrato_Label";
-            this.DataContrato_Label.Size = new System.Drawing.Size(151, 24);
+            this.DataContrato_Label.Size = new System.Drawing.Size(123, 18);
             this.DataContrato_Label.TabIndex = 8;
             this.DataContrato_Label.Text = "Data do contrato:";
             // 
@@ -121,7 +121,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.FimContrato_Label.Location = new System.Drawing.Point(839, 212);
             this.FimContrato_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FimContrato_Label.Name = "FimContrato_Label";
-            this.FimContrato_Label.Size = new System.Drawing.Size(207, 24);
+            this.FimContrato_Label.Size = new System.Drawing.Size(167, 18);
             this.FimContrato_Label.TabIndex = 9;
             this.FimContrato_Label.Text = "Data do fim de contrato:";
             // 
@@ -133,7 +133,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataRegistoCriminal_Label.Location = new System.Drawing.Point(839, 252);
             this.DataRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataRegistoCriminal_Label.Name = "DataRegistoCriminal_Label";
-            this.DataRegistoCriminal_Label.Size = new System.Drawing.Size(193, 24);
+            this.DataRegistoCriminal_Label.Size = new System.Drawing.Size(156, 18);
             this.DataRegistoCriminal_Label.TabIndex = 10;
             this.DataRegistoCriminal_Label.Text = "Data Registo Criminal:";
             // 
@@ -142,7 +142,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.nome_textbox.Location = new System.Drawing.Point(447, 141);
             this.nome_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.nome_textbox.Name = "nome_textbox";
-            this.nome_textbox.Size = new System.Drawing.Size(277, 29);
+            this.nome_textbox.Size = new System.Drawing.Size(277, 24);
             this.nome_textbox.TabIndex = 11;
             // 
             // morada_textbox
@@ -150,7 +150,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.morada_textbox.Location = new System.Drawing.Point(447, 229);
             this.morada_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.morada_textbox.Name = "morada_textbox";
-            this.morada_textbox.Size = new System.Drawing.Size(277, 29);
+            this.morada_textbox.Size = new System.Drawing.Size(277, 24);
             this.morada_textbox.TabIndex = 12;
             // 
             // contacto_textbox
@@ -158,7 +158,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.contacto_textbox.Location = new System.Drawing.Point(447, 271);
             this.contacto_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.contacto_textbox.Name = "contacto_textbox";
-            this.contacto_textbox.Size = new System.Drawing.Size(148, 29);
+            this.contacto_textbox.Size = new System.Drawing.Size(148, 24);
             this.contacto_textbox.TabIndex = 13;
             // 
             // TipoFuncionario_ComboBox
@@ -168,7 +168,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(447, 307);
             this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
-            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(180, 32);
+            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(180, 26);
             this.TipoFuncionario_ComboBox.TabIndex = 14;
             this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
             // 
@@ -177,7 +177,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataContrato_DateTimePicker.Location = new System.Drawing.Point(1043, 170);
             this.DataContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataContrato_DateTimePicker.Name = "DataContrato_DateTimePicker";
-            this.DataContrato_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataContrato_DateTimePicker.TabIndex = 15;
             // 
             // DataFimContrato_DateTimePicker
@@ -185,7 +185,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataFimContrato_DateTimePicker.Location = new System.Drawing.Point(1043, 206);
             this.DataFimContrato_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimContrato_DateTimePicker.Name = "DataFimContrato_DateTimePicker";
-            this.DataFimContrato_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataFimContrato_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataFimContrato_DateTimePicker.TabIndex = 16;
             // 
             // DataRegistoCriminal_DateTimePicker
@@ -193,7 +193,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1043, 252);
             this.DataRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataRegistoCriminal_DateTimePicker.Name = "DataRegistoCriminal_DateTimePicker";
-            this.DataRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataRegistoCriminal_DateTimePicker.TabIndex = 17;
             // 
             // DataFimRegistoCriminal_Label
@@ -204,7 +204,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataFimRegistoCriminal_Label.Location = new System.Drawing.Point(839, 294);
             this.DataFimRegistoCriminal_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DataFimRegistoCriminal_Label.Name = "DataFimRegistoCriminal_Label";
-            this.DataFimRegistoCriminal_Label.Size = new System.Drawing.Size(230, 24);
+            this.DataFimRegistoCriminal_Label.Size = new System.Drawing.Size(185, 18);
             this.DataFimRegistoCriminal_Label.TabIndex = 18;
             this.DataFimRegistoCriminal_Label.Text = "Data Fim Registo Criminal:";
             // 
@@ -213,7 +213,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1043, 294);
             this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
-            this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataFimRegistoCriminal_DateTimePicker.TabIndex = 19;
             // 
             // Sair_Btn
@@ -231,7 +231,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.DataNascimento_DateTimePicker.Location = new System.Drawing.Point(447, 189);
             this.DataNascimento_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.DataNascimento_DateTimePicker.Name = "DataNascimento_DateTimePicker";
-            this.DataNascimento_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataNascimento_DateTimePicker.Size = new System.Drawing.Size(298, 24);
             this.DataNascimento_DateTimePicker.TabIndex = 25;
             // 
             // label1
@@ -242,7 +242,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.label1.Location = new System.Drawing.Point(285, 193);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 24);
+            this.label1.Size = new System.Drawing.Size(140, 18);
             this.label1.TabIndex = 24;
             this.label1.Text = "Data de nascimento";
             // 
@@ -251,7 +251,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.salario_textbox.Location = new System.Drawing.Point(447, 357);
             this.salario_textbox.Margin = new System.Windows.Forms.Padding(4);
             this.salario_textbox.Name = "salario_textbox";
-            this.salario_textbox.Size = new System.Drawing.Size(148, 29);
+            this.salario_textbox.Size = new System.Drawing.Size(148, 24);
             this.salario_textbox.TabIndex = 27;
             // 
             // salario_label
@@ -262,7 +262,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.salario_label.Location = new System.Drawing.Point(358, 361);
             this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.salario_label.Name = "salario_label";
-            this.salario_label.Size = new System.Drawing.Size(72, 24);
+            this.salario_label.Size = new System.Drawing.Size(58, 18);
             this.salario_label.TabIndex = 26;
             this.salario_label.Text = "Salário:";
             // 
@@ -287,7 +287,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.SalarioHoraTextBox.Location = new System.Drawing.Point(447, 358);
             this.SalarioHoraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SalarioHoraTextBox.Name = "SalarioHoraTextBox";
-            this.SalarioHoraTextBox.Size = new System.Drawing.Size(148, 29);
+            this.SalarioHoraTextBox.Size = new System.Drawing.Size(148, 24);
             this.SalarioHoraTextBox.TabIndex = 28;
             // 
             // SalarioHoralabel
@@ -298,7 +298,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.SalarioHoralabel.Location = new System.Drawing.Point(315, 364);
             this.SalarioHoralabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SalarioHoralabel.Name = "SalarioHoralabel";
-            this.SalarioHoralabel.Size = new System.Drawing.Size(118, 24);
+            this.SalarioHoralabel.Size = new System.Drawing.Size(95, 18);
             this.SalarioHoralabel.TabIndex = 29;
             this.SalarioHoralabel.Text = "Salário Hora:";
             // 
@@ -320,11 +320,11 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             // EditarFuncionarioForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1710, 696);
+            this.ClientSize = new System.Drawing.Size(1604, 696);
             this.Controls.Add(this.SalarioHoralabel);
             this.Controls.Add(this.SalarioHoraTextBox);
             this.Controls.Add(this.RemoverFuncionario_Btn);

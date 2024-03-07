@@ -44,26 +44,26 @@
             this.DataFimContrato_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataFimRegistoCriminal_Label = new System.Windows.Forms.Label();
-            this.DataFimRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.addFuncionarioSistema_btn = new FontAwesome.Sharp.IconButton();
             this.DataNascimento_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.salario_textbox = new System.Windows.Forms.TextBox();
-            this.salario_label = new System.Windows.Forms.Label();
-            this.isencaohorario_checkbox = new System.Windows.Forms.CheckBox();
-            this.bonusmensal_checkbox = new System.Windows.Forms.CheckBox();
-            this.carroempresa_checkbox = new System.Windows.Forms.CheckBox();
-            this.secretariaNomeDiretor_textbox = new System.Windows.Forms.TextBox();
-            this.areaensino_textbox = new System.Windows.Forms.TextBox();
-            this.laboral_checkbox = new System.Windows.Forms.CheckBox();
-            this.poslaboral_checkbox = new System.Windows.Forms.CheckBox();
             this.valorhora_textbox = new System.Windows.Forms.TextBox();
             this.username_textbox = new System.Windows.Forms.TextBox();
             this.username_label = new System.Windows.Forms.Label();
             this.password_textbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cursoresponsavel_textbox = new System.Windows.Forms.TextBox();
+            this.carroempresa_checkbox = new System.Windows.Forms.CheckBox();
+            this.areaensino_textbox = new System.Windows.Forms.TextBox();
+            this.poslaboral_checkbox = new System.Windows.Forms.CheckBox();
+            this.laboral_checkbox = new System.Windows.Forms.CheckBox();
+            this.secretariaNomeDiretor_textbox = new System.Windows.Forms.TextBox();
+            this.isencaohorario_checkbox = new System.Windows.Forms.CheckBox();
+            this.bonusmensal_checkbox = new System.Windows.Forms.CheckBox();
+            this.salario_label = new System.Windows.Forms.Label();
+            this.DataFimRegistoCriminal_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ValorHoralabel = new System.Windows.Forms.Label();
+            this.cursoresponsavel_textbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -230,14 +230,6 @@
             this.DataFimRegistoCriminal_Label.TabIndex = 18;
             this.DataFimRegistoCriminal_Label.Text = "Data Fim Registo Criminal:";
             // 
-            // DataFimRegistoCriminal_DateTimePicker
-            // 
-            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1017, 575);
-            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
-            this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
-            this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 29);
-            this.DataFimRegistoCriminal_DateTimePicker.TabIndex = 19;
-            // 
             // addFuncionarioSistema_btn
             // 
             this.addFuncionarioSistema_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -284,92 +276,6 @@
             this.salario_textbox.Name = "salario_textbox";
             this.salario_textbox.Size = new System.Drawing.Size(148, 29);
             this.salario_textbox.TabIndex = 27;
-            // 
-            // salario_label
-            // 
-            this.salario_label.AutoSize = true;
-            this.salario_label.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.salario_label.Location = new System.Drawing.Point(190, 351);
-            this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.salario_label.Name = "salario_label";
-            this.salario_label.Size = new System.Drawing.Size(72, 24);
-            this.salario_label.TabIndex = 26;
-            this.salario_label.Text = "Salário:";
-            // 
-            // isencaohorario_checkbox
-            // 
-            this.isencaohorario_checkbox.AutoSize = true;
-            this.isencaohorario_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.isencaohorario_checkbox.Location = new System.Drawing.Point(541, 248);
-            this.isencaohorario_checkbox.Name = "isencaohorario_checkbox";
-            this.isencaohorario_checkbox.Size = new System.Drawing.Size(189, 28);
-            this.isencaohorario_checkbox.TabIndex = 28;
-            this.isencaohorario_checkbox.Text = "Isenção de horário";
-            this.isencaohorario_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // bonusmensal_checkbox
-            // 
-            this.bonusmensal_checkbox.AutoSize = true;
-            this.bonusmensal_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bonusmensal_checkbox.Location = new System.Drawing.Point(736, 251);
-            this.bonusmensal_checkbox.Name = "bonusmensal_checkbox";
-            this.bonusmensal_checkbox.Size = new System.Drawing.Size(152, 28);
-            this.bonusmensal_checkbox.TabIndex = 29;
-            this.bonusmensal_checkbox.Text = "Bónus Mensal";
-            this.bonusmensal_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // carroempresa_checkbox
-            // 
-            this.carroempresa_checkbox.AutoSize = true;
-            this.carroempresa_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.carroempresa_checkbox.Location = new System.Drawing.Point(931, 253);
-            this.carroempresa_checkbox.Name = "carroempresa_checkbox";
-            this.carroempresa_checkbox.Size = new System.Drawing.Size(183, 28);
-            this.carroempresa_checkbox.TabIndex = 30;
-            this.carroempresa_checkbox.Text = "Carro da empresa";
-            this.carroempresa_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // secretariaNomeDiretor_textbox
-            // 
-            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(541, 248);
-            this.secretariaNomeDiretor_textbox.Name = "secretariaNomeDiretor_textbox";
-            this.secretariaNomeDiretor_textbox.Size = new System.Drawing.Size(308, 29);
-            this.secretariaNomeDiretor_textbox.TabIndex = 31;
-            this.secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento";
-            this.secretariaNomeDiretor_textbox.GotFocus += new System.EventHandler(this.secretariaNomeDiretor_textbox_GotFocus);
-            this.secretariaNomeDiretor_textbox.LostFocus += new System.EventHandler(this.secretariaNomeDiretor_textbox_LostFocus);
-            // 
-            // areaensino_textbox
-            // 
-            this.areaensino_textbox.Location = new System.Drawing.Point(541, 249);
-            this.areaensino_textbox.Name = "areaensino_textbox";
-            this.areaensino_textbox.Size = new System.Drawing.Size(308, 29);
-            this.areaensino_textbox.TabIndex = 35;
-            this.areaensino_textbox.Text = "Introduza a área de ensino do formador";
-            this.areaensino_textbox.GotFocus += new System.EventHandler(this.areaensino_textbox_GotFocus);
-            this.areaensino_textbox.LostFocus += new System.EventHandler(this.areaensino_textbox_LostFocus);
-            // 
-            // laboral_checkbox
-            // 
-            this.laboral_checkbox.AutoSize = true;
-            this.laboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.laboral_checkbox.Location = new System.Drawing.Point(982, 248);
-            this.laboral_checkbox.Name = "laboral_checkbox";
-            this.laboral_checkbox.Size = new System.Drawing.Size(94, 28);
-            this.laboral_checkbox.TabIndex = 33;
-            this.laboral_checkbox.Text = "Laboral";
-            this.laboral_checkbox.UseVisualStyleBackColor = true;
-            // 
-            // poslaboral_checkbox
-            // 
-            this.poslaboral_checkbox.AutoSize = true;
-            this.poslaboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.poslaboral_checkbox.Location = new System.Drawing.Point(1122, 248);
-            this.poslaboral_checkbox.Name = "poslaboral_checkbox";
-            this.poslaboral_checkbox.Size = new System.Drawing.Size(126, 28);
-            this.poslaboral_checkbox.TabIndex = 32;
-            this.poslaboral_checkbox.Text = "Pós-laboral";
-            this.poslaboral_checkbox.UseVisualStyleBackColor = true;
             // 
             // valorhora_textbox
             // 
@@ -421,35 +327,141 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Password";
             // 
-            // cursoresponsavel_textbox
+            // carroempresa_checkbox
             // 
-            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(541, 251);
-            this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
-            this.cursoresponsavel_textbox.Size = new System.Drawing.Size(142, 29);
-            this.cursoresponsavel_textbox.TabIndex = 41;
-            this.cursoresponsavel_textbox.Text = "Curso Responsavél";
+            this.carroempresa_checkbox.AutoSize = true;
+            this.carroempresa_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.carroempresa_checkbox.Location = new System.Drawing.Point(861, 204);
+            this.carroempresa_checkbox.Name = "carroempresa_checkbox";
+            this.carroempresa_checkbox.Size = new System.Drawing.Size(183, 28);
+            this.carroempresa_checkbox.TabIndex = 30;
+            this.carroempresa_checkbox.Text = "Carro da empresa";
+            this.carroempresa_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // areaensino_textbox
+            // 
+            this.areaensino_textbox.Location = new System.Drawing.Point(504, 208);
+            this.areaensino_textbox.Name = "areaensino_textbox";
+            this.areaensino_textbox.Size = new System.Drawing.Size(308, 29);
+            this.areaensino_textbox.TabIndex = 35;
+            this.areaensino_textbox.Text = "Introduza a área de ensino do formador";
+            this.areaensino_textbox.GotFocus += new System.EventHandler(this.areaensino_textbox_GotFocus);
+            this.areaensino_textbox.LostFocus += new System.EventHandler(this.areaensino_textbox_LostFocus);
+            // 
+            // poslaboral_checkbox
+            // 
+            this.poslaboral_checkbox.AutoSize = true;
+            this.poslaboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.poslaboral_checkbox.Location = new System.Drawing.Point(973, 205);
+            this.poslaboral_checkbox.Name = "poslaboral_checkbox";
+            this.poslaboral_checkbox.Size = new System.Drawing.Size(126, 28);
+            this.poslaboral_checkbox.TabIndex = 32;
+            this.poslaboral_checkbox.Text = "Pós-laboral";
+            this.poslaboral_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // laboral_checkbox
+            // 
+            this.laboral_checkbox.AutoSize = true;
+            this.laboral_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.laboral_checkbox.Location = new System.Drawing.Point(861, 205);
+            this.laboral_checkbox.Name = "laboral_checkbox";
+            this.laboral_checkbox.Size = new System.Drawing.Size(94, 28);
+            this.laboral_checkbox.TabIndex = 33;
+            this.laboral_checkbox.Text = "Laboral";
+            this.laboral_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // secretariaNomeDiretor_textbox
+            // 
+            this.secretariaNomeDiretor_textbox.Location = new System.Drawing.Point(504, 207);
+            this.secretariaNomeDiretor_textbox.Name = "secretariaNomeDiretor_textbox";
+            this.secretariaNomeDiretor_textbox.Size = new System.Drawing.Size(308, 29);
+            this.secretariaNomeDiretor_textbox.TabIndex = 31;
+            this.secretariaNomeDiretor_textbox.Text = "Introduza o nome do diretor de departamento";
+            this.secretariaNomeDiretor_textbox.GotFocus += new System.EventHandler(this.secretariaNomeDiretor_textbox_GotFocus);
+            this.secretariaNomeDiretor_textbox.LostFocus += new System.EventHandler(this.secretariaNomeDiretor_textbox_LostFocus);
+            // 
+            // isencaohorario_checkbox
+            // 
+            this.isencaohorario_checkbox.AutoSize = true;
+            this.isencaohorario_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.isencaohorario_checkbox.Location = new System.Drawing.Point(504, 208);
+            this.isencaohorario_checkbox.Name = "isencaohorario_checkbox";
+            this.isencaohorario_checkbox.Size = new System.Drawing.Size(189, 28);
+            this.isencaohorario_checkbox.TabIndex = 28;
+            this.isencaohorario_checkbox.Text = "Isenção de horário";
+            this.isencaohorario_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // bonusmensal_checkbox
+            // 
+            this.bonusmensal_checkbox.AutoSize = true;
+            this.bonusmensal_checkbox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bonusmensal_checkbox.Location = new System.Drawing.Point(699, 204);
+            this.bonusmensal_checkbox.Name = "bonusmensal_checkbox";
+            this.bonusmensal_checkbox.Size = new System.Drawing.Size(152, 28);
+            this.bonusmensal_checkbox.TabIndex = 29;
+            this.bonusmensal_checkbox.Text = "Bónus Mensal";
+            this.bonusmensal_checkbox.UseVisualStyleBackColor = true;
+            // 
+            // salario_label
+            // 
+            this.salario_label.AutoSize = true;
+            this.salario_label.BackColor = System.Drawing.Color.Transparent;
+            this.salario_label.Location = new System.Drawing.Point(150, 300);
+            this.salario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.salario_label.Name = "salario_label";
+            this.salario_label.Size = new System.Drawing.Size(72, 24);
+            this.salario_label.TabIndex = 26;
+            this.salario_label.Text = "Salário:";
+            // 
+            // DataFimRegistoCriminal_DateTimePicker
+            // 
+            this.DataFimRegistoCriminal_DateTimePicker.Location = new System.Drawing.Point(1017, 575);
+            this.DataFimRegistoCriminal_DateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DataFimRegistoCriminal_DateTimePicker.Name = "DataFimRegistoCriminal_DateTimePicker";
+            this.DataFimRegistoCriminal_DateTimePicker.Size = new System.Drawing.Size(298, 29);
+            this.DataFimRegistoCriminal_DateTimePicker.TabIndex = 19;
             // 
             // ValorHoralabel
             // 
             this.ValorHoralabel.AutoSize = true;
             this.ValorHoralabel.BackColor = System.Drawing.Color.Transparent;
             this.ValorHoralabel.ForeColor = System.Drawing.Color.White;
-            this.ValorHoralabel.Location = new System.Drawing.Point(159, 351);
+            this.ValorHoralabel.Location = new System.Drawing.Point(133, 300);
             this.ValorHoralabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ValorHoralabel.Name = "ValorHoralabel";
             this.ValorHoralabel.Size = new System.Drawing.Size(105, 24);
             this.ValorHoralabel.TabIndex = 42;
             this.ValorHoralabel.Text = "Valor Hora:";
             // 
+            // cursoresponsavel_textbox
+            // 
+            this.cursoresponsavel_textbox.Location = new System.Drawing.Point(504, 208);
+            this.cursoresponsavel_textbox.Name = "cursoresponsavel_textbox";
+            this.cursoresponsavel_textbox.Size = new System.Drawing.Size(300, 29);
+            this.cursoresponsavel_textbox.TabIndex = 41;
+            this.cursoresponsavel_textbox.Text = "Curso Responsavél";
+            this.cursoresponsavel_textbox.GotFocus += new System.EventHandler(this.cursoresponsavel_textbox_GotFocus);
+            this.cursoresponsavel_textbox.LostFocus += new System.EventHandler(this.cursoresponsavel_textbox_LostFocus);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cursoresponsavel_textbox);
+            this.panel1.Controls.Add(this.ValorHoralabel);
             this.panel1.Controls.Add(this.DataFimRegistoCriminal_DateTimePicker);
+            this.panel1.Controls.Add(this.salario_label);
+            this.panel1.Controls.Add(this.bonusmensal_checkbox);
+            this.panel1.Controls.Add(this.isencaohorario_checkbox);
+            this.panel1.Controls.Add(this.secretariaNomeDiretor_textbox);
+            this.panel1.Controls.Add(this.laboral_checkbox);
+            this.panel1.Controls.Add(this.poslaboral_checkbox);
+            this.panel1.Controls.Add(this.areaensino_textbox);
+            this.panel1.Controls.Add(this.carroempresa_checkbox);
             this.panel1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.Location = new System.Drawing.Point(36, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1353, 644);
+            this.panel1.Size = new System.Drawing.Size(1353, 646);
             this.panel1.TabIndex = 43;
             // 
             // AdicionarFuncionarioForm
@@ -459,22 +471,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1419, 787);
-            this.Controls.Add(this.ValorHoralabel);
-            this.Controls.Add(this.cursoresponsavel_textbox);
             this.Controls.Add(this.password_textbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.username_textbox);
             this.Controls.Add(this.username_label);
             this.Controls.Add(this.valorhora_textbox);
-            this.Controls.Add(this.areaensino_textbox);
-            this.Controls.Add(this.laboral_checkbox);
-            this.Controls.Add(this.poslaboral_checkbox);
-            this.Controls.Add(this.secretariaNomeDiretor_textbox);
-            this.Controls.Add(this.carroempresa_checkbox);
-            this.Controls.Add(this.bonusmensal_checkbox);
-            this.Controls.Add(this.isencaohorario_checkbox);
             this.Controls.Add(this.salario_textbox);
-            this.Controls.Add(this.salario_label);
             this.Controls.Add(this.DataNascimento_DateTimePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addFuncionarioSistema_btn);
@@ -505,6 +507,7 @@
             this.Text = "Adicionar funcionario";
             this.Load += new System.EventHandler(this.AdicionarFuncionarioForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,26 +529,26 @@
         private System.Windows.Forms.DateTimePicker DataFimContrato_DateTimePicker;
         private System.Windows.Forms.DateTimePicker DataRegistoCriminal_DateTimePicker;
         private System.Windows.Forms.Label DataFimRegistoCriminal_Label;
-        private System.Windows.Forms.DateTimePicker DataFimRegistoCriminal_DateTimePicker;
         private FontAwesome.Sharp.IconButton addFuncionarioSistema_btn;
         private System.Windows.Forms.DateTimePicker DataNascimento_DateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox salario_textbox;
-        private System.Windows.Forms.Label salario_label;
-        private System.Windows.Forms.CheckBox isencaohorario_checkbox;
-        private System.Windows.Forms.CheckBox bonusmensal_checkbox;
-        private System.Windows.Forms.CheckBox carroempresa_checkbox;
-        private System.Windows.Forms.TextBox secretariaNomeDiretor_textbox;
-        private System.Windows.Forms.TextBox areaensino_textbox;
-        private System.Windows.Forms.CheckBox laboral_checkbox;
-        private System.Windows.Forms.CheckBox poslaboral_checkbox;
         private System.Windows.Forms.TextBox valorhora_textbox;
         private System.Windows.Forms.TextBox username_textbox;
         private System.Windows.Forms.Label username_label;
         private System.Windows.Forms.TextBox password_textbox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox cursoresponsavel_textbox;
+        private System.Windows.Forms.CheckBox carroempresa_checkbox;
+        private System.Windows.Forms.TextBox areaensino_textbox;
+        private System.Windows.Forms.CheckBox poslaboral_checkbox;
+        private System.Windows.Forms.CheckBox laboral_checkbox;
+        private System.Windows.Forms.TextBox secretariaNomeDiretor_textbox;
+        private System.Windows.Forms.CheckBox isencaohorario_checkbox;
+        private System.Windows.Forms.CheckBox bonusmensal_checkbox;
+        private System.Windows.Forms.Label salario_label;
+        private System.Windows.Forms.DateTimePicker DataFimRegistoCriminal_DateTimePicker;
         private System.Windows.Forms.Label ValorHoralabel;
+        private System.Windows.Forms.TextBox cursoresponsavel_textbox;
         private System.Windows.Forms.Panel panel1;
     }
 }

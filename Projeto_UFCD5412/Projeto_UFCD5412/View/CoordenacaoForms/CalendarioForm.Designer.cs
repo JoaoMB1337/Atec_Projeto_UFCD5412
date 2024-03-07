@@ -77,10 +77,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.retroceder_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.retroceder_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retroceder_btn.ForeColor = System.Drawing.Color.White;
-            this.retroceder_btn.Location = new System.Drawing.Point(993, 786);
+            this.retroceder_btn.Location = new System.Drawing.Point(956, 786);
             this.retroceder_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.retroceder_btn.Name = "retroceder_btn";
-            this.retroceder_btn.Size = new System.Drawing.Size(160, 62);
+            this.retroceder_btn.Size = new System.Drawing.Size(182, 62);
             this.retroceder_btn.TabIndex = 1;
             this.retroceder_btn.Text = "Retroceder";
             this.retroceder_btn.UseVisualStyleBackColor = false;
@@ -94,10 +94,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.avancar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.avancar_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avancar_btn.ForeColor = System.Drawing.Color.White;
-            this.avancar_btn.Location = new System.Drawing.Point(1159, 786);
+            this.avancar_btn.Location = new System.Drawing.Point(1144, 786);
             this.avancar_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.avancar_btn.Name = "avancar_btn";
-            this.avancar_btn.Size = new System.Drawing.Size(160, 62);
+            this.avancar_btn.Size = new System.Drawing.Size(175, 62);
             this.avancar_btn.TabIndex = 2;
             this.avancar_btn.Text = "Avançar";
             this.avancar_btn.UseVisualStyleBackColor = false;

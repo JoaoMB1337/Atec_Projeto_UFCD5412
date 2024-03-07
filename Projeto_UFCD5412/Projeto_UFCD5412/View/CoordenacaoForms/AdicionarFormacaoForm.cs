@@ -61,7 +61,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void AdicionarFormacao_btn_Click_1(object sender, EventArgs e)
         {
-            DateTime dataInicio = DataInicio_calendar.Value;
+            DateTime dataInicio = dataSelecionada;
             DateTime dataFim = DataFim_calendar.Value;
             string horaInicio = HoraIncio_combo.SelectedItem?.ToString();
             string horaFim = HoraFim_combo.SelectedItem?.ToString();

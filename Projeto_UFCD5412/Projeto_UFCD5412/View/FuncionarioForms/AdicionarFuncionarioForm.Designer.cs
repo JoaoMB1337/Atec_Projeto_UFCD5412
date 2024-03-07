@@ -240,7 +240,7 @@
             // addFuncionarioSistema_btn
             // 
             this.addFuncionarioSistema_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addFuncionarioSistema_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(255)))));
+            this.addFuncionarioSistema_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.addFuncionarioSistema_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addFuncionarioSistema_btn.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addFuncionarioSistema_btn.IconChar = FontAwesome.Sharp.IconChar.None;

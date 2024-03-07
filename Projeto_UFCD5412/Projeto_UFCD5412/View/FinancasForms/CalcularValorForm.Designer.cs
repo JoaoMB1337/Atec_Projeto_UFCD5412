@@ -77,7 +77,7 @@
             this.ValorPagarDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.ValorPagarDataGridView.EnableHeadersVisualStyles = false;
             this.ValorPagarDataGridView.Location = new System.Drawing.Point(4, 50);
-            this.ValorPagarDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ValorPagarDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ValorPagarDataGridView.Name = "ValorPagarDataGridView";
             this.ValorPagarDataGridView.ReadOnly = true;
             this.ValorPagarDataGridView.RowHeadersWidth = 51;
@@ -87,10 +87,10 @@
             // Sair_Btn
             // 
             this.Sair_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.Sair_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.Sair_Btn.ForeColor = System.Drawing.Color.White;
             this.Sair_Btn.Location = new System.Drawing.Point(879, 502);
-            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(4);
             this.Sair_Btn.Name = "Sair_Btn";
             this.Sair_Btn.Size = new System.Drawing.Size(172, 37);
             this.Sair_Btn.TabIndex = 4;
@@ -101,7 +101,7 @@
             // PesquisarFuncinarioPorNome_Textbox
             // 
             this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(72, 12);
-            this.PesquisarFuncinarioPorNome_Textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PesquisarFuncinarioPorNome_Textbox.Margin = new System.Windows.Forms.Padding(4);
             this.PesquisarFuncinarioPorNome_Textbox.Name = "PesquisarFuncinarioPorNome_Textbox";
             this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(248, 22);
             this.PesquisarFuncinarioPorNome_Textbox.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
             this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(413, 11);
-            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
             this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(160, 24);
             this.TipoFuncionario_ComboBox.TabIndex = 6;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.Sair_Btn);
             this.Controls.Add(this.ValorPagarDataGridView);
             this.Controls.Add(this.NomeFunc_label);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CalcularValorForm";
             this.Text = "Finanças";
             ((System.ComponentModel.ISupportInitialize)(this.ValorPagarDataGridView)).EndInit();

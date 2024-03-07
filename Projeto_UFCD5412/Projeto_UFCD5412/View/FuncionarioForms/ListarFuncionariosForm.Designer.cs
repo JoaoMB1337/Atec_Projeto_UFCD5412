@@ -91,7 +91,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // Editarfuncionario_Btn
             // 
             this.Editarfuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Editarfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.Editarfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.Editarfuncionario_Btn.ForeColor = System.Drawing.Color.White;
             this.Editarfuncionario_Btn.Location = new System.Drawing.Point(208, 559);
             this.Editarfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
@@ -105,7 +105,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // Addfuncionario_Btn
             // 
             this.Addfuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Addfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.Addfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.Addfuncionario_Btn.ForeColor = System.Drawing.Color.White;
             this.Addfuncionario_Btn.Location = new System.Drawing.Point(16, 559);
             this.Addfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);

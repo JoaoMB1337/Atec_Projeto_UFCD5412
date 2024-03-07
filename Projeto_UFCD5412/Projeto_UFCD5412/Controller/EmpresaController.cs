@@ -22,7 +22,6 @@ namespace Projeto_UFCD5412.Controller
             contadorId = Funcionarios.Count > 0 ? Funcionarios.Max(f => f.Id) + 1 : 1;
         }
 
-        // Singleton Pattern - Garante que apenas existe uma instancia da classe
         public static EmpresaController Instance
         {
             get

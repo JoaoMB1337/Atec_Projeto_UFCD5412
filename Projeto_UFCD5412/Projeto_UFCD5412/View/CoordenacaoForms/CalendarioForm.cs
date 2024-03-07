@@ -38,9 +38,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             InitializeComponent();
             dataAtual = DateTime.Today;
             CarregarAulasSalvas();
-            AtualizarCalendario();
+
             this.Resize += CalendarioForm_Resize;
             ExibirDiasSalvosNoCalendario();
+            AtualizarCalendario();
+
         }
 
         private void CarregarAulasSalvas()
@@ -58,8 +60,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
                 eventosPorDia[dataInicio].Add(formacao);
             }
-
-            AtualizarCalendario();       
+            AtualizarCalendario();  
         }
 
 
@@ -143,7 +144,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         lbl.BorderStyle = BorderStyle.FixedSingle;
                         lbl.Margin = new Padding(3);
 
-                        // Verifica se há formações para este dia
                         DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
                         if (eventosPorDia.ContainsKey(dataAtual) && eventosPorDia[dataAtual].Count > 0)
                         {
@@ -155,7 +155,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             }
                             lbl.Font = new Font(lbl.Font, FontStyle.Bold);
 
-                            // Ajusta o tamanho da label com base no conteúdo
                             Size size = TextRenderer.MeasureText(lbl.Text, lbl.Font);
                             lbl.Size = new Size(size.Width + 10, size.Height + 10); 
                         }
@@ -195,7 +194,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             DateTime dataSelecionada = new DateTime(ano, mes, dia);
 
-            // Verificar se a data selecionada é anterior ao dia atual
             if (dataSelecionada < DateTime.Today)
             {
                 MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);   
@@ -241,7 +239,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                     }
                                     label.Font = new Font(label.Font, FontStyle.Bold);
 
-                                    // Ajustar o tamanho da label com base no conteúdo
                                     Size size = TextRenderer.MeasureText(label.Text, label.Font);
                                     label.Size = new Size(size.Width + 10, size.Height + 10);
                                 }
@@ -259,17 +256,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void ExibirDiasSalvosNoCalendario()
         {
-            // Limpa o conteúdo das células
             foreach (Control control in tableLayoutPanel1.Controls)
             {
                 if (control is Label label)
                 {
                     label.Text = "";
-                    label.BackColor = Color.White; // ou a cor padrão desejada
+                    label.BackColor = Color.White;
                 }
             }
 
-            // Preenche as células com os eventos
             foreach (var formacaoList in eventosPorDia.Values)
             {
                 foreach (var formacao in formacaoList)
@@ -284,6 +279,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             dataAtual = dataAtual.AddMonths(1);
             AtualizarCalendario();
+
         }
 
         private void retroceder_btn_Click(object sender, EventArgs e)

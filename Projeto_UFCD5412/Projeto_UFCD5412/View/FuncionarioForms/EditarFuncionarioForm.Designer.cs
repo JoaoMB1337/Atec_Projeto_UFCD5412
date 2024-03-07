@@ -268,7 +268,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             // EditFuncionario_Btn
             // 
-            this.EditFuncionario_Btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.EditFuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.EditFuncionario_Btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.EditFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.EditFuncionario_Btn.IconColor = System.Drawing.Color.Black;
             this.EditFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -303,7 +304,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             // RemoverFuncionario_Btn
             // 
-            this.RemoverFuncionario_Btn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RemoverFuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.RemoverFuncionario_Btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RemoverFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.None;
             this.RemoverFuncionario_Btn.IconColor = System.Drawing.Color.Black;
             this.RemoverFuncionario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;

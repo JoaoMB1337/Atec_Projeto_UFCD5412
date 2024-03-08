@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projeto_UFCD5412.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         public CoordenacaoMainForm()
         {
             InitializeComponent();
+            MostrarNomeUtilizador();
         }
 
 
@@ -28,12 +30,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             calendarioForm.FormBorderStyle = FormBorderStyle.None;
             flowLayoutPanel1.Controls.Add(calendarioForm);
             calendarioForm.Show();
-
-
-
         }
 
-       
+        private void MostrarNomeUtilizador()
+        {
+            //mostrar o nome do utilizador
+            NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
+        }
+
 
         private void Sair_btn_Click_1(object sender, EventArgs e)
         {

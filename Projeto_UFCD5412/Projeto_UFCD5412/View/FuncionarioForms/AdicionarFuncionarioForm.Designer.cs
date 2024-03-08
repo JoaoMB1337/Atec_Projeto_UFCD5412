@@ -440,8 +440,8 @@
             this.cursoresponsavel_textbox.Size = new System.Drawing.Size(300, 29);
             this.cursoresponsavel_textbox.TabIndex = 41;
             this.cursoresponsavel_textbox.Text = "Curso Responsavél";
-            //this.cursoresponsavel_textbox.GotFocus += new System.EventHandler(this.cursoresponsavel_textbox_GotFocus);
-            //this.cursoresponsavel_textbox.LostFocus += new System.EventHandler(this.cursoresponsavel_textbox_LostFocus);
+            this.cursoresponsavel_textbox.GotFocus += new System.EventHandler(this.cursoresponsavel_textbox_GotFocus);
+            this.cursoresponsavel_textbox.LostFocus += new System.EventHandler(this.cursoresponsavel_textbox_LostFocus);
             // 
             // panel1
             // 

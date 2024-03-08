@@ -30,6 +30,7 @@
         {
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.NomeFuncionario_Label = new System.Windows.Forms.Label();
             this.timer_label = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.Sair_btn = new System.Windows.Forms.Button();
@@ -55,7 +56,8 @@
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.panelTitleBar.Controls.Add(this.NomeFuncionario_Label);
             this.panelTitleBar.Controls.Add(this.timer_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
@@ -63,6 +65,18 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(842, 174);
             this.panelTitleBar.TabIndex = 6;
+            // 
+            // NomeFuncionario_Label
+            // 
+            this.NomeFuncionario_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NomeFuncionario_Label.AutoSize = true;
+            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFuncionario_Label.ForeColor = System.Drawing.Color.White;
+            this.NomeFuncionario_Label.Location = new System.Drawing.Point(507, 116);
+            this.NomeFuncionario_Label.Name = "NomeFuncionario_Label";
+            this.NomeFuncionario_Label.Size = new System.Drawing.Size(158, 38);
+            this.NomeFuncionario_Label.TabIndex = 2;
+            this.NomeFuncionario_Label.Text = "Bem vindo";
             // 
             // timer_label
             // 
@@ -93,7 +107,7 @@
             // Sair_btn
             // 
             this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.Sair_btn.FlatAppearance.BorderSize = 0;
             this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sair_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,7 +147,7 @@
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(167)))), ((int)(((byte)(240)))));
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.panelLogo.Controls.Add(this.Home_Btn);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
@@ -198,5 +212,6 @@
         private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button Sair_btn;
+        private System.Windows.Forms.Label NomeFuncionario_Label;
     }
 }

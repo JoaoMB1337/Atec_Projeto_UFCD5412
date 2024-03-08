@@ -50,6 +50,9 @@ namespace Projeto_UFCD5412
 
             timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             LoadDashboardForm();
+
+            //Mostrar o nome do utilizador
+            MostrarNomeUtilizador();
         
         }
 
@@ -156,6 +159,7 @@ namespace Projeto_UFCD5412
             dashboardForm.Show();
         }
 
+
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
@@ -215,6 +219,19 @@ namespace Projeto_UFCD5412
         private void Exit_Btn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MostrarNomeUtilizador()
+        {
+            //mostrar o nome do utilizador
+            if(LoginController.funcionarioLogado != null)
+            { 
+                NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
+            }
+            else
+            {
+                NomeFuncionario_Label.Text = "Bem-vindo, Administrador";
+            }
         }
     }
 }

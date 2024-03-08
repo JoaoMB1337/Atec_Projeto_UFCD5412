@@ -9,7 +9,9 @@ namespace Projeto_UFCD5412.Controller
     internal class LoginController
     {
         private List<Funcionario> funcionarios = new List<Funcionario>();
-        private Funcionario funcionarioLogado; 
+        public static Funcionario funcionarioLogado;
+
+     
 
         public LoginController()
         {
@@ -54,6 +56,14 @@ namespace Projeto_UFCD5412.Controller
                 return true;
             }
             return false; 
+        }
+
+        public void RetornarNomeUtilizador()
+        {
+            if (funcionarioLogado != null)
+            {
+                funcionarioLogado.Nome = funcionarioLogado.Nome;
+            }
         }
     }
 }

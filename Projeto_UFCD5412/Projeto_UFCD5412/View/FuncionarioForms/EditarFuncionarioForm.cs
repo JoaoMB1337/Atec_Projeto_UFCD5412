@@ -20,7 +20,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         public EditarFuncionarioForm()
         {
             InitializeComponent();
-            
         }
 
         internal void SetParameter(int funcionarioId)
@@ -59,8 +58,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
            
         }
 
-
-
         private void LoadTipoFuncionarioComboBox()
         {
             TipoFuncionario_ComboBox.Items.Add("Funcionario");
@@ -79,6 +76,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         private void EditFuncionario_Btn_Click(object sender, EventArgs e)
         {
             UpdateInfoFuncionario();
+            
         }
 
 
@@ -159,7 +157,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
             empresaController.UpdateFuncionario(funcionario);
             MessageBox.Show("Funcionário atualizado com sucesso");
-            this.Close();
+            
         }
 
 
@@ -181,7 +179,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 {
                     empresaController.RemoverFuncionario(funcionario);
                     MessageBox.Show("Funcionário removido com sucesso");
-                    this.Close();
+                    
                 }
             }
         }

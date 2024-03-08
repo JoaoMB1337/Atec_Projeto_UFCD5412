@@ -23,7 +23,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         public ListarFuncionariosForm()
         {
             InitializeComponent();
-
+            panelEditar.Visible = false;
         }
 
         internal void SetParameter( string parametro)
@@ -31,16 +31,15 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             if (parametro == "editar")
             {
                 ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
+           
             }
+            
         }
 
         private void ListarFuncionariosForm_Load(object sender, EventArgs e)
         {
             LoadComboBox();
             ListarFuncionarioDataGrid();
-            
-
-
         }
 
         private void LoadComboBox()
@@ -79,7 +78,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         }
 
 
-        private void ListarFuncionarioDataGrid()
+        public void ListarFuncionarioDataGrid()
         {
             List<Funcionario> funcionarios = empresaController.ListarFuncionarios();
             ListaFuncionarios_DataGrid.Columns.Clear();
@@ -144,40 +143,43 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         { 
             int rowIndex = e.RowIndex;
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
-            EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm(); 
+            panelEditar.Visible = true;
+            EditarFuncionarioForm editarFuncionarioForm = new EditarFuncionarioForm();
             editarFuncionarioForm.SetParameter(funcionarioId);
-            editarFuncionarioForm.ShowDialog();
-            editarFuncionarioForm.FormClosed += EditarFuncionarioForm_FormClosed;
-        }
-
-        private void EditarFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ListarFuncionarioDataGrid();
-        }
-
-        private void AddFuncionarioForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ListarFuncionarioDataGrid();
+            editarFuncionarioForm.TopLevel = false;
+            editarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            editarFuncionarioForm.Dock = DockStyle.Fill;
+            panelEditar.Controls.Add(editarFuncionarioForm);
+            editarFuncionarioForm.BringToFront();
+            editarFuncionarioForm.Show();
+            
         }
 
         private void Addfuncionario_Btn_Click(object sender, EventArgs e)
         {
+            panelEditar.Visible = true;
+
+            //abrir o form de adicionar funcionario dentro da panelAddFuncionario
             AdicionarFuncionarioForm adicionarFuncionarioForm = new AdicionarFuncionarioForm();
-            adicionarFuncionarioForm.ShowDialog();
-            adicionarFuncionarioForm.FormClosed += AddFuncionarioForm_FormClosed;
-            
+            adicionarFuncionarioForm.TopLevel = false;
+            adicionarFuncionarioForm.FormBorderStyle = FormBorderStyle.None;
+            adicionarFuncionarioForm.Dock = DockStyle.Fill;
+            panelEditar.Controls.Add(adicionarFuncionarioForm);
+            adicionarFuncionarioForm.BringToFront();
+            adicionarFuncionarioForm.Show();
 
         }
 
         private void Editarfuncionario_Btn_Click(object sender, EventArgs e)
         {
            SetParameter("editar");
-
+                
         }
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
+            panelEditar.Visible = false;
         }
     }
 }

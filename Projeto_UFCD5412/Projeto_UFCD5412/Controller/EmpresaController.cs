@@ -145,9 +145,12 @@ namespace Projeto_UFCD5412.Controller
         #region Regiao de Adicionar, Atualizar e Remover Funcionarios
         public void AdicionarFuncionario(Funcionario funcionario)
         {
-            funcionario.Id = Funcionarios.Count + 1;
-            Funcionarios.Add(funcionario);
-            CSVHandler.AddFuncionario(funcionario);
+            lock (lockObject)
+            {
+                funcionario.Id = contadorId++;
+                Funcionarios.Add(funcionario);
+                CSVHandler.AddFuncionario(funcionario);
+            }
         }
 
         public void UpdateFuncionario(Funcionario updateFuncionario)

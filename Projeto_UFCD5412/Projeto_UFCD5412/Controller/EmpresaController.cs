@@ -254,6 +254,49 @@ namespace Projeto_UFCD5412.Controller
             return funcionario != null;
         }
 
+
+        public bool VerificarNumerosTelefone(string contacto)
+        {
+            return contacto.Length == 9 && contacto.All(char.IsDigit);
+        }
+
+        public bool VerificarSeDataNascimentoValida(DateTime dataNascimento)
+        {
+            return dataNascimento < DateTime.Now;
+        }
+
+        public bool VerificarSeDataContratoValida(DateTime dataContrato)
+        {
+            return dataContrato < DateTime.Now;
+        }
+
+        public bool VerificarSeDataFimContratoValida(DateTime dataFimContrato, DateTime dataContrato)
+        {
+            return dataFimContrato > dataContrato;
+        }
+        public bool VerificarSeSalarioValido(decimal salario)
+        {
+            return salario > 0;
+        }
+
+        public bool VerificarSeValorHoraValido(decimal valorHora)
+        {
+            return valorHora > 0;
+        }
+
+        public bool VerificarAreaEnsino(string areaEnsino)
+        {
+            return areaEnsino != "";
+        }
+
+
+        public bool VeririficarLetras(string texto)
+        {
+            return texto.All(char.IsLetter);
+        }
+
+        
+
         #endregion
 
     }

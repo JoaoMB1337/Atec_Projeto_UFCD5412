@@ -1,29 +1,22 @@
 ﻿using Projeto_UFCD5412.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using System.Windows.Forms;
-using System.Windows.Markup;
-using System.Text.RegularExpressions;
 using Projeto_UFCD5412.Data;
 using Projeto_UFCD5412.Controller;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class CalendarioForm : Form
     {
         private DateTime dataAtual;
-        private Dictionary<DateTime, List<Formacao>> eventosPorDia = new Dictionary<DateTime, List<Formacao>>();
-        private CoordenadorController coordenadorController = CoordenadorController.Instance;
+        private readonly Dictionary<DateTime, List<Formacao>> eventosPorDia = new Dictionary<DateTime, List<Formacao>>();
+        private readonly CoordenadorController coordenadorController = CoordenadorController.Instance;
 
         public enum DiaDaSemana
-        {             
+        {
             Domingo,
             Segunda,
             Terca,
@@ -42,17 +35,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.Resize += CalendarioForm_Resize;
             ExibirDiasSalvosNoCalendario();
             AtualizarCalendario();
-
         }
 
         private void CarregarAulasSalvas()
         {
             List<Formacao> listaFormacoes = CSVFormacao.LoadFromCSV();
-            MessageBox.Show($"Loaded {listaFormacoes.Count} formations from CSV.");
 
             foreach (Formacao formacao in listaFormacoes)
             {
-                DateTime dataInicio = formacao.DataInicio.Date; 
+                DateTime dataInicio = formacao.DataInicio.Date;
                 if (!eventosPorDia.ContainsKey(dataInicio))
                 {
                     eventosPorDia[dataInicio] = new List<Formacao>();
@@ -60,9 +51,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
                 eventosPorDia[dataInicio].Add(formacao);
             }
-            AtualizarCalendario();  
+            AtualizarCalendario();
         }
-
 
         private void CalendarioForm_Resize(object sender, EventArgs e)
         {
@@ -107,22 +97,26 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
             int diaAtualDoMes = DateTime.Today.Day;
 
-            Label lblMes = new Label();
-            lblMes.Text = data.ToString("MMMM yyyy");
-            lblMes.TextAlign = ContentAlignment.MiddleCenter;
-            lblMes.Font = new Font(lblMes.Font, FontStyle.Bold);
-            lblMes.ForeColor = Color.White;
+            Label lblMes = new Label
+            {
+                Text = data.ToString("MMMM yyyy"),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font(Font, FontStyle.Bold),
+                ForeColor = Color.White
+            };
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
 
             string[] diasDaSemana = Enum.GetNames(typeof(DiaDaSemana));
             for (int i = 0; i < numColunas; i++)
             {
-                Label lblDiaSemana = new Label();
-                lblDiaSemana.Text = diasDaSemana[i];
-                lblDiaSemana.TextAlign = ContentAlignment.MiddleCenter;
-                lblDiaSemana.Font = new Font(lblDiaSemana.Font, FontStyle.Bold);
-                lblDiaSemana.ForeColor = Color.Orange;
+                Label lblDiaSemana = new Label
+                {
+                    Text = diasDaSemana[i],
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font(Font, FontStyle.Bold),
+                    ForeColor = Color.Orange
+                };
                 tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
             }
 
@@ -137,12 +131,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
                     if (preencher && diaAtual <= diasNoMes)
                     {
-                        Label lbl = new Label();
-                        lbl.Text = diaAtual.ToString();
-                        lbl.TextAlign = ContentAlignment.MiddleCenter;
-                        lbl.Font = new Font(lbl.Font, FontStyle.Bold);
-                        lbl.BorderStyle = BorderStyle.FixedSingle;
-                        lbl.Margin = new Padding(3);
+                        Label lbl = new Label
+                        {
+                            Text = diaAtual.ToString(),
+                            TextAlign = ContentAlignment.MiddleCenter,
+                            Font = new Font(Font, FontStyle.Bold),
+                            BorderStyle = BorderStyle.FixedSingle,
+                            Margin = new Padding(3)
+                        };
 
                         DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
                         if (eventosPorDia.ContainsKey(dataAtual) && eventosPorDia[dataAtual].Count > 0)
@@ -156,7 +152,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             lbl.Font = new Font(lbl.Font, FontStyle.Bold);
 
                             Size size = TextRenderer.MeasureText(lbl.Text, lbl.Font);
-                            lbl.Size = new Size(size.Width + 10, size.Height + 10); 
+                            lbl.Size = new Size(size.Width + 10, size.Height + 10);
                         }
                         else
                         {
@@ -189,14 +185,13 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-
         private void AdicionarEvento(int ano, int mes, int dia)
         {
             DateTime dataSelecionada = new DateTime(ano, mes, dia);
 
             if (dataSelecionada < DateTime.Today)
             {
-                MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);   
+                MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -235,7 +230,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                     label.Text += "\n";
                                     foreach (var formacao in eventosPorDia[data])
                                     {
-                                       label.Text += $"{formacao.Formador} - {formacao.Turma}\n"; 
+                                        label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
                                     }
                                     label.Font = new Font(label.Font, FontStyle.Bold);
 
@@ -249,7 +244,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
                         }
                     }
-                    
+
                 }
             }
         }
@@ -274,12 +269,10 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-
         private void avancar_btn_Click(object sender, EventArgs e)
         {
             dataAtual = dataAtual.AddMonths(1);
             AtualizarCalendario();
-
         }
 
         private void retroceder_btn_Click(object sender, EventArgs e)
@@ -287,6 +280,5 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             dataAtual = dataAtual.AddMonths(-1);
             AtualizarCalendario();
         }
-
     }
 }

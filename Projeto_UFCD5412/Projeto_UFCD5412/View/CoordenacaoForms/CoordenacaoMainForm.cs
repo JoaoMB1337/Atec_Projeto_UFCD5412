@@ -35,7 +35,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void MostrarNomeUtilizador()
         {
             //mostrar o nome do utilizador
-            NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
+            if(LoginController.funcionarioLogado != null)
+            {
+                NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
+            }
+            else
+            {
+                NomeFuncionario_Label.Text = "Bem-vindo, ";
+
+            }
         }
 
 

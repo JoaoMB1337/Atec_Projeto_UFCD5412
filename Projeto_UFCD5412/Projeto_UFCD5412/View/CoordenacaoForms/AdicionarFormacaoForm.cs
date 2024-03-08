@@ -2,12 +2,6 @@
 using Projeto_UFCD5412.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projeto_UFCD5412.Controller;
 
@@ -15,21 +9,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 {
     public partial class AdicionarFormacaoForm : Form
     {
-        private CoordenadorController coordenadorController = CoordenadorController.Instance;
+        private readonly CoordenadorController coordenadorController = CoordenadorController.Instance;
+        private DateTime dataSelecionada;
 
-        public AdicionarFormacaoForm()
-        {
-            InitializeComponent();
-         
-        }
-
-        private void DataSistema_DateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Data alterada com sucesso");
-        }
+        // Adicione a declaração da propriedade FormacaoAdicionada
         public Formacao FormacaoAdicionada { get; private set; }
-
-        private  DateTime dataSelecionada;
 
         public AdicionarFormacaoForm(DateTime dataSelecionada)
         {
@@ -37,12 +21,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             CarregarFormadores();
             CarregarTurmas();
             this.dataSelecionada = dataSelecionada;
+            DataInicio_calendar.Value = dataSelecionada;
+            DataFim_calendar.Value = dataSelecionada;
         }
 
         private void CarregarFormadores()
         {
             FormadorNomes_combo.Items.Clear();
             List<Funcionario> funcionarios = CSVHandler.LoadFromCSV();
+
             foreach (var funcionario in funcionarios)
             {
                 if (funcionario is Formador formador)
@@ -85,6 +72,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void DataSistema_DateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Data alterada com sucesso");
         }
     }
 }

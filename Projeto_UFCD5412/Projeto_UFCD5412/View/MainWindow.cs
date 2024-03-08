@@ -53,6 +53,7 @@ namespace Projeto_UFCD5412
 
             //Mostrar o nome do utilizador
             MostrarNomeUtilizador();
+
         
         }
 
@@ -233,5 +234,8 @@ namespace Projeto_UFCD5412
                 NomeFuncionario_Label.Text = "Bem-vindo, Administrador";
             }
         }
+
+      
+
     }
 }

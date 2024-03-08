@@ -23,7 +23,22 @@ namespace Projeto_UFCD5412.View.DashboardForms
             InitializeComponent();
             LoadData();
             LoadComboBox();
+
+
+            
         }
+       
+        //carrega  a dashboard na inicialização no tabcontrol em ecra inteiro
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+            DashboardForm dashboard = new DashboardForm();
+            dashboard.TopLevel = false;
+            dashboard.FormBorderStyle = FormBorderStyle.None;
+            dashboard.Dock = DockStyle.Fill;
+            dashboard.BringToFront();
+            dashboard.Show();
+        }
+
 
         private void LoadComboBox()
         {
@@ -99,6 +114,9 @@ namespace Projeto_UFCD5412.View.DashboardForms
             totalSalario_lbl.Text = totalSalarios.ToString();
 
         }
+
+        
+
     }
 }
 

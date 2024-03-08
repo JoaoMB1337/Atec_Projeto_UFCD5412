@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoordenacaoMainForm));
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.NomeFuncionario_Label = new System.Windows.Forms.Label();
             this.timer_label = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Sair_btn = new System.Windows.Forms.Button();
+            this.Exit_Btn = new FontAwesome.Sharp.IconPictureBox();
             this.DashboardCalendario_Btn = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.Home_Btn = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTitleBar.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.SuspendLayout();
@@ -68,12 +70,12 @@
             // 
             this.NomeFuncionario_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NomeFuncionario_Label.AutoSize = true;
-            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Roboto", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeFuncionario_Label.ForeColor = System.Drawing.Color.White;
-            this.NomeFuncionario_Label.Location = new System.Drawing.Point(379, 94);
+            this.NomeFuncionario_Label.Location = new System.Drawing.Point(335, 97);
             this.NomeFuncionario_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NomeFuncionario_Label.Name = "NomeFuncionario_Label";
-            this.NomeFuncionario_Label.Size = new System.Drawing.Size(123, 30);
+            this.NomeFuncionario_Label.Size = new System.Drawing.Size(129, 28);
             this.NomeFuncionario_Label.TabIndex = 2;
             this.NomeFuncionario_Label.Text = "Bem vindo";
             // 
@@ -93,7 +95,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMenu.Controls.Add(this.Sair_btn);
+            this.panelMenu.Controls.Add(this.Exit_Btn);
             this.panelMenu.Controls.Add(this.DashboardCalendario_Btn);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -103,29 +105,30 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 474);
             this.panelMenu.TabIndex = 5;
             // 
-            // Sair_btn
+            // Exit_Btn
             // 
-            this.Sair_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Sair_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
-            this.Sair_btn.FlatAppearance.BorderSize = 0;
-            this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Sair_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sair_btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Sair_btn.Location = new System.Drawing.Point(9, 429);
-            this.Sair_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Sair_btn.Name = "Sair_btn";
-            this.Sair_btn.Size = new System.Drawing.Size(193, 32);
-            this.Sair_btn.TabIndex = 9;
-            this.Sair_btn.Text = "Sair";
-            this.Sair_btn.UseVisualStyleBackColor = false;
-            this.Sair_btn.Click += new System.EventHandler(this.Sair_btn_Click_1);
+            this.Exit_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Exit_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.Exit_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Exit_Btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.Exit_Btn.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.Exit_Btn.IconColor = System.Drawing.SystemColors.Window;
+            this.Exit_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Exit_Btn.IconSize = 61;
+            this.Exit_Btn.Location = new System.Drawing.Point(2, 401);
+            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Exit_Btn.Name = "Exit_Btn";
+            this.Exit_Btn.Size = new System.Drawing.Size(207, 61);
+            this.Exit_Btn.TabIndex = 10;
+            this.Exit_Btn.TabStop = false;
+            this.Exit_Btn.Text = "Sair";
             // 
             // DashboardCalendario_Btn
             // 
             this.DashboardCalendario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardCalendario_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardCalendario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DashboardCalendario_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardCalendario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.DashboardCalendario_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
             this.DashboardCalendario_Btn.IconColor = System.Drawing.Color.Gainsboro;
@@ -133,7 +136,7 @@
             this.DashboardCalendario_Btn.IconSize = 32;
             this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 140);
-            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
             this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardCalendario_Btn.Size = new System.Drawing.Size(218, 49);
@@ -171,7 +174,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 140);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 333);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -185,13 +188,15 @@
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CoordenacaoMainForm";
             this.Text = "Coordenação";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).EndInit();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.ResumeLayout(false);
@@ -208,7 +213,7 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Sair_btn;
         private System.Windows.Forms.Label NomeFuncionario_Label;
+        private FontAwesome.Sharp.IconPictureBox Exit_Btn;
     }
 }

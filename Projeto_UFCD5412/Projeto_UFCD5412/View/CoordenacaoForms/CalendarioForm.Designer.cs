@@ -33,6 +33,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarioForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.retroceder_btn = new System.Windows.Forms.Button();
             this.avancar_btn = new System.Windows.Forms.Button();
@@ -127,6 +128,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             this.Controls.Add(this.avancar_btn);
             this.Controls.Add(this.retroceder_btn);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CalendarioForm";
             this.Text = "Calendário";

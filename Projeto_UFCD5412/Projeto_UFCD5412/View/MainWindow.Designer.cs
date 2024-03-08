@@ -85,7 +85,7 @@
             this.Exit_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Exit_Btn.IconSize = 61;
             this.Exit_Btn.Location = new System.Drawing.Point(9, 518);
-            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Exit_Btn.Name = "Exit_Btn";
             this.Exit_Btn.Size = new System.Drawing.Size(207, 61);
             this.Exit_Btn.TabIndex = 9;
@@ -98,7 +98,7 @@
             this.Defincoes_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Defincoes_Btn.FlatAppearance.BorderSize = 0;
             this.Defincoes_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Defincoes_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Defincoes_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Defincoes_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.Defincoes_Btn.IconChar = FontAwesome.Sharp.IconChar.Gear;
             this.Defincoes_Btn.IconColor = System.Drawing.Color.Gainsboro;
@@ -106,7 +106,7 @@
             this.Defincoes_Btn.IconSize = 32;
             this.Defincoes_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Defincoes_Btn.Location = new System.Drawing.Point(0, 290);
-            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Defincoes_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Defincoes_Btn.Name = "Defincoes_Btn";
             this.Defincoes_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.Defincoes_Btn.Size = new System.Drawing.Size(220, 50);
@@ -122,7 +122,7 @@
             this.DashboardFinancas_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardFinancas_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardFinancas_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardFinancas_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardFinancas_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardFinancas_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.DashboardFinancas_Btn.IconChar = FontAwesome.Sharp.IconChar.MoneyBill;
             this.DashboardFinancas_Btn.IconColor = System.Drawing.Color.Gainsboro;
@@ -130,7 +130,7 @@
             this.DashboardFinancas_Btn.IconSize = 32;
             this.DashboardFinancas_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFinancas_Btn.Location = new System.Drawing.Point(0, 240);
-            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFinancas_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFinancas_Btn.Name = "DashboardFinancas_Btn";
             this.DashboardFinancas_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFinancas_Btn.Size = new System.Drawing.Size(220, 50);
@@ -146,7 +146,7 @@
             this.DashboardFuncionario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardFuncionario_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardFuncionario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardFuncionario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardFuncionario_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardFuncionario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.DashboardFuncionario_Btn.IconChar = FontAwesome.Sharp.IconChar.Book;
             this.DashboardFuncionario_Btn.IconColor = System.Drawing.Color.Gainsboro;
@@ -154,7 +154,7 @@
             this.DashboardFuncionario_Btn.IconSize = 32;
             this.DashboardFuncionario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardFuncionario_Btn.Location = new System.Drawing.Point(0, 190);
-            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardFuncionario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardFuncionario_Btn.Name = "DashboardFuncionario_Btn";
             this.DashboardFuncionario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardFuncionario_Btn.Size = new System.Drawing.Size(220, 50);
@@ -170,7 +170,7 @@
             this.Dashboard_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.Dashboard_Btn.FlatAppearance.BorderSize = 0;
             this.Dashboard_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Dashboard_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dashboard_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dashboard_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.Dashboard_Btn.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             this.Dashboard_Btn.IconColor = System.Drawing.Color.Gainsboro;
@@ -200,7 +200,6 @@
             // 
             // Home_Btn
             // 
-            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
             this.Home_Btn.Location = new System.Drawing.Point(52, 12);
             this.Home_Btn.Name = "Home_Btn";
             this.Home_Btn.Size = new System.Drawing.Size(113, 112);
@@ -224,12 +223,12 @@
             // 
             this.NomeFuncionario_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NomeFuncionario_Label.AutoSize = true;
-            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Roboto", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeFuncionario_Label.ForeColor = System.Drawing.Color.White;
             this.NomeFuncionario_Label.Location = new System.Drawing.Point(390, 49);
             this.NomeFuncionario_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NomeFuncionario_Label.Name = "NomeFuncionario_Label";
-            this.NomeFuncionario_Label.Size = new System.Drawing.Size(123, 30);
+            this.NomeFuncionario_Label.Size = new System.Drawing.Size(129, 28);
             this.NomeFuncionario_Label.TabIndex = 1;
             this.NomeFuncionario_Label.Text = "Bem vindo";
             // 
@@ -264,7 +263,7 @@
             this.Menus_TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Menus_TabControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.Menus_TabControl.Location = new System.Drawing.Point(220, 140);
-            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Menus_TabControl.Margin = new System.Windows.Forms.Padding(2);
             this.Menus_TabControl.Name = "Menus_TabControl";
             this.Menus_TabControl.SelectedIndex = 0;
             this.Menus_TabControl.Size = new System.Drawing.Size(738, 449);
@@ -276,9 +275,9 @@
             this.tabDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.tabDashboard.Controls.Add(this.BemVindo_Label);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Name = "tabDashboard";
-            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboard.Padding = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Size = new System.Drawing.Size(730, 423);
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
@@ -287,11 +286,11 @@
             // 
             this.BemVindo_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BemVindo_Label.AutoSize = true;
-            this.BemVindo_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BemVindo_Label.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BemVindo_Label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BemVindo_Label.Location = new System.Drawing.Point(79, 174);
             this.BemVindo_Label.Name = "BemVindo_Label";
-            this.BemVindo_Label.Size = new System.Drawing.Size(583, 42);
+            this.BemVindo_Label.Size = new System.Drawing.Size(578, 44);
             this.BemVindo_Label.TabIndex = 0;
             this.BemVindo_Label.Text = "Bem Vindo/a à Nossa Academia";
             // 
@@ -299,9 +298,9 @@
             // 
             this.tabDashboardFuncionario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabDashboardFuncionario.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFuncionario.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFuncionario.Name = "tabDashboardFuncionario";
-            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFuncionario.Padding = new System.Windows.Forms.Padding(2);
             this.tabDashboardFuncionario.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFuncionario.TabIndex = 1;
             this.tabDashboardFuncionario.Text = "tabPage2";
@@ -310,7 +309,7 @@
             // tabDashboardFormadoes
             // 
             this.tabDashboardFormadoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFormadoes.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFormadoes.Name = "tabDashboardFormadoes";
             this.tabDashboardFormadoes.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFormadoes.TabIndex = 2;
@@ -320,7 +319,7 @@
             // tabDashboardFinancas
             // 
             this.tabDashboardFinancas.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardFinancas.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardFinancas.Name = "tabDashboardFinancas";
             this.tabDashboardFinancas.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardFinancas.TabIndex = 3;
@@ -330,7 +329,7 @@
             // tabDashboardDefinicoes
             // 
             this.tabDashboardDefinicoes.Location = new System.Drawing.Point(4, 22);
-            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabDashboardDefinicoes.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboardDefinicoes.Name = "tabDashboardDefinicoes";
             this.tabDashboardDefinicoes.Size = new System.Drawing.Size(730, 423);
             this.tabDashboardDefinicoes.TabIndex = 4;

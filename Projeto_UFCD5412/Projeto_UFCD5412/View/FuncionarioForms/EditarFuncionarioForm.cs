@@ -94,6 +94,30 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 return;
             }
 
+            if (empresaController.VerificarNumerosTelefone(contacto_textbox.Text) == false)
+            {
+                MessageBox.Show("Por favor, insira um número de telefone válido.");
+                return;
+            }
+
+            if (empresaController.VerificarSeDataNascimentoValida(DataNascimento_DateTimePicker.Value) == false)
+            {
+                MessageBox.Show("Por favor, insira uma data de nascimento válida.");
+                return;
+            }
+
+            if (empresaController.VerificarSeDataContratoValida(DataContrato_DateTimePicker.Value) == false)
+            {
+                MessageBox.Show("Por favor, insira uma data de contrato válida.");
+                return;
+            }
+
+            if (empresaController.VerificarSeDataFimContratoValida(DataFimContrato_DateTimePicker.Value, DataContrato_DateTimePicker.Value) == false)
+            {
+                MessageBox.Show("Por favor, insira uma data de fim de contrato válida.");
+                return;
+            }
+
             funcionario.Nome = nome_textbox.Text;
             funcionario.Morada = morada_textbox.Text;
             funcionario.Contacto = contacto_textbox.Text;

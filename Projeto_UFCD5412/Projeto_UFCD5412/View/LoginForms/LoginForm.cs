@@ -93,13 +93,14 @@ namespace Projeto_UFCD5412.View.LoginForms
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.ShowDialog();
+
+
                 }
                 else
                 {
                     MessageBox.Show("Username ou Password incorretos!");
                 }
             }
-
         }
 
         private void Sair_btn_Click(object sender, EventArgs e)

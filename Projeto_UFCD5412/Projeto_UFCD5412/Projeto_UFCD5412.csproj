@@ -255,5 +255,8 @@
   <ItemGroup>
     <None Include="Resources\sairIcon-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

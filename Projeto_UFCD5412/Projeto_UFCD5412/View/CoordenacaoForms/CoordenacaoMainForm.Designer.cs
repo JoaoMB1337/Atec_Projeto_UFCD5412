@@ -122,6 +122,7 @@
             this.Exit_Btn.TabIndex = 10;
             this.Exit_Btn.TabStop = false;
             this.Exit_Btn.Text = "Sair";
+            this.Exit_Btn.Click += new System.EventHandler(this.Exit_Btn_Click);
             // 
             // DashboardCalendario_Btn
             // 

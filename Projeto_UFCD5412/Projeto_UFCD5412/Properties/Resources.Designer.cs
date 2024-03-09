@@ -163,6 +163,16 @@ namespace Projeto_UFCD5412.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap new_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("new-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NewLogo {
             get {
                 object obj = ResourceManager.GetObject("NewLogo", resourceCulture);

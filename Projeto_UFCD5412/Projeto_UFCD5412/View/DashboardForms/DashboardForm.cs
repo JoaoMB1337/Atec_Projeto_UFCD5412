@@ -92,6 +92,17 @@ namespace Projeto_UFCD5412.View.DashboardForms
             int RegistosCriminaisInativos = empresaController.CountRegistosCriminaisExpirados(dataAtual);
             ContadorRegistosCriminaisInativos_label.Text = $"Registos Criminais Inativos: {RegistosCriminaisInativos}";
 
+   
+            Funcionario funcionarioMaisRecente = empresaController.FuncionarioMaisRecente();
+            if (funcionarioMaisRecente != null)
+            {
+                FuncionarioRecente_label.Text = $"{funcionarioMaisRecente.Nome} {funcionarioMaisRecente.DataContrato.Day}/{funcionarioMaisRecente.DataContrato.Month}/{funcionarioMaisRecente.DataContrato.Year}";
+            }
+            else
+            {
+                FuncionarioRecente_label.Text = "Não há funcionários registados.";
+            }
+
         }
 
         private void Home_Button_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.View.LoginForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,14 +43,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             else
             {
                 NomeFuncionario_Label.Text = "Bem-vindo, ";
-
             }
         }
 
 
-        private void Sair_btn_Click_1(object sender, EventArgs e)
+        
+
+        private void Exit_Btn_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+           Application.Exit();
         }
     }
 }

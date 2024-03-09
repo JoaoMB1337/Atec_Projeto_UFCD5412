@@ -44,18 +44,18 @@
             this.panelShadow = new System.Windows.Forms.Panel();
             this.Menus_TabControl = new System.Windows.Forms.TabControl();
             this.tabDashboard = new System.Windows.Forms.TabPage();
-            this.BemVindo_Label = new System.Windows.Forms.Label();
             this.tabDashboardFuncionario = new System.Windows.Forms.TabPage();
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.panelTitleBar.SuspendLayout();
+            this.panelShadow.SuspendLayout();
             this.Menus_TabControl.SuspendLayout();
-            this.tabDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -200,11 +200,12 @@
             // 
             // Home_Btn
             // 
-            this.Home_Btn.Location = new System.Drawing.Point(52, 12);
+            this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
+            this.Home_Btn.Location = new System.Drawing.Point(54, 14);
             this.Home_Btn.Name = "Home_Btn";
             this.Home_Btn.Size = new System.Drawing.Size(113, 112);
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Home_Btn.TabIndex = 0;
+            this.Home_Btn.TabIndex = 1;
             this.Home_Btn.TabStop = false;
             // 
             // panelTitleBar
@@ -247,6 +248,7 @@
             // panelShadow
             // 
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.panelShadow.Controls.Add(this.label1);
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 80);
             this.panelShadow.Name = "panelShadow";
@@ -273,7 +275,6 @@
             // tabDashboard
             // 
             this.tabDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.tabDashboard.Controls.Add(this.BemVindo_Label);
             this.tabDashboard.Location = new System.Drawing.Point(4, 22);
             this.tabDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.tabDashboard.Name = "tabDashboard";
@@ -281,18 +282,6 @@
             this.tabDashboard.Size = new System.Drawing.Size(730, 423);
             this.tabDashboard.TabIndex = 0;
             this.tabDashboard.Text = "tabPage1";
-            // 
-            // BemVindo_Label
-            // 
-            this.BemVindo_Label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BemVindo_Label.AutoSize = true;
-            this.BemVindo_Label.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BemVindo_Label.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BemVindo_Label.Location = new System.Drawing.Point(79, 174);
-            this.BemVindo_Label.Name = "BemVindo_Label";
-            this.BemVindo_Label.Size = new System.Drawing.Size(578, 44);
-            this.BemVindo_Label.TabIndex = 0;
-            this.BemVindo_Label.Text = "Bem Vindo/a à Nossa Academia";
             // 
             // tabDashboardFuncionario
             // 
@@ -336,6 +325,15 @@
             this.tabDashboardDefinicoes.Text = "tabPage5";
             this.tabDashboardDefinicoes.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(392, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,9 +354,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelShadow.ResumeLayout(false);
+            this.panelShadow.PerformLayout();
             this.Menus_TabControl.ResumeLayout(false);
-            this.tabDashboard.ResumeLayout(false);
-            this.tabDashboard.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -370,7 +368,6 @@
         private FontAwesome.Sharp.IconButton Dashboard_Btn;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton DashboardFuncionario_Btn;
-        private System.Windows.Forms.PictureBox Home_Btn;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Panel panelShadow;
         private FontAwesome.Sharp.IconButton DashboardFinancas_Btn;
@@ -382,9 +379,10 @@
         private System.Windows.Forms.TabPage tabDashboardFinancas;
         private System.Windows.Forms.TabPage tabDashboardDefinicoes;
         private System.Windows.Forms.Label timer_label;
-        private System.Windows.Forms.Label BemVindo_Label;
         private FontAwesome.Sharp.IconPictureBox Exit_Btn;
         private System.Windows.Forms.Label NomeFuncionario_Label;
+        private System.Windows.Forms.PictureBox Home_Btn;
+        private System.Windows.Forms.Label label1;
     }
 }
 

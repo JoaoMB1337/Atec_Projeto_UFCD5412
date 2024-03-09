@@ -158,7 +158,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         {
                             if (diaAtual == diaAtualDoMes)
                             {
-                                lbl.BackColor = Color.DarkGray;
+                                lbl.BackColor = Color.Gray;
                             }
                             else
                             {

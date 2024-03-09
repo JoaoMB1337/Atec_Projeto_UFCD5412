@@ -298,7 +298,12 @@ namespace Projeto_UFCD5412.Controller
             return texto.All(char.IsLetter);
         }
 
-        
+        internal Funcionario FuncionarioMaisRecente()
+        {
+            return Funcionarios.OrderByDescending(f => f.DataContrato).FirstOrDefault();
+        }
+
+
 
         #endregion
 

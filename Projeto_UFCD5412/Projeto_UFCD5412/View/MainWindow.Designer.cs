@@ -48,13 +48,11 @@
             this.tabDashboardFormadoes = new System.Windows.Forms.TabPage();
             this.tabDashboardFinancas = new System.Windows.Forms.TabPage();
             this.tabDashboardDefinicoes = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Exit_Btn)).BeginInit();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).BeginInit();
             this.panelTitleBar.SuspendLayout();
-            this.panelShadow.SuspendLayout();
             this.Menus_TabControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,7 +246,6 @@
             // panelShadow
             // 
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
-            this.panelShadow.Controls.Add(this.label1);
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 80);
             this.panelShadow.Name = "panelShadow";
@@ -325,15 +322,6 @@
             this.tabDashboardDefinicoes.Text = "tabPage5";
             this.tabDashboardDefinicoes.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(392, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,8 +342,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Home_Btn)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
-            this.panelShadow.ResumeLayout(false);
-            this.panelShadow.PerformLayout();
             this.Menus_TabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -382,7 +368,6 @@
         private FontAwesome.Sharp.IconPictureBox Exit_Btn;
         private System.Windows.Forms.Label NomeFuncionario_Label;
         private System.Windows.Forms.PictureBox Home_Btn;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -49,20 +49,18 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.ListaFuncionarios_DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListaFuncionarios_DataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ListaFuncionarios_DataGrid.ColumnHeadersHeight = 50;
-            this.ListaFuncionarios_DataGrid.Location = new System.Drawing.Point(16, 76);
-            this.ListaFuncionarios_DataGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.ListaFuncionarios_DataGrid.Location = new System.Drawing.Point(12, 62);
             this.ListaFuncionarios_DataGrid.Name = "ListaFuncionarios_DataGrid";
             this.ListaFuncionarios_DataGrid.ReadOnly = true;
             this.ListaFuncionarios_DataGrid.RowHeadersWidth = 51;
-            this.ListaFuncionarios_DataGrid.Size = new System.Drawing.Size(1035, 475);
+            this.ListaFuncionarios_DataGrid.Size = new System.Drawing.Size(776, 386);
             this.ListaFuncionarios_DataGrid.TabIndex = 0;
             // 
             // PesquisarFuncinarioPorNome_Textbox
             // 
-            this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(16, 15);
-            this.PesquisarFuncinarioPorNome_Textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.PesquisarFuncinarioPorNome_Textbox.Location = new System.Drawing.Point(12, 12);
             this.PesquisarFuncinarioPorNome_Textbox.Name = "PesquisarFuncinarioPorNome_Textbox";
-            this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(248, 22);
+            this.PesquisarFuncinarioPorNome_Textbox.Size = new System.Drawing.Size(187, 20);
             this.PesquisarFuncinarioPorNome_Textbox.TabIndex = 1;
             this.PesquisarFuncinarioPorNome_Textbox.TextChanged += new System.EventHandler(this.PesquisarFuncinarioPorNome_Textbox_TextChanged);
             // 
@@ -70,20 +68,19 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             this.TipoFuncionario_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoFuncionario_ComboBox.FormattingEnabled = true;
-            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(879, 16);
-            this.TipoFuncionario_ComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.TipoFuncionario_ComboBox.Location = new System.Drawing.Point(659, 13);
             this.TipoFuncionario_ComboBox.Name = "TipoFuncionario_ComboBox";
-            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(160, 24);
+            this.TipoFuncionario_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.TipoFuncionario_ComboBox.TabIndex = 2;
             this.TipoFuncionario_ComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoFuncionario_ComboBox_SelectedIndexChanged);
             // 
             // RegistoCriminal_CheckBox
             // 
             this.RegistoCriminal_CheckBox.AutoSize = true;
-            this.RegistoCriminal_CheckBox.Location = new System.Drawing.Point(628, 20);
-            this.RegistoCriminal_CheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.RegistoCriminal_CheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RegistoCriminal_CheckBox.Location = new System.Drawing.Point(471, 16);
             this.RegistoCriminal_CheckBox.Name = "RegistoCriminal_CheckBox";
-            this.RegistoCriminal_CheckBox.Size = new System.Drawing.Size(184, 20);
+            this.RegistoCriminal_CheckBox.Size = new System.Drawing.Size(145, 17);
             this.RegistoCriminal_CheckBox.TabIndex = 5;
             this.RegistoCriminal_CheckBox.Text = "Registo Criminal Expirado";
             this.RegistoCriminal_CheckBox.UseVisualStyleBackColor = true;
@@ -93,11 +90,11 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             this.Editarfuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Editarfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.Editarfuncionario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Editarfuncionario_Btn.ForeColor = System.Drawing.Color.White;
-            this.Editarfuncionario_Btn.Location = new System.Drawing.Point(208, 559);
-            this.Editarfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Editarfuncionario_Btn.Location = new System.Drawing.Point(156, 454);
             this.Editarfuncionario_Btn.Name = "Editarfuncionario_Btn";
-            this.Editarfuncionario_Btn.Size = new System.Drawing.Size(172, 37);
+            this.Editarfuncionario_Btn.Size = new System.Drawing.Size(129, 30);
             this.Editarfuncionario_Btn.TabIndex = 6;
             this.Editarfuncionario_Btn.Text = "Editar ";
             this.Editarfuncionario_Btn.UseVisualStyleBackColor = false;
@@ -107,11 +104,11 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // 
             this.Addfuncionario_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Addfuncionario_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.Addfuncionario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addfuncionario_Btn.ForeColor = System.Drawing.Color.White;
-            this.Addfuncionario_Btn.Location = new System.Drawing.Point(16, 559);
-            this.Addfuncionario_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Addfuncionario_Btn.Location = new System.Drawing.Point(12, 454);
             this.Addfuncionario_Btn.Name = "Addfuncionario_Btn";
-            this.Addfuncionario_Btn.Size = new System.Drawing.Size(172, 37);
+            this.Addfuncionario_Btn.Size = new System.Drawing.Size(129, 30);
             this.Addfuncionario_Btn.TabIndex = 7;
             this.Addfuncionario_Btn.Text = "Adicionar";
             this.Addfuncionario_Btn.UseVisualStyleBackColor = false;
@@ -120,10 +117,10 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             // ContratoValido_CheckBox
             // 
             this.ContratoValido_CheckBox.AutoSize = true;
-            this.ContratoValido_CheckBox.Location = new System.Drawing.Point(436, 20);
-            this.ContratoValido_CheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ContratoValido_CheckBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ContratoValido_CheckBox.Location = new System.Drawing.Point(327, 16);
             this.ContratoValido_CheckBox.Name = "ContratoValido_CheckBox";
-            this.ContratoValido_CheckBox.Size = new System.Drawing.Size(119, 20);
+            this.ContratoValido_CheckBox.Size = new System.Drawing.Size(97, 17);
             this.ContratoValido_CheckBox.TabIndex = 8;
             this.ContratoValido_CheckBox.Text = "Contrato válido";
             this.ContratoValido_CheckBox.UseVisualStyleBackColor = true;
@@ -135,18 +132,19 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelEditar.BackColor = System.Drawing.Color.Transparent;
-            this.panelEditar.Location = new System.Drawing.Point(16, 76);
+            this.panelEditar.Location = new System.Drawing.Point(12, 62);
+            this.panelEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelEditar.Name = "panelEditar";
-            this.panelEditar.Size = new System.Drawing.Size(1035, 475);
+            this.panelEditar.Size = new System.Drawing.Size(776, 386);
             this.panelEditar.TabIndex = 9;
             this.panelEditar.Visible = false;
             // 
             // ListarFuncionariosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1067, 602);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(800, 489);
             this.Controls.Add(this.panelEditar);
             this.Controls.Add(this.ContratoValido_CheckBox);
             this.Controls.Add(this.Addfuncionario_Btn);
@@ -155,7 +153,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             this.Controls.Add(this.TipoFuncionario_ComboBox);
             this.Controls.Add(this.PesquisarFuncinarioPorNome_Textbox);
             this.Controls.Add(this.ListaFuncionarios_DataGrid);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListarFuncionariosForm";
             this.Text = "Listar Funcionarios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

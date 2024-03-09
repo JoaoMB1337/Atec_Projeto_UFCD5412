@@ -31,15 +31,17 @@
             this.DataSistema_DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ExportCsv_Btn = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ExportCsv_Btn)).BeginInit();
             this.SuspendLayout();
             // 
             // DataSistema_DateTimePicker
             // 
-            this.DataSistema_DateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DataSistema_DateTimePicker.Location = new System.Drawing.Point(23, 61);
+            this.DataSistema_DateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.DataSistema_DateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataSistema_DateTimePicker.Location = new System.Drawing.Point(230, 174);
             this.DataSistema_DateTimePicker.Name = "DataSistema_DateTimePicker";
-            this.DataSistema_DateTimePicker.Size = new System.Drawing.Size(241, 26);
+            this.DataSistema_DateTimePicker.Size = new System.Drawing.Size(335, 38);
             this.DataSistema_DateTimePicker.TabIndex = 0;
             this.DataSistema_DateTimePicker.ValueChanged += new System.EventHandler(this.DataSistema_DateTimePicker_ValueChanged);
             // 
@@ -64,15 +66,27 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 18);
+            this.label1.Location = new System.Drawing.Point(193, 138);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 26);
+            this.label1.Size = new System.Drawing.Size(404, 33);
             this.label1.TabIndex = 2;
             this.label1.Text = "Controlador da data do software";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(118, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(571, 237);
+            this.panel1.TabIndex = 3;
             // 
             // SettingsForm
             // 
@@ -83,6 +97,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExportCsv_Btn);
             this.Controls.Add(this.DataSistema_DateTimePicker);
+            this.Controls.Add(this.panel1);
             this.Name = "SettingsForm";
             this.Text = "Settings";
             ((System.ComponentModel.ISupportInitialize)(this.ExportCsv_Btn)).EndInit();
@@ -96,5 +111,6 @@
         private System.Windows.Forms.DateTimePicker DataSistema_DateTimePicker;
         private FontAwesome.Sharp.IconPictureBox ExportCsv_Btn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

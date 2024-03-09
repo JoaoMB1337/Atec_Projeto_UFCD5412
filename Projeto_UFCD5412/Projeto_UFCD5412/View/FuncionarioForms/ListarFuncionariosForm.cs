@@ -24,6 +24,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
         {
             InitializeComponent();
             panelEditar.Visible = false;
+            ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
+
         }
 
         internal void SetParameter( string parametro)

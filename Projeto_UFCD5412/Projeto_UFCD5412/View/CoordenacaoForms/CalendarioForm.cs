@@ -167,9 +167,17 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
                             lbl.Click += (sender, e) =>
                             {
-                                Label selectedLabel = (Label)sender;
-                                int diaSelecionado = int.Parse(selectedLabel.Text);
-                                AdicionarEvento(data.Year, data.Month, diaSelecionado);
+                                try
+                                {
+                                    Label selectedLabel = (Label)sender;
+                                    int diaSelecionado = int.Parse(selectedLabel.Text);
+                                    AdicionarEvento(data.Year, data.Month, diaSelecionado);
+                                }
+                                catch(Exception ex)
+                                {
+                                    MessageBox.Show($"Erro ao adicionar evento: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                
                             };
                             lbl.Cursor = Cursors.Hand;
                         }
@@ -187,29 +195,51 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void AdicionarEvento(int ano, int mes, int dia)
         {
-            DateTime dataSelecionada = new DateTime(ano, mes, dia);
-
-            if (dataSelecionada < DateTime.Today)
+            try
             {
-                MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (ano <= 0 || mes < 1 || mes > 12 || dia < 1 || dia > DateTime.DaysInMonth(ano, mes))
+                {
+                    MessageBox.Show("Data inválida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                DateTime dataSelecionada = new DateTime(ano, mes, dia);
+
+                if (dataSelecionada < DateTime.Today)
+                {
+                    MessageBox.Show("Não é possível adicionar formações em dias passados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!eventosPorDia.ContainsKey(dataSelecionada))
+                {
+                    eventosPorDia[dataSelecionada] = new List<Formacao>();
+                }
+
+                AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
+
+                if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
+                {
+                    Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
+
+                    if (novaFormacao != null)
+                    {
+                        eventosPorDia[dataSelecionada].Add(novaFormacao);
+                        AtualizarCelula(dataSelecionada);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Formação inválida.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
-
-            if (!eventosPorDia.ContainsKey(dataSelecionada))
+            catch (Exception ex)
             {
-                eventosPorDia[dataSelecionada] = new List<Formacao>();
-            }
-
-            AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
-            if (adicionarFormacaoForm.ShowDialog() == DialogResult.OK)
-            {
-                Formacao novaFormacao = adicionarFormacaoForm.FormacaoAdicionada;
-
-                eventosPorDia[dataSelecionada].Add(novaFormacao);
-
-                AtualizarCelula(dataSelecionada);
+                MessageBox.Show($"Erro ao adicionar evento: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Exception in AdicionarEvento: {ex}");
             }
         }
+
 
         private void AtualizarCelula(DateTime data)
         {
@@ -280,13 +310,5 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             dataAtual = dataAtual.AddMonths(-1);
             AtualizarCalendario();
         }
-
-
-
-        
-        
-
-
-
     }
 }

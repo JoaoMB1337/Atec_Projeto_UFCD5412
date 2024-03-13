@@ -293,9 +293,20 @@ namespace Projeto_UFCD5412.Controller
         }
 
 
-        public bool VeririficarLetras(string texto)
+        public bool VerificarSeDataRegistoCriminalValida(DateTime dataRegistoCriminal)
         {
-            return texto.All(char.IsLetter);
+            return dataRegistoCriminal < DateTime.Now;
+        }
+
+        public bool VerificarSeDataFimRegistoCriminalValida(DateTime dataFimRegistoCriminal, DateTime dataRegistoCriminal)
+        {
+            return dataFimRegistoCriminal > dataRegistoCriminal;
+        }
+    
+        
+        public bool VerificarUsernameUnico(string username)
+        {
+            return Funcionarios.All(f => f.Username != username);
         }
 
         internal Funcionario FuncionarioMaisRecente()

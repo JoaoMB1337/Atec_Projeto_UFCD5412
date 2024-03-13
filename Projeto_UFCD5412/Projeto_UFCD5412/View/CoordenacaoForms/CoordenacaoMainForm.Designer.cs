@@ -50,10 +50,9 @@
             // 
             this.panelShadow.BackColor = System.Drawing.Color.Gray;
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(293, 174);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Location = new System.Drawing.Point(220, 141);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(842, 11);
+            this.panelShadow.Size = new System.Drawing.Size(631, 9);
             this.panelShadow.TabIndex = 7;
             // 
             // panelTitleBar
@@ -62,21 +61,21 @@
             this.panelTitleBar.Controls.Add(this.NomeFuncionario_Label);
             this.panelTitleBar.Controls.Add(this.timer_label);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(842, 174);
+            this.panelTitleBar.Size = new System.Drawing.Size(631, 141);
             this.panelTitleBar.TabIndex = 6;
             // 
             // NomeFuncionario_Label
             // 
             this.NomeFuncionario_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NomeFuncionario_Label.AutoSize = true;
-            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Roboto", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NomeFuncionario_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NomeFuncionario_Label.ForeColor = System.Drawing.Color.White;
-            this.NomeFuncionario_Label.Location = new System.Drawing.Point(448, 126);
+            this.NomeFuncionario_Label.Location = new System.Drawing.Point(335, 102);
+            this.NomeFuncionario_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NomeFuncionario_Label.Name = "NomeFuncionario_Label";
-            this.NomeFuncionario_Label.Size = new System.Drawing.Size(120, 28);
+            this.NomeFuncionario_Label.Size = new System.Drawing.Size(94, 22);
             this.NomeFuncionario_Label.TabIndex = 2;
             this.NomeFuncionario_Label.Text = "Bem vindo";
             // 
@@ -86,9 +85,10 @@
             this.timer_label.Dock = System.Windows.Forms.DockStyle.Right;
             this.timer_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer_label.ForeColor = System.Drawing.Color.White;
-            this.timer_label.Location = new System.Drawing.Point(842, 0);
+            this.timer_label.Location = new System.Drawing.Point(631, 0);
+            this.timer_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.timer_label.Name = "timer_label";
-            this.timer_label.Size = new System.Drawing.Size(0, 20);
+            this.timer_label.Size = new System.Drawing.Size(0, 17);
             this.timer_label.TabIndex = 0;
             // 
             // panelMenu
@@ -101,9 +101,8 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(293, 583);
+            this.panelMenu.Size = new System.Drawing.Size(220, 474);
             this.panelMenu.TabIndex = 5;
             // 
             // Exit_Btn
@@ -115,11 +114,11 @@
             this.Exit_Btn.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.Exit_Btn.IconColor = System.Drawing.SystemColors.Window;
             this.Exit_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Exit_Btn.IconSize = 75;
-            this.Exit_Btn.Location = new System.Drawing.Point(3, 494);
-            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Exit_Btn.IconSize = 61;
+            this.Exit_Btn.Location = new System.Drawing.Point(2, 401);
+            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Exit_Btn.Name = "Exit_Btn";
-            this.Exit_Btn.Size = new System.Drawing.Size(276, 75);
+            this.Exit_Btn.Size = new System.Drawing.Size(207, 61);
             this.Exit_Btn.TabIndex = 10;
             this.Exit_Btn.TabStop = false;
             this.Exit_Btn.Text = "Sair";
@@ -130,18 +129,18 @@
             this.DashboardCalendario_Btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.DashboardCalendario_Btn.FlatAppearance.BorderSize = 0;
             this.DashboardCalendario_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardCalendario_Btn.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardCalendario_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DashboardCalendario_Btn.ForeColor = System.Drawing.Color.Gainsboro;
             this.DashboardCalendario_Btn.IconChar = FontAwesome.Sharp.IconChar.Table;
             this.DashboardCalendario_Btn.IconColor = System.Drawing.Color.Gainsboro;
             this.DashboardCalendario_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DashboardCalendario_Btn.IconSize = 32;
             this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 172);
-            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 140);
+            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
-            this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(11, 0, 20, 0);
-            this.DashboardCalendario_Btn.Size = new System.Drawing.Size(291, 60);
+            this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.DashboardCalendario_Btn.Size = new System.Drawing.Size(218, 49);
             this.DashboardCalendario_Btn.TabIndex = 7;
             this.DashboardCalendario_Btn.Text = "Calendário";
             this.DashboardCalendario_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,18 +154,16 @@
             this.panelLogo.Controls.Add(this.Home_Btn);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(291, 172);
+            this.panelLogo.Size = new System.Drawing.Size(218, 140);
             this.panelLogo.TabIndex = 0;
             // 
             // Home_Btn
             // 
             this.Home_Btn.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
-            this.Home_Btn.Location = new System.Drawing.Point(69, 15);
-            this.Home_Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home_Btn.Location = new System.Drawing.Point(52, 12);
             this.Home_Btn.Name = "Home_Btn";
-            this.Home_Btn.Size = new System.Drawing.Size(151, 138);
+            this.Home_Btn.Size = new System.Drawing.Size(113, 112);
             this.Home_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Home_Btn.TabIndex = 0;
             this.Home_Btn.TabStop = false;
@@ -177,23 +174,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(293, 172);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 140);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(843, 410);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 333);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // CoordenacaoMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1135, 583);
+            this.ClientSize = new System.Drawing.Size(851, 474);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CoordenacaoMainForm";
             this.Text = "Coordenação";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

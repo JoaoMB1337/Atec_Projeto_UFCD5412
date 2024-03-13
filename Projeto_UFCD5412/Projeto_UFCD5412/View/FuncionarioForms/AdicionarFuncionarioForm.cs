@@ -238,63 +238,125 @@ namespace Projeto_UFCD5412.View.Forms
             this.Close(); 
         }
 
-        private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)
+        private bool ValidarCampos()
         {
-            if (string.IsNullOrWhiteSpace(nome_textbox.Text) ||
-       string.IsNullOrWhiteSpace(morada_textbox.Text) ||
-       string.IsNullOrWhiteSpace(contacto_textbox.Text) ||
-       string.IsNullOrWhiteSpace(salario_textbox.Text) ||
-       string.IsNullOrWhiteSpace(valorhora_textbox.Text) ||
-       string.IsNullOrWhiteSpace(username_textbox.Text) ||
-       string.IsNullOrWhiteSpace(password_textbox.Text))
+            if (string.IsNullOrWhiteSpace(nome_textbox.Text))
             {
-                MessageBox.Show("Por favor, preencha todos os campos.");
-                return;
+                MessageBox.Show("Por favor, insira o nome do funcionário.");
+                return false;
             }
 
-            // Verifica se o número de telefone é válido
-            if (!empresaController.VerificarNumerosTelefone(contacto_textbox.Text))
+            if (string.IsNullOrWhiteSpace(morada_textbox.Text))
             {
-                MessageBox.Show("Número de telefone inválido.");
-                return;
+                MessageBox.Show("Por favor, insira a morada do funcionário.");
+                return false;
             }
 
-            // Verificações adicionais...
+            if (string.IsNullOrWhiteSpace(contacto_textbox.Text))
+            {
+                MessageBox.Show("Por favor, insira o contacto do funcionário.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(username_textbox.Text) && !empresaController.VerificarUsernameUnico(username_textbox.Text))
+            {
+                MessageBox.Show("Por favor, insira um username único para o funcionário.");
+                return false;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(password_textbox.Text))
+            {
+                MessageBox.Show("Por favor, insira a password do funcionário.");
+                return false;
+            }
+
+            if (empresaController.VerificarNumerosTelefone(contacto_textbox.Text) == false)
+            {
+                MessageBox.Show("Por favor, insira um número de telefone válido.");
+                return false;
+            }
+
             if (!empresaController.VerificarSeDataNascimentoValida(DataNascimento_DateTimePicker.Value))
             {
-                MessageBox.Show("Data de nascimento inválida.");
-                return;
+                MessageBox.Show("Por favor, insira uma data de nascimento válida.");
+                return false;
             }
+
 
             if (!empresaController.VerificarSeDataContratoValida(DataContrato_DateTimePicker.Value))
             {
-                MessageBox.Show("Data de contrato inválida.");
-                return;
+                MessageBox.Show("Por favor, insira uma data de contrato válida.");
+                return false;
             }
 
             if (!empresaController.VerificarSeDataFimContratoValida(DataFimContrato_DateTimePicker.Value, DataContrato_DateTimePicker.Value))
             {
-                MessageBox.Show("Data de fim de contrato inválida.");
-                return;
+                MessageBox.Show("A data de fim de contrato deve ser posterior à data de contrato.");
+                return false;
             }
 
-            decimal salario;
-            if (!decimal.TryParse(salario_textbox.Text, out salario) || salario <= 0)
+
+            return true;
+        }
+
+        private bool ValidarSalario(decimal salario)
+        {
+            return salario >= 0;
+        }
+
+        private bool ValidarValorHora(decimal valorHora)
+        {
+            return valorHora >= 0;
+        }
+
+        private bool ValidarCamposEspecificos(string tipoFuncionario, decimal salario, decimal valorHora)
+        {
+            switch (tipoFuncionario)
             {
-                MessageBox.Show("Salário inválido.");
-                return;
+                case "Diretor":
+                    if (!ValidarSalario(salario))
+                    {
+                        MessageBox.Show("O salário do diretor não pode ser inferior a 0.");
+                        return false;
+                    }
+                    break;
+                case "Secretaria":
+                    if (!ValidarSalario(salario))
+                    {
+                        MessageBox.Show("O salário da secretária não pode ser inferior a 0.");
+                        return false;
+                    }
+                    break;
+                case "Coordenador":
+                    if (!ValidarSalario(salario))
+                    {
+                        MessageBox.Show("O salário do coordenador não pode ser inferior a 0.");
+                        return false;
+                    }
+                    break;
+                case "Formador":
+                    if (!ValidarValorHora(valorHora))
+                    {
+                        MessageBox.Show("O valor da hora do formador não pode ser inferior a 0.");
+                        return false;
+                    }
+                    break;
             }
 
-           /* if (!empresaController.VerificarSeUsernameExite(username_textbox.Text))
-            {
-                MessageBox.Show("Username já existe.");
-                return;
-            }*/
+            return true;
+        }
 
-            string nome = nome_textbox.Text;
+        private void addFuncionarioSistema_btn_Click(object sender, EventArgs e)
+        {
+                if (ValidarCampos() == false)
+                return;
+
+                string nome = nome_textbox.Text;
                 string morada = morada_textbox.Text;
                 string contacto = contacto_textbox.Text;
                 decimal valorHora = 0;
+                decimal salario = 0;
                 decimal.TryParse(valorhora_textbox.Text, out valorHora);
                 decimal.TryParse(salario_textbox.Text, out salario);
                 DateTime dataAniversario = DataNascimento_DateTimePicker.Value;
@@ -312,13 +374,15 @@ namespace Projeto_UFCD5412.View.Forms
 
                 string passwordEncriptada = EncryptController.EncryptPasswordStatic(password_textbox.Text);
 
+                if (!ValidarCamposEspecificos(tipoFuncionario, salario, valorHora))
+                return;
 
-
-                Funcionario novoFuncionario = null;
+            Funcionario novoFuncionario = null;
 
                 switch (tipoFuncionario)
                 {
                     case "Funcionario":
+                        
                         novoFuncionario = new Funcionario(
                              id: 0,
                              nome: nome,
@@ -338,7 +402,8 @@ namespace Projeto_UFCD5412.View.Forms
                         break;
 
                     case "Diretor":
-                        novoFuncionario = new Diretor(
+                    
+                    novoFuncionario = new Diretor(
                             id: 0,
                             nome: nome,
                             morada: morada,
@@ -360,13 +425,7 @@ namespace Projeto_UFCD5412.View.Forms
                         );
                         break;
                     case "Secretaria":
-
-
-                    if (string.IsNullOrWhiteSpace(cursoresponsavel_textbox.Text))
-                    {
-                        MessageBox.Show("Por favor, insira o nome do diretor responsável.");
-                        return;
-                    }
+                    
 
                     novoFuncionario = new Secretaria(
                             id: 0,
@@ -389,18 +448,8 @@ namespace Projeto_UFCD5412.View.Forms
 
                         break;
                     case "Formador":
-                    if (!empresaController.VerificarSeValorHoraValido(decimal.Parse(valorhora_textbox.Text)))
-                    {
-                        MessageBox.Show("Valor da hora inválido.");
-                        return;
-                    }
 
-                    if (!poslaboral_checkbox.Checked && !laboral_checkbox.Checked)
-                    {
-                        MessageBox.Show("Selecione a disponibilidade do formador.");
-                        return;
-                    }
-
+                    
                     novoFuncionario = new Formador(
                             id: 0,
                             nome: nome,
@@ -424,11 +473,7 @@ namespace Projeto_UFCD5412.View.Forms
                         break;
                     case "Coordenador":
 
-                    if (string.IsNullOrWhiteSpace(cursoresponsavel_textbox.Text))
-                    {
-                        MessageBox.Show("Por favor, insira o curso responsável.");
-                        return;
-                    }
+                    
 
                     novoFuncionario = new Coordenador(
                             id: 0,

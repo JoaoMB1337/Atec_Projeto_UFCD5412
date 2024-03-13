@@ -126,7 +126,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             funcionario.DataFimRegistoCriminal = DataFimRegistoCriminal_DateTimePicker.Value;
             funcionario.DataAniversario = DataNascimento_DateTimePicker.Value;
 
-            // Verificar se o TextBox está vazio antes de tentar converter para decimal
+           
             if (!string.IsNullOrWhiteSpace(salario_textbox.Text) && decimal.TryParse(salario_textbox.Text, out decimal salario))
             {
                 funcionario.Salario = salario;
@@ -145,6 +145,12 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
                 {
                     if (!string.IsNullOrWhiteSpace(SalarioHoraTextBox.Text) && decimal.TryParse(SalarioHoraTextBox.Text, out decimal valorHora))
                     {
+                        if (valorHora <= 0)
+                        {
+                            MessageBox.Show("Por favor, insira um valor de hora válido para formadores.");
+                            return;
+                        }
+
                         formador.ValorHora = valorHora;
                     }
                     else

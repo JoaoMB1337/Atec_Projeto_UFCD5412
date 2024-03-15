@@ -61,6 +61,9 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void AtualizarCalendario()
         {
+            // Limpar o calendário antes de atualizar
+            tableLayoutPanel1.Controls.Clear();
+
             PreencherCalendario(dataAtual);
             AjustarTamanhoCelulas();
         }
@@ -83,6 +86,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void PreencherCalendario(DateTime data)
         {
+            // Remover todas as labels existentes
             tableLayoutPanel1.Controls.Clear();
 
             int diasNoMes = DateTime.DaysInMonth(data.Year, data.Month);
@@ -313,13 +317,16 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                     EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[dataSelecionada][0]);
                     if (editarFormacaoForm.ShowDialog() == DialogResult.OK)
                     {
-                        AtualizarCelula(dataSelecionada);
+                        AtualizarCalendario();
                     }
                 }
                 else
                 {
                     AdicionarEvento(dataAtual.Year, dataAtual.Month, diaSelecionado);
+                    AtualizarCalendario();
                 }
+                // Atualiza a célula independentemente de ter sido adicionada ou editada
+                AtualizarCelula(dataSelecionada);
             }
             catch (Exception ex)
             {

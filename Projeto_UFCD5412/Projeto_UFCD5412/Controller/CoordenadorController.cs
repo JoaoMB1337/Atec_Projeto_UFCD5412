@@ -5,13 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Projeto_UFCD5412.Data;
+using System.Windows;
 
 namespace Projeto_UFCD5412.Controller
 {
     internal class CoordenadorController
     {
+        public List<Formacao> Formacaos { get; set; }
         private static CoordenadorController instance;
         private static readonly object lockObject = new object();
+
+        public CoordenadorController()
+        {
+            Formacaos = CSVFormacao.LoadFromCSV();
+        }
+
         public static CoordenadorController Instance
         {
             get
@@ -27,12 +35,6 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
-        public List<Formacao> Formacaos { get; set; }
-
-        public CoordenadorController()
-        {
-            Formacaos = CSVFormacao.LoadFromCSV();
-        }
 
         public void AdicionarFormacao(Formacao formacao)
         {
@@ -59,8 +61,6 @@ namespace Projeto_UFCD5412.Controller
         {
             return Formacaos;
         }
-
-
 
     }
 }

@@ -93,6 +93,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
 
             Formacao formacaoEditada = new Formacao(dataInicioFormacao, dataInicioFormacao, horaInicio, horaFim, formador, turma);
+            
             coordenadorController.EditarFormacao(formacaoOriginal, formacaoEditada);
 
             MessageBox.Show("Formação atualizada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

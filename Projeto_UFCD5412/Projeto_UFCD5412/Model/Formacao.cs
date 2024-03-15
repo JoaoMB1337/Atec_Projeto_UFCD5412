@@ -27,5 +27,23 @@ namespace Projeto_UFCD5412.Model
             Turma = turma;
         }
 
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Formacao formacao = (Formacao)obj;
+            return DataInicio == formacao.DataInicio && DataFim == formacao.DataFim && HoraInicio == formacao.HoraInicio && HoraFim == formacao.HoraFim && Formador == formacao.Formador && Turma == formacao.Turma;
+        }
+
+        public override int GetHashCode()
+        {
+            return DataInicio.GetHashCode() ^ DataFim.GetHashCode() ^ HoraInicio.GetHashCode() ^ HoraFim.GetHashCode() ^ Formador.GetHashCode() ^ Turma.GetHashCode();
+        }
+
+
+
     }
 }

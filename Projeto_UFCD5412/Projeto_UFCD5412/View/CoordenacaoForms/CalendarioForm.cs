@@ -288,34 +288,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-        private void AtualizarEventos()
-        {
-            foreach (DateTime data in eventosPorDia.Keys)
-            {
-                AtualizarCelula(data);
-            }
-        }
-
-        private void EditarEvento(DateTime data)
-        {
-            try
-            {
-                if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
-                {
-                    // Supondo que você queira editar o primeiro evento na lista, você pode fazer assim:
-                    EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[data][0]);
-                    if (editarFormacaoForm.ShowDialog() == DialogResult.OK)
-                    {
-                        AtualizarCelula(data);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void avancar_btn_Click(object sender, EventArgs e)
         {
             dataAtual = dataAtual.AddMonths(1);
@@ -336,7 +308,18 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 int diaSelecionado = (int)selectedLabel.Tag;
                 DateTime dataSelecionada = new DateTime(dataAtual.Year, dataAtual.Month, diaSelecionado);
 
-                EditarEvento(dataSelecionada);
+                if (eventosPorDia.ContainsKey(dataSelecionada) && eventosPorDia[dataSelecionada].Count > 0)
+                {
+                    EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[dataSelecionada][0]);
+                    if (editarFormacaoForm.ShowDialog() == DialogResult.OK)
+                    {
+                        AtualizarCelula(dataSelecionada);
+                    }
+                }
+                else
+                {
+                    AdicionarEvento(dataAtual.Year, dataAtual.Month, diaSelecionado);
+                }
             }
             catch (Exception ex)
             {

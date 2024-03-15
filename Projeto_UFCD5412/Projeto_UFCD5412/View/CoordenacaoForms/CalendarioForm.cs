@@ -139,6 +139,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             BorderStyle = BorderStyle.FixedSingle,
                             Margin = new Padding(3)
                         };
+                        // Definir o número do dia como tag
+                        lbl.Tag = diaAtual;
 
                         DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
                         if (eventosPorDia.ContainsKey(dataAtual) && eventosPorDia[dataAtual].Count > 0)
@@ -164,23 +166,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                             {
                                 lbl.BackColor = Color.White;
                             }
-
-                            lbl.Click += (sender, e) =>
-                            {
-                                try
-                                {
-                                    Label selectedLabel = (Label)sender;
-                                    int diaSelecionado = int.Parse(selectedLabel.Text);
-                                    AdicionarEvento(data.Year, data.Month, diaSelecionado);
-                                }
-                                catch(Exception ex)
-                                {
-                                    MessageBox.Show($"Erro ao adicionar evento: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                                
-                            };
-                            lbl.Cursor = Cursors.Hand;
                         }
+
+                        lbl.Click += Label_Click; // Adiciona o manipulador de evento de clique
+
+                        lbl.Cursor = Cursors.Hand;
 
                         tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
 
@@ -240,7 +230,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             }
         }
 
-
         private void AtualizarCelula(DateTime data)
         {
             foreach (Control control in tableLayoutPanel1.Controls)
@@ -267,6 +256,15 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                                     Size size = TextRenderer.MeasureText(label.Text, label.Font);
                                     label.Size = new Size(size.Width + 10, size.Height + 10);
                                 }
+                                else
+                                {
+                                    // Limpar as configurações de fundo e texto se não houver evento para este dia
+                                    label.BackColor = Color.White;
+                                    label.Text = diaCelula.ToString();
+                                }
+                                // Adicione ou atualize o evento de clique da label
+                                label.Click -= Label_Click; // Remova o manipulador de evento existente, se houver
+                                label.Click += Label_Click; // Adicione o manipulador de evento atualizado
                             }
                         }
                         else
@@ -281,21 +279,40 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void ExibirDiasSalvosNoCalendario()
         {
-            foreach (Control control in tableLayoutPanel1.Controls)
-            {
-                if (control is Label label)
-                {
-                    label.Text = "";
-                    label.BackColor = Color.White;
-                }
-            }
-
             foreach (var formacaoList in eventosPorDia.Values)
             {
                 foreach (var formacao in formacaoList)
                 {
                     AtualizarCelula(formacao.DataInicio);
                 }
+            }
+        }
+
+        private void AtualizarEventos()
+        {
+            foreach (DateTime data in eventosPorDia.Keys)
+            {
+                AtualizarCelula(data);
+            }
+        }
+
+        private void EditarEvento(DateTime data)
+        {
+            try
+            {
+                if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
+                {
+                    // Supondo que você queira editar o primeiro evento na lista, você pode fazer assim:
+                    EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[data][0]);
+                    if (editarFormacaoForm.ShowDialog() == DialogResult.OK)
+                    {
+                        AtualizarCelula(data);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -309,6 +326,22 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             dataAtual = dataAtual.AddMonths(-1);
             AtualizarCalendario();
+        }
+
+        private void Label_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Label selectedLabel = (Label)sender;
+                int diaSelecionado = (int)selectedLabel.Tag;
+                DateTime dataSelecionada = new DateTime(dataAtual.Year, dataAtual.Month, diaSelecionado);
+
+                EditarEvento(dataSelecionada);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

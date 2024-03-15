@@ -40,10 +40,27 @@ namespace Projeto_UFCD5412.Controller
             CSVFormacao.AdicionarFormacao(formacao);
         }
 
+        public void EditarFormacao(Formacao formacaoOriginal, Formacao formacaoEditada)
+        {
+            int index = Formacaos.FindIndex(f => f.Equals(formacaoOriginal));
+            if (index != -1)
+            {
+                Formacaos[index] = formacaoEditada;
+                CSVFormacao.ExportToCSV(Formacaos);
+                Console.WriteLine("Formação editada com sucesso no arquivo CSV.");
+            }
+            else
+            {
+                Console.WriteLine("Formação original não encontrada.");
+            }
+        }
+
         public List<Formacao> ListarFormacoes()
         {
             return Formacaos;
         }
+
+
 
     }
 }

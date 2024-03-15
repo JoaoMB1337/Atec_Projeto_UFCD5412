@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows;
 
 namespace Projeto_UFCD5412.Data
 {
@@ -92,81 +93,21 @@ namespace Projeto_UFCD5412.Data
             }
         }
 
-
-        //public static Dictionary<DateTime, List<Formacao>> ImportarFormacoes()
-        //{
-        //    var eventosPorDia = new Dictionary<DateTime, List<Formacao>>();
-
-        //    try
-        //    {
-        //        if (!File.Exists(filePath))
-        //        {
-        //            // If the file does not exist, create it
-        //            File.Create(filePath).Close();
-        //        }
-
-        //        using (StreamReader sr = new StreamReader(filePath))
-        //        {
-        //            string line;
-        //            while ((line = sr.ReadLine()) != null)
-        //            {
-        //                string[] parts = line.Split(',');
-        //                if (parts.Length == 3)
-        //                {
-        //                    DateTime dataInicio = DateTime.ParseExact(parts[0], "yyyy-MM-dd HH:mm:ss", null).Date;
-        //                    string formador = parts[1];
-        //                    string turma = parts[2];
-        //                    var novaFormacao = new Formacao
-        //                    {
-        //                        Data = dataInicio,
-        //                        Formador = formador,
-        //                        Turma = turma
-        //                    };
-
-        //                    if (!eventosPorDia.ContainsKey(dataInicio))
-        //                    {
-        //                        eventosPorDia[dataInicio] = new List<Formacao>();
-        //                    }
-        //                    eventosPorDia[dataInicio].Add(novaFormacao);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (FileNotFoundException)
-        //    {
-        //        // Handle file not found exception
-        //    }
-
-        //    return eventosPorDia;
-        //}
-
-        //public static void ExportarFormacoes(Dictionary<DateTime, List<Formacao>> eventosPorDia)
-        //{
-        //    try
-        //    {
-        //        if (eventosPorDia != null && eventosPorDia.Any())
-        //        {
-        //            using (StreamWriter sw = new StreamWriter(filePath))
-        //            {
-        //                foreach (var kvp in eventosPorDia)
-        //                {
-        //                    foreach (var formacao in kvp.Value)
-        //                    {
-        //                    //    string formattedDate = formacao.Data.ToString("yyyy-MM-dd HH:mm:ss");
-        //                    //    string line = $"{formattedDate},{formacao.Formador},{formacao.Turma},{formacao.HoraInicio},{formacao.HoraFim}";
-        //                    //    sw.WriteLine(line);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine($"Ocorreu um erro ao exportar as formações: {ex.Message}");
-        //    }
-        //}
-
-
+        public static void EditarFormacao(Formacao formacaoOriginal, Formacao formacaoEditada)
+        {
+            try
+            {
+                List<Formacao> formacoes = LoadFromCSV();
+                formacoes.Remove(formacaoOriginal);
+                formacoes.Add(formacaoEditada);
+                ExportToCSV(formacoes);
+                Console.WriteLine("Formacao editada com sucesso no arquivo CSV.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao editar formação no CSV: {ex.Message}");
+            }
+        }
 
     }
 }

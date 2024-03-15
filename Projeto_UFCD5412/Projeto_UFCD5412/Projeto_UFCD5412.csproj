@@ -84,6 +84,12 @@
     <Compile Include="View\CoordenacaoForms\CoordenacaoMainForm.Designer.cs">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CoordenacaoForms\EditarFormacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CoordenacaoForms\EditarFormacaoForm.Designer.cs">
+      <DependentUpon>EditarFormacaoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\DashboardForms\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CoordenacaoForms\CoordenacaoMainForm.resx">
       <DependentUpon>CoordenacaoMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CoordenacaoForms\EditarFormacaoForm.resx">
+      <DependentUpon>EditarFormacaoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashboardForms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>

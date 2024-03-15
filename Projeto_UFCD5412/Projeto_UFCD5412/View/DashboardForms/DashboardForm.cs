@@ -23,9 +23,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             InitializeComponent();
             LoadData();
             LoadComboBox();
-
-
-            
         }
        
         //carrega  a dashboard na inicialização no tabcontrol em ecra inteiro
@@ -108,7 +105,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
         private void Home_Button_Click(object sender, EventArgs e)
         {
             DashboardForm dashboard = new DashboardForm();
-
             dashboard.TopLevel = false;
             dashboard.FormBorderStyle = FormBorderStyle.None;
             dashboard.Dock = DockStyle.Fill;
@@ -118,16 +114,11 @@ namespace Projeto_UFCD5412.View.DashboardForms
 
         private void TipoFuncionarioComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DateTime dataAtual = dateTimeController.GetDateTime();
             string selectedTipo = TipoFuncionarioComboBox.SelectedItem.ToString();
-
-
-            decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(selectedTipo);
+            decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(selectedTipo, dataAtual);
             totalSalario_lbl.Text = totalSalarios.ToString();
-
         }
-
-        
-
     }
 }
 

@@ -219,7 +219,7 @@ namespace Projeto_UFCD5412.Controller
         #region Calcular Salarios
 
 
-        public decimal CalcularTotalSalariosPorTipo(string tipoFuncionario)
+        public decimal CalcularTotalSalariosPorTipo(string tipoFuncionario,DateTime dataAtual)
         {
             decimal totalSalarios = 0;
 
@@ -233,10 +233,23 @@ namespace Projeto_UFCD5412.Controller
             else
             {
                 var funcionariosPorTipo = Funcionarios.Where(f => f.Tipo == tipoFuncionario).ToList(); 
-                foreach (var funcionario in funcionariosPorTipo)
+                if(tipoFuncionario == "Formador")
                 {
-                    totalSalarios += funcionario.Salario;
+                    var formadores = Funcionarios.Where(f => f.Tipo == "Formador").ToList();
+                    foreach (var formador in formadores)
+                    {
+                        totalSalarios += CalcularSalarioFormadores(formador, dataAtual);
+                    }
+
                 }
+                else
+                {
+                    foreach (var funcionario in funcionariosPorTipo)
+                    {
+                        totalSalarios += funcionario.Salario;
+                    }
+                }
+                
             }
             return totalSalarios;
         }
@@ -245,14 +258,10 @@ namespace Projeto_UFCD5412.Controller
         public int CalcularDiasTrabalhadosNoMes(DateTime dataReferencia, DateTime dataInicio, DateTime dataFim)
         {
             int diasTrabalhados = 0;
-
-            // Loop de data de início até a data de fim
             for (DateTime dataAtual = dataInicio; dataAtual <= dataFim; dataAtual = dataAtual.AddDays(1))
             {
-                // Verifica se a data está no mesmo mês e ano que a data de referência
                 if (dataAtual.Month == dataReferencia.Month && dataAtual.Year == dataReferencia.Year)
                 {
-                    // Se a data atual não é sábado nem domingo, considera-se um dia útil
                     if (dataAtual.DayOfWeek != DayOfWeek.Saturday && dataAtual.DayOfWeek != DayOfWeek.Sunday)
                     {
                         diasTrabalhados++;

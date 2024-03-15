@@ -43,7 +43,7 @@
             this.NomeFunc_label.AutoSize = true;
             this.NomeFunc_label.Location = new System.Drawing.Point(10, 13);
             this.NomeFunc_label.Name = "NomeFunc_label";
-            this.NomeFunc_label.Size = new System.Drawing.Size(44, 15);
+            this.NomeFunc_label.Size = new System.Drawing.Size(38, 13);
             this.NomeFunc_label.TabIndex = 0;
             this.NomeFunc_label.Text = "Nome:";
             // 
@@ -104,7 +104,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(269, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Filtrar:";
             // 
@@ -120,6 +120,7 @@
             this.Controls.Add(this.NomeFunc_label);
             this.Name = "CalcularValorForm";
             this.Text = "Finanças";
+            this.Load += new System.EventHandler(this.CalcularValorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ValorPagarDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -20,9 +20,8 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             InitializeComponent();
             CarregarFormadores();
             CarregarTurmas();
+            CarregarHoras();
             this.dataSelecionada = dataSelecionada;
-            DataInicio_calendar.Value = dataSelecionada;
-            DataFim_calendar.Value = dataSelecionada;
         }
 
         private void CarregarFormadores()
@@ -46,18 +45,39 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             Turmas_combo.Items.AddRange(turmas);
         }
 
+        private void CarregarHoras()
+        {
+            // Adicione o código para carregar as horas de incio e fim nas comboboxes
+            HoraIncio_combo.Items.Clear();
+            HoraFim_combo.Items.Clear();
+            string[] horas = { "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", 
+                "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM" };
+            HoraIncio_combo.Items.AddRange(horas);
+            HoraFim_combo.Items.AddRange(horas);
+        }
+
         private void AdicionarFormacao_btn_Click_1(object sender, EventArgs e)
         {
             DateTime dataInicio = dataSelecionada;
-            DateTime dataFim = DataFim_calendar.Value;
+            DateTime dataFim = dataSelecionada;
             string horaInicio = HoraIncio_combo.SelectedItem?.ToString();
             string horaFim = HoraFim_combo.SelectedItem?.ToString();
             string formador = FormadorNomes_combo.SelectedItem?.ToString();
             string turma = Turmas_combo.SelectedItem?.ToString();
 
-            if (string.IsNullOrEmpty(formador) || string.IsNullOrEmpty(turma))
+            if (string.IsNullOrEmpty(formador) || string.IsNullOrEmpty(turma) || string.IsNullOrEmpty(horaInicio) || string.IsNullOrEmpty(horaFim))
             {
                 MessageBox.Show("Por favor, preencha todos os campos antes de adicionar a formação.", "Campos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Converta as horas de string para DateTime para fazer comparação
+            DateTime horaInicioDateTime = DateTime.ParseExact(horaInicio, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime horaFimDateTime = DateTime.ParseExact(horaFim, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+
+            if (horaFimDateTime <= horaInicioDateTime)
+            {
+                MessageBox.Show("A hora de término deve ser maior que a hora de início.", "Horário Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -66,12 +86,12 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             coordenadorController.AdicionarFormacao(novaFormacao);
             DialogResult = DialogResult.OK;
             FormacaoAdicionada = novaFormacao;
-            Close();
+            this.Close();
         }
 
         private void Sair_Btn_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void DataSistema_DateTimePicker_ValueChanged(object sender, EventArgs e)

@@ -243,7 +243,7 @@
             this.label10.Location = new System.Drawing.Point(31, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(213, 23);
+            this.label10.Size = new System.Drawing.Size(195, 23);
             this.label10.TabIndex = 3;
             this.label10.Text = "Total de Funcionários";
             // 
@@ -336,7 +336,7 @@
             this.Salarios_lbl.Location = new System.Drawing.Point(31, 16);
             this.Salarios_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Salarios_lbl.Name = "Salarios_lbl";
-            this.Salarios_lbl.Size = new System.Drawing.Size(86, 23);
+            this.Salarios_lbl.Size = new System.Drawing.Size(80, 23);
             this.Salarios_lbl.TabIndex = 3;
             this.Salarios_lbl.Text = "Salários";
             // 
@@ -399,7 +399,7 @@
             this.label13.Location = new System.Drawing.Point(26, 16);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(276, 23);
+            this.label13.Size = new System.Drawing.Size(252, 23);
             this.label13.TabIndex = 3;
             this.label13.Text = "Registo Criminais Expirados";
             // 
@@ -462,7 +462,7 @@
             this.label11.Location = new System.Drawing.Point(26, 18);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(242, 23);
+            this.label11.Size = new System.Drawing.Size(221, 23);
             this.label11.TabIndex = 3;
             this.label11.Text = "Registo Criminais Ativos";
             // 
@@ -525,7 +525,7 @@
             this.label9.Location = new System.Drawing.Point(26, 17);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(200, 23);
+            this.label9.Size = new System.Drawing.Size(185, 23);
             this.label9.TabIndex = 3;
             this.label9.Text = "Contratos Expirados";
             // 
@@ -588,7 +588,7 @@
             this.label3.Location = new System.Drawing.Point(26, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 23);
+            this.label3.Size = new System.Drawing.Size(154, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Contratos Ativos";
             // 
@@ -635,7 +635,7 @@
             this.label8.Location = new System.Drawing.Point(26, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(227, 23);
+            this.label8.Size = new System.Drawing.Size(212, 23);
             this.label8.TabIndex = 3;
             this.label8.Text = "Próximo Aniversariante";
             // 
@@ -697,7 +697,7 @@
             this.label1.Location = new System.Drawing.Point(26, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 23);
+            this.label1.Size = new System.Drawing.Size(227, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Funcionario mais recente";
             // 

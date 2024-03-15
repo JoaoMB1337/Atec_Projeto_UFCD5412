@@ -1,17 +1,9 @@
-﻿using Projeto_UFCD5412.Controller;
-using Projeto_UFCD5412.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Projeto_UFCD5412.Data;
+using Projeto_UFCD5412.Controller;
+using Projeto_UFCD5412.Model;
 using Projeto_UFCD5412.View.Forms;
-using System.Runtime.CompilerServices;
 
 namespace Projeto_UFCD5412.View.FuncionarioForms
 {
@@ -25,17 +17,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             InitializeComponent();
             panelEditar.Visible = false;
             ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
-
-        }
-
-        internal void SetParameter( string parametro)
-        {
-            if (parametro == "editar")
-            {
-                ListaFuncionarios_DataGrid.CellDoubleClick += ListaFuncionarios_DataGrid_CellDoubleClick;
-           
-            }
-            
+            RegistoCriminal_CheckBox.CheckedChanged += RegistoCriminal_CheckBox_CheckedChanged;
+            ContratoValido_CheckBox.CheckedChanged += ContratoValido_CheckBox_CheckedChanged;
         }
 
         private void ListarFuncionariosForm_Load(object sender, EventArgs e)
@@ -79,7 +62,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             }
         }
 
-
         public void ListarFuncionarioDataGrid()
         {
             List<Funcionario> funcionarios = empresaController.ListarFuncionarios();
@@ -106,6 +88,8 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             ListarFuncionarioDataGrid();
         }
 
+        #region Filtros de Funcionarios
+
         private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
         {
             string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text;
@@ -115,10 +99,32 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
         private void RegistoCriminal_CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (RegistoCriminal_CheckBox.Checked)
+            AtualizarFiltros();
+        }
+
+        private void ContratoValido_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarFiltros();
+        }
+
+        private void AtualizarFiltros()
+        {
+            bool contratoValido = ContratoValido_CheckBox.Checked;
+            bool registoCriminal = RegistoCriminal_CheckBox.Checked;
+
+            if (contratoValido && registoCriminal)
             {
-                DateTime dataAtual = dateTimeController.GetDateTime();
-                List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(dataAtual);
+                List<Funcionario> funcionariosFiltrados = AplicarFiltrosConjuntos();
+                AtualizarDataGridView(funcionariosFiltrados);
+            }
+            else if (contratoValido)
+            {
+                List<Funcionario> funcionariosComContratoValido = AplicarFiltroContratoValido();
+                AtualizarDataGridView(funcionariosComContratoValido);
+            }
+            else if (registoCriminal)
+            {
+                List<Funcionario> funcionariosComRegistoExpirado = AplicarFiltroRegistoCriminalExpirado();
                 AtualizarDataGridView(funcionariosComRegistoExpirado);
             }
             else
@@ -127,22 +133,32 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             }
         }
 
-        private void ContratoValido_CheckBox_CheckedChanged(object sender, EventArgs e)
+        private List<Funcionario> AplicarFiltrosConjuntos()
         {
-            if (ContratoValido_CheckBox.Checked)
-            {
-                DateTime dataAtual = dateTimeController.GetDateTime();
-                List<Funcionario> funcionariosComContratoValido = empresaController.ListarFuncionariosComContratoValido(dataAtual);
-                AtualizarDataGridView(funcionariosComContratoValido);
-            }
-            else
-            {
-                ListarFuncionarioDataGrid();
-            }
+            DateTime dataAtual = dateTimeController.GetDateTime();
+            List<Funcionario> funcionariosFiltrados = empresaController.ListarFuncionarios().FindAll(funcionario =>
+                funcionario.DataFimContrato >= dataAtual && funcionario.DataFimRegistoCriminal <= dataAtual);
+            return funcionariosFiltrados;
         }
 
+        private List<Funcionario> AplicarFiltroContratoValido()
+        {
+            DateTime dataAtual = dateTimeController.GetDateTime();
+            List<Funcionario> funcionariosComContratoValido = empresaController.ListarFuncionariosComContratoValido(dataAtual);
+            return funcionariosComContratoValido;
+        }
+
+        private List<Funcionario> AplicarFiltroRegistoCriminalExpirado()
+        {
+            DateTime dataAtual = dateTimeController.GetDateTime();
+            List<Funcionario> funcionariosComRegistoExpirado = empresaController.ListarFuncionariosComRegistoCriminalExpirado(dataAtual);
+            return funcionariosComRegistoExpirado;
+        }
+
+        #endregion
+
         private void ListaFuncionarios_DataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        { 
+        {
             int rowIndex = e.RowIndex;
             int funcionarioId = Convert.ToInt32(ListaFuncionarios_DataGrid.Rows[rowIndex].Cells["Id"].Value);
             panelEditar.Visible = true;
@@ -154,7 +170,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             panelEditar.Controls.Add(editarFuncionarioForm);
             editarFuncionarioForm.BringToFront();
             editarFuncionarioForm.Show();
-            
         }
 
         private void Addfuncionario_Btn_Click(object sender, EventArgs e)
@@ -169,13 +184,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             panelEditar.Controls.Add(adicionarFuncionarioForm);
             adicionarFuncionarioForm.BringToFront();
             adicionarFuncionarioForm.Show();
-
-        }
-
-        private void Editarfuncionario_Btn_Click(object sender, EventArgs e)
-        {
-           SetParameter("editar");
-                
         }
 
         private void Sair_Btn_Click(object sender, EventArgs e)

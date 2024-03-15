@@ -1,12 +1,9 @@
-﻿using Projeto_UFCD5412.Controller;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using Projeto_UFCD5412.Controller;
 using Projeto_UFCD5412.Model;
 using Projeto_UFCD5412.View.DashboardForms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
-using System.Windows.Forms;
 
 namespace Projeto_UFCD5412.View.FinancasForms
 {
@@ -18,18 +15,23 @@ namespace Projeto_UFCD5412.View.FinancasForms
         public CalcularValorForm()
         {
             InitializeComponent();
+        }
+
+        private void CalcularValorForm_Load(object sender, EventArgs e)
+        {
             LoadComboBox();
             InitializeDataGridView();
         }
 
         private void LoadComboBox()
         {
+            TipoFuncionario_ComboBox.Items.Add("Todos");
             TipoFuncionario_ComboBox.Items.Add("Funcionario");
             TipoFuncionario_ComboBox.Items.Add("Formador");
             TipoFuncionario_ComboBox.Items.Add("Coordenador");
             TipoFuncionario_ComboBox.Items.Add("Secretaria");
             TipoFuncionario_ComboBox.Items.Add("Diretor");
-            TipoFuncionario_ComboBox.Items.Add("Todos");
+            TipoFuncionario_ComboBox.SelectedIndex = 0;
             TipoFuncionario_ComboBox.SelectedIndexChanged += TipoFuncionario_ComboBox_SelectedIndexChanged;
         }
 
@@ -56,24 +58,8 @@ namespace Projeto_UFCD5412.View.FinancasForms
             ValorPagarDataGridView.Rows.Clear();
             foreach (var funcionario in funcionarios)
             {
-                decimal salario = CalcularSalario(funcionario);
+                decimal salario = empresaController.CalcularSalarioFormadores(funcionario,DateTime.Now);
                 ValorPagarDataGridView.Rows.Add(funcionario.Nome, funcionario.Tipo, salario, funcionario.DataContrato, funcionario.DataFimContrato);
-            }
-        }
-
-        private decimal CalcularSalario(Funcionario funcionario)
-        {
-            if (funcionario is Formador formador)
-            {
-                DateTime dataInicio = funcionario.DataContrato;
-                DateTime dataFim = funcionario.DataFimContrato;
-                int totalDias = (int)(dataFim - dataInicio).TotalDays + 1;
-                int totalHoras = totalDias * 6; 
-                return totalHoras * formador.ValorHora; 
-            }
-            else
-            {
-                return funcionario.Salario; 
             }
         }
 
@@ -84,19 +70,11 @@ namespace Projeto_UFCD5412.View.FinancasForms
 
             if (tipoSelecionado != "Todos")
             {
-                funcionariosFiltrados = funcionarios.Where(funcionario => funcionario.Tipo == tipoSelecionado).ToList();
+                funcionariosFiltrados = empresaController.ListarFuncionariosPorTipo(tipoSelecionado);
             }
             AtualizarDataGridView(funcionariosFiltrados);
         }
 
- 
-
-        private void Sair_Btn_Click(object sender, EventArgs e)
-        {
-            DashboardForm dashboardForm = new DashboardForm();
-            dashboardForm.Show();
-            this.Hide();
-        }
 
         private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
         {

@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DataInicio_calendar = new System.Windows.Forms.DateTimePicker();
-            this.DataFim_calendar = new System.Windows.Forms.DateTimePicker();
             this.HoraIncio_combo = new System.Windows.Forms.ComboBox();
             this.HoraFim_combo = new System.Windows.Forms.ComboBox();
             this.FormadorNomes_combo = new System.Windows.Forms.ComboBox();
@@ -46,70 +42,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(74, 173);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Data de início:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(464, 174);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data de fim:";
-            // 
-            // DataInicio_calendar
-            // 
-            this.DataInicio_calendar.Location = new System.Drawing.Point(212, 178);
-            this.DataInicio_calendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DataInicio_calendar.Name = "DataInicio_calendar";
-            this.DataInicio_calendar.Size = new System.Drawing.Size(186, 20);
-            this.DataInicio_calendar.TabIndex = 11;
-            // 
-            // DataFim_calendar
-            // 
-            this.DataFim_calendar.Location = new System.Drawing.Point(584, 177);
-            this.DataFim_calendar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.DataFim_calendar.Name = "DataFim_calendar";
-            this.DataFim_calendar.Size = new System.Drawing.Size(186, 20);
-            this.DataFim_calendar.TabIndex = 12;
-            // 
             // HoraIncio_combo
             // 
             this.HoraIncio_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HoraIncio_combo.FormattingEnabled = true;
-            this.HoraIncio_combo.Items.AddRange(new object[] {
-            "07:00 AM",
-            "08:00 AM",
-            "09:00 AM",
-            "10:00 AM",
-            "11:00 AM",
-            "12:00 PM",
-            "01:00 PM",
-            "02:00 PM",
-            "03:00 PM",
-            "04:00 PM",
-            "05:00 PM",
-            "06:00 PM",
-            "07:00 PM",
-            "08:00 PM",
-            "09:00 PM",
-            "10:00 PM",
-            "11:00 PM"});
             this.HoraIncio_combo.Location = new System.Drawing.Point(260, 241);
-            this.HoraIncio_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HoraIncio_combo.Margin = new System.Windows.Forms.Padding(2);
             this.HoraIncio_combo.Name = "HoraIncio_combo";
             this.HoraIncio_combo.Size = new System.Drawing.Size(130, 21);
             this.HoraIncio_combo.TabIndex = 21;
@@ -118,26 +56,8 @@
             // 
             this.HoraFim_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HoraFim_combo.FormattingEnabled = true;
-            this.HoraFim_combo.Items.AddRange(new object[] {
-            "07:00 AM",
-            "08:00 AM",
-            "09:00 AM",
-            "10:00 AM",
-            "11:00 AM",
-            "12:00 PM",
-            "01:00 PM",
-            "02:00 PM",
-            "03:00 PM",
-            "04:00 PM",
-            "05:00 PM",
-            "06:00 PM",
-            "07:00 PM",
-            "08:00 PM",
-            "09:00 PM",
-            "10:00 PM",
-            "11:00 PM"});
             this.HoraFim_combo.Location = new System.Drawing.Point(646, 241);
-            this.HoraFim_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HoraFim_combo.Margin = new System.Windows.Forms.Padding(2);
             this.HoraFim_combo.Name = "HoraFim_combo";
             this.HoraFim_combo.Size = new System.Drawing.Size(123, 21);
             this.HoraFim_combo.TabIndex = 23;
@@ -147,7 +67,7 @@
             this.FormadorNomes_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FormadorNomes_combo.FormattingEnabled = true;
             this.FormadorNomes_combo.Location = new System.Drawing.Point(212, 311);
-            this.FormadorNomes_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormadorNomes_combo.Margin = new System.Windows.Forms.Padding(2);
             this.FormadorNomes_combo.Name = "FormadorNomes_combo";
             this.FormadorNomes_combo.Size = new System.Drawing.Size(186, 21);
             this.FormadorNomes_combo.TabIndex = 24;
@@ -157,7 +77,7 @@
             this.Turmas_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Turmas_combo.FormattingEnabled = true;
             this.Turmas_combo.Location = new System.Drawing.Point(584, 311);
-            this.Turmas_combo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Turmas_combo.Margin = new System.Windows.Forms.Padding(2);
             this.Turmas_combo.Name = "Turmas_combo";
             this.Turmas_combo.Size = new System.Drawing.Size(186, 21);
             this.Turmas_combo.TabIndex = 25;
@@ -168,7 +88,7 @@
             this.AdicionarFormacao_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdicionarFormacao_btn.ForeColor = System.Drawing.Color.White;
             this.AdicionarFormacao_btn.Location = new System.Drawing.Point(621, 437);
-            this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2);
             this.AdicionarFormacao_btn.Name = "AdicionarFormacao_btn";
             this.AdicionarFormacao_btn.Size = new System.Drawing.Size(107, 23);
             this.AdicionarFormacao_btn.TabIndex = 26;
@@ -232,7 +152,7 @@
             this.label7.Location = new System.Drawing.Point(131, 46);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(578, 42);
+            this.label7.Size = new System.Drawing.Size(552, 42);
             this.label7.TabIndex = 31;
             this.label7.Text = "Agendamento de Formação UFCD";
             // 
@@ -242,7 +162,7 @@
             this.Sair_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sair_Btn.ForeColor = System.Drawing.Color.White;
             this.Sair_Btn.Location = new System.Drawing.Point(734, 437);
-            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Sair_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Sair_Btn.Name = "Sair_Btn";
             this.Sair_Btn.Size = new System.Drawing.Size(107, 23);
             this.Sair_Btn.TabIndex = 32;
@@ -276,12 +196,8 @@
             this.Controls.Add(this.FormadorNomes_combo);
             this.Controls.Add(this.HoraFim_combo);
             this.Controls.Add(this.HoraIncio_combo);
-            this.Controls.Add(this.DataFim_calendar);
-            this.Controls.Add(this.DataInicio_calendar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdicionarFormacaoForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -292,11 +208,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker DataInicio_calendar;
-        private System.Windows.Forms.DateTimePicker DataFim_calendar;
         private System.Windows.Forms.ComboBox HoraIncio_combo;
         private System.Windows.Forms.ComboBox HoraFim_combo;
         private System.Windows.Forms.ComboBox FormadorNomes_combo;

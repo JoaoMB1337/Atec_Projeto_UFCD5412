@@ -217,16 +217,11 @@ namespace Projeto_UFCD5412
             timer_label.Text = e.NewDateTime.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
-        private void Exit_Btn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void MostrarNomeUtilizador()
         {
             //mostrar o nome do utilizador
-            if(LoginController.funcionarioLogado != null)
-            { 
+            if (LoginController.funcionarioLogado != null)
+            {
                 NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;
             }
             else
@@ -235,7 +230,9 @@ namespace Projeto_UFCD5412
             }
         }
 
-      
-
+        private void Exit_Btn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -119,6 +119,42 @@ namespace Projeto_UFCD5412.View.DashboardForms
             decimal totalSalarios = empresaController.CalcularTotalSalariosPorTipo(selectedTipo, dataAtual);
             totalSalario_lbl.Text = totalSalarios.ToString();
         }
+
+
+
+        private void PanelContratosInativos_MouseEnter(object sender, EventArgs e)
+        {
+            DateTime dataAtual = dateTimeController.GetDateTime();
+            List<string> nomesFuncionariosInativos = empresaController.ListarNomesFuncionariosInativos(dataAtual);
+
+            // Construir uma mensagem com os nomes dos funcionários
+            StringBuilder mensagem = new StringBuilder();
+            mensagem.AppendLine("Funcionários com contratos Inativos:");
+            foreach (string nome in nomesFuncionariosInativos)
+            {
+                mensagem.AppendLine(nome);
+            }
+
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(PanelContratosInativos, mensagem.ToString());
+        }
+
+        private void PanelRegistoCriminalInativos_MouseEnter(object sender, EventArgs e)
+        {
+            DateTime dataAtual = dateTimeController.GetDateTime();
+            List<string> nomesFuncionariosComRegistroCriminalInativos = empresaController.ListarNomesFunciomariosComRegistoCriminalInativo(dataAtual);
+            StringBuilder mensagem = new StringBuilder();
+            mensagem.AppendLine("Funcionários com contratos Inativos:");
+            foreach (string nome in nomesFuncionariosComRegistroCriminalInativos)
+            {
+                mensagem.AppendLine(nome);
+            }
+
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(PanelRegistoCriminalInativos, mensagem.ToString());
+        }
+
+
     }
 }
 

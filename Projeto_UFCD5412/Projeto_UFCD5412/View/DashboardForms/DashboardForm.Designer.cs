@@ -34,7 +34,7 @@
             this.totalSalario_lbl = new System.Windows.Forms.Label();
             this.dolar_lbl = new System.Windows.Forms.Label();
             this.Salarios_lbl = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.PanelRegistoCriminalInativos = new System.Windows.Forms.Panel();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorRegistosCriminaisInativos_label = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorRegistosCriminais_label = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelContratosInativos = new System.Windows.Forms.Panel();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.ContadorContratosInativos_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,11 +62,11 @@
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
+            this.PanelRegistoCriminalInativos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.PanelContratosInativos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -238,12 +238,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(31, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(195, 23);
+            this.label10.Size = new System.Drawing.Size(214, 24);
             this.label10.TabIndex = 3;
             this.label10.Text = "Total de Funcionários";
             // 
@@ -331,29 +331,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Salarios_lbl.AutoSize = true;
-            this.Salarios_lbl.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Salarios_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Salarios_lbl.ForeColor = System.Drawing.Color.White;
             this.Salarios_lbl.Location = new System.Drawing.Point(31, 16);
             this.Salarios_lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Salarios_lbl.Name = "Salarios_lbl";
-            this.Salarios_lbl.Size = new System.Drawing.Size(80, 23);
+            this.Salarios_lbl.Size = new System.Drawing.Size(84, 24);
             this.Salarios_lbl.TabIndex = 3;
             this.Salarios_lbl.Text = "Salários";
             // 
-            // panel6
+            // PanelRegistoCriminalInativos
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
-            this.panel6.Controls.Add(this.iconPictureBox5);
-            this.panel6.Controls.Add(this.ContadorRegistosCriminaisInativos_label);
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.Location = new System.Drawing.Point(528, 576);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(574, 123);
-            this.panel6.TabIndex = 20;
+            this.PanelRegistoCriminalInativos.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.PanelRegistoCriminalInativos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelRegistoCriminalInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.PanelRegistoCriminalInativos.Controls.Add(this.iconPictureBox5);
+            this.PanelRegistoCriminalInativos.Controls.Add(this.ContadorRegistosCriminaisInativos_label);
+            this.PanelRegistoCriminalInativos.Controls.Add(this.label13);
+            this.PanelRegistoCriminalInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelRegistoCriminalInativos.Location = new System.Drawing.Point(528, 576);
+            this.PanelRegistoCriminalInativos.Margin = new System.Windows.Forms.Padding(4);
+            this.PanelRegistoCriminalInativos.Name = "PanelRegistoCriminalInativos";
+            this.PanelRegistoCriminalInativos.Size = new System.Drawing.Size(574, 123);
+            this.PanelRegistoCriminalInativos.TabIndex = 20;
+            this.PanelRegistoCriminalInativos.MouseEnter += new System.EventHandler(this.PanelRegistoCriminalInativos_MouseEnter);
+           
             // 
             // iconPictureBox5
             // 
@@ -394,12 +396,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(26, 16);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(252, 23);
+            this.label13.Size = new System.Drawing.Size(272, 24);
             this.label13.TabIndex = 3;
             this.label13.Text = "Registo Criminais Expirados";
             // 
@@ -457,30 +459,30 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(26, 18);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(221, 23);
+            this.label11.Size = new System.Drawing.Size(234, 24);
             this.label11.TabIndex = 3;
             this.label11.Text = "Registo Criminais Ativos";
             // 
-            // panel3
+            // PanelContratosInativos
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
-            this.panel3.Controls.Add(this.iconPictureBox4);
-            this.panel3.Controls.Add(this.ContadorContratosInativos_label);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(528, 211);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(568, 123);
-            this.panel3.TabIndex = 22;
-            // 
+            this.PanelContratosInativos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PanelContratosInativos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PanelContratosInativos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.PanelContratosInativos.Controls.Add(this.iconPictureBox4);
+            this.PanelContratosInativos.Controls.Add(this.ContadorContratosInativos_label);
+            this.PanelContratosInativos.Controls.Add(this.label9);
+            this.PanelContratosInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PanelContratosInativos.Location = new System.Drawing.Point(528, 211);
+            this.PanelContratosInativos.Margin = new System.Windows.Forms.Padding(4);
+            this.PanelContratosInativos.Name = "PanelContratosInativos";
+            this.PanelContratosInativos.Size = new System.Drawing.Size(568, 123);
+            this.PanelContratosInativos.TabIndex = 22;
+            this.PanelContratosInativos.MouseEnter += new System.EventHandler(this.PanelContratosInativos_MouseEnter);            // 
             // iconPictureBox4
             // 
             this.iconPictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -520,12 +522,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(26, 17);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(185, 23);
+            this.label9.Size = new System.Drawing.Size(198, 24);
             this.label9.TabIndex = 3;
             this.label9.Text = "Contratos Expirados";
             // 
@@ -583,12 +585,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(26, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 23);
+            this.label3.Size = new System.Drawing.Size(160, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Contratos Ativos";
             // 
@@ -630,12 +632,12 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(26, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(212, 23);
+            this.label8.Size = new System.Drawing.Size(226, 24);
             this.label8.TabIndex = 3;
             this.label8.Text = "Próximo Aniversariante";
             // 
@@ -692,12 +694,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(26, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 23);
+            this.label1.Size = new System.Drawing.Size(248, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Funcionario mais recente";
             // 
@@ -740,9 +742,9 @@
             this.ClientSize = new System.Drawing.Size(1666, 1078);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.PanelRegistoCriminalInativos);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.PanelContratosInativos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
@@ -756,14 +758,14 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.PanelRegistoCriminalInativos.ResumeLayout(false);
+            this.PanelRegistoCriminalInativos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.PanelContratosInativos.ResumeLayout(false);
+            this.PanelContratosInativos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -797,7 +799,7 @@
         private System.Windows.Forms.Label totalSalario_lbl;
         private System.Windows.Forms.Label dolar_lbl;
         private System.Windows.Forms.Label Salarios_lbl;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel PanelRegistoCriminalInativos;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private System.Windows.Forms.Label ContadorRegistosCriminaisInativos_label;
         private System.Windows.Forms.Label label13;
@@ -805,7 +807,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label ContadorRegistosCriminais_label;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel PanelContratosInativos;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private System.Windows.Forms.Label ContadorContratosInativos_label;
         private System.Windows.Forms.Label label9;

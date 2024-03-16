@@ -78,7 +78,7 @@
             this.ValorPagarDataGridView.Name = "ValorPagarDataGridView";
             this.ValorPagarDataGridView.ReadOnly = true;
             this.ValorPagarDataGridView.RowHeadersWidth = 51;
-            this.ValorPagarDataGridView.Size = new System.Drawing.Size(792, 358);
+            this.ValorPagarDataGridView.Size = new System.Drawing.Size(792, 397);
             this.ValorPagarDataGridView.TabIndex = 0;
             // 
             // PesquisarFuncinarioPorNome_Textbox

@@ -113,5 +113,19 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             return formacaoEditada;
         }
+
+        private void RemoverFormacao_Btn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Tem certeza de que deseja remover esta formação?", "Confirmação de Remoção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                coordenadorController.RemoverFormacao(formacaoOriginal);
+
+                MessageBox.Show("Formação removida com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+        }
     }
 }

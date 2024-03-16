@@ -36,6 +36,7 @@ namespace Projeto_UFCD5412.Controller
         }
 
 
+        #region Formacao Editar, Adicionar, Remover
         public void AdicionarFormacao(Formacao formacao)
         {
             Formacaos.Add(formacao);
@@ -57,11 +58,23 @@ namespace Projeto_UFCD5412.Controller
             }
         }
 
+        public void RemoverFormacao(Formacao formacao)
+        {
+            Formacaos.Remove(formacao);
+            CSVFormacao.ExportToCSV(Formacaos);
+        }
+
+        #endregion
+
+
+        #region Listar Formaçoes
+
         public List<Formacao> ListarFormacoes()
         {
             return Formacaos;
         }
 
+        #endregion
+
     }
 }
- 

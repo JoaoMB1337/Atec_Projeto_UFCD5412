@@ -38,18 +38,16 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 123);
+            this.panel1.Size = new System.Drawing.Size(640, 100);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Projeto_UFCD5412.Properties.Resources.LogoEmpresa_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 82);
+            this.pictureBox1.Size = new System.Drawing.Size(65, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -59,10 +57,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(133, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(100, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 54);
+            this.label1.Size = new System.Drawing.Size(226, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bem-vindo(a)";
             // 
@@ -72,30 +69,27 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(40, 185);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(30, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 28);
+            this.label2.Size = new System.Drawing.Size(84, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
             // User_Textbox
             // 
             this.User_Textbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Textbox.Location = new System.Drawing.Point(187, 181);
-            this.User_Textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.User_Textbox.Location = new System.Drawing.Point(140, 147);
             this.User_Textbox.Name = "User_Textbox";
-            this.User_Textbox.Size = new System.Drawing.Size(399, 34);
+            this.User_Textbox.Size = new System.Drawing.Size(300, 29);
             this.User_Textbox.TabIndex = 2;
             // 
             // Password_TextBox
             // 
             this.Password_TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_TextBox.Location = new System.Drawing.Point(187, 246);
-            this.Password_TextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.Password_TextBox.Location = new System.Drawing.Point(140, 200);
             this.Password_TextBox.Name = "Password_TextBox";
             this.Password_TextBox.PasswordChar = '*';
-            this.Password_TextBox.Size = new System.Drawing.Size(399, 34);
+            this.Password_TextBox.Size = new System.Drawing.Size(300, 29);
             this.Password_TextBox.TabIndex = 4;
             // 
             // UserLogin_Btn
@@ -105,24 +99,22 @@
             this.UserLogin_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserLogin_Btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLogin_Btn.ForeColor = System.Drawing.Color.White;
-            this.UserLogin_Btn.Location = new System.Drawing.Point(187, 320);
-            this.UserLogin_Btn.Margin = new System.Windows.Forms.Padding(4);
+            this.UserLogin_Btn.Location = new System.Drawing.Point(140, 260);
             this.UserLogin_Btn.Name = "UserLogin_Btn";
-            this.UserLogin_Btn.Size = new System.Drawing.Size(133, 49);
+            this.UserLogin_Btn.Size = new System.Drawing.Size(100, 40);
             this.UserLogin_Btn.TabIndex = 5;
             this.UserLogin_Btn.Text = "Login";
             this.UserLogin_Btn.UseVisualStyleBackColor = false;
-            this.UserLogin_Btn.Click += new System.EventHandler(this.UserLogin_Btn_Click_1);
+            this.UserLogin_Btn.Click += new System.EventHandler(this.UserLogin_Btn_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 250);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 28);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Password:";
             // 
@@ -133,10 +125,9 @@
             this.Sair_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Sair_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sair_btn.ForeColor = System.Drawing.Color.White;
-            this.Sair_btn.Location = new System.Drawing.Point(351, 320);
-            this.Sair_btn.Margin = new System.Windows.Forms.Padding(4);
+            this.Sair_btn.Location = new System.Drawing.Point(263, 260);
             this.Sair_btn.Name = "Sair_btn";
-            this.Sair_btn.Size = new System.Drawing.Size(133, 49);
+            this.Sair_btn.Size = new System.Drawing.Size(100, 40);
             this.Sair_btn.TabIndex = 8;
             this.Sair_btn.Text = "Sair";
             this.Sair_btn.UseVisualStyleBackColor = false;
@@ -144,10 +135,10 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(853, 492);
+            this.ClientSize = new System.Drawing.Size(640, 400);
             this.Controls.Add(this.Sair_btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.UserLogin_Btn);
@@ -157,7 +148,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

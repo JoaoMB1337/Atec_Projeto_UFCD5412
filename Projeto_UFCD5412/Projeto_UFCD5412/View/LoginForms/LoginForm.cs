@@ -49,15 +49,16 @@ namespace Projeto_UFCD5412.View.LoginForms
             }
         }
 
-        private void UserLogin_Btn_Click_1(object sender, EventArgs e)
+        private void UserLogin_Btn_Click(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrEmpty(User_Textbox.Text) || string.IsNullOrEmpty(Password_TextBox.Text))
             {
-                MessageBox.Show("Por favor, preencha ambos os campos de user e password.");
+                MessageBox.Show("Por favor, preencha ambos os campos de usuário e senha.", "Campos Vazios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string loginResult = loginController.Login(User_Textbox.Text, Password_TextBox.Text);
+
             if (loginResult != null)
             {
                 if (loginResult == "PrimeiroLogin")
@@ -71,19 +72,20 @@ namespace Projeto_UFCD5412.View.LoginForms
                         bool verificaNovaPassword = loginController.AlterarPassword(novaPassword);
                         if (verificaNovaPassword)
                         {
-                            MessageBox.Show("Password alterada com sucesso!");
-                            MessageBox.Show("Por favor, faça login novamente.");
+                            MessageBox.Show("Password alterada com sucesso! Por favor, faça login novamente.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             User_Textbox.Text = null;
                             Password_TextBox.Text = null;
                         }
                         else
                         {
-                            MessageBox.Show("Erro ao alterar a password!");
+                            MessageBox.Show("Erro ao alterar a senha.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 else
                 {
+                    User_Textbox.Text = null;
+                    Password_TextBox.Text = null;
                     MostrarMenuConsoanteTipoUtilizador(loginResult);
                 }
             }
@@ -93,15 +95,15 @@ namespace Projeto_UFCD5412.View.LoginForms
                 {
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.ShowDialog();
-
-
                 }
                 else
                 {
-                    MessageBox.Show("Username ou Password incorretos!");
+                    MessageBox.Show("Nome de usuário ou senha incorretos. Por favor, tente novamente.", "Login Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
 
         private void Sair_btn_Click(object sender, EventArgs e)
         {
@@ -113,6 +115,7 @@ namespace Projeto_UFCD5412.View.LoginForms
             this.Show();
             Application.Exit();
         }
+
     }
 
 }

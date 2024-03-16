@@ -40,6 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Sair_Btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RemoverFormacao_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // HoraIncio_combo
@@ -87,7 +88,7 @@
             this.AdicionarFormacao_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
             this.AdicionarFormacao_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdicionarFormacao_btn.ForeColor = System.Drawing.Color.White;
-            this.AdicionarFormacao_btn.Location = new System.Drawing.Point(621, 437);
+            this.AdicionarFormacao_btn.Location = new System.Drawing.Point(482, 437);
             this.AdicionarFormacao_btn.Margin = new System.Windows.Forms.Padding(2);
             this.AdicionarFormacao_btn.Name = "AdicionarFormacao_btn";
             this.AdicionarFormacao_btn.Size = new System.Drawing.Size(107, 23);
@@ -147,12 +148,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label7.Location = new System.Drawing.Point(131, 46);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(552, 42);
+            this.label7.Size = new System.Drawing.Size(578, 39);
             this.label7.TabIndex = 31;
             this.label7.Text = "Agendamento de Formação UFCD";
             // 
@@ -178,6 +179,20 @@
             this.panel1.Size = new System.Drawing.Size(735, 239);
             this.panel1.TabIndex = 33;
             // 
+            // RemoverFormacao_Btn
+            // 
+            this.RemoverFormacao_Btn.BackColor = System.Drawing.Color.Red;
+            this.RemoverFormacao_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoverFormacao_Btn.ForeColor = System.Drawing.Color.White;
+            this.RemoverFormacao_Btn.Location = new System.Drawing.Point(613, 437);
+            this.RemoverFormacao_Btn.Margin = new System.Windows.Forms.Padding(2);
+            this.RemoverFormacao_Btn.Name = "RemoverFormacao_Btn";
+            this.RemoverFormacao_Btn.Size = new System.Drawing.Size(107, 23);
+            this.RemoverFormacao_Btn.TabIndex = 34;
+            this.RemoverFormacao_Btn.Text = "Remover";
+            this.RemoverFormacao_Btn.UseVisualStyleBackColor = false;
+            this.RemoverFormacao_Btn.Click += new System.EventHandler(this.RemoverFormacao_Btn_Click);
+            // 
             // EditarFormacaoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +200,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(867, 471);
             this.ControlBox = false;
+            this.Controls.Add(this.RemoverFormacao_Btn);
             this.Controls.Add(this.Sair_Btn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -220,5 +236,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button Sair_Btn;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button RemoverFormacao_Btn;
     }
 }

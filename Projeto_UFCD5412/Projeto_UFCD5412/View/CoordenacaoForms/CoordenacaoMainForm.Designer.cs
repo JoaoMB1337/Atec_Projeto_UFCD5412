@@ -116,7 +116,7 @@
             this.Exit_Btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Exit_Btn.IconSize = 61;
             this.Exit_Btn.Location = new System.Drawing.Point(2, 401);
-            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Exit_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.Exit_Btn.Name = "Exit_Btn";
             this.Exit_Btn.Size = new System.Drawing.Size(207, 61);
             this.Exit_Btn.TabIndex = 10;
@@ -137,7 +137,7 @@
             this.DashboardCalendario_Btn.IconSize = 32;
             this.DashboardCalendario_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardCalendario_Btn.Location = new System.Drawing.Point(0, 140);
-            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardCalendario_Btn.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCalendario_Btn.Name = "DashboardCalendario_Btn";
             this.DashboardCalendario_Btn.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
             this.DashboardCalendario_Btn.Size = new System.Drawing.Size(218, 49);
@@ -175,7 +175,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(220, 140);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 333);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -190,7 +190,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CoordenacaoMainForm";
             this.Text = "Coordenação";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

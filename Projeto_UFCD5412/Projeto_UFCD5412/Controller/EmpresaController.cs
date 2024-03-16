@@ -144,6 +144,24 @@ namespace Projeto_UFCD5412.Controller
                 return proximoAniversario;
         }
 
+        public List<string> ListarNomesFuncionariosInativos(DateTime dataAtual)
+        {
+            var nomesFuncionariosInativos = Funcionarios
+            .Where(f => f.DataFimContrato < dataAtual)
+            .Select(f => f.Nome)
+            .ToList();
+            return nomesFuncionariosInativos;
+        }
+
+        public List<string> ListarNomesFunciomariosComRegistoCriminalInativo(DateTime dataAtual)
+        {
+            var nomesFuncionariosComRegistoCriminalInativo = Funcionarios
+            .Where(f => f.DataFimRegistoCriminal < dataAtual)
+            .Select(f => f.Nome)
+            .ToList();
+            return nomesFuncionariosComRegistoCriminalInativo;
+        }
+
 
         #endregion
 

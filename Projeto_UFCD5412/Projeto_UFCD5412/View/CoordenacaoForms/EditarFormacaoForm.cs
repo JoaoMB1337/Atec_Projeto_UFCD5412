@@ -10,9 +10,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
     public partial class EditarFormacaoForm : Form
     {
         private readonly CoordenadorController coordenadorController = CoordenadorController.Instance;
-        private Formacao formacaoOriginal;
+        private readonly Formacao formacaoOriginal;
         private DateTime dataInicioFormacao;
         private DateTime dataFimFormacao;
+        private Formacao formacaoEditada;
+
 
         public EditarFormacaoForm(Formacao formacao)
         {
@@ -83,8 +85,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 return;
             }
 
-            DateTime horaInicioDateTime = DateTime.ParseExact(horaInicio, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime horaFimDateTime = DateTime.ParseExact(horaFim.ToString(), "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime horaInicioDateTime;
+            DateTime horaFimDateTime;
+            if (!DateTime.TryParseExact(horaInicio, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out horaInicioDateTime) ||
+                !DateTime.TryParseExact(horaFim, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out horaFimDateTime))
+            {
+                MessageBox.Show("Formato de hora inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (horaFimDateTime <= horaInicioDateTime)
             {
@@ -92,13 +100,18 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 return;
             }
 
-            Formacao formacaoEditada = new Formacao(dataInicioFormacao, dataInicioFormacao, horaInicio, horaFim, formador, turma);
-            
+            formacaoEditada = new Formacao(dataInicioFormacao, dataInicioFormacao, horaInicio, horaFim, formador, turma);
+
             coordenadorController.EditarFormacao(formacaoOriginal, formacaoEditada);
 
             MessageBox.Show("Formação atualizada com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             this.Close();
+        }
+
+        public Formacao GetFormacaoEditada()
+        {
+            return formacaoEditada;
         }
     }
 }

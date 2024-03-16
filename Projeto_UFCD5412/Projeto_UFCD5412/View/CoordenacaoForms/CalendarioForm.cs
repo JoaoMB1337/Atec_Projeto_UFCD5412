@@ -162,7 +162,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                         }
                         else
                         {
-                            if (diaAtual == diaAtualDoMes)
+                            if (diaAtual == diaAtualDoMes )
                             {
                                 lbl.BackColor = Color.Gray;
                             }
@@ -238,48 +238,37 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         {
             foreach (Control control in tableLayoutPanel1.Controls)
             {
-                if (control is Label label && label.Text != "")
+                if (control is Label label && label.Tag is int diaCelula)
                 {
-                    string[] splitText = label.Text.Split('\n');
-                    if (splitText.Length > 0)
+                    DateTime dataCelula = new DateTime(data.Year, data.Month, diaCelula);
+                    if (dataCelula == data)
                     {
-                        if (int.TryParse(splitText[0], out int diaCelula))
+                        if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
                         {
-                            if (new DateTime(data.Year, data.Month, diaCelula) == data)
+                            label.BackColor = Color.LightGreen;
+                            label.Text = diaCelula.ToString() + "\n";
+                            foreach (var formacao in eventosPorDia[data])
                             {
-                                if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
-                                {
-                                    label.BackColor = Color.LightGreen;
-                                    label.Text += "\n";
-                                    foreach (var formacao in eventosPorDia[data])
-                                    {
-                                        label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
-                                    }
-                                    label.Font = new Font(label.Font, FontStyle.Bold);
-
-                                    Size size = TextRenderer.MeasureText(label.Text, label.Font);
-                                    label.Size = new Size(size.Width + 10, size.Height + 10);
-                                }
-                                else
-                                {
-                                    // Limpar as configurações de fundo e texto se não houver evento para este dia
-                                    label.BackColor = Color.White;
-                                    label.Text = diaCelula.ToString();
-                                }
-                                // Adicione ou atualize o evento de clique da label
-                                label.Click -= Label_Click; // Remova o manipulador de evento existente, se houver
-                                label.Click += Label_Click; // Adicione o manipulador de evento atualizado
+                                label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
                             }
+                            label.Font = new Font(label.Font, FontStyle.Bold);
+                            Size size = TextRenderer.MeasureText(label.Text, label.Font);
+                            label.Size = new Size(size.Width + 10, size.Height + 10);
                         }
                         else
                         {
-                            Console.WriteLine($"Erro ao converter o texto \"{splitText[0]}\" do rótulo para um número inteiro.");
+                            // Limpar as configurações de fundo e texto se não houver evento para este dia
+                            label.BackColor = diaCelula == DateTime.Today.Day ? Color.Gray : Color.White;
+                            label.Text = diaCelula.ToString();
                         }
+                        // Adicione ou atualize o evento de clique da label
+                        label.Click -= Label_Click; // Remova o manipulador de evento existente, se houver
+                        label.Click += Label_Click; // Adicione o manipulador de evento atualizado
                     }
-
                 }
             }
         }
+
 
         private void ExibirDiasSalvosNoCalendario()
         {
@@ -315,23 +304,34 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 if (eventosPorDia.ContainsKey(dataSelecionada) && eventosPorDia[dataSelecionada].Count > 0)
                 {
                     EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[dataSelecionada][0]);
-                    if (editarFormacaoForm.ShowDialog() == DialogResult.OK)
+                    editarFormacaoForm.FormClosed += (s, args) =>
                     {
-                        AtualizarCalendario();
-                    }
+                        // Recarrega as formações do CSV
+                        eventosPorDia.Clear();
+                        CarregarAulasSalvas();
+
+                        // Atualiza apenas a célula afetada pela edição
+                        AtualizarCelula(dataSelecionada);
+                    };
+                    editarFormacaoForm.ShowDialog();
                 }
                 else
                 {
                     AdicionarEvento(dataAtual.Year, dataAtual.Month, diaSelecionado);
+
+                    // Recarrega as formações do CSV
+                    eventosPorDia.Clear();
+                    CarregarAulasSalvas();
+
+                    // Atualiza o calendário
                     AtualizarCalendario();
                 }
-                // Atualiza a célula independentemente de ter sido adicionada ou editada
-                AtualizarCelula(dataSelecionada);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

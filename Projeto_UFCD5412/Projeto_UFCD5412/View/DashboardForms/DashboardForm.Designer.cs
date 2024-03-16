@@ -18,6 +18,8 @@
         private void InitializeComponent()
         {
             this.panel7 = new System.Windows.Forms.Panel();
+            this.ContCoordenadores_label = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.Contador_Formadores_label = new System.Windows.Forms.Label();
             this.Contador_Secretari_label = new System.Windows.Forms.Label();
             this.Contador_Diretores_label = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@
             // 
             this.panel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(171)))));
+            this.panel7.Controls.Add(this.ContCoordenadores_label);
+            this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.Contador_Formadores_label);
             this.panel7.Controls.Add(this.Contador_Secretari_label);
             this.panel7.Controls.Add(this.Contador_Diretores_label);
@@ -94,8 +98,38 @@
             this.panel7.Location = new System.Drawing.Point(35, 51);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(376, 306);
+            this.panel7.Size = new System.Drawing.Size(376, 326);
             this.panel7.TabIndex = 14;
+            // 
+            // ContCoordenadores_label
+            // 
+            this.ContCoordenadores_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ContCoordenadores_label.AutoSize = true;
+            this.ContCoordenadores_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContCoordenadores_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ContCoordenadores_label.Location = new System.Drawing.Point(228, 278);
+            this.ContCoordenadores_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ContCoordenadores_label.Name = "ContCoordenadores_label";
+            this.ContCoordenadores_label.Size = new System.Drawing.Size(126, 21);
+            this.ContCoordenadores_label.TabIndex = 10;
+            this.ContCoordenadores_label.Text = "Coordenadores";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(42, 278);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 21);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Coordenadores";
             // 
             // Contador_Formadores_label
             // 
@@ -105,7 +139,7 @@
             this.Contador_Formadores_label.AutoSize = true;
             this.Contador_Formadores_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Formadores_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Formadores_label.Location = new System.Drawing.Point(229, 255);
+            this.Contador_Formadores_label.Location = new System.Drawing.Point(228, 241);
             this.Contador_Formadores_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Formadores_label.Name = "Contador_Formadores_label";
             this.Contador_Formadores_label.Size = new System.Drawing.Size(80, 21);
@@ -120,7 +154,7 @@
             this.Contador_Secretari_label.AutoSize = true;
             this.Contador_Secretari_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Secretari_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Secretari_label.Location = new System.Drawing.Point(229, 223);
+            this.Contador_Secretari_label.Location = new System.Drawing.Point(228, 209);
             this.Contador_Secretari_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Secretari_label.Name = "Contador_Secretari_label";
             this.Contador_Secretari_label.Size = new System.Drawing.Size(67, 21);
@@ -135,7 +169,7 @@
             this.Contador_Diretores_label.AutoSize = true;
             this.Contador_Diretores_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Contador_Diretores_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Contador_Diretores_label.Location = new System.Drawing.Point(229, 190);
+            this.Contador_Diretores_label.Location = new System.Drawing.Point(228, 176);
             this.Contador_Diretores_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Contador_Diretores_label.Name = "Contador_Diretores_label";
             this.Contador_Diretores_label.Size = new System.Drawing.Size(89, 21);
@@ -150,7 +184,7 @@
             this.ContFuncionarios_label.AutoSize = true;
             this.ContFuncionarios_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContFuncionarios_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ContFuncionarios_label.Location = new System.Drawing.Point(229, 155);
+            this.ContFuncionarios_label.Location = new System.Drawing.Point(228, 141);
             this.ContFuncionarios_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContFuncionarios_label.Name = "ContFuncionarios_label";
             this.ContFuncionarios_label.Size = new System.Drawing.Size(77, 21);
@@ -165,7 +199,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(43, 255);
+            this.label7.Location = new System.Drawing.Point(42, 241);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 21);
@@ -180,7 +214,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(43, 223);
+            this.label5.Location = new System.Drawing.Point(42, 209);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 21);
@@ -195,7 +229,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(43, 190);
+            this.label6.Location = new System.Drawing.Point(42, 176);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 21);
@@ -210,7 +244,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(43, 155);
+            this.label4.Location = new System.Drawing.Point(42, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 21);
@@ -355,7 +389,6 @@
             this.PanelRegistoCriminalInativos.Size = new System.Drawing.Size(574, 123);
             this.PanelRegistoCriminalInativos.TabIndex = 20;
             this.PanelRegistoCriminalInativos.MouseEnter += new System.EventHandler(this.PanelRegistoCriminalInativos_MouseEnter);
-           
             // 
             // iconPictureBox5
             // 
@@ -482,7 +515,8 @@
             this.PanelContratosInativos.Name = "PanelContratosInativos";
             this.PanelContratosInativos.Size = new System.Drawing.Size(568, 123);
             this.PanelContratosInativos.TabIndex = 22;
-            this.PanelContratosInativos.MouseEnter += new System.EventHandler(this.PanelContratosInativos_MouseEnter);            // 
+            this.PanelContratosInativos.MouseEnter += new System.EventHandler(this.PanelContratosInativos_MouseEnter);
+            // 
             // iconPictureBox4
             // 
             this.iconPictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -823,5 +857,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label FuncionarioRecente_label;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private System.Windows.Forms.Label ContCoordenadores_label;
+        private System.Windows.Forms.Label label12;
     }
 }

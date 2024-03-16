@@ -17,6 +17,7 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
     {
         public int _funcionarioId;
         private EmpresaController empresaController = EmpresaController.Instance;
+
         public EditarFuncionarioForm()
         {
             InitializeComponent();
@@ -78,8 +79,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             UpdateInfoFuncionario();
             
         }
-
-
 
         private void UpdateInfoFuncionario()
         {
@@ -166,8 +165,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
             
         }
 
-
-
         private void RemoverFuncionario_Btn_Click(object sender, EventArgs e)
         {
             var funcionario = empresaController.GetFuncionarioById(_funcionarioId);
@@ -233,5 +230,6 @@ namespace Projeto_UFCD5412.View.FuncionarioForms
 
                }
             }
-        }
+        
     }
+ }

@@ -23,7 +23,6 @@ namespace Projeto_UFCD5412
 {
     public partial class MainWindow : Form
     {   
-        //Variáveis
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
@@ -36,7 +35,6 @@ namespace Projeto_UFCD5412
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
-            //Form
             this.Text = string.Empty;
             this.DoubleBuffered = true;
           
@@ -51,7 +49,6 @@ namespace Projeto_UFCD5412
             timer_label.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             LoadDashboardForm();
 
-            //Mostrar o nome do utilizador
             MostrarNomeUtilizador();
 
         
@@ -68,7 +65,6 @@ namespace Projeto_UFCD5412
             dashboardForm.Show();
         }
 
-        //Eventos
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -79,7 +75,6 @@ namespace Projeto_UFCD5412
             public static Color color6 = Color.FromArgb(24, 161, 251);          
         }
 
-        //Métodos
         private void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -111,10 +106,9 @@ namespace Projeto_UFCD5412
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-        //drag form
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
-
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
@@ -131,7 +125,6 @@ namespace Projeto_UFCD5412
 
             if (newDateTime.Date != dateTimeController.GetDateTime().Date)
             {
-                // Mantém o dia e atualiza a hora
                 dateTimeController.SetDateTime(dateTimeController.GetDateTime().Date.Add(newDateTime.TimeOfDay));
             }
             else
@@ -152,7 +145,6 @@ namespace Projeto_UFCD5412
             dashboardForm.FormBorderStyle = FormBorderStyle.None;
             dashboardForm.Dock = DockStyle.Fill;
 
-            // Define o tamanho da janela com base no tamanho da aba do TabControl
             dashboardForm.Size = Menus_TabControl.SelectedTab.ClientSize;
 
             Menus_TabControl.SelectedTab.Controls.Add(dashboardForm);
@@ -160,12 +152,10 @@ namespace Projeto_UFCD5412
             dashboardForm.Show();
         }
 
-
         private void DashboardFuncionario_Btn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
            Menus_TabControl.SelectedTab = Menus_TabControl.TabPages["tabDashboardFuncionario"];
-            //abrir form de listagem de funcionarios dentro do tabcontrol
             ListarFuncionariosForm listarFuncionariosForm = new ListarFuncionariosForm();
             listarFuncionariosForm.TopLevel = false;
             listarFuncionariosForm.FormBorderStyle = FormBorderStyle.None;
@@ -219,7 +209,6 @@ namespace Projeto_UFCD5412
 
         private void MostrarNomeUtilizador()
         {
-            //mostrar o nome do utilizador
             if (LoginController.funcionarioLogado != null)
             {
                 NomeFuncionario_Label.Text = "Bem-vindo, " + LoginController.funcionarioLogado.Nome;

@@ -20,8 +20,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             MostrarNomeUtilizador();
         }
 
-
-
         private void DashboardCalendario_Btn_Click(object sender, EventArgs e)
         {
             //abrir calendario dentro do flowpanel
@@ -45,9 +43,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 NomeFuncionario_Label.Text = "Bem-vindo, ";
             }
         }
-
-
-        
 
         private void Exit_Btn_Click(object sender, EventArgs e)
         {

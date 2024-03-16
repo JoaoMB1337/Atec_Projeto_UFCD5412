@@ -13,6 +13,7 @@ namespace Projeto_UFCD5412.View.LoginForms
     public partial class AlterarPasswordForm : Form
     {
         public string NovaPassword { get; private set; }
+
         public AlterarPasswordForm()
         {
             InitializeComponent();

@@ -75,7 +75,6 @@ namespace Projeto_UFCD5412.View.FinancasForms
             AtualizarDataGridView(funcionariosFiltrados);
         }
 
-
         private void PesquisarFuncinarioPorNome_Textbox_TextChanged(object sender, EventArgs e)
         {
             string nomePesquisado = PesquisarFuncinarioPorNome_Textbox.Text;

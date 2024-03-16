@@ -12,7 +12,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private readonly CoordenadorController coordenadorController = CoordenadorController.Instance;
         private DateTime dataSelecionada;
 
-        // Adicione a declaração da propriedade FormacaoAdicionada
         public Formacao FormacaoAdicionada { get; private set; }
 
         public AdicionarFormacaoForm(DateTime dataSelecionada)
@@ -47,7 +46,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void CarregarHoras()
         {
-            // Adicione o código para carregar as horas de incio e fim nas comboboxes
             HoraIncio_combo.Items.Clear();
             HoraFim_combo.Items.Clear();
             string[] horas = { "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", 
@@ -71,7 +69,6 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 return;
             }
 
-            // Converta as horas de string para DateTime para fazer comparação
             DateTime horaInicioDateTime = DateTime.ParseExact(horaInicio, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
             DateTime horaFimDateTime = DateTime.ParseExact(horaFim, "hh:mm tt", System.Globalization.CultureInfo.InvariantCulture);
 

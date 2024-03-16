@@ -25,7 +25,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             LoadComboBox();
         }
        
-        //carrega  a dashboard na inicialização no tabcontrol em ecra inteiro
         private void DashboardForm_Load(object sender, EventArgs e)
         {
             DashboardForm dashboard = new DashboardForm();
@@ -35,7 +34,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             dashboard.BringToFront();
             dashboard.Show();
         }
-
 
         private void LoadComboBox()
         {
@@ -52,18 +50,17 @@ namespace Projeto_UFCD5412.View.DashboardForms
         private void LoadData()
         {
             DateTime dataAtual = dateTimeController.GetDateTime();
-            // Carrega a lista de funcionários
             funcionarios = empresaController.ListarFuncionarios();
 
-            // Calcula o total de funcionários
             int totalFuncionarios = empresaController.CountTotalFuncionarios(); ;
             ContadorFunc_label.Text = totalFuncionarios.ToString();
 
-            // Calcula o total de funcionários por tipo
             ContFuncionarios_label.Text = empresaController.CountNumeroTipoFuncionarios("Funcionario").ToString();
             Contador_Diretores_label.Text = empresaController.CountNumeroTipoFuncionarios("Diretor").ToString();
             Contador_Secretari_label.Text = empresaController.CountNumeroTipoFuncionarios("Secretaria").ToString();
             Contador_Formadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Formador").ToString();
+            ContCoordenadores_label.Text = empresaController.CountNumeroTipoFuncionarios("Coordenador").ToString();
+
 
             int contratosAtivos = empresaController.CountContratosAtivos(dataAtual);
             ContadorContratos_label.Text = $"Contratos Ativos: {contratosAtivos}";
@@ -71,7 +68,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             int contratosInativos = empresaController.CountContratosInativos(dataAtual);
             ContadorContratosInativos_label.Text = $"Contratos Inativos: {contratosInativos}";
 
-            // Encontra o próximo aniversário de um funcionário
             var proximoAniversario = empresaController.ProximoAniversario(dataAtual);
 
             if (proximoAniversario != null)
@@ -120,8 +116,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             totalSalario_lbl.Text = totalSalarios.ToString();
         }
 
-
-
         private void PanelContratosInativos_MouseEnter(object sender, EventArgs e)
         {
             DateTime dataAtual = dateTimeController.GetDateTime();
@@ -153,7 +147,6 @@ namespace Projeto_UFCD5412.View.DashboardForms
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(PanelRegistoCriminalInativos, mensagem.ToString());
         }
-
 
     }
 }

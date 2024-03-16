@@ -56,6 +56,7 @@ namespace Projeto_UFCD5412.View.Forms
                 valorhora_textbox.ForeColor = SystemColors.WindowText;
             }
         }
+
         private void valorhora_textbox_LostFocus(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(valorhora_textbox.Text))
@@ -64,7 +65,7 @@ namespace Projeto_UFCD5412.View.Forms
                 valorhora_textbox.ForeColor = SystemColors.GrayText;
             }
         }
-        //
+        
         private void areaensino_textbox_GotFocus(object sender, EventArgs e)
         {
             if (areaensino_textbox.Text == "Introduza a área de ensino")
@@ -73,6 +74,7 @@ namespace Projeto_UFCD5412.View.Forms
                 areaensino_textbox.ForeColor = SystemColors.WindowText;
             }
         }
+
         private void areaensino_textbox_LostFocus(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(areaensino_textbox.Text))
@@ -90,6 +92,7 @@ namespace Projeto_UFCD5412.View.Forms
                 secretariaNomeDiretor_textbox.ForeColor = SystemColors.WindowText;
             }
         }
+
         private void secretariaNomeDiretor_textbox_LostFocus(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(secretariaNomeDiretor_textbox.Text))
@@ -107,6 +110,7 @@ namespace Projeto_UFCD5412.View.Forms
                 cursoresponsavel_textbox.ForeColor = SystemColors.WindowText;
             }
         }
+
         private void cursoresponsavel_textbox_LostFocus(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cursoresponsavel_textbox.Text))

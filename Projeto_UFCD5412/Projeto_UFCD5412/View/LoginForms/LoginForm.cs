@@ -103,8 +103,6 @@ namespace Projeto_UFCD5412.View.LoginForms
             }
         }
 
-
-
         private void Sair_btn_Click(object sender, EventArgs e)
         {
             Application.Exit();

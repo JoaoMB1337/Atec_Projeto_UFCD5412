@@ -14,8 +14,8 @@ namespace Projeto_UFCD5412.View.SettingsForms
 {
     public partial class SettingsForm : Form
     {
-        
         DateTimeController dateTimeController = DateTimeController.Instance;
+
         public SettingsForm()
         {
             InitializeComponent();
@@ -59,10 +59,6 @@ namespace Projeto_UFCD5412.View.SettingsForms
             }
         }
 
-        private void ExportJson_Btn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

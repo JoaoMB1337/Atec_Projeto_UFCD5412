@@ -15,23 +15,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
         private readonly Dictionary<DateTime, List<Formacao>> eventosPorDia = new Dictionary<DateTime, List<Formacao>>();
         private readonly CoordenadorController coordenadorController = CoordenadorController.Instance;
 
-        public enum DiaDaSemana
-        {
-            Domingo,
-            Segunda,
-            Terca,
-            Quarta,
-            Quinta,
-            Sexta,
-            Sabado
-        }
-
         public CalendarioForm()
         {
             InitializeComponent();
             dataAtual = DateTime.Today;
             CarregarAulasSalvas();
-
             this.Resize += CalendarioForm_Resize;
             ExibirDiasSalvosNoCalendario();
             AtualizarCalendario();
@@ -39,31 +27,21 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
         private void CarregarAulasSalvas()
         {
-            List<Formacao> listaFormacoes = CSVFormacao.LoadFromCSV();
-
-            foreach (Formacao formacao in listaFormacoes)
+            eventosPorDia.Clear();
+            foreach (var formacao in CSVFormacao.LoadFromCSV())
             {
-                DateTime dataInicio = formacao.DataInicio.Date;
-                if (!eventosPorDia.ContainsKey(dataInicio))
-                {
-                    eventosPorDia[dataInicio] = new List<Formacao>();
-                }
+                if (!eventosPorDia.ContainsKey(formacao.DataInicio.Date))
+                    eventosPorDia[formacao.DataInicio.Date] = new List<Formacao>();
 
-                eventosPorDia[dataInicio].Add(formacao);
+                eventosPorDia[formacao.DataInicio.Date].Add(formacao);
             }
-            AtualizarCalendario();
         }
 
-        private void CalendarioForm_Resize(object sender, EventArgs e)
-        {
-            AjustarTamanhoCelulas();
-        }
+        private void CalendarioForm_Resize(object sender, EventArgs e) => AjustarTamanhoCelulas();
 
         private void AtualizarCalendario()
         {
-            // Limpar o calendário antes de atualizar
             tableLayoutPanel1.Controls.Clear();
-
             PreencherCalendario(dataAtual);
             AjustarTamanhoCelulas();
         }
@@ -74,19 +52,14 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             int alturaCelula = tableLayoutPanel1.Height / tableLayoutPanel1.RowCount;
 
             foreach (ColumnStyle columnStyle in tableLayoutPanel1.ColumnStyles)
-            {
                 columnStyle.Width = larguraCelula;
-            }
 
             foreach (RowStyle rowStyle in tableLayoutPanel1.RowStyles)
-            {
                 rowStyle.Height = alturaCelula;
-            }
         }
 
         private void PreencherCalendario(DateTime data)
         {
-            // Remover todas as labels existentes
             tableLayoutPanel1.Controls.Clear();
 
             int diasNoMes = DateTime.DaysInMonth(data.Year, data.Month);
@@ -101,6 +74,30 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
 
             int diaAtualDoMes = DateTime.Today.Day;
 
+            AdicionarLabelMes(data, numColunas);
+            AdicionarLabelsDiasSemana(numColunas);
+
+            for (int i = 0; i < numLinhas - 2; i++)
+            {
+                for (int j = 0; j < numColunas; j++)
+                {
+                    if (!preencher && j == (int)primeiroDiaDoMes)
+                        preencher = true;
+
+                    if (preencher && diaAtual <= diasNoMes)
+                    {
+                        AdicionarLabelDia(data, diaAtual, linhaAtual, j);
+                        diaAtual++;
+                    }
+                }
+                if (preencher && diaAtual > diasNoMes)
+                    break;
+                linhaAtual++;
+            }
+        }
+
+        private void AdicionarLabelMes(DateTime data, int numColunas)
+        {
             Label lblMes = new Label
             {
                 Text = data.ToString("MMMM yyyy"),
@@ -110,8 +107,11 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
             };
             tableLayoutPanel1.Controls.Add(lblMes, 0, 0);
             tableLayoutPanel1.SetColumnSpan(lblMes, numColunas);
+        }
 
-            string[] diasDaSemana = Enum.GetNames(typeof(DiaDaSemana));
+        private void AdicionarLabelsDiasSemana(int numColunas)
+        {
+            string[] diasDaSemana = Enum.GetNames(typeof(DayOfWeek));
             for (int i = 0; i < numColunas; i++)
             {
                 Label lblDiaSemana = new Label
@@ -123,67 +123,88 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 };
                 tableLayoutPanel1.Controls.Add(lblDiaSemana, i, 1);
             }
+        }
 
-            for (int i = 0; i < numLinhas - 2; i++)
+        private void AdicionarLabelDia(DateTime data, int diaAtual, int linhaAtual, int colunaAtual)
+        {
+            Label lbl = new Label
             {
-                for (int j = 0; j < numColunas; j++)
+                Text = diaAtual.ToString(),
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font(Font, FontStyle.Bold),
+                BorderStyle = BorderStyle.FixedSingle,
+                Margin = new Padding(3),
+                Tag = diaAtual
+            };
+
+            DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
+            if (eventosPorDia.TryGetValue(dataAtual, out var formacoes) && formacoes.Count > 0)
+            {
+                lbl.BackColor = Color.LightGreen;
+                lbl.Text += "\n";
+                foreach (var formacao in formacoes)
+                    lbl.Text += $"{formacao.Formador} - {formacao.Turma}\n";
+
+                lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+                Size size = TextRenderer.MeasureText(lbl.Text, lbl.Font);
+                lbl.Size = new Size(size.Width + 10, size.Height + 10);
+            }
+            else
+            {
+                lbl.BackColor = diaAtual == DateTime.Today.Day ? Color.Gray : Color.White;
+            }
+
+            lbl.Click += Label_Click;
+            lbl.Cursor = Cursors.Hand;
+
+            tableLayoutPanel1.Controls.Add(lbl, colunaAtual, linhaAtual);
+        }
+
+        private void ExibirDiasSalvosNoCalendario()
+        {
+            eventosPorDia.Keys.ToList().ForEach(AtualizarCelula);
+        }
+
+        private void avancar_btn_Click(object sender, EventArgs e)
+        {
+            dataAtual = dataAtual.AddMonths(1);
+            AtualizarCalendario();
+        }
+
+        private void retroceder_btn_Click(object sender, EventArgs e)
+        {
+            dataAtual = dataAtual.AddMonths(-1);
+            AtualizarCalendario();
+        }
+
+        private void Label_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Label selectedLabel = (Label)sender;
+                int diaSelecionado = (int)selectedLabel.Tag;
+                DateTime dataSelecionada = new DateTime(dataAtual.Year, dataAtual.Month, diaSelecionado);
+
+                if (eventosPorDia.TryGetValue(dataSelecionada, out var formacoes) && formacoes.Count > 0)
                 {
-                    if (!preencher && j == (int)primeiroDiaDoMes)
+                    EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(formacoes[0]);
+                    editarFormacaoForm.FormClosed += (s, args) =>
                     {
-                        preencher = true;
-                    }
-
-                    if (preencher && diaAtual <= diasNoMes)
-                    {
-                        Label lbl = new Label
-                        {
-                            Text = diaAtual.ToString(),
-                            TextAlign = ContentAlignment.MiddleCenter,
-                            Font = new Font(Font, FontStyle.Bold),
-                            BorderStyle = BorderStyle.FixedSingle,
-                            Margin = new Padding(3)
-                        };
-                        // Definir o número do dia como tag
-                        lbl.Tag = diaAtual;
-
-                        DateTime dataAtual = new DateTime(data.Year, data.Month, diaAtual);
-                        if (eventosPorDia.ContainsKey(dataAtual) && eventosPorDia[dataAtual].Count > 0)
-                        {
-                            lbl.BackColor = Color.LightGreen;
-                            lbl.Text += "\n";
-                            foreach (var formacao in eventosPorDia[dataAtual])
-                            {
-                                lbl.Text += $"{formacao.Formador} - {formacao.Turma}\n";
-                            }
-                            lbl.Font = new Font(lbl.Font, FontStyle.Bold);
-
-                            Size size = TextRenderer.MeasureText(lbl.Text, lbl.Font);
-                            lbl.Size = new Size(size.Width + 10, size.Height + 10);
-                        }
-                        else
-                        {
-                            if (diaAtual == diaAtualDoMes )
-                            {
-                                lbl.BackColor = Color.Gray;
-                            }
-                            else
-                            {
-                                lbl.BackColor = Color.White;
-                            }
-                        }
-
-                        lbl.Click += Label_Click; // Adiciona o manipulador de evento de clique
-
-                        lbl.Cursor = Cursors.Hand;
-
-                        tableLayoutPanel1.Controls.Add(lbl, j, linhaAtual);
-
-                        diaAtual++;
-                    }
+                        CarregarAulasSalvas();
+                        AtualizarCelula(dataSelecionada);
+                    };
+                    editarFormacaoForm.ShowDialog();
                 }
-                if (preencher && diaAtual > diasNoMes)
-                    break;
-                linhaAtual++;
+                else
+                {
+                    AdicionarEvento(dataAtual.Year, dataAtual.Month, diaSelecionado);
+                    CarregarAulasSalvas();
+                    AtualizarCalendario();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -206,9 +227,7 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                 }
 
                 if (!eventosPorDia.ContainsKey(dataSelecionada))
-                {
                     eventosPorDia[dataSelecionada] = new List<Formacao>();
-                }
 
                 AdicionarFormacaoForm adicionarFormacaoForm = new AdicionarFormacaoForm(dataSelecionada);
 
@@ -243,95 +262,27 @@ namespace Projeto_UFCD5412.View.CoordenacaoForms
                     DateTime dataCelula = new DateTime(data.Year, data.Month, diaCelula);
                     if (dataCelula == data)
                     {
-                        if (eventosPorDia.ContainsKey(data) && eventosPorDia[data].Count > 0)
+                        if (eventosPorDia.TryGetValue(data, out var formacoes) && formacoes.Count > 0)
                         {
                             label.BackColor = Color.LightGreen;
                             label.Text = diaCelula.ToString() + "\n";
-                            foreach (var formacao in eventosPorDia[data])
-                            {
+                            foreach (var formacao in formacoes)
                                 label.Text += $"{formacao.Formador} - {formacao.Turma}\n";
-                            }
+
                             label.Font = new Font(label.Font, FontStyle.Bold);
                             Size size = TextRenderer.MeasureText(label.Text, label.Font);
                             label.Size = new Size(size.Width + 10, size.Height + 10);
                         }
                         else
                         {
-                            // Limpar as configurações de fundo e texto se não houver evento para este dia
                             label.BackColor = diaCelula == DateTime.Today.Day ? Color.Gray : Color.White;
                             label.Text = diaCelula.ToString();
                         }
-                        // Adicione ou atualize o evento de clique da label
-                        label.Click -= Label_Click; // Remova o manipulador de evento existente, se houver
-                        label.Click += Label_Click; // Adicione o manipulador de evento atualizado
+                        label.Click -= Label_Click;
+                        label.Click += Label_Click;
                     }
                 }
             }
         }
-
-
-        private void ExibirDiasSalvosNoCalendario()
-        {
-            foreach (var formacaoList in eventosPorDia.Values)
-            {
-                foreach (var formacao in formacaoList)
-                {
-                    AtualizarCelula(formacao.DataInicio);
-                }
-            }
-        }
-
-        private void avancar_btn_Click(object sender, EventArgs e)
-        {
-            dataAtual = dataAtual.AddMonths(1);
-            AtualizarCalendario();
-        }
-
-        private void retroceder_btn_Click(object sender, EventArgs e)
-        {
-            dataAtual = dataAtual.AddMonths(-1);
-            AtualizarCalendario();
-        }
-
-        private void Label_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Label selectedLabel = (Label)sender;
-                int diaSelecionado = (int)selectedLabel.Tag;
-                DateTime dataSelecionada = new DateTime(dataAtual.Year, dataAtual.Month, diaSelecionado);
-
-                if (eventosPorDia.ContainsKey(dataSelecionada) && eventosPorDia[dataSelecionada].Count > 0)
-                {
-                    EditarFormacaoForm editarFormacaoForm = new EditarFormacaoForm(eventosPorDia[dataSelecionada][0]);
-                    editarFormacaoForm.FormClosed += (s, args) =>
-                    {
-                        // Recarrega as formações do CSV
-                        eventosPorDia.Clear();
-                        CarregarAulasSalvas();
-
-                        // Atualiza apenas a célula afetada pela edição
-                        AtualizarCelula(dataSelecionada);
-                    };
-                    editarFormacaoForm.ShowDialog();
-                }
-                else
-                {
-                    AdicionarEvento(dataAtual.Year, dataAtual.Month, diaSelecionado);
-
-                    // Recarrega as formações do CSV
-                    eventosPorDia.Clear();
-                    CarregarAulasSalvas();
-
-                    // Atualiza o calendário
-                    AtualizarCalendario();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao processar clique: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
     }
 }

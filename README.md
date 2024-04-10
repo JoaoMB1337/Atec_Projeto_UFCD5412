@@ -40,4 +40,4 @@ License
 This program is distributed under the MIT License, granting users the freedom to use, modify, and distribute the software. Contributions are welcome through issues or pull requests.
 
 Acknowledgments
-We appreciate your consideration to contribute to the development of this Asset Management System. Your collaboration is essential for the success of this application
+We appreciate your consideration to contribute to the development of this Asset Management System. Your collaboration is essential for the success of this application.

@@ -1,52 +1,43 @@
-# Sistema de Gestão de Ativos da ADOSMELHORES
+ADOSMELHORES Asset Management System
+Description
+This C# program was developed to meet the asset management needs of ADOSMELHORES, a training company. The application provides functionalities to manage information about employees, directors, secretaries, trainers, and coordinators. The program utilizes classes and inheritance to organize and perform the specified tasks.
 
-## Descrição
+Classes
+Employee
 
-Este programa em C# foi desenvolvido para atender às necessidades de gestão de ativos da ADOSMELHORES, uma empresa de formação. A aplicação fornece funcionalidades para gerenciar informações sobre funcionários, diretores, secretárias, formadores e coordenadores. O programa utiliza classes e herança para organizar e realizar as tarefas especificadas.
+Represents generic information about an employee.
+Attributes: ID, name, address, contact, contractEndDate, criminalRecordRegistrationDate.
+Director
 
-## Classes
+Represents a director in the company.
+Inherits from Employee.
+Additional attributes: scheduleExemption, monthlyBonus, companyCar.
+Secretary
 
-1. **Funcionario**
-   - Representa informações genéricas sobre um funcionário.
-   - Atributos: `ID`, `nome`, `morada`, `contacto`, `dataFimContrato`, `dataRegistoCriminal`.
+Represents a secretary in the company.
+Inherits from Employee.
+Additional attributes: reportedDirector, area.
+Trainer
 
-2. **Diretor**
-   - Representa um diretor na empresa.
-   - Herda de Funcionario.
-   - Atributos adicionais: `isencaoHorario`, `bonusMensal`, `carroEmpresa`.
+Represents a trainer in the company.
+Inherits from Employee.
+Additional attributes: taughtArea, availability, hourlyRate.
+Coordinator
 
-3. **Secretaria**
-   - Representa uma secretária na empresa.
-   - Herda de Funcionario.
-   - Atributos adicionais: `diretorReportado`, `area`.
+Represents a coordinator in the company.
+Inherits from Employee.
+Additional attributes: associatedTrainers (list of trainers).
+Additional Features
+Validation to ensure data integrity.
+Flexibility in trainer availability options (post-labor, labor, or both).
+Information about the reported director and area for secretaries.
+List of associated trainers for coordinators.
+How to Use
+Compile and execute the C# program.
+Follow the on-screen menu to perform different actions related to asset management.
+After each action, the program returns to the initial menu.
+License
+This program is distributed under the MIT License, granting users the freedom to use, modify, and distribute the software. Contributions are welcome through issues or pull requests.
 
-4. **Formador**
-   - Representa um formador na empresa.
-   - Herda de Funcionario.
-   - Atributos adicionais: `areaLecionada`, `disponibilidade`, `valorHora`.
-
-5. **Coordenador**
-   - Representa um coordenador na empresa.
-   - Herda de Funcionario.
-   - Atributos adicionais: `formadoresAssociados` (lista de formadores).
-
-## Recursos Adicionais
-
-- Validação para garantir a integridade dos dados.
-- Flexibilidade nas opções de disponibilidade para formadores (pós-laboral, laboral ou ambas).
-- Informações sobre o diretor reportado e a área para secretárias.
-- Lista de formadores associados para coordenadores.
-
-## Como Usar
-
-1. Compile e execute o programa em C#.
-2. Siga o menu na tela para realizar diferentes ações relacionadas à gestão de ativos.
-3. Após cada ação, o programa retorna ao menu inicial.
-
-## Licença
-
-Este programa é distribuído sob a Licença MIT, concedendo aos usuários a liberdade de usar, modificar e distribuir o software. Contribuições são bem-vindas por meio de issues ou pull requests.
-
-## Agradecimentos
-
-Agradecemos por considerar contribuir para o desenvolvimento deste Sistema de Gestão de Ativos. Sua colaboração é essencial para o sucesso desta aplicação.
+Acknowledgments
+We appreciate your consideration to contribute to the development of this Asset Management System. Your collaboration is essential for the success of this application
